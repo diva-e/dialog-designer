@@ -1,9 +1,9 @@
 .drop-target {
-  border: 2px solid #991111;
-  display: inline-block;
+  display: none;
 
   &--can-drop {
     background: #119911;
+    display: inline-block;
   }
 
   &--is-over {

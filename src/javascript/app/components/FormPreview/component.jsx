@@ -11,6 +11,7 @@ const d2r = new Dom2react([
       <DropTarget
         key={key}
         accepts={node.dataset.accept.split(',')}
+        path={node.dataset.path}
         dropped={() => {}}
       />
     ),

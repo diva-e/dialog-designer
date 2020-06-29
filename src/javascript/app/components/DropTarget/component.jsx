@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { useDrop } from 'react-dnd';
 import classNames from 'class-names';
 
-const DropTarget = ({ dropped, accepts }) => {
+const DropTarget = ({ dropped, accepts, path }) => {
 
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: accepts,
-    drop: () => ({ name: 'droptarget' }),
+    drop: () => ({ name: 'droptarget', path }),
     collect: (monitor) => ({
       isOver: monitor.isOver(),
       canDrop: monitor.canDrop(),
@@ -29,6 +29,8 @@ const DropTarget = ({ dropped, accepts }) => {
         onClick={dropped}
       >
         {`[DROP-ZONE | Accepts: ${accepts.join(', ')}]`}
+        <br />
+        { path }
       </button>
     </div>
   );

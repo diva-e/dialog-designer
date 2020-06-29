@@ -3,7 +3,7 @@ import stringFormat from '../stringFormat';
 
 const compAll = coralComponents.map(({ nodeName }) => (nodeName)).join(',');
 
-const structureToDom = (structureNode) => {
+const structureToDom = (structureNode, path = '') => {
 
   const nodeData = coralComponents.find((coralComponent) => coralComponent.nodeName === structureNode.type);
 
@@ -22,11 +22,15 @@ const structureToDom = (structureNode) => {
 
   // Add childnodes for all contend defined by the names of droptargets
   [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {
-    const childContainerName = droptarget.dataset.name;
-    if (structureNode.children && structureNode.children[childContainerName]) {
-      structureNode.children[childContainerName].forEach((childNode) => {
 
-        droptarget.parentNode.insertBefore(structureToDom(childNode), droptarget);
+    const childContainerName = droptarget.dataset.name;
+    const childPath = `${path}children.${childContainerName}`;
+    // eslint-disable-next-line no-param-reassign
+    droptarget.dataset.path = childPath;
+
+    if (structureNode.children && structureNode.children[childContainerName]) {
+      structureNode.children[childContainerName].forEach((childNode, index) => {
+        droptarget.parentNode.insertBefore(structureToDom(childNode, `${childPath}.${index}.`), droptarget);
       });
     }
   });

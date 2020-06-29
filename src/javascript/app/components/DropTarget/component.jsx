@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDrop } from 'react-dnd';
 import classNames from 'class-names';
 
-const DropTarget = ({ dropped, accepts, path }) => {
+const DropTarget = ({ accepts, path }) => {
 
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: accepts,
@@ -24,20 +23,11 @@ const DropTarget = ({ dropped, accepts, path }) => {
         })
       }
     >
-      <button
-        type="button"
-        onClick={dropped}
-      >
-        {`[DROP-ZONE | Accepts: ${accepts.join(', ')}]`}
-        <br />
-        { path }
-      </button>
+      {`[DROP-ZONE | Accepts: ${accepts.join(', ')}]`}
+      <br />
+      { path }
     </div>
   );
-};
-
-DropTarget.propTypes = {
-  dropped: PropTypes.func.isRequired,
 };
 
 export default DropTarget;

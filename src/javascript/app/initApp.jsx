@@ -10,7 +10,15 @@ const initApp = () => {
     return;
   }
 
-  render(<Provider store={getStore()}><App /></Provider>, appRoot);
+  const initialState = {};
+
+  const loadedStructure = JSON.parse(window.localStorage.getItem('dndd-test-structure'));
+
+  if (loadedStructure) {
+    initialState.structure = loadedStructure;
+  }
+
+  render(<Provider store={getStore(initialState)}><App /></Provider>, appRoot);
 };
 
 export default initApp;

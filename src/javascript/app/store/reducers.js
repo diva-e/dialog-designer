@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import example from './reducers/exampleReducer';
+import structure from './reducers/structureReducer';
 
 export default combineReducers({
-  example,
+  structure,
 });

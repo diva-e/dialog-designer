@@ -1,6 +1,8 @@
 import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
 
+const compAll = coralComponents.map(({ nodeName }) => (nodeName)).join(',');
+
 const structureToDom = (structureNode) => {
 
   const nodeData = coralComponents.find((coralComponent) => coralComponent.nodeName === structureNode.type);
@@ -10,7 +12,10 @@ const structureToDom = (structureNode) => {
   }
 
   // Fill any textcontent placeholders
-  const nodeDomString = stringFormat(nodeData.src, structureNode.properties);
+  const nodeDomString = stringFormat(nodeData.src, structureNode.properties)
+    // replace * with a list of all components
+    // ToDo: add sope sort of "contentgroups"
+    .replace(/data-accept="\*"/gi, `data-accept="${compAll}"`);
 
   const parser = new DOMParser();
   const doc = parser.parseFromString(nodeDomString, 'text/html');

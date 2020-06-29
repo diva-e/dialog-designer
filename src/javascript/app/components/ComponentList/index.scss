@@ -8,5 +8,10 @@
     border: 1px solid $color-grey-90;
     padding: 10px 20px;
     user-select: none;
+
+    &--is-dragging {
+      background: $color-grey-50;
+      color: $color-white;
+    }
   }
 }

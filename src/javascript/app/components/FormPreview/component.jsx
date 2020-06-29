@@ -1,6 +1,6 @@
 import React from 'react';
 import Dom2react from 'dom-to-react';
-import DropTarget from '../DropTarget/component';
+import DropTarget from '../DropTarget';
 
 const d2r = new Dom2react([
   {

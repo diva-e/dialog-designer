@@ -1,3 +1,17 @@
 .drop-target {
-  border: 2px solid brown;
+  border: 2px solid #991111;
+  display: inline-block;
+
+  &--can-drop {
+    background: #119911;
+  }
+
+  &--is-over {
+    background: #12e512;
+  }
+
+  button {
+    background: none;
+    border: none;
+  }
 }

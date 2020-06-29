@@ -1,9 +1,7 @@
 import { connect } from 'react-redux';
 
-const mapStateToProps = () => ({
-});
+const mapStateToProps = () => ({});
 
-const mapDispatchToProps = () => ({
-});
+const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps);

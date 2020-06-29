@@ -1,0 +1,12 @@
+.conponent-list {
+  flex: 300px 1 1;
+  margin: 0 10px;
+  background: $color-grey-70;
+
+  &__entry {
+    background: $color-grey-70;
+    border: 1px solid $color-grey-90;
+    padding: 10px 20px;
+    user-select: none;
+  }
+}

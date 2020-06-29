@@ -23,11 +23,13 @@
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",
+    "autoprefixer": "^9.8.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0",
     "chalk": "^3.0.0",
     "css-loader": "^3.6.0",
+    "dom-to-react": "^1.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-loader": "^3.0.4",
@@ -53,9 +55,6 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0"
-  },
-  "dependencies": {
-    "autoprefixer": "^9.8.4"
   },
   "browserslist": [
     ">1%",

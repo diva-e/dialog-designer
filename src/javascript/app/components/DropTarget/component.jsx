@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DropTarget = ({ dropped }) => (
+const DropTarget = ({ dropped, accepts }) => (
   <div className="drop-target">
     <button
       type="button"
       onClick={dropped}
     >
-      [DROP ZONE FOR CONTENT]
+      {`[DROP-ZONE | Accepts: ${accepts.join(', ')}]`}
     </button>
   </div>
 );
@@ -15,8 +15,5 @@ const DropTarget = ({ dropped }) => (
 DropTarget.propTypes = {
   dropped: PropTypes.func.isRequired,
 };
-
-// DropTarget.defaultProps = {
-// };
 
 export default DropTarget;

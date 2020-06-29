@@ -5,7 +5,11 @@
     "browser": true,
     "jest": true
   },
+  "globals": {
+    "Coral": true
+  },
   "rules": {
+    "react/prop-types": "off",
     // Airbnb overwrites
     "import/no-extraneous-dependencies": [
       "off"

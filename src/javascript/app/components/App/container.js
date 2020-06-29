@@ -1,15 +1,7 @@
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => ({
-  example: state.example,
-});
+const mapStateToProps = () => ({});
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleExample: () => {
-    dispatch({
-      type: 'TOGGLE_EXAMPLE',
-    });
-  },
-});
+const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps);

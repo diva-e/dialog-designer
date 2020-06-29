@@ -30,7 +30,7 @@ const dropMiddleware = (store) => (next) => (action) => {
     objectPath.push(structure, editComponent.where.path, {
       type: editComponent.what,
       properties: editComponent.fields,
-      children: [],
+      children: {},
     });
 
     store.dispatch({

@@ -1,14 +1,35 @@
 import objectPath from 'object-path';
 
+import coralComponents from '../../data/coral-components';
+
+const getFields = ({ what }) => {
+  const comp = coralComponents.find(({ nodeName }) => nodeName === what);
+
+  const fields = {};
+  const findFieldsRegex = /{([\d\w]+)}/g;
+
+  let found = findFieldsRegex.exec(comp.src);
+  while (found) {
+    fields[found[1]] = '';
+    found = findFieldsRegex.exec(comp.src);
+  }
+
+  return fields;
+};
+
+
 const dropMiddleware = (store) => (next) => (action) => {
-  next(action);
 
   if (action.type === 'DROP_NEW_COMPONENT') {
-    const { structure } = store.getState();
+    Object.assign(action.payload, { fields: getFields(action.payload) });
+  }
 
-    objectPath.push(structure, action.payload.where.path, {
-      type: action.payload.what,
-      properties: {},
+  if (action.type === 'SAVE_EDIT_COMPONENT') {
+    const { structure, editComponent } = store.getState();
+
+    objectPath.push(structure, editComponent.where.path, {
+      type: editComponent.what,
+      properties: editComponent.fields,
       children: [],
     });
 
@@ -17,6 +38,8 @@ const dropMiddleware = (store) => (next) => (action) => {
       payload: { ...structure },
     });
   }
+
+  next(action);
 };
 
 export default dropMiddleware;

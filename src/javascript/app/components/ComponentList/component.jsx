@@ -26,7 +26,7 @@ const doDrop = (what, where) => {
 
 const ComponentList = () => (
   <ul
-    className="conponent-list"
+    className="component-list"
   >
     {
       coralComponents.map((component) => {
@@ -48,8 +48,8 @@ const ComponentList = () => (
           <li
             ref={drag}
             className={
-              classNames('conponent-list__entry', {
-                'conponent-list__entry--is-dragging': isDragging,
+              classNames('component-list__entry', {
+                'component-list__entry--is-dragging': isDragging,
               })
             }
             key={component.nodeName}

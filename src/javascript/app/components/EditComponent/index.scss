@@ -1,7 +1,17 @@
 .edit-component {
-  position: absolute;
+  position: fixed;
   width: 400px;
   height: 500px;
   border: $color-grey-30;
   background: $color-grey-70;
+  left: calc(50vw - 200px);
+  top: calc(50vh - 250px);
+  padding: 20px;
+
+  &__backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color-grey-70, 0.7);
+  }
 }

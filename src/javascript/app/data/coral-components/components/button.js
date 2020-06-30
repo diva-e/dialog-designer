@@ -3,9 +3,12 @@ const button = {
   description: 'Just a button',
   id: 'button',
   src: `<button class="coral-Button coral-Button--secondary">
-  {label}
+  {test}
 </button>`,
-  xml: '',
+  xml: `<{id}
+  label="{label}"
+  name="./{id}"
+/>`,
 };
 
 export default button;

@@ -14,6 +14,12 @@ const getFields = ({ what }) => {
     found = findFieldsRegex.exec(comp.src);
   }
 
+  found = findFieldsRegex.exec(comp.xml);
+  while (found) {
+    fields[found[1]] = found[1];
+    found = findFieldsRegex.exec(comp.xml);
+  }
+
   return fields;
 };
 

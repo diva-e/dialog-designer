@@ -16,6 +16,7 @@ const panel = {
     </div>
   </coral-panel-content>
 </coral-panel>`,
+  xml: '',
 };
 
 export default panel;

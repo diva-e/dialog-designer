@@ -5,6 +5,7 @@ const button = {
   src: `<button class="coral-Button coral-Button--secondary">
   {label}
 </button>`,
+  xml: '',
 };
 
 export default button;

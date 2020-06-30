@@ -1,11 +1,11 @@
 import tabView from './components/tabView';
 import tab from './components/tab';
-import tabPanel from './components/tabPanel';
+import panel from './components/panel';
 
 const coralComponents = [
   tabView,
   tab,
-  tabPanel,
+  panel,
 ];
 
 export default coralComponents;

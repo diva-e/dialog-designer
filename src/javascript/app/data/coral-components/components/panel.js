@@ -1,8 +1,8 @@
-const tabPanel = {
-  name: 'Tab Content Panel',
-  description: 'Tab Panel holding further content',
+const panel = {
+  name: 'Content Panel',
+  description: 'Panel holding further content (e.g. for tabs)',
   nodeName: 'coral-panel',
-  src: `<coral-panel aria-labelledby={id}>
+  src: `<coral-panel aria-labelledby={id} selected>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">
       <div class="coral-FixedColumn foundation-layout-util-vmargin">
@@ -18,4 +18,4 @@ const tabPanel = {
 </coral-panel>`,
 };
 
-export default tabPanel;
+export default panel;

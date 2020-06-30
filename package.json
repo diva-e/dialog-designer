@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.diva-e.com:andreas.hahn/dnd-aem-dialogs.git"
+    "url": "git@gitlab.diva-e.com:adaptto/dnd-aem-dialogs.git"
   },
   "private": true,
   "projectConfig": {

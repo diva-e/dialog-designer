@@ -8,7 +8,7 @@ const button = {
       Coral.Button()
     ),
   },
-  src: `<button is="coral-button" class="coral-Button coral-Button--secondary">
+  src: `<button is="coral-button">
   {label}
 </button>`,
   xml: `<{id}

@@ -2,8 +2,14 @@ const button = {
   name: 'Button',
   description: 'Just a button',
   id: 'button',
-  src: `<button class="coral-Button coral-Button--secondary">
-  {test}
+  createNode: {
+    is: 'coral-button',
+    creator: () => (
+      Coral.Button()
+    ),
+  },
+  src: `<button is="coral-button" class="coral-Button coral-Button--secondary">
+  {label}
 </button>`,
   xml: `<{id}
   label="{label}"

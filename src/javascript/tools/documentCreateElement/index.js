@@ -2,6 +2,11 @@ import coralComponents from '../../app/data/coral-components';
 
 const originalFn = document.createElement;
 
+/*
+* This Function monkeypatched document.createElement !!!!!
+* This is evil and should not be used...
+* */
+
 document.createElement = (nodeName, options) => {
 
   if (!options || !options.is) {

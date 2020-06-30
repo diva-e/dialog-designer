@@ -35,7 +35,7 @@ const structureToDom = (structureNode, path = '') => {
     }
   });
 
-  return doc.querySelector(nodeData.nodeName.toLowerCase());
+  return doc.body.firstElementChild;
 };
 
 export default structureToDom;

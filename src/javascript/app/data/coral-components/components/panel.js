@@ -9,7 +9,7 @@ const panel = {
         <div class="coral-FixedColumn-column">
           <h4 class="coral-Heading coral-Heading--4">{heading}</h4>
           <div class="coral-Well">
-            <droptarget data-accept="coral-tabview,button" data-name="content"/>
+            <droptarget data-accept="coral-tabview,button,div-textfield" data-name="content"/>
           </div>
         </div>
       </div>

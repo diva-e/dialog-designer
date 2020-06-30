@@ -22,6 +22,7 @@ const FormPreview = ({ formDom }) => (
   <div className="form-preview">
     {d2r.prepareNode(formDom)}
   </div>
+  // <div className="form-preview" ref={(node) => node.appendChild(formDom)} />
 );
 
 export default FormPreview;

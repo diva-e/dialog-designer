@@ -1,7 +1,7 @@
 const defaultStructure = {
-  type: 'coral-tabview',
+  type: 'coral-panel',
   properties: {
-    id: 'root-tabs',
+    heading: 'Content',
   },
   children: {},
 };

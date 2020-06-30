@@ -11,11 +11,11 @@ const ComponentList = ({ dropNewComponent }) => (
       coralComponents.map((component) => {
 
         const [{ isDragging }, drag] = useDrag({
-          item: { name: component.name, type: component.nodeName },
+          item: { name: component.name, type: component.id },
           end: (item, monitor) => {
             const dropResult = monitor.getDropResult();
             if (item && dropResult) {
-              dropNewComponent(component.nodeName, dropResult);
+              dropNewComponent(component.id, dropResult);
             }
           },
           collect: (monitor) => ({
@@ -31,7 +31,7 @@ const ComponentList = ({ dropNewComponent }) => (
                 'component-list__entry--is-dragging': isDragging,
               })
             }
-            key={component.nodeName}
+            key={component.id}
             title={component.description}
           >
             {component.name}

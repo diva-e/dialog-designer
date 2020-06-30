@@ -1,7 +1,7 @@
 const tab = {
   name: 'Tab',
   description: 'Clickable Tab',
-  nodeName: 'coral-tab',
+  id: 'coral-tab',
   src: `<coral-tab id={id}>
   <coral-tab-label>
     {label}

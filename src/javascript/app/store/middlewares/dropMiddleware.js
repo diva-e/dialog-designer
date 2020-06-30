@@ -3,14 +3,14 @@ import objectPath from 'object-path';
 import coralComponents from '../../data/coral-components';
 
 const getFields = ({ what }) => {
-  const comp = coralComponents.find(({ nodeName }) => nodeName === what);
+  const comp = coralComponents.find(({ id }) => id === what);
 
   const fields = {};
   const findFieldsRegex = /{([\d\w]+)}/g;
 
   let found = findFieldsRegex.exec(comp.src);
   while (found) {
-    fields[found[1]] = '';
+    fields[found[1]] = found[1];
     found = findFieldsRegex.exec(comp.src);
   }
 

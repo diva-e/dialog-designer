@@ -1,11 +1,11 @@
 import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
 
-const compAll = coralComponents.map(({ nodeName }) => (nodeName)).join(',');
+const compAll = coralComponents.map(({ id }) => (id)).join(',');
 
 const structureToDom = (structureNode, path = '') => {
 
-  const nodeData = coralComponents.find((coralComponent) => coralComponent.nodeName === structureNode.type);
+  const nodeData = coralComponents.find((coralComponent) => coralComponent.id === structureNode.type);
 
   if (!nodeData) {
     return null;

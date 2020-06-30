@@ -1,7 +1,7 @@
 const tabView = {
   name: 'Tab View',
   description: 'Switchable tabs with multiple panels',
-  nodeName: 'coral-tabview',
+  id: 'coral-tabview',
   src: `<coral-tabview>
   <coral-tablist target="#{id}">
     <droptarget data-accept="coral-tab" data-name="tabs"/>

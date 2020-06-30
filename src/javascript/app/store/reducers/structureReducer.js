@@ -1,8 +1,6 @@
 const defaultStructure = {
-  type: 'coral-panel',
-  properties: {
-    heading: 'Content',
-  },
+  type: 'root',
+  properties: {},
   children: {},
 };
 

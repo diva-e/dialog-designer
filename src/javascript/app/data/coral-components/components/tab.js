@@ -7,7 +7,7 @@ const tab = {
     {label}
   </coral-tab-label>
 </coral-tab>`,
-  xml: '',
+  xml: '<span>Tab</span>',
 };
 
 export default tab;

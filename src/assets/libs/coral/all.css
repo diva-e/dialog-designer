@@ -1,0 +1,695 @@
+.ac-Scene7-parameters .js-ac-scene7-reset  {
+    margin-left: 0.5rem;
+}
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+td[is='coral-table-cell'].cq-sites-Permissions-actions {
+  width: 82px;
+  mix-width: 82px;
+  max-width: 82px;
+  background-color: #fafafa;
+  text-align: right;
+}
+.cq-sites-ClosedUserGroup-permissions {
+  height: 380px;
+}
+.cq-sites-Permissions-thumbnail {
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  margin-right: 0.625rem;
+}
+.cq-sites-Permissions-label {
+  line-height: 2.6875rem;
+}
+.cq-sites-Permissions-aclContainer .coral-FixedColumn-column {
+  width: 12rem;
+  max-width: 35rem;
+}
+.cq-sites-Permissions-labelColumn {
+  padding-left: 0;
+}
+.cq-sites-Permissions-checkColumn {
+  width: 9rem;
+}
+.cq-sites-Permissions-labelColumn--emptyRow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+/* Effective permissions */
+.cq-sites-EffectivePermissionsDialog coral-dialog-content {
+  max-width: 70rem;
+  max-height: 35rem;
+  overflow-y: scroll;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list .card-page .main {
+  width: 12.5rem;
+  border-right: 0.0625rem solid #d2d2d2;
+  height: 100%;
+  padding-left: 0.625rem;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list .card-page .main,
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list .card-page .permission {
+  line-height: 3.125rem;
+  vertical-align: middle;
+  margin-top: 0;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list .card-page .permission {
+  width: 7rem;
+  text-align: center;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list .card-page .main.full-info {
+  line-height: 1.125rem;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list header.card-page {
+  padding: 0;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list header.card-page .main,
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list header.card-page .permission {
+  font-weight: bold;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list header.card-page .sort {
+  float: right;
+}
+.cq-sites-EffectivePermissionsDialog .foundation-layout-list article.card-page .permission {
+  display: inline-block;
+  line-height: 3.125rem;
+  vertical-align: middle;
+  float: left;
+}
+.cq-sites-EffectivePermissionsDialog article.card-page > .label {
+  border-bottom: 0.0625rem solid #d2d2d2;
+}
+.cq-sites-EffectivePermissionsDialog article.card-page .main.full-info {
+  text-transform: none;
+}
+.cq-sites-EffectivePermissionsDialog article.card-page .main.full-info > .path {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 0.4375rem;
+}
+.cq-sites-EffectivePermissionsDialog .card-page .main.full-info > .restrictions {
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.coral-PathBrowser + .js-TagsPickerField-tagList.coral-TagList {
+    margin-top: 0.4375rem;
+}
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2017 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+.cq-AllowedStyles-groupField {
+  float: left;
+  max-width: calc((100% - 10px) / 2);
+  margin-left: 10px;
+}
+.cq-AllowedStyles-groupField:first-child {
+  margin-left: 0;
+}
+.cq-AllowedStyles-styles {
+  clear: both;
+}
+.cq-AllowedStyles-style {
+  display: flex;
+}
+.cq-AllowedStyles-styleField.coral-Form-field {
+  min-width: 90px;
+  margin-left: 10px;
+}
+.cq-AllowedStyles-styleField.coral-Form-field:first-child {
+  margin-left: 0;
+}
+
+.cq-DropArea {
+  text-align: center;
+  position: relative;
+}
+.cq-DropArea.is-hovered:not(.is-filled)::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2583DB;
+  z-index: 99999;
+  box-shadow: 0.0625rem 0.4375rem 1.5rem 0 #414141;
+}
+.cq-DropArea img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.cq-Slideshow-list {
+  display: table;
+  width: 100%;
+}
+.cq-Slideshow-list > * {
+  display: table-cell !important;
+  vertical-align: top;
+}
+.cq-Slideshow-list > .cq-Slideshow-list-actions {
+  padding-left: 10px;
+  /* Fixed width equivalent to the width of two buttons it contains. Requires a fixed width in order to have the first cell flexible */
+  width: 4.75rem;
+  min-width: 4.75rem;
+  text-align: right;
+}
+.cq-Slideshow-list .cq-Slideshow-select.coral-Form-field {
+  width: 100%;
+}
+
+.cq-Sizefield {
+  display: inline-block;
+  width: 100%;
+  font-size: 0;
+}
+.cq-Sizefield .cq-Sizefield-width,
+.cq-Sizefield .cq-Sizefield-height {
+  width: 50%;
+}
+.cq-Sizefield .cq-Sizefield-width {
+  box-sizing: border-box;
+  padding-right: 1.25rem;
+}
+
+.cq-RichText {
+  overflow: auto;
+  position: static;
+}
+.cq-RichText-editable {
+  box-sizing: border-box;
+  min-height: 2.75rem;
+  border-radius: 4px;
+  padding: 15px;
+}
+.cq-RichText-editable.is-edited {
+  outline: none;
+  box-shadow: 0 0 3px #326ec8;
+  border: 1px solid #326ec8;
+}
+.cq-Dialog:not([fullscreen]) .cq-RichText-editable.is-edited .cq-RichText-hiddenHeader--editing,
+.cq-Dialog:not([fullscreen]) .rte-sourceEditor .cq-RichText-hiddenHeader--editing {
+  background-color: #555555;
+}
+.cq-Dialog:not([fullscreen]) .cq-RichText-editable.is-edited table,
+.cq-Dialog:not([fullscreen]) .rte-sourceEditor table {
+  border: 1px solid #777777;
+}
+.cq-Dialog:not([fullscreen]) .cq-RichText-editable {
+  height: 13.2rem;
+}
+.cq-Dialog:not([fullscreen]) .rte-sourceEditor {
+  height: 12.8rem;
+}
+.cq-Dialog:not([fullscreen]) .rte-ui .rte-dialog--find coral-checkbox {
+  margin-left: 0px;
+  width: 95px;
+}
+.scaffold-host-wizard .cq-RichText-FixedColumn-column,
+.cq-Dialog[fullscreen] .cq-RichText-FixedColumn-column {
+  width: 68.36%;
+}
+.scaffold-host-wizard .cq-RichText .cq-RichText-editable,
+.cq-Dialog[fullscreen] .cq-RichText .cq-RichText-editable,
+.scaffold-host-wizard .cq-RichText .rte-sourceEditor,
+.cq-Dialog[fullscreen] .cq-RichText .rte-sourceEditor {
+  height: 35rem;
+}
+.scaffold-host-wizard .cq-RichText .cq-RichText-editable .cq-RichText-hiddenHeader--editing,
+.cq-Dialog[fullscreen] .cq-RichText .cq-RichText-editable .cq-RichText-hiddenHeader--editing,
+.scaffold-host-wizard .cq-RichText .rte-sourceEditor .cq-RichText-hiddenHeader--editing,
+.cq-Dialog[fullscreen] .cq-RichText .rte-sourceEditor .cq-RichText-hiddenHeader--editing {
+  background-color: #d7d7d7;
+}
+.scaffold-host-wizard .cq-RichText .coral-Form-fielderror,
+.cq-Dialog[fullscreen] .cq-RichText .coral-Form-fielderror {
+  position: relative;
+}
+.scaffold-host-wizard .rte-toolbar,
+.cq-dialog .rte-toolbar {
+  background-color: transparent;
+  position: relative;
+  box-shadow: none;
+}
+.scaffold-host-wizard .cq-RichText-editable,
+.cq-dialog .cq-RichText-editable,
+.scaffold-host-wizard .rte-sourceEditor,
+.cq-dialog .rte-sourceEditor {
+  overflow-y: auto;
+}
+.scaffold-host-wizard .rte-sourceEditor,
+.cq-dialog .rte-sourceEditor {
+  width: 100%;
+  box-sizing: border-box;
+}
+.coral--dark .cq-RichText-editable.is-edited {
+  box-shadow: 0 0 3px #87beff;
+  border-color: #87beff;
+}
+
+.cq-Policy-list {
+  display: table;
+  width: 100%;
+}
+.cq-Policy-list > * {
+  display: table-cell !important;
+  vertical-align: bottom;
+}
+.cq-Policy-list > .cq-Policy-list-actions {
+  padding-left: 10px;
+  padding-bottom: .375rem;
+  /* Fixed width equivalent to the width of two buttons it contains. Requires a fixed width in order to have the first cell flexible */
+  width: 5rem;
+  min-width: 5rem;
+  text-align: right;
+}
+.cq-Policy-list .cq-Policy-dialog-select.coral-Form-field {
+  width: 100%;
+}
+.coral-Form--aligned .cq-Policy-list {
+  margin: 0 0 .9375rem 0;
+}
+.cq-Policy-openClassicDesign {
+  display: none;
+}
+.cq-Policy-openClassicDesign.is-visible {
+  display: block;
+}
+.cq-Policy-templates-list td[is="coral-table-cell"].cq-Policy-templates-list-thumbnailcell {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+}
+.cq-Policy-templates-list td[is="coral-table-cell"].cq-Policy-templates-list-thumbnailcell img {
+  width: 100%;
+  height: 100%;
+  line-height: 3rem;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.cq-Policy-templates-list .cq-Policy-templates-anchor {
+  text-decoration: none;
+  color: inherit;
+}
+.cq-Policy-templates-list .cq-Policy-templates-anchor:hover {
+  text-decoration: underline;
+}
+.cq-Policy-policyWrapper.coral-Form-fieldset .coral-Form-fieldset-legend,
+.cq-Policy-designWrapper.coral-Form-fieldset .coral-Form-fieldset-legend {
+  margin-top: 1.5625rem;
+}
+/** Avoid overflow issues with nested fixed columns */
+.cq-Policy-wrapper .coral-FixedColumn-column .coral-FixedColumn-column {
+  margin-left: 0;
+  margin-right: 0;
+}
+.cq-dialog-floating .cq-dialog-content.cq-Policy-wrapper coral-panel-content {
+  padding: 0;
+}
+.cq-dialog-floating .cq-dialog-content.cq-Policy-wrapper .coral-FixedColumn-column {
+  margin: 0;
+  padding: 0;
+}
+.cq-dialog-floating .cq-dialog-content.cq-Policy-wrapper .coral-FixedColumn-column + .coral-FixedColumn-column {
+  margin-left: 0.9375rem;
+}
+.cq-dialog-floating .cq-Policy-templates .coral-Form-fieldlabel {
+  width: 100%;
+}
+.cq-Policy-wrapper-description {
+  margin: 0 0 .375rem;
+}
+
+.cq-AspectRatio coral-multifield-item > button {
+  margin: 0 0 .375rem;
+  top: initial;
+  bottom: 0;
+}
+.cq-AspectRatio-field {
+  display: table;
+}
+.cq-AspectRatio-field .coral-Form-fieldwrapper {
+  display: table-cell;
+}
+.cq-AspectRatio-field .coral-Form-fieldwrapper:nth-child(1) {
+  width: 100%;
+  padding-right: 10px;
+}
+.cq-AspectRatio-field .coral-Form-fieldwrapper:nth-child(2) {
+  max-width: 12rem;
+  width: 100%;
+}
+
+.cq-paragraphstyles coral-multifield-item > button,
+.cq-specialcharacters coral-multifield-item > button,
+.cq-charactersstyles coral-multifield-item > button {
+  margin: 0 0 .375rem;
+  top: initial;
+  bottom: 0;
+}
+.cq-paragraphstyles-field .cq-rte-symbol,
+.cq-specialcharacters-field .cq-rte-symbol {
+  max-width: 4rem;
+  float: left;
+  min-width: 2rem;
+  margin-right: 10px;
+}
+.cq-paragraphstyles-field .cq-rte-symbol-description,
+.cq-specialcharacters-field .cq-rte-symbol-description {
+  max-width: 18rem;
+}
+
+img.image-full-width {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+.cq-FileUpload {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.cq-FileUpload.is-filled .cq-FileUpload-icon {
+  display: none;
+}
+.cq-FileUpload.is-filled .cq-FileUpload-thumbnail-img {
+  display: block;
+}
+.cq-FileUpload.is-filled .cq-FileUpload-edit,
+.cq-FileUpload.is-filled .cq-FileUpload-clear {
+  display: inline-block;
+}
+.cq-FileUpload.is-disabled {
+  opacity: .3;
+}
+.cq-FileUpload.is-disabled .cq-FileUpload-browse {
+  cursor: text;
+  text-decoration: none;
+}
+.cq-FileUpload.is-disabled .cq-FileUpload-browse .coral-FileUpload-input {
+  font-size: 0;
+}
+.cq-FileUpload:not(.is-disabled).is-active .cq-FileUpload-thumbnail,
+.cq-FileUpload:not(.is-disabled).is-dragging .cq-FileUpload-thumbnail,
+.cq-FileUpload:not(.is-disabled).is-hovered .cq-FileUpload-thumbnail {
+  border-color: #a0a0a0;
+}
+.cq-FileUpload:not(.is-disabled).is-active .cq-FileUpload-thumbnail-dropHere,
+.cq-FileUpload:not(.is-disabled).is-dragging .cq-FileUpload-thumbnail-dropHere,
+.cq-FileUpload:not(.is-disabled).is-hovered .cq-FileUpload-thumbnail-dropHere {
+  color: #a0a0a0;
+}
+.cq-FileUpload:not(.is-disabled).is-filled.is-dragging .cq-FileUpload-thumbnail-img:after,
+.cq-FileUpload:not(.is-disabled).is-filled.is-hovered .cq-FileUpload-thumbnail-img:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #2583db;
+  opacity: .5;
+}
+.cq-FileUpload-thumbnail {
+  position: relative;
+  max-width: 100%;
+  padding: 15px;
+  margin: 15px auto;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+}
+.cq-FileUpload-thumbnail-img {
+  position: relative;
+  max-width: 200px;
+  margin: auto;
+  word-wrap: break-word;
+}
+.cq-FileUpload-thumbnail-img img {
+  max-width: 100%;
+  max-height: 200px;
+  vertical-align: bottom;
+}
+.cq-FileUpload-edit,
+.cq-FileUpload-clear {
+  display: none;
+}
+.cq-FileUpload-icon {
+  display: block;
+  margin: 5px auto;
+}
+.cq-FileUpload-browse {
+  position: relative;
+  cursor: pointer;
+}
+.cq-dialog-floating .cq-dialog-content .coral-FileUpload-input {
+  font-size: 0;
+}
+.coral--dark .cq-FileUpload-thumbnail {
+  background: #464646;
+}
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2013 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+.cq-dialog-header-action {
+  padding: 0 0.9375rem;
+  line-height: 3.125rem;
+}
+.cq-Dialog[fullscreen] .cq-dialog-header-action {
+  line-height: 4.125rem;
+}
+coral-dialog.cq-compat-dialog .cq-dialog-header .cq-dialog-actions {
+  position: absolute;
+  top: 0;
+  right: 0.9375rem;
+}
+coral-dialog.cq-Dialog[backdrop=none][fullscreen] {
+  pointer-events: auto;
+}
+.cq-dialog-floating .cq-dialog-content {
+  width: 35rem;
+  height: 30rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.cq-dialog-backdrop {
+  z-index: 920;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: opacity 0.35s;
+  -moz-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  -ms-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.cq-dialog-backdrop.is-open {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#SidePanel.cq-dialog-is-open {
+  z-index: 940;
+}
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2013 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+
+/**
+ * Hide cq-fileuploadfield's thumbnail, since pagethumbnail is providing its own
+ */
+.cq-dialog .cq-wcm-pagethumbnail .cq-FileUpload-thumbnail {
+    display: none;
+}
+
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2016 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+.cq-AllowedComponents coral-checkbox {
+  margin-left: 0 !important;
+}
+.cq-AllowedComponents coral-tag {
+  padding-left: 0.313rem;
+  padding-right: 0.313rem;
+}
+.cq-AllowedComponents .cq-AllowedComponents-componentContent {
+  display: inline;
+}
+.cq-AllowedComponents .cq-AllowedComponents-componentGroup coral-checkbox {
+  margin-right: 0.5rem;
+}
+.cq-AllowedComponents .cq-AllowedComponents-group coral-tag {
+  min-width: 1.5rem;
+  text-align: center;
+  margin-top: 0.625rem;
+}
+.cq-AllowedComponents .cq-AllowedComponents-component coral-checkbox label {
+  margin-left: 0;
+}
+.cq-AllowedComponents .cq-AllowedComponents-component .cq-AllowedComponents-componentContent {
+  display: inline-table;
+}
+.cq-AllowedComponents .cq-AllowedComponents-component .cq-AllowedComponents-componentContent .cq-AllowedComponents-componentIcon {
+  display: table-cell;
+  width: 3.125rem;
+  text-align: center;
+}
+.cq-AllowedComponents .cq-AllowedComponents-component .cq-AllowedComponents-componentContent .cq-AllowedComponents-componentIcon img {
+  max-width: 1.25rem;
+  max-height: 1.25rem;
+}
+.cq-AllowedComponents .cq-AllowedComponents-component .cq-AllowedComponents-componentContent .cq-AllowedComponents-componentTitle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.cq-AllowedComponents .cq-AllowedComponents-component .cq-AllowedComponents-componentContent .cq-AllowedComponents-componentTitle .cq-AllowedComponents-componentResourceType {
+  opacity: 0.5;
+  margin-left: 0.313rem;
+}
+.cq-AllowedComponents-filter {
+  width: 100%;
+}
+@-moz-document url-prefix() {
+  .cq-AllowedComponents-componentGroup coral-accordion-item-label {
+    white-space: normal;
+  }
+}
+
+/*
+ ADOBE CONFIDENTIAL
+
+ Copyright 2016 Adobe Systems Incorporated
+ All Rights Reserved.
+
+ NOTICE:  All information contained herein is, and remains
+ the property of Adobe Systems Incorporated and its suppliers,
+ if any.  The intellectual and technical concepts contained
+ herein are proprietary to Adobe Systems Incorporated and its
+ suppliers and may be covered by U.S. and Foreign Patents,
+ patents in process, and are protected by trade secret or copyright law.
+ Dissemination of this information or reproduction of this material
+ is strictly forbidden unless prior written permission is obtained
+ from Adobe Systems Incorporated.
+ */
+.cq-AssetToComponentMapper-resourceType--notAllowed {
+    display: none;
+}
+
+.cq-AssetToComponentMapper-mapping--notAllowed .cq-AssetToComponentMapper-resourceType--notAllowed {
+    display: block;
+}

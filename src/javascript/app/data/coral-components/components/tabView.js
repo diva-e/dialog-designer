@@ -10,7 +10,7 @@ const tabView = {
     <droptarget data-accept="coral-panel" data-name="panels"/>
   </coral-panelstack>
 </coral-tabview>`,
-  xml: '',
+  xml: '<p>tabs</p>',
 };
 
 export default tabView;

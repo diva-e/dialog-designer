@@ -5,14 +5,14 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit }) => (
     <>
       <div className="edit-component__backdrop" />
       <div className="edit-component">
-        {Object.keys(fields).map((field) => (
+        {Object.values(fields).map((field) => (
           <input
             type="text"
-            key={field}
-            name={field}
-            placeholder={field}
-            value={fields[field]}
-            onChange={({ target }) => updateFieldValue(field, target.value)}
+            key={field.name}
+            name={field.name}
+            placeholder={field.name}
+            value={field.value}
+            onChange={({ target }) => updateFieldValue(field.name, target.value)}
           />
         ))}
         <br />

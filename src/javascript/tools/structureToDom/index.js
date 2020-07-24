@@ -12,7 +12,11 @@ const structureToDom = (structureNode, path = '') => {
   }
 
   // Fill any textcontent placeholders
-  const nodeDomString = stringFormat(nodeData.src, structureNode.properties)
+  const textReplace = {};
+  Object.keys(structureNode.properties).forEach((fieldName) => {
+    textReplace[structureNode.properties[fieldName].type + fieldName] = structureNode.properties[fieldName].value;
+  });
+  const nodeDomString = stringFormat(nodeData.src, textReplace)
     // replace * with a list of all components
     // ToDo: add sope sort of "contentgroups"
     .replace(/data-accept="\*"/gi, `data-accept="${compAll}"`);

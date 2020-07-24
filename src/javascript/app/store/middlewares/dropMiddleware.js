@@ -6,20 +6,28 @@ const getFields = ({ what }) => {
   const comp = coralComponents.find(({ id }) => id === what);
 
   const fields = {};
-  const findFieldsRegex = /{([\d\w]+)}/g;
+  const findFieldsRegex = /{(\w+:)?([\d\w]+)}/g;
 
   let found = findFieldsRegex.exec(comp.src);
   while (found) {
-    fields[found[1]] = found[1];
+    fields[found[2]] = {
+      type: found[1] || 'String',
+      name: found[2],
+      value: '',
+    };
     found = findFieldsRegex.exec(comp.src);
   }
 
   found = findFieldsRegex.exec(comp.xml);
   while (found) {
-    fields[found[1]] = found[1];
+    fields[found[2]] = {
+      type: found[1] || 'String',
+      name: found[2],
+      value: '',
+    };
     found = findFieldsRegex.exec(comp.xml);
   }
-
+  console.log(fields);
   return fields;
 };
 

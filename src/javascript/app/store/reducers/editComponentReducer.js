@@ -7,7 +7,11 @@ const newComponentReducer = (value = null, action) => {
         ...value,
         fields: {
           ...value.fields,
-          [action.payload.field]: action.payload.value,
+          [action.payload.field]: {
+            ...value.fields[action.payload.field],
+            value: action.payload.value,
+          },
+          // [action.payload.field]: action.payload.value,
         },
       };
     case 'SAVE_EDIT_COMPONENT':

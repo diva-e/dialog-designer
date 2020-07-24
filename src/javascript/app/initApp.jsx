@@ -19,7 +19,11 @@ const initApp = () => {
     initialState.structure = loadedStructure;
   }
 
-  render(<Provider store={getStore(initialState)}><App /></Provider>, appRootProxy(appRoot));
+  const store = getStore(initialState);
+
+  window.store = store;
+
+  render(<Provider store={store}><App /></Provider>, appRootProxy(appRoot));
 };
 
 export default initApp;

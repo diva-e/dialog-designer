@@ -8,7 +8,11 @@
 
 // todo: maybe different location for coral extensions in general
 ._coral-Button {
- line-height: 1.3;
- padding: 3.5px 14px 4.5px;
- margin-top: 12px;
+  line-height: 1.3;
+  padding: 3.5px 14px 4.5px;
+  margin-top: 12px;
+}
+
+._coral-Dialog {
+  min-width: 560px;
 }

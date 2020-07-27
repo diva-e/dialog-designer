@@ -2,11 +2,16 @@
   display: none;
 
   &--can-drop {
-    background: #119911;
+    // background: #119911;
     display: inline-block;
+    padding: 15px;
+    margin: 15px auto;
+    border: 1px dashed rgba(0,0,0,0.2);
+    border-radius: 5px;
+    text-align: center;
   }
 
   &--is-over {
-    background: #12e512;
+    background: #eee;
   }
 }

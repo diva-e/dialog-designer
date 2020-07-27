@@ -16,7 +16,7 @@ const root = {
                           Dialog Preview
                       </coral-dialog-header>
                   </div>
-                  <coral-dialog-content-preview id="coral-id-632" class="_coral-Dialog-content">
+                  <coral-dialog-content id="coral-id-632" class="_coral-Dialog-content">
                       <div class="cq-dialog-content">
                         <br/>
                         <h4>Start by dragging your components here</h4>
@@ -27,13 +27,13 @@ const root = {
                     </form>
                   </div>
                 </coral-dialog-content>
-            <coral-dialog-footer-preview class="_coral-Dialog-footer">
+            <coral-dialog-footer class="_coral-Dialog-footer">
             </coral-dialog-footer>
         </form>
       </div>
       <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation"></div>
       <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
-  </coral-dialog>`,
+  </coral-dialog-preview>`,
   xml: `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root
   xmlns:sling="http://sling.apache.org/jcr/sling/1.0"

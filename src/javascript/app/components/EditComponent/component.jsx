@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EditComponent = ({ fields, updateFieldValue, saveEdit }) => (
+const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
   fields ? (
     <div className="yet-another-wrapper">
       <div className="edit-component__backdrop" />
@@ -21,7 +21,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit }) => (
                 <div className="edit-component">
                   {Object.values(fields).map((field) => (
                     <div className="coral-Form-fieldwrapper">
-                      <label id="label_{id}" className="coral-Form-fieldlabel">
+                      <label id="label_{field.name}" className="coral-Form-fieldlabel">
                         {field.name}
                       </label>
                       <input
@@ -43,7 +43,15 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit }) => (
               </div>
             </coral-dialog-content-add>
             <coral-dialog-footer-add className="_coral-Dialog-footer">
-              <button type="button" icon="" variant="default" className="cq-dialog-header-action cq-dialog-cancel _coral-Button _coral-Button--primary" title="Cancel" size="M">
+              <button
+                type="button"
+                icon=""
+                variant="default"
+                className="cq-dialog-header-action cq-dialog-cancel _coral-Button _coral-Button--primary"
+                title="Cancel"
+                size="M"
+                onClick={() => closeEdit()}
+              >
                 <coral-button-label class="_coral-Button-label">Cancel</coral-button-label>
               </button>
               <button

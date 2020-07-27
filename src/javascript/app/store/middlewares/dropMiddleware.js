@@ -11,7 +11,7 @@ const getFields = ({ what }) => {
   let found = findFieldsRegex.exec(comp.src);
   while (found) {
     fields[found[2]] = {
-      type: found[1] || 'String',
+      type: found[1] ? found[1].replace(':', '') : 'String',
       name: found[2],
       value: '',
     };
@@ -21,16 +21,16 @@ const getFields = ({ what }) => {
   found = findFieldsRegex.exec(comp.xml);
   while (found) {
     fields[found[2]] = {
-      type: found[1] || 'String',
+      type: found[1] ? found[1].replace(':', '') : 'String',
       name: found[2],
       value: '',
     };
     found = findFieldsRegex.exec(comp.xml);
   }
-  console.log(fields);
+
+  // console.log(fields);
   return fields;
 };
-
 
 const dropMiddleware = (store) => (next) => (action) => {
 
@@ -51,6 +51,10 @@ const dropMiddleware = (store) => (next) => (action) => {
       type: 'SET_STRUCTURE',
       payload: { ...structure },
     });
+  }
+
+  if (action.type === 'CLOSE_EDIT_COMPONENT') {
+    // nothing for now
   }
 
   next(action);

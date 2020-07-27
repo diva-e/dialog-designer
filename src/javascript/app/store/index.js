@@ -13,5 +13,4 @@ const getStore = (config) => (
   createStore(reducers, config, composeEnhancers(...enhancers))
 );
 
-
 export default getStore;

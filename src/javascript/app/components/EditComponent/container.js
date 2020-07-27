@@ -20,6 +20,11 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'SAVE_EDIT_COMPONENT',
     });
   },
+  closeEdit: () => {
+    dispatch({
+      type: 'CLOSE_EDIT_COMPONENT',
+    });
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

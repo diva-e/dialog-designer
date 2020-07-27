@@ -4,19 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=yes">
     <title><%=htmlWebpackPlugin.options.title%></title>
-    <link rel="stylesheet" href="./libs/coral/coralui2.css" />
+    <link rel="stylesheet" href="./libs/coral/coralui3.css" />
+    <link rel="stylesheet" href="./libs/coral/core.css" />
     <link rel="stylesheet" href="./libs/coral/all.css" />
-    <script src="./libs/coral/moment.js"></script>
     <script src="./libs/coral/jquery.js"></script>
-    <script src="./libs/coral/coralui2.js"></script>
+    <script src="./libs/coral/coralui3.js"></script>
   </head>
   <body class="coral--light">
     <div id="app"></div>
-    <button
-      style="position: absolute; bottom: 0;"
-      onclick="window.localStorage.removeItem('dndd-test-structure'); window.location.reload();"
+    <button is="coral-button"
+            icon=""
+            variant="warning"
+            class="_coral-Button _coral-Button--warning"
+            title="Complete Reset"
+            size="M"
+            style="position: absolute; bottom: 30px; left: 30px;"
+            onclick="window.localStorage.removeItem('dndd-test-structure'); window.location.reload();"
     >
-      Complete Reset
+      <coral-button-label class="_coral-Button-label">Complete Reset</coral-button-label>
     </button>
   </body>
 </html>

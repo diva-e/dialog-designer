@@ -1,5 +1,7 @@
 const tabView = {
   name: 'Tab View',
+  tag: 'TV',
+  category: 'Layout',
   description: 'Switchable tabs with multiple panels',
   id: 'coral-tabview',
   src: `<coral-tabview>

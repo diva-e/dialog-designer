@@ -1,5 +1,7 @@
 const panel = {
   name: 'Content Panel',
+  tag: 'CP',
+  category: 'Layout',
   description: 'Panel holding further content (e.g. for tabs)',
   id: 'coral-panel',
   src: `<coral-panel aria-labelledby={id} selected>

@@ -1,5 +1,7 @@
 const button = {
   name: 'Button',
+  tag: 'BT',
+  category: 'Authoring Helper',
   description: 'Just a button',
   id: 'button',
   createNode: {

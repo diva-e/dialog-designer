@@ -1,30 +1,38 @@
 const root = {
   name: 'Root',
+  tag: 'Rt',
+  category: 'System',
   description: 'start adding content from here',
   id: 'root',
   hidden: true,
-  src: `<coral-dialog-preview class="cq-Dialog coral3-Dialog coral3-Dialog--backdropNone cq-dialog-floating is-open" backdrop="none" aria-hidden="false" closable="off" role="dialog" open="">
-    <div class="coral3-Dialog-wrapper" style="{{ position: 'absolute', left: '300px', width: '500px', top: '100px', 'height': '500px' }}">
-      <form class="form-preview coral-Form--vertical cq-dialog foundation-form foundation-layout-form">
-        <div class="coral3-Dialog-header">
-          <coral-icon class="coral3-Icon coral3-Dialog-typeIcon coral3-Icon--sizeS" icon="" size="S" handle="icon"></coral-icon>
-          <div handle="headerContent" class=" coral3-Dialog-title coral-Heading coral-Heading--2" role="heading" aria-level="2">
-            <coral-dialog-header class="cq-dialog-header">
-              <div class="cq-dialog-actions u-coral-pullRight">
-              </div>
-              Dialog Preview
-            </coral-dialog-header>
-          </div>
-        </div>
-        <div class="cq-dialog-content">
-          <br/>
-          <h4>Start by dragging your components here</h4>
-          <br/>
-          <droptarget data-accept="coral-tabview,button,textfield,headline" data-name="content" />
-          <br/>
-        </div>
-      </form>
-    </div>
+  src: `<coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" trackingfeature="aem:sites:components:dialogs:core-components:image:v2" variant="default" role="dialog" aria-labelledby="coral-id-631" closable="off" tabindex="0" open="open" aria-hidden="false" movable="true" style="z-index: 10010;">
+          <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+          <div handle="wrapper">
+              <form class="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open" action="/content/wknd/language-masters/en/magazine/arctic-surfing/_jcr_content/root/container/image" method="post" data-foundation-form-ajax="true" data-cq-dialog-pageeditor="/editor.html/content/wknd/language-masters/en/magazine/arctic-surfing.html" coral-dialog-size="">
+                 <div class="_coral-Dialog-header u-coral-openHand" handle="headerWrapper">
+                      <div class=" _coral-Dialog-dragZone" handle="dragZone"></div>
+                      <coral-dialog-header class="cq-dialog-header _coral-Dialog-title" id="coral-id-631">
+                          <div class="cq-dialog-actions u-coral-pullRight"></div>
+                          Dialog Preview
+                      </coral-dialog-header>
+                  </div>
+                  <coral-dialog-content-preview id="coral-id-632" class="_coral-Dialog-content">
+                      <div class="cq-dialog-content">
+                        <br/>
+                        <h4>Start by dragging your components here</h4>
+                        <br/>
+                        <droptarget data-accept="coral-tabview,button,textfield,headline" data-name="content" />
+                        <br/>
+                      </div>
+                    </form>
+                  </div>
+                </coral-dialog-content>
+            <coral-dialog-footer-preview class="_coral-Dialog-footer">
+            </coral-dialog-footer>
+        </form>
+      </div>
+      <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation"></div>
+      <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
   </coral-dialog>`,
   xml: `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root

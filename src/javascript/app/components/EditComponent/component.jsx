@@ -17,10 +17,15 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit }) => (
         ))}
         <br />
         <button
+          icon=""
+          variant="cta"
+          className="_coral-Button _coral-Button--cta"
+          title="Save"
+          size="M"
           type="submit"
           onClick={() => saveEdit()}
         >
-          Save
+          <coral-button-label className="_coral-Button-label">Save</coral-button-label>
         </button>
       </div>
     </>

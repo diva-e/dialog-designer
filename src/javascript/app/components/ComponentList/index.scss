@@ -1,13 +1,28 @@
 .component-list {
+  height: 100%;
+  top: 0;
+  // todo: cleanup/varify
+  /*
   flex: 200px 0 0;
   margin: 0 10px;
-  background: $color-grey-80;
+
+  // background: $color-grey-80;
+  background-color: rgb(245, 245, 245);
+  border-right: 2px solid #e1e1e1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  */
 
   &__entry {
-    background: $color-grey-70;
-    border: 1px solid $color-grey-90;
+    // background: $color-grey-70;
+    // border: 1px solid $color-grey-90;
     padding: 10px 20px;
     user-select: none;
+    cursor: grab;
+
+    &:hover {
+        background-color: rgba(44,44,44,.04);
+    }
 
     &--is-dragging {
       background: $color-grey-50;

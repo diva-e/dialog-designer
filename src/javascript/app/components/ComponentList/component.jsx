@@ -5,7 +5,7 @@ import coralComponents from '../../data/coral-components';
 
 const ComponentList = ({ dropNewComponent }) => (
   <ul
-    className="component-list"
+    className="component-list sidepanel"
   >
     {
       coralComponents
@@ -29,14 +29,26 @@ const ComponentList = ({ dropNewComponent }) => (
             <li
               ref={drag}
               className={
-                classNames('component-list__entry', {
+                classNames('component-list__entry _coral-Menu-item', {
                   'component-list__entry--is-dragging': isDragging,
                 })
               }
               key={component.id}
               title={component.description}
             >
-              {component.name}
+              <div className="_coral-Menu-itemLabel">
+                <div className="editor-ComponentBrowser-component cq-draggable u-coral-openHand">
+                  <div className="editor-ComponentBrowser-component-icon">
+                    <coral-tag size="M" className="_coral-Label _coral-Label--medium _coral-Label--grey" color="grey">
+                      <coral-tag-label className="_coral-Tags-itemLabel">{component.tag}</coral-tag-label>
+                    </coral-tag>
+                  </div>
+                  <div className="editor-ComponentBrowser-component-title">
+                    <div className="foundation-collection-item-title">{component.name}</div>
+                    <div className="foundation-layout-util-subtletext">{component.category}</div>
+                  </div>
+                </div>
+              </div>
             </li>
           );
         })

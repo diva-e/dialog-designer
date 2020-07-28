@@ -23,7 +23,10 @@ const DropTarget = ({ accepts, path }) => {
         })
       }
     >
-      {`[DROP-ZONE | Accepts: ${accepts.join(', ')}]`}
+      Drop field component here.
+      <br />
+      <br />
+      <span>{`[Accepts: ${accepts.join(', ')}]`}</span>
       <br />
       { path }
     </div>

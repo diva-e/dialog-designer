@@ -18,11 +18,7 @@ const root = {
                   </div>
                   <coral-dialog-content id="coral-id-632" class="_coral-Dialog-content">
                       <div class="cq-dialog-content">
-                        <br/>
-                        <h4>Start by dragging your components here</h4>
-                        <br/>
-                        <droptarget data-accept="coral-tabview,button,textfield,headline" data-name="content" />
-                        <br/>
+                        <droptarget data-accept="fieldset,panel,tabView,tab,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
                       </div>
                     </form>
                   </div>

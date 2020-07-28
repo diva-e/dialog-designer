@@ -10,7 +10,7 @@ const Footer = ({ executeCompleteReset, downloadXML, downloadJSON }) => (
         className="_coral-Button _coral-Button--warning"
         title="Complete Reset"
         size="M"
-        onClick="window.localStorage.removeItem('dndd-test-structure'); window.location.reload();"
+        onClick={() => executeCompleteReset()}
       >
         <coral-button-label className="_coral-Button-label">Complete Reset</coral-button-label>
       </button>

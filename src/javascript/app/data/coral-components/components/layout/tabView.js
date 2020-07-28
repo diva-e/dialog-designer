@@ -3,7 +3,7 @@ const tabView = {
   tag: 'TV',
   category: 'Layout',
   description: 'Switchable tabs with multiple panels',
-  id: 'coral-tabview',
+  id: 'tabview',
   src: `<coral-tabview>
   <coral-tablist target="#{id}">
     <droptarget data-accept="coral-tab" data-name="tabs"/>

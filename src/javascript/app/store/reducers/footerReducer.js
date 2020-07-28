@@ -1,3 +1,4 @@
+/* eslint no-restricted-globals: "error" */
 const footerReducer = (value = null, action) => {
   switch (action.type) {
     case 'DOWNLOAD_XML':
@@ -7,8 +8,10 @@ const footerReducer = (value = null, action) => {
       alert('NOT YET IMPLEMENTED');
       return null;
     case 'EXECUTE_COMPLETE_RESET':
-      window.localStorage.removeItem('dndd-test-structure');
-      window.location.reload();
+      if (confirm('Proceeding here will completly reset the current dialog.')) {
+        window.localStorage.removeItem('dndd-test-structure');
+        window.location.reload();
+      }
       return null;
     default:
       return value;

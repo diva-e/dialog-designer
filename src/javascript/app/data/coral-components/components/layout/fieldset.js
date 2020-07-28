@@ -3,7 +3,7 @@ const fieldset = {
   tag: 'FS',
   category: 'Layout',
   description: 'Clickable Tab',
-  id: 'coral-tab',
+  id: 'fieldset',
   src: `<coral-tab id={id}>
   <coral-tab-label>
     {label}

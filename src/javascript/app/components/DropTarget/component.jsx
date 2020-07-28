@@ -23,12 +23,11 @@ const DropTarget = ({ accepts, path }) => {
         })
       }
     >
-      Drop field component here.
-      <br />
-      <br />
-      <span>{`[Accepts: ${accepts.join(', ')}]`}</span>
-      <br />
-      { path }
+      <span
+        title={`Accepts: ${accepts.join(', ')}`}
+      >
+        Drag field component here
+      </span>
     </div>
   );
 };

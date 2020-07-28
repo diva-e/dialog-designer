@@ -4,11 +4,10 @@ const alerthint = {
   category: 'Authoring Helper',
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
-  src: `<input class="_"
-    type="text"
-    name="{id}"
-    id="{id}"
-  />`,
+  src: `<coral-alert size="{size}" variant="{variant}">
+          <coral-alert-header>{header}</coral-alert-header>
+          <coral-alert-content>{message}</coral-alert-content>
+        </coral-alert>`,
   xml: `<{id}
   jcr:primaryType="nt:unstructured"
   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

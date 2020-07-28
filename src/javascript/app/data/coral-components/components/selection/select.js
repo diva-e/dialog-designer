@@ -3,7 +3,7 @@ const select = {
   tag: 'DD',
   category: 'Selection',
   description: 'Textfield for entering text',
-  id: 'textfield',
+  id: 'select',
   src: `<div class="coral-Form-fieldwrapper">
   <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
   <input class="coral-Form-field _coral-Textfield"

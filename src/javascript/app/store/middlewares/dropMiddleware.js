@@ -28,7 +28,6 @@ const getFields = ({ what }) => {
     found = findFieldsRegex.exec(comp.xml);
   }
 
-  // console.log(fields);
   return fields;
 };
 

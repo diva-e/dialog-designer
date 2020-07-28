@@ -3,7 +3,7 @@ const panel = {
   tag: 'CP',
   category: 'Layout',
   description: 'Panel holding further content (e.g. for tabs)',
-  id: 'coral-panel',
+  id: 'panel',
   src: `<coral-panel aria-labelledby={id} selected>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">

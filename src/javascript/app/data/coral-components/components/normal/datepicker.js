@@ -1,11 +1,11 @@
-const hidden = {
-  name: 'Hidden',
-  tag: 'Hi',
+const datepicker = {
+  name: 'Datepicker',
+  tag: '<dp',
   category: 'Standard',
-  description: 'Hidden Field',
-  id: 'hidden',
+  description: 'Datepicker Field',
+  id: 'datepicker',
   src: `<input class="_"
-    type="hidden"
+    type="text"
     name="{id}"
     id="{id}"
   />`,
@@ -19,4 +19,4 @@ const hidden = {
   value="{value}"/>`,
 };
 
-export default hidden;
+export default datepicker;

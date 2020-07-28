@@ -3,7 +3,7 @@ const tab = {
   tag: 'Tb',
   category: 'Layout',
   description: 'Clickable Tab',
-  id: 'coral-tab',
+  id: 'tab',
   src: `<coral-tab id={id}>
   <coral-tab-label>
     {label}

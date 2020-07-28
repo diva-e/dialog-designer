@@ -1,0 +1,24 @@
+.sidepanel {
+  height: 100%;
+  top: 0;
+  border-right: 2px solid #e1e1e1;
+  overflow-y: auto;
+  position: relative !important;
+  padding: 10px;
+  background: #f5f5f5;
+
+  &__entry {
+    user-select: none;
+    cursor: grab;
+    padding: 0px;
+
+    &:hover {
+        // background-color: rgba(44,44,44,.04);
+    }
+
+    &--is-dragging {
+      // background: $color-grey-50;
+      // color: $color-white;
+    }
+  }
+}

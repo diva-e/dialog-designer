@@ -1,9 +1,9 @@
-const button = {
-  name: 'Button',
-  tag: 'BT',
+const anchorbutton = {
+  name: 'Anchorbutton',
+  tag: 'AB',
   category: 'Authoring Helper',
-  description: 'Just a button',
-  id: 'button',
+  description: 'Button in diferent forms / Links',
+  id: 'anchorbutton',
   createNode: {
     is: 'coral-button',
     creator: () => (
@@ -19,4 +19,4 @@ const button = {
 />`,
 };
 
-export default button;
+export default anchorbutton;

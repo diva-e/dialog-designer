@@ -18,11 +18,11 @@ const d2r = new Dom2react([
   },
 ]);
 
-const FormPreview = ({ formDom }) => (
-  <div className="form-preview">
+const DialogPreview = ({ formDom }) => (
+  <div className="dialog-preview">
     {d2r.prepareNode(formDom)}
   </div>
-  // <div className="form-preview" ref={(node) => node.appendChild(formDom)} />
+  // <div className="dialog-preview" ref={(node) => node.appendChild(formDom)} />
 );
 
-export default FormPreview;
+export default DialogPreview;

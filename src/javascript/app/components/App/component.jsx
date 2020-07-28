@@ -1,17 +1,23 @@
 import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import ComponentList from '../ComponentList';
-import FormPreview from '../FormPreview';
+import Header from '../Header';
+import Sidepanel from '../Sidepanel';
+import DialogPreview from '../DialogPreview';
 import EditComponent from '../EditComponent';
 import Structure from '../Structure';
+import Footer from '../Footer';
 
 const App = () => (
-  <div className="app">
+  <div className="app-layout">
     <DndProvider backend={HTML5Backend}>
-      <ComponentList />
-      <FormPreview />
-      <Structure />
+      <Header />
+      <main className="app-main-layout">
+        <Sidepanel />
+        <DialogPreview />
+        <Structure />
+      </main>
+      <Footer />
     </DndProvider>
     <EditComponent />
   </div>

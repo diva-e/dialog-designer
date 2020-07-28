@@ -1,0 +1,26 @@
+.footer {
+  height: 56px;
+  width: 100vw;
+  min-width: 100vw;
+  border-top: 2px solid #e1e1e1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  padding: 5px 20px;
+
+  button {
+    margin-top: 6px;
+    max-height: 32px;
+  }
+}
+
+.footer_left {
+ width: 50%;
+}
+
+.footer_right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}

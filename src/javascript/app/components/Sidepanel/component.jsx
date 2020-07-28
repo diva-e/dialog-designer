@@ -3,9 +3,9 @@ import { useDrag } from 'react-dnd';
 import classNames from 'class-names';
 import coralComponents from '../../data/coral-components';
 
-const ComponentList = ({ dropNewComponent }) => (
+const Sidepanel = ({ dropNewComponent }) => (
   <ul
-    className="component-list sidepanel"
+    className="sidepanel"
   >
     {
       coralComponents
@@ -29,8 +29,8 @@ const ComponentList = ({ dropNewComponent }) => (
             <li
               ref={drag}
               className={
-                classNames('component-list__entry _coral-Menu-item', {
-                  'component-list__entry--is-dragging': isDragging,
+                classNames('sidepanel__entry _coral-Menu-item', {
+                  'sidepanel__entry--is-dragging': isDragging,
                 })
               }
               key={component.id}
@@ -56,4 +56,4 @@ const ComponentList = ({ dropNewComponent }) => (
   </ul>
 );
 
-export default ComponentList;
+export default Sidepanel;

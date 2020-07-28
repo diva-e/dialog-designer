@@ -1,9 +1,21 @@
-.app {
+.app-layout {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  min-height: calc(100vh - 40px);
-  height: calc(100vh - 40px);
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.app-main-layout {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100vw;
+  height: calc(100vh - 96px);  /* 40 header 56 footer */
+  min-width: 100vw;
+  overflow: hidden;
+  background: #e1e1e1;
 }
 
 // todo: maybe different location for coral extensions in general
@@ -15,4 +27,7 @@
 
 ._coral-Dialog {
   min-width: 560px;
+  &:focus {
+    outline: none;
+  }
 }

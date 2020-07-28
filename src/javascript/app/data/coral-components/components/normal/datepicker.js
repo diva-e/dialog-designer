@@ -1,6 +1,6 @@
 const datepicker = {
   name: 'Datepicker',
-  tag: '<dp',
+  tag: 'DP',
   category: 'Standard',
   description: 'Datepicker Field',
   id: 'datepicker',

@@ -4,11 +4,27 @@ const checkbox = {
   category: 'Selection',
   description: 'Checkbox',
   id: 'checkbox',
-  src: `<input class="_"
-    type="text"
-    name="{id}"
-    id="{id}"
-  />`,
+  src: `<coral-checkbox
+      name={id}
+      value="true"
+      data-foundation-validation=""
+      data-validation=""
+      class="coral-Form-field _coral-Checkbox"
+    >
+      <input
+        type="checkbox"
+        handle="input"
+        class="_coral-Checkbox-input"
+        id={id}
+        name={id}
+        value="true"
+      />
+      <span class="_coral-Checkbox-box" handle="checkbox" />
+      <label class="_coral-Checkbox-label" handle="labelWrapper" htmlFor="{id}">
+        <span class="u-coral-screenReaderOnly" handle="screenReaderOnly" hidden="">Select</span>
+        <coral-checkbox-label>{label}</coral-checkbox-label>
+      </label>
+    </coral-checkbox>`,
   xml: `<{id}
   jcr:primaryType="nt:unstructured"
   sling:resourceType="granite/ui/components/coral/foundation/form/hidden"

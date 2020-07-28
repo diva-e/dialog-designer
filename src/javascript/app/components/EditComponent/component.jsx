@@ -18,14 +18,14 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
   // only once
   useEffect(() => {
     if (fields) {
-     multifieldTest();
+     // multifieldTest();
     }
   });
 
   return (
 
     fields ? (
-      <div className="yet-another-wrapper">
+      <>
         <div className="edit-component__backdrop" />
         <coral-dialog-add className="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" aria-labelledby="coral-id-631-add" closable="off" open="open" aria-hidden="false">
           <div handle="topTabCapture" coral-tabcapture="top" role="presentation" />
@@ -48,12 +48,12 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
                         key={index}
                       >
                         { field.type === 'Boolean' ? (
-                          <coral-checkbox-x
+                          <coral-checkbox-ne
                             name={field.name}
                             value="true"
                             data-foundation-validation=""
                             data-validation=""
-                            className="coral-Form-field _coral-Checkbox"
+                            class="coral-Form-field _coral-Checkbox"
                           >
                             <input
                               type="checkbox"
@@ -69,7 +69,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
                               <span className="u-coral-screenReaderOnly" handle="screenReaderOnly" hidden="">Select</span>
                               <coral-checkbox-label>{field.name}</coral-checkbox-label>
                             </label>
-                          </coral-checkbox-x>
+                          </coral-checkbox-ne>
                         ) : (
                           <>
                             <label
@@ -95,11 +95,11 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
                         )}
                       </div>
                     ))}
-                    <div id="test-multifield" />
+                    <div id="test-multifieldxxxxxxxxxx" />
                   </div>
                 </div>
               </coral-dialog-content-add>
-              <coral-dialog-footer-add className="_coral-Dialog-footer">
+              <coral-dialog-footer-add class="_coral-Dialog-footer">
                 <button
                   type="button"
                   icon=""
@@ -128,7 +128,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
           <div handle="intermediateTabCapture" coral-tabcapture="intermediate" role="presentation" />
           <div handle="bottomTabCapture" coral-tabcapture="bottom" role="presentation" />
         </coral-dialog-add>
-      </div>
+      </>
     ) : null
 
   );

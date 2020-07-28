@@ -4,20 +4,12 @@ const heading = {
   category: 'Authoring Helper',
   description: 'Headline',
   id: 'heading',
-  src: `<input class="_"
-    type="text"
-    name="{id}"
-    id="{id}"
-    value=""
-  />`,
-  xml: `<{id}
+  src: `<h{level}>{value}</h{level}>`,
+  xml: `<MainHeading
   jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+  sling:resourceType="granite/ui/components/coral/foundation/heading"
+  level="{Long:level}"
+  text="{value}"/>`,
 };
 
 export default heading;

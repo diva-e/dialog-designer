@@ -4,11 +4,11 @@ const switchfield = {
   category: 'Selection',
   description: 'Switch / Toggle Field',
   id: 'switchfield',
-  src: `<input class="_"
-    type="text"
-    name="{id}"
-    id="{id}"
-  />`,
+  src: `<div class="coral-Form-fieldwrapper">
+            <label id="label-{id}" class="coral-Form-fieldlabel">{label}</label>
+            <coral-switch class="coral-Form-field" labelledby="label-{id}">
+            </coral-switch>
+          </div>`,
   xml: `<{id}
   jcr:primaryType="nt:unstructured"
   sling:resourceType="granite/ui/components/coral/foundation/form/hidden"

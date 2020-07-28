@@ -18,6 +18,14 @@ const structureToDom = (structureNode, path = '') => {
     console.log(structureNode.properties[fieldName]);
   });
   console.log(textReplace);
+
+
+  if (nodeData.creation) {
+    const comp = new Coral.Textarea();
+  } else {
+
+  }
+
   const nodeDomString = stringFormat(nodeData.src, textReplace)
     // replace * with a list of all components
     // ToDo: add sope sort of "contentgroups"

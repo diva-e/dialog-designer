@@ -4,9 +4,39 @@ const textfield = {
   category: 'Standard',
   description: 'Textfield for entering text',
   id: 'textfield',
-  src: `<div class="coral-Form-fieldwrapper">
+  config: [
+    {
+      id: 'id',
+      label: 'Id',
+      description: '',
+      type: 'String',
+      required: true,
+    },
+    {
+      id: 'label',
+      label: 'Label',
+      description: '',
+      type: 'String',
+      required: false,
+    },
+    {
+      id: 'required',
+      label: 'Required',
+      description: '',
+      type: 'Boolean',
+      required: false,
+    },
+    {
+      id: 'description',
+      label: 'Description',
+      description: '',
+      type: 'String',
+      required: false,
+    },
+  ],
+  src: `<div className="coral-Form-fieldwrapper">
   <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
-  <input class="coral-Form-field _coral-Textfield"
+  <input className="coral-Form-field _coral-Textfield"
     type="text"
     name="{id}"
     labelledby="label_{id}"

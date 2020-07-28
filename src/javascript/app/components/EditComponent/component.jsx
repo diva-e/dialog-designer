@@ -1,26 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import EditComponentInput from '../EditComponentInput';
 
 const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
 
-  const peter = React.createRef();
-
-  const multifieldTest = () => {
-    const multifield = new Coral.Multifield();
-    multifield.template.content.appendChild(new Coral.Textfield());
-    const add = new Coral.Button();
-    add.label.textContent = 'Add a field';
-    add.setAttribute('coral-multifield-add', '');
-    multifield.appendChild(add);
-    const constructorExample = document.getElementById('test-multifield');
-    constructorExample.appendChild(multifield);
-  };
-
-  // only once
-  useEffect(() => {
-    if (fields) {
-     // multifieldTest();
-    }
-  });
+  console.log(true);
 
   return (
 
@@ -48,12 +31,12 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
                         key={index}
                       >
                         { field.type === 'Boolean' ? (
-                          <coral-checkbox-ne
+                          <div
                             name={field.name}
                             value="true"
                             data-foundation-validation=""
                             data-validation=""
-                            class="coral-Form-field _coral-Checkbox"
+                            className="coral-Form-field _coral-Checkbox"
                           >
                             <input
                               type="checkbox"
@@ -69,33 +52,16 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
                               <span className="u-coral-screenReaderOnly" handle="screenReaderOnly" hidden="">Select</span>
                               <coral-checkbox-label>{field.name}</coral-checkbox-label>
                             </label>
-                          </coral-checkbox-ne>
+                          </div>
                         ) : (
-                          <>
-                            <label
-                              id={`label_${field.name}`}
-                              className="coral-Form-fieldlabel"
-                            >
-                              {field.name}
-                            </label>
-                            <input
-                              className="coral-Form-field _coral-Textfield"
-                              type="text"
-                              key={field.name}
-                              name={field.name}
-                              labelledby={`label_${field.name}`}
-                              data-foundation-validation=""
-                              data-validation=""
-                              id="{name}"
-                              aria-labelledby={`label_${field.name}`}
-                              variant="default"
-                              onChange={({ target }) => updateFieldValue(field.name, target.value)}
-                            />
-                          </>
+                          <EditComponentInput
+                            name={field.name}
+                            value={field.value}
+                            updateFieldValue={updateFieldValue}
+                          />
                         )}
                       </div>
                     ))}
-                    <div id="test-multifieldxxxxxxxxxx" />
                   </div>
                 </div>
               </coral-dialog-content-add>

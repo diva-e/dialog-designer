@@ -14,10 +14,24 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
     fields ? (
       <>
         <div className="edit-component__backdrop" />
-        <div className="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" closable="off" open="open" aria-hidden="false">
+        <div
+          className="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open"
+          backdrop="none"
+          variant="default"
+          role="dialog"
+          closable="off"
+          open="open"
+          aria-hidden="false"
+        >
           <div handle="topTabCapture" coral-tabcapture="top" role="presentation" />
           <div handle="wrapper">
-            <form className="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open" action="#" method="post" data-foundation-form-ajax="true" coral-dialog-size="">
+            <form
+              className="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open"
+              action="#"
+              method="post"
+              data-foundation-form-ajax="true"
+              coral-dialog-size=""
+            >
               <div className="_coral-Dialog-header u-coral-openHand" handle="headerWrapper">
                 <div className="_coral-Dialog-dragZone" handle="dragZone" />
                 <coral-dialog-header className="cq-dialog-header _coral-Dialog-title" id="coral-id-631-add">
@@ -34,7 +48,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => {
                         className="coral-Form-fieldwrapper"
                         key={index}
                       >
-                        { field.type === 'Boolean' ? (
+                        {field.type === 'Boolean' ? (
                           <EditComponentCheckbox
                             name={field.name}
                             value={field.value}

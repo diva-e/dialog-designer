@@ -54,7 +54,13 @@ const structureToXML = (structureNode) => {
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode) => {
 
-        const XMLchildNode = structureToXML(childNode).firstElementChild;
+        const xmlDoc = structureToXML(childNode);
+
+        if (!xmlDoc) {
+          return;
+        }
+
+        const XMLchildNode = xmlDoc.firstElementChild;
 
         const XMLappendNode = XMLchildNode.nodeName.toLowerCase() === 'wrapns' ? XMLchildNode.firstElementChild : XMLchildNode;
 

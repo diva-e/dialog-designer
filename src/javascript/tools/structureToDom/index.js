@@ -45,7 +45,11 @@ const structureToDom = (structureNode, path = '') => {
 
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode, index) => {
-        droptarget.parentNode.insertBefore(structureToDom(childNode, `${childPath}.${index}.`), droptarget);
+        const newChild = structureToDom(childNode, `${childPath}.${index}.`);
+
+        if (newChild) {
+          droptarget.parentNode.insertBefore(newChild, droptarget);
+        }
       });
     }
   });

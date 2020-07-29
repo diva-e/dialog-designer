@@ -1,10 +1,20 @@
 import { connect } from 'react-redux';
 import structureToXML from '../../../tools/structureToXML';
 
-const mapStateToProps = (state) => ({
-  structure: state.structure,
-  xmlOutput: new XMLSerializer().serializeToString(structureToXML(state.structure).documentElement),
-});
+const mapStateToProps = (state) => {
+  let xmlOutput;
+
+  try {
+    xmlOutput = new XMLSerializer().serializeToString(structureToXML(state.structure).documentElement);
+  } catch (error) {
+    xmlOutput = error.message;
+  }
+
+  return ({
+    structure: state.structure,
+    xmlOutput,
+  });
+};
 
 const mapDispatchToProps = (dispatch) => ({
   updateStructure: (structure) => {

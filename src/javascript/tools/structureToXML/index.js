@@ -41,7 +41,7 @@ const structureToXML = (structureNode) => {
     [...doc.querySelectorAll('parsererror')].forEach((parseError) => {
       const actualParseError = parseError.querySelector('div');
       if (actualParseError) {
-        console.error(actualParseError.innerText);
+        throw new Error(`In component ${nodeData.name}: ${actualParseError.innerText}`);
       }
     });
   }

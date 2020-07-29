@@ -15,7 +15,6 @@ const structureToDom = (structureNode, path = '') => {
   const textReplace = {};
   Object.keys(structureNode.properties).forEach((fieldName) => {
     textReplace[fieldName] = structureNode.properties[fieldName].value;
-    console.log(structureNode.properties[fieldName]);
   });
 
   const nodeDomString = stringFormat(nodeData.src, textReplace)
@@ -25,6 +24,16 @@ const structureToDom = (structureNode, path = '') => {
 
   const parser = new DOMParser();
   const doc = parser.parseFromString(nodeDomString, 'text/html');
+
+  if (doc.querySelector('parsererror')) {
+    console.error(`parseerror structureToDom [${structureNode.type}]`);
+    [...doc.querySelectorAll('parsererror')].forEach((parseError) => {
+      const actualParseError = parseError.querySelector('div');
+      if (actualParseError) {
+        console.error(actualParseError.innerText);
+      }
+    });
+  }
 
   // Add childnodes for all contents defined by the names of droptargets
   [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {

@@ -4,7 +4,7 @@ const alerthint = {
   category: 'Authoring Helper',
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
-  src: `<coral-alert size="{size}" variant="{variant}">
+  src: `<coral-alert size="{size}" variant="{variant}" id="{id}">
           <coral-alert-header>{header}</coral-alert-header>
           <coral-alert-content>{message}</coral-alert-content>
         </coral-alert>`,

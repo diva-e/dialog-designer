@@ -48,7 +48,8 @@ const textfield = {
     variant="default"
   />
   </div>`,
-  xml: `<{id}
+  xml: `<abc
+  test="{id}"
   jcr:primaryType="nt:unstructured"
   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
   fieldDescription="{label}"

@@ -25,13 +25,25 @@ const structureToXML = (structureNode) => {
   }
 
   // Fill any textcontent placeholders
-  const nodeDomString = stringFormat(nodeData.xml, structureNode.properties);
+  const textReplace = {};
+  Object.keys(structureNode.properties).forEach((fieldName) => {
+    textReplace[fieldName] = structureNode.properties[fieldName].value;
+  });
+
+  // Fill any textcontent placeholders
+  const nodeDomString = stringFormat(nodeData.xml, textReplace);
 
   const parser = new DOMParser();
   const doc = parser.parseFromString(wrapNS(nodeDomString), 'text/xml');
 
   if (doc.querySelector('parsererror')) {
-    console.log('aayyyy');
+    console.error(`parseerror structureToXML [${structureNode.type}]`);
+    [...doc.querySelectorAll('parsererror')].forEach((parseError) => {
+      const actualParseError = parseError.querySelector('div');
+      if (actualParseError) {
+        console.error(actualParseError.innerText);
+      }
+    });
   }
 
   // Add childnodes for all contend defined by the names of droptargets

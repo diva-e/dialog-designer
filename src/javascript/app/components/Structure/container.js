@@ -1,20 +1,11 @@
 import { connect } from 'react-redux';
 import structureToXML from '../../../tools/structureToXML';
+import XMLFormat from '../../../tools/XMLFormat';
 
-const mapStateToProps = (state) => {
-  let xmlOutput;
-
-  try {
-    xmlOutput = new XMLSerializer().serializeToString(structureToXML(state.structure).documentElement);
-  } catch (error) {
-    xmlOutput = error.message;
-  }
-
-  return ({
-    structure: state.structure,
-    xmlOutput,
-  });
-};
+const mapStateToProps = (state) => ({
+  structure: state.structure,
+  xmlOutput: XMLFormat(structureToXML(state.structure).documentElement),
+});
 
 const mapDispatchToProps = (dispatch) => ({
   updateStructure: (structure) => {

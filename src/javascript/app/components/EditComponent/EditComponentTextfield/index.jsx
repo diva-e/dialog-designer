@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EditComponentInput = ({ name, value, updateFieldValue }) => (
+const EditComponentTextfield = ({ name, value, updateFieldValue }) => (
   <>
     <label
       id={`label_${name}`}
@@ -25,4 +25,4 @@ const EditComponentInput = ({ name, value, updateFieldValue }) => (
   </>
 );
 
-export default EditComponentInput;
+export default EditComponentTextfield;

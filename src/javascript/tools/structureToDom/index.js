@@ -17,14 +17,6 @@ const structureToDom = (structureNode, path = '') => {
     textReplace[fieldName] = structureNode.properties[fieldName].value;
     console.log(structureNode.properties[fieldName]);
   });
-  console.log(textReplace);
-
-
-  if (nodeData.creation) {
-    const comp = new Coral.Textarea();
-  } else {
-
-  }
 
   const nodeDomString = stringFormat(nodeData.src, textReplace)
     // replace * with a list of all components

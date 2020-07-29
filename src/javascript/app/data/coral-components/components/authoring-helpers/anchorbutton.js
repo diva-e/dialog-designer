@@ -4,15 +4,13 @@ const anchorbutton = {
   category: 'Authoring Helper',
   description: 'Button in different forms / Links',
   id: 'anchorbutton',
-  createNode: {
-    is: 'coral-button',
-    creator: () => (
-      Coral.Button()
-    ),
-  },
-  src: `<button is="coral-button">
-  {label}
-</button>`,
+  // createNode: {
+  //   is: 'coral-button',
+  //   creator: () => (
+  //     Coral.Button()
+  //   ),
+  // },
+  src: '<coral-button>{label}</coral-button>',
   xml: `<{id}
   jcr:primaryType="nt:unstructured"
   sling:resourceType="granite/ui/components/coral/foundation/form/anchorbutton"
@@ -22,7 +20,7 @@ const anchorbutton = {
   x-cq-linkchecker="skip"
   target="_blank"
   text="{text}"
-  href="{href}"
+  href="javascript:alert('no function')"
   title="{title}"/>`,
 };
 

@@ -10,13 +10,14 @@ const numberfield = {
     id="{id}"
   />`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+         granite:class="cq-AspectRatio-ratio"
+         jcr:primaryType="nt:unstructured"
+         sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+         fieldLabel="{label}"
+         min="{minValue}"
+         max="{minValue}"
+         name="ratio"
+         step="{step}" />`,
 };
 
 export default numberfield;

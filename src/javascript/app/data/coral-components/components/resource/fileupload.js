@@ -9,14 +9,21 @@ const fielupload = {
     name="{id}"
     id="{id}"
   />`,
-  xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+  xml: `<file
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+    autoStart="{Boolean}false"
+    class="cq-droptarget"
+    fileNameParameter="./fileName"
+    fileReferenceParameter="./fileReference"
+    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+    multiple="{Boolean}false"
+    name="./file"
+    title="Upload Image Asset"
+    uploadUrl=""
+    useHTML5="{Boolean}true"/>`,
 };
+// todo: find solution for / disable substitution logic
+// uploadUrl="${suffix.path}"
 
 export default fielupload;

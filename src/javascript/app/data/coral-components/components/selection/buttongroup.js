@@ -10,13 +10,28 @@ const buttongroup = {
     id="{id}"
   />`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+    jcr:primaryType="nt:unstructured"
+    name="./{id}"
+    fieldLabel="{label}"
+    required="{Boolean:required}"
+    selectionMode="{selectionMode}"
+    sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup">
+    <items jcr:primaryType="nt:unstructured">
+        <left jcr:primaryType="nt:unstructured"
+            name="./one"
+            text="One"
+            value="one" />
+        <center jcr:primaryType="nt:unstructured"
+            name="./two"
+            text="Two"
+            value="two" />
+        <right jcr:primaryType="nt:unstructured"
+            name="./three"
+            text="Option three"
+            value="three" />
+    </items>
+</alignment>`,
 };
 
+// todo: anti sample it
 export default buttongroup;

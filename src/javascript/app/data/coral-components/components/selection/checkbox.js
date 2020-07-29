@@ -26,13 +26,15 @@ const checkbox = {
       </label>
     </coral-checkbox>`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+    fieldDescription="{label}"
+    fieldLabel="{label}"
+    name="./{id}"
+    required="{Boolean:required}"
+    uncheckedValue="{Boolean}false"
+    defaultChecked="{Boolean}true"
+    value="{Boolean:value}"/>`,
 };
 
 export default checkbox;

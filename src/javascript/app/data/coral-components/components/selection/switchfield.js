@@ -10,13 +10,14 @@ const switchfield = {
             </coral-switch>
           </div>`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/switch"
+    fieldDescription="{description}"
+    fieldLabel="{label}"
+    name="./{id}"
+    checked="{Boolean}true"
+    required="{Boolean:required}"
+    value="{value}"/>`,
 };
 
 export default switchfield;

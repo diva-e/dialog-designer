@@ -4,12 +4,12 @@ const heading = {
   category: 'Authoring Helper',
   description: 'Headline',
   id: 'heading',
-  src: `<h{level}>{value}</h{level}>`,
-  xml: `<MainHeading
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/heading"
-  level="{Long:level}"
-  text="{value}"/>`,
+  src: `<h{level}>{text}</h{level}>`,
+  xml: `<{id}
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/heading"
+    level="{Long:level}"
+    text="{text}"/>`,
 };
 
 export default heading;

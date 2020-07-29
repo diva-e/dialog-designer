@@ -10,13 +10,11 @@ const richtext = {
     id="{id}"
   />`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+    fieldDescription="{label}"
+    fieldLabel="{label}"
+    name="./{id}" />`,
 };
 
 export default richtext;

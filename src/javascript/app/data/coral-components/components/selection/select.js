@@ -49,34 +49,48 @@ const select = {
       },
   ],
   src: `<label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
-  <coral-select placeholder="Choose an item" name="{id}" id="{id}">
-          <coral-select-item>
-            Africa
-          </coral-select-item>
-          <coral-select-item>
-            America
-          </coral-select-item>
-          <coral-select-item>
-            Asia
-          </coral-select-item>
-          <coral-select-item>
-            Europe
-          </coral-select-item>
-          <coral-select-item>
-            Oceania
-          </coral-select-item>
-        </coral-select>
-  <div class="coral-Form-fieldwrapper">
-  xxx
-  </div>`,
+    <coral-select placeholder="{placeholder}" name="{id}" id="{id}">
+      <coral-select-item>
+        Value One
+      </coral-select-item>
+      <coral-select-item>
+        Value Two
+      </coral-select-item>
+      <coral-select-item>
+        Value Three
+      </coral-select-item>
+    </coral-select>`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+   granite:class="cmp-options--editor-type-v1"
+   jcr:primaryType="nt:unstructured"
+   sling:resourceType="granite/ui/components/coral/foundation/form/select"
+   fieldLabel="{label}"
+   name="./{id}">
+   <items jcr:primaryType="nt:unstructured">
+       <valueOne
+           jcr:primaryType="nt:unstructured"
+           text="Value One"
+           value="one"/>
+       <valueTwo
+           jcr:primaryType="nt:unstructured"
+           text="Value Two"
+           value="two"/>
+       <valueThree
+           jcr:primaryType="nt:unstructured"
+           text="Value Three"
+           value="tree"/>
+   </items>
+</{id}>`,
 };
+
+// todo: anti sample it
+
+// todo: allow alternative datasource (instead of static options)
+/*
+<datasource
+   jcr:primaryType="nt:unstructured"
+   sling:resourceType="{datasource}"
+/>
+ */
 
 export default select;

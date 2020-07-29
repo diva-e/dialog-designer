@@ -10,13 +10,24 @@ const radio = {
     id="{id}"
   />`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+   jcr:primaryType="nt:unstructured"
+   sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+   name="./{id}"
+   vertical="{Boolean}true"
+   fieldLabel="Radio">
+     <items jcr:primaryType="nt:unstructured">
+         <optionOne
+             jcr:primaryType="nt:unstructured"
+             text="Option One"
+             value="one"/>
+         <optionTwo
+            jcr:primaryType="nt:unstructured"
+            text="Option Two"
+            value="two"/>
+     </items>
+ </{id}>`,
 };
+
+// todo: anti sample it
 
 export default radio;

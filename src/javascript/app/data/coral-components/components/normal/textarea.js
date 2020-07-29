@@ -67,13 +67,11 @@ const textarea = {
             variant="default">{value}</textarea>
         </div>`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+     jcr:primaryType="nt:unstructured"
+     name="./{id}"
+     fieldLabel="{label}"
+     fieldDescription="{description}" />`,
 };
 
 export default textarea;

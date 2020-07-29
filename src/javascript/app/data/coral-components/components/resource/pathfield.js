@@ -10,13 +10,12 @@ const pathfield = {
     id="{id}"
   />`,
   xml: `<{id}
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+   jcr:primaryType="nt:unstructured"
+   sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+   fieldLabel="{label}"
+   name="./{id}"
+   rootPath="{rootPath}}"
+   suffix="{suffix}"/>`,
 };
 
 export default pathfield;

@@ -7,28 +7,29 @@ const textfield = {
   config: [
     {
       id: 'id',
-      label: 'Id',
-      description: '',
+      label: 'Field Id',
+      description: 'Id of the field must start with a letter (can also contain - _ or numbers).',
       type: 'String',
+      validation: '^([a-zA-z])+([a-zA-Z0-9-_])*',
       required: true,
     },
     {
       id: 'label',
-      label: 'Label',
+      label: 'Field Label',
       description: '',
       type: 'String',
       required: false,
     },
     {
       id: 'required',
-      label: 'Required',
+      label: 'Field will be required',
       description: '',
       type: 'Boolean',
       required: false,
     },
     {
       id: 'description',
-      label: 'Description',
+      label: 'Field Description',
       description: '',
       type: 'String',
       required: false,
@@ -40,23 +41,21 @@ const textfield = {
     type="text"
     name="{id}"
     labelledby="label_{id}"
-    data-foundation-validation=""
-    data-validation=""
     is="coral-textfield"
     id="{id}"
-    aria-labelledby="{id}"
+    aria-labelledby="label_{id}"
     variant="default"
   />
   </div>`,
   xml: `<{id}
-  test="{id}"
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-  fieldDescription="{label}"
-  fieldLabel="{label}"
-  name="./{id}"
-  required="{Boolean:required}"
-  value="{value}"/>`,
+    test="{id}"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+    fieldDescription="{label}"
+    fieldLabel="{label}"
+    name="./{id}"
+    required="{Boolean:required}"
+    value="{value}"/>`,
 };
 
 export default textfield;

@@ -7,8 +7,6 @@ const checkbox = {
   src: `<coral-checkbox
       name={id}
       value="true"
-      data-foundation-validation=""
-      data-validation=""
       class="coral-Form-field _coral-Checkbox"
     >
       <input

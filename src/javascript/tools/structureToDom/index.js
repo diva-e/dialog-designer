@@ -43,12 +43,11 @@ const structureToDom = (structureNode, path = '') => {
 
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode, index) => {
+        const fieldData = coralComponents.find((coralComponent) => coralComponent.id === childNode.type);
         const newChild = document.createElement('div');
         newChild.classList.add('coral-Form-fieldwrapper');
-        // todo get name property of the field itself (not childNode.type)
-        newChild.dataset.title = childNode.type;
+        newChild.dataset.title = fieldData.name;
         newChild.appendChild(structureToDom(childNode, `${childPath}.${index}.`));
-        console.log(nodeData);
         if (newChild) {
           droptarget.parentNode.insertBefore(newChild, droptarget);
         }

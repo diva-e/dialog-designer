@@ -26,9 +26,23 @@ const structureToXML = (structureNode) => {
 
   // Fill any textcontent placeholders
   const textReplace = {};
-  Object.keys(structureNode.properties).forEach((fieldName) => {
-    textReplace[fieldName] = structureNode.properties[fieldName].value;
-  });
+  if (structureNode.properties && structureNode.properties.forEach) {
+    structureNode.properties.forEach((field) => {
+      console.log(field);
+      switch (field.type) {
+        case 'Boolean':
+          textReplace[field.id] = `{Boolean}${field.value ? 'true' : 'false'}`;
+          break;
+        case 'Long':
+          textReplace[field.id] = `{Long}${parseInt(field.value, 10)}`;
+          break;
+        case 'String':
+        default:
+          textReplace[field.id] = field.value;
+          break;
+      }
+    });
+  }
 
   // Fill any textcontent placeholders
   const nodeDomString = stringFormat(nodeData.xml, textReplace);

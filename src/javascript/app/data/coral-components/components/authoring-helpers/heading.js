@@ -7,14 +7,7 @@ const heading = {
   description: 'Headline',
   id: 'heading',
   config: [
-    {
-      id: 'id',
-      label: 'Field Id',
-      description: 'Id of the field must start with a letter (can also contain - _ or numbers).',
-      type: 'String',
-      validation: '^([a-zA-z])+([a-zA-Z0-9-_])*',
-      required: true,
-    },
+    coralConstants.fieldDefinitions.ID,
     {
       id: 'text',
       label: 'Headline text',

@@ -1,26 +1,26 @@
 import React from 'react';
 
-const EditComponentTextfield = ({ name, value, updateFieldValue }) => (
+const EditComponentTextfield = ({ id, value, updateFieldValue }) => (
   <>
     <label
-      id={`label_${name}`}
+      id={`label_${id}`}
       className="coral-Form-fieldlabel"
     >
-      {name}
+      {id}
     </label>
     <input
       className="coral-Form-field _coral-Textfield"
       type="text"
-      key={name}
-      name={name}
-      labelledby={`label_${name}`}
+      key={id}
+      name={id}
+      labelledby={`label_${id}`}
       data-foundation-validation=""
       data-validation=""
-      id={name}
-      aria-labelledby={`label_${name}`}
+      id={id}
+      aria-labelledby={`label_${id}`}
       variant="default"
       value={value}
-      onChange={({ target }) => updateFieldValue(name, target.value)}
+      onChange={({ target }) => updateFieldValue(id, target.value)}
     />
   </>
 );

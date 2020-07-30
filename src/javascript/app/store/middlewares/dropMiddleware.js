@@ -4,31 +4,11 @@ import coralComponents from '../../data/coral-components';
 
 const getFields = ({ what }) => {
   const comp = coralComponents.find(({ id }) => id === what);
-
-  const fields = {};
-  const findFieldsRegex = /{(\w+:)?([\d\w]+)}/g;
-
-  let found = findFieldsRegex.exec(comp.src);
-  while (found) {
-    fields[found[2]] = {
-      type: found[1] ? found[1].replace(':', '') : 'String',
-      name: found[2],
-      value: '',
-    };
-    found = findFieldsRegex.exec(comp.src);
-  }
-
-  found = findFieldsRegex.exec(comp.xml);
-  while (found) {
-    fields[found[2]] = {
-      type: found[1] ? found[1].replace(':', '') : 'String',
-      name: found[2],
-      value: '',
-    };
-    found = findFieldsRegex.exec(comp.xml);
-  }
-
-  return fields;
+  // todo prevent duplicate id of fields
+  return comp.fields.map((field) => ({
+    ...field,
+    value: '',
+  }));
 };
 
 const dropMiddleware = (store) => (next) => (action) => {

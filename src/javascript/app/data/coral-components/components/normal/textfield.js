@@ -6,12 +6,13 @@ const textfield = {
   category: coralConstants.fieldCategories.STANDARD,
   description: 'Textfield for entering text',
   id: 'textfield',
-  config: [
+  fields: [
     coralConstants.fieldDefinitions.ID,
     coralConstants.fieldDefinitions.LABEL,
     coralConstants.fieldDefinitions.DESCRIPTION,
     coralConstants.fieldDefinitions.REQUIRED,
   ],
+  // todo: structureToDOM so that no wrapper is needed
   src: `<div><label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
   <input className="coral-Form-field _coral-Textfield"
     type="text"
@@ -28,8 +29,8 @@ const textfield = {
     fieldDescription="{label}"
     fieldLabel="{label}"
     name="./{id}"
-    required="{Boolean:required}"
-    value="{value}"/>`,
+    required="{required}"
+    value="" />`,
 };
 
 export default textfield;

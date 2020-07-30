@@ -48,15 +48,7 @@
         "assert": "either"
       }
     ],
-    "no-console": [
-      "warn",
-      {
-        "allow": [
-          "warn",
-          "error"
-        ]
-      }
-    ],
+    "no-console": 0,
     "eol-last": "warn",
     "no-alert": "warn",
     "no-loop-func": "error",

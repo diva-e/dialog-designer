@@ -5,6 +5,7 @@ const root = {
   description: 'start adding content from here',
   id: 'root',
   hidden: true,
+  fields: [],
   src: `
 <coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" closable="off" open="open" aria-hidden="false" movable="false" style="z-index: 10010;">
   <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>

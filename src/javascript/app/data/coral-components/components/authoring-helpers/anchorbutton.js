@@ -6,6 +6,12 @@ const anchorbutton = {
   category: coralConstants.fieldCategories.AUTHORING_HELPER,
   description: 'Button in different forms / Links',
   id: 'anchorbutton',
+  config: [
+    coralConstants.fieldDefinitions.ID,
+    coralConstants.fieldDefinitions.LABEL,
+    coralConstants.fieldDefinitions.DESCRIPTION,
+    coralConstants.fieldDefinitions.REQUIRED,
+  ],
   // createNode: {
   //   is: 'coral-button',
   //   creator: () => (

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const EditComponentCheckbox = ({ name, updateFieldValue }) => (
+const EditComponentCheckbox = ({ id, updateFieldValue }) => (
   <div
-    name={name}
+    name={id}
     value="true"
     data-foundation-validation=""
     data-validation=""
@@ -12,15 +12,15 @@ const EditComponentCheckbox = ({ name, updateFieldValue }) => (
       type="checkbox"
       handle="input"
       className="_coral-Checkbox-input"
-      id={name}
-      name={name}
+      id={id}
+      name={id}
       value="true"
-      onChange={({ target }) => updateFieldValue(name, target.checked)}
+      onChange={({ target }) => updateFieldValue(id, target.checked)}
     />
     <span className="_coral-Checkbox-box" handle="checkbox" />
     <label className="_coral-Checkbox-label" handle="labelWrapper" htmlFor="coral-id-615">
       <span className="u-coral-screenReaderOnly" handle="screenReaderOnly" hidden="">Select</span>
-      <coral-checkbox-label>{name}</coral-checkbox-label>
+      <coral-checkbox-label>{id}</coral-checkbox-label>
     </label>
   </div>
 );

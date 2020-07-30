@@ -6,6 +6,16 @@ const fieldset = {
   category: coralConstants.fieldCategories.LAYOUT,
   description: 'Fieldset',
   id: 'fieldset',
+  config: [
+    coralConstants.fieldDefinitions.ID,
+    {
+      id: 'title',
+      label: 'Title',
+      description: '',
+      type: 'String',
+      required: true,
+    },
+  ],
   /* todo: include sub dropzone */
   src: `<section class="coral-Form-fieldset">
       <h3

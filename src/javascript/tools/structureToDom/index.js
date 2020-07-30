@@ -11,9 +11,12 @@ const structureToDom = (structureNode, path = '') => {
 
   // Fill any text-content placeholder {}
   const textReplace = {};
-  Object.keys(structureNode.properties).forEach((fieldName) => {
-    textReplace[fieldName] = structureNode.properties[fieldName].value;
-  });
+
+  if (structureNode.properties && structureNode.properties.forEach) {
+    structureNode.properties.forEach((field) => {
+      textReplace[field.id] = field.value;
+    });
+  }
 
   const nodeDomString = stringFormat(nodeData.src, textReplace)
     // replace * with a list of all components

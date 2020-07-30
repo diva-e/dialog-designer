@@ -1,4 +1,11 @@
 const coralConstants = {
+  fieldCategories: {
+    STANDARD: 'Standard',
+    LAYOUT: 'Layout',
+    AUTHORING_HELPER: 'Authoring Helper',
+    RESOURCE: 'Resource',
+    SELECTION: 'Selection',
+  },
   fieldDefinitions: {
     ID: {
       id: 'id',
@@ -29,13 +36,6 @@ const coralConstants = {
       type: 'String',
       required: false,
     },
-  },
-  fieldCategories: {
-    STANDARD: 'Standard',
-    LAYOUT: 'Layout',
-    AUTHORING_HELPER: 'Authoring Helper',
-    RESOURCE: 'Resource',
-    SELECTION: 'Selection',
   },
 };
 

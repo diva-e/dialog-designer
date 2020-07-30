@@ -35,7 +35,7 @@ const heading = {
   xml: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/heading"
-    level="{Long:level}"
+    level="{level}"
     text="{text}"/>`,
 };
 

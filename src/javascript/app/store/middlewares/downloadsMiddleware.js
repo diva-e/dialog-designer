@@ -9,7 +9,8 @@ const downloadsMiddleware = (store) => (next) => (action) => {
       saveStructure(store.getState().structure, 'json');
       break;
     case 'EXECUTE_COMPLETE_RESET':
-      if (window.confirm('Proceeding here will completly reset the current dialog.')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Proceeding here will completely reset the current dialog.')) {
         window.localStorage.removeItem('dndd-test-structure');
         window.location.reload();
       }

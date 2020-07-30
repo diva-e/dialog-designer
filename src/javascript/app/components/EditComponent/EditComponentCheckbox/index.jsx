@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EditComponentCheckbox = ({ name, value, updateFieldValue }) => (
+const EditComponentCheckbox = ({ name, updateFieldValue }) => (
   <div
     name={name}
     value="true"

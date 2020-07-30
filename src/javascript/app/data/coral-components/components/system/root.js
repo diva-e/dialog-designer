@@ -6,7 +6,7 @@ const root = {
   id: 'root',
   hidden: true,
   src: `
-<coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" trackingfeature="aem:sites:components:dialogs:core-components:image:v2" variant="default" role="dialog" aria-labelledby="coral-id-631" closable="off" tabindex="0" open="open" aria-hidden="false" movable="true" style="z-index: 10010;">
+<coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" closable="off" open="open" aria-hidden="false" movable="false" style="z-index: 10010;">
   <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
   <div handle="wrapper">
     <div class="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open">

@@ -8,10 +8,10 @@ const textfield = {
   description: 'Textfield for entering text',
   id: 'textfield',
   fields: [
-    FIELD_DEFINITIONS_ID,
-    FIELD_DEFINITIONS_LABEL,
-    FIELD_DEFINITIONS_DESCRIPTION,
-    FIELD_DEFINITIONS_REQUIRED,
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
   ],
   // todo: structureToDOM so that no wrapper is needed
   src: `<div><label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>

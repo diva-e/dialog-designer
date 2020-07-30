@@ -4,6 +4,7 @@ const radio = {
   category: 'Selection',
   description: 'Radio Button Field',
   id: 'radio',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

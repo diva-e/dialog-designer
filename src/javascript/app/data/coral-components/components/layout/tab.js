@@ -9,6 +9,7 @@ const tab = {
     {label}
   </coral-tab-label>
 </coral-tab>`,
+  /* todo: xml output */
   xml: '<span>Tab</span>',
 };
 

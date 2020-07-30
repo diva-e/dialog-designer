@@ -4,6 +4,7 @@ const pathbrowser = {
   category: 'Resource',
   description: 'Pathbrowser Field',
   id: 'pathbrowser',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

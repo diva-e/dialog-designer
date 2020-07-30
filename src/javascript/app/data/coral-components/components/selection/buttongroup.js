@@ -4,6 +4,7 @@ const buttongroup = {
   category: 'Selection',
   description: 'ButtonGroup',
   id: 'buttongroup',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

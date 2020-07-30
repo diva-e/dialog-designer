@@ -4,6 +4,7 @@ const fieldset = {
   category: 'Layout',
   description: 'Fieldset',
   id: 'fieldset',
+  /* todo: include sub dropzone */
   src: `<section class="coral-Form-fieldset">
       <h3
         class="coral-Form-fieldset-legend">

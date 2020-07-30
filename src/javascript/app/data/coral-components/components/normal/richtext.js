@@ -4,6 +4,7 @@ const richtext = {
   category: 'Standard',
   description: 'RTE Field',
   id: 'richtext',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

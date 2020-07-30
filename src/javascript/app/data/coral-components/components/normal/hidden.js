@@ -4,6 +4,7 @@ const hidden = {
   category: 'Standard',
   description: 'Hidden Field',
   id: 'hidden',
+  /* todo: preview output */
   src: `<input class="_"
     type="hidden"
     name="{id}"

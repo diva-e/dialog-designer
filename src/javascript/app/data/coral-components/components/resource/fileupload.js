@@ -4,6 +4,7 @@ const fielupload = {
   category: 'Resource',
   description: 'Fielupload / Image',
   id: 'fielupload',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

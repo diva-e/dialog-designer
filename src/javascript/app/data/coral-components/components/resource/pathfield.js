@@ -4,6 +4,7 @@ const pathfield = {
   category: 'Resource',
   description: 'Path Field',
   id: 'pathfield',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

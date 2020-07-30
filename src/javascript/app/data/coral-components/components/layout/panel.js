@@ -1,3 +1,4 @@
+/* todo: delete => deprecated */
 const panel = {
   name: 'Content Panel',
   tag: 'CP',

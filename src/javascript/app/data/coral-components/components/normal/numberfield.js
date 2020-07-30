@@ -4,6 +4,7 @@ const numberfield = {
   category: 'Standard',
   description: 'Number Field',
   id: 'numberfield',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

@@ -10,6 +10,7 @@ const anchorbutton = {
   //     Coral.Button()
   //   ),
   // },
+  /* todo: preview output */
   src: '<coral-button>{label}</coral-button>',
   xml: `<{id}
   jcr:primaryType="nt:unstructured"

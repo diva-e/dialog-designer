@@ -4,6 +4,7 @@ const datepicker = {
   category: 'Standard',
   description: 'Datepicker Field',
   id: 'datepicker',
+  /* todo: preview output */
   src: `<input class="_"
     type="text"
     name="{id}"

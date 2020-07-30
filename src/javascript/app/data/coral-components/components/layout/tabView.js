@@ -12,6 +12,7 @@ const tabView = {
     <droptarget data-accept="coral-panel" data-name="panels"/>
   </coral-panelstack>
 </coral-tabview>`,
+  /* todo: xml output */
   xml: '<p>tabs</p>',
 };
 

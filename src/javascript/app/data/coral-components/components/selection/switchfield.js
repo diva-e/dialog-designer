@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const switchfield = {
   name: 'Switch',
   tag: 'Sw',
-  category: 'Selection',
+  category: coralConstants.fieldCategories.SELECTION,
   description: 'Switch / Toggle Field',
   id: 'switchfield',
   src: `<div>

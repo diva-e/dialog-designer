@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const select = {
   name: 'DropDown',
   tag: 'DD',
-  category: 'Selection',
+  category: coralConstants.fieldCategories.SELECTION,
   description: 'Select field',
   id: 'select',
   config: [

@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const anchorbutton = {
   name: 'Anchorbutton',
   tag: 'AB',
-  category: 'Authoring Helper',
+  category: coralConstants.fieldCategories.AUTHORING_HELPER,
   description: 'Button in different forms / Links',
   id: 'anchorbutton',
   // createNode: {

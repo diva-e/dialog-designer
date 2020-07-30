@@ -1,39 +1,16 @@
+import coralConstants from '../../constants';
+
 const textfield = {
   name: 'Textfield',
   tag: 'TF',
-  category: 'Standard',
+  category: coralConstants.fieldCategories.STANDARD,
   description: 'Textfield for entering text',
   id: 'textfield',
   config: [
-    {
-      id: 'id',
-      label: 'Field Id',
-      description: 'Id of the field must start with a letter (can also contain - _ or numbers).',
-      type: 'String',
-      validation: '^([a-zA-z])+([a-zA-Z0-9-_])*',
-      required: true,
-    },
-    {
-      id: 'label',
-      label: 'Field Label',
-      description: '',
-      type: 'String',
-      required: false,
-    },
-    {
-      id: 'required',
-      label: 'Field will be required',
-      description: '',
-      type: 'Boolean',
-      required: false,
-    },
-    {
-      id: 'description',
-      label: 'Field Description',
-      description: '',
-      type: 'String',
-      required: false,
-    },
+    coralConstants.fieldDefinitions.ID,
+    coralConstants.fieldDefinitions.LABEL,
+    coralConstants.fieldDefinitions.DESCRIPTION,
+    coralConstants.fieldDefinitions.REQUIRED,
   ],
   src: `<div><label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
   <input className="coral-Form-field _coral-Textfield"

@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const hidden = {
   name: 'Hidden',
   tag: 'Hi',
-  category: 'Standard',
+  category: coralConstants.fieldCategories.STANDARD,
   description: 'Hidden Field',
   id: 'hidden',
   /* todo: preview output */

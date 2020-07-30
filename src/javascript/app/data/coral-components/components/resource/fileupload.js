@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const fielupload = {
   name: 'Fileupload',
   tag: 'FU',
-  category: 'Resource',
+  category: coralConstants.fieldCategories.RESOURCE,
   description: 'Fielupload / Image',
   id: 'fielupload',
   /* todo: preview output */

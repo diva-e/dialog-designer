@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const buttongroup = {
   name: 'Buttongroup',
   tag: 'BG',
-  category: 'Selection',
+  category: coralConstants.fieldCategories.SELECTION,
   description: 'ButtonGroup',
   id: 'buttongroup',
   /* todo: preview output */

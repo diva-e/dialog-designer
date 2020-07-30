@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const richtext = {
   name: 'Richtext',
   tag: 'RT',
-  category: 'Standard',
+  category: coralConstants.fieldCategories.STANDARD,
   description: 'RTE Field',
   id: 'richtext',
   /* todo: preview output */

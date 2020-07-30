@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const fieldset = {
   name: 'Fieldset',
   tag: 'FS',
-  category: 'Layout',
+  category: coralConstants.fieldCategories.LAYOUT,
   description: 'Fieldset',
   id: 'fieldset',
   /* todo: include sub dropzone */

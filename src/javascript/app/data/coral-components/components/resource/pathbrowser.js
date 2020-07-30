@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const pathbrowser = {
   name: 'Pathbrowser',
   tag: 'PB',
-  category: 'Resource',
+  category: coralConstants.fieldCategories.RESOURCE,
   description: 'Pathbrowser Field',
   id: 'pathbrowser',
   /* todo: preview output */

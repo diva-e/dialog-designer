@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const checkbox = {
   name: 'Checkbox',
   tag: 'CB',
-  category: 'Selection',
+  category: coralConstants.fieldCategories.SELECTION,
   description: 'Checkbox',
   id: 'checkbox',
   src: `<coral-checkbox

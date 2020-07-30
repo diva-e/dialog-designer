@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const tabView = {
   name: 'Tab View',
   tag: 'TV',
-  category: 'Layout',
+  category: coralConstants.fieldCategories.LAYOUT,
   description: 'Switchable tabs with multiple panels',
   id: 'tabview',
   src: `<coral-tabview>

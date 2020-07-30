@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const tab = {
   name: 'Tab',
   tag: 'Tb',
-  category: 'Layout',
+  category: coralConstants.fieldCategories.LAYOUT,
   description: 'Clickable Tab',
   id: 'tab',
   src: `<coral-tab id={id}>

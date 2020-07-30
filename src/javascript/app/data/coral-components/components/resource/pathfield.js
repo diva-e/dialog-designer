@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const pathfield = {
   name: 'Pathfield',
   tag: 'PF',
-  category: 'Resource',
+  category: coralConstants.fieldCategories.RESOURCE,
   description: 'Path Field',
   id: 'pathfield',
   /* todo: preview output */

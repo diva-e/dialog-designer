@@ -1,8 +1,10 @@
+import coralConstants from '../../constants';
+
 /* todo: delete => deprecated */
 const panel = {
   name: 'Content Panel',
   tag: 'CP',
-  category: 'Layout',
+  category: coralConstants.fieldCategories.LAYOUT,
   description: 'Panel holding further content (e.g. for tabs)',
   id: 'panel',
   src: `<coral-panel aria-labelledby={id} selected>

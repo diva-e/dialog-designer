@@ -1,7 +1,9 @@
+import coralConstants from "../../constants";
+
 const textarea = {
   name: 'Textarea',
   tag: 'TA',
-  category: 'Standard',
+  category: coralConstants.fieldCategories.STANDARD,
   description: 'Textarea',
   id: 'textarea',
   config: [

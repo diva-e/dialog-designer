@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const datepicker = {
   name: 'Datepicker',
   tag: 'DP',
-  category: 'Standard',
+  category: coralConstants.fieldCategories.STANDARD,
   description: 'Datepicker Field',
   id: 'datepicker',
   /* todo: preview output */

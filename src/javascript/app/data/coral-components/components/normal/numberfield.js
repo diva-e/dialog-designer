@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const numberfield = {
   name: 'Numberfield',
   tag: 'NF',
-  category: 'Standard',
+  category: coralConstants.fieldCategories.STANDARD,
   description: 'Number Field',
   id: 'numberfield',
   /* todo: preview output */

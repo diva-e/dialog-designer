@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const radio = {
   name: 'Radio',
   tag: 'Ra',
-  category: 'Selection',
+  category: coralConstants.fieldCategories.SELECTION,
   description: 'Radio Button Field',
   id: 'radio',
   /* todo: preview output */

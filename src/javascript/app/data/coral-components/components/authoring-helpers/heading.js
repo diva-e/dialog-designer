@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const heading = {
   name: 'Heading',
   tag: 'He',
-  category: 'Authoring Helper',
+  category: coralConstants.fieldCategories.AUTHORING_HELPER,
   description: 'Headline',
   id: 'heading',
   config: [

@@ -1,7 +1,9 @@
+import coralConstants from '../../constants';
+
 const alerthint = {
   name: 'Alert',
   tag: 'Al',
-  category: 'Authoring Helper',
+  category: coralConstants.fieldCategories.AUTHORING_HELPER,
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
   src: `<coral-alert size="{size}" variant="{variant}" id="{id}">
@@ -14,7 +16,7 @@ const alerthint = {
    sling:resourceType="granite/ui/components/coral/foundation/alert"
    size="{size}"
    text="{message}"
-   variant="{variant}"/>`,
+   variant="{variant}" />`,
 };
 
 export default alerthint;

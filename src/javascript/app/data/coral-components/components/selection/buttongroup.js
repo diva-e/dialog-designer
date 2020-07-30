@@ -30,7 +30,7 @@ const buttongroup = {
             text="Option three"
             value="three" />
     </items>
-</alignment>`,
+</{id}>`,
 };
 
 // todo: anti sample it

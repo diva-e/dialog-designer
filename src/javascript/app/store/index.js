@@ -1,12 +1,12 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, compose } from 'redux';
 import reducers from './reducers';
-import dropMiddleware from './middlewares/dropMiddleware';
+import middlewares from './middlewares';
 
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancers = [
-  applyMiddleware(dropMiddleware),
+  middlewares,
 ];
 
 const getStore = (config) => (

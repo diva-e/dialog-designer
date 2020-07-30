@@ -7,6 +7,7 @@ import DialogPreview from '../DialogPreview';
 import EditComponent from '../EditComponent';
 import Structure from '../Structure';
 import Footer from '../Footer';
+import ErrorBoundary from '../ErrorBoundary';
 
 const App = () => (
   <div className="app-layout">
@@ -14,8 +15,12 @@ const App = () => (
       <Header />
       <main className="app-main-layout">
         <Sidepanel />
-        <DialogPreview />
-        <Structure />
+        <ErrorBoundary>
+          <DialogPreview />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Structure />
+        </ErrorBoundary>
       </main>
       <Footer />
     </DndProvider>

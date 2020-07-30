@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import structureToXML from '../../../tools/structureToXML';
+import XMLFormat from '../../../tools/XMLFormat';
 
 const mapStateToProps = (state) => ({
   structure: state.structure,
-  xmlOutput: new XMLSerializer().serializeToString(structureToXML(state.structure).documentElement),
+  xmlOutput: XMLFormat(structureToXML(state.structure).documentElement),
 });
 
 const mapDispatchToProps = (dispatch) => ({

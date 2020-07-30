@@ -1,29 +1,55 @@
 import React from 'react';
 
-const EditComponentSelect = ({ id, label, value, options, updateFieldValue }) => (
-  <>
-    <label
-      className="coral-Form-fieldlabel"
-    >
-      {label}
-    </label>
-    <select
-      value={value}
-      className="coral3-Select"
-      onChange={({ target }) => updateFieldValue(id, target.value)}
-    >
-      {
-        options.map(({ caption, value: optionValue }) => (
-          <option
-            key={optionValue}
-            value={optionValue}
-          >
-            {caption}
-          </option>
-        ))
-      }
-    </select>
-  </>
-);
+class EditComponentSelect extends React.Component {
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+    this.onChange = this.onChange.bind(this);
+  }
+
+  componentDidMount() {
+    const select = this.ref.current;
+
+    this.props.options.forEach((option) => {
+      select.items.add({
+        value: option.value,
+        content: {
+          textContent: option.caption,
+        },
+      });
+    });
+
+    select.value = this.props.value;
+
+    select.addEventListener('change', this.onChange);
+  }
+
+  componentWillUnmount() {
+    const select = this.ref.current;
+    select.removeEventListener('change', this.onChange);
+  }
+
+  onChange({ target }) {
+    const { updateFieldValue, id } = this.props;
+    updateFieldValue(id, target.value);
+  }
+
+  render() {
+    const { label, value } = this.props;
+    return (
+      <>
+        <label
+          className="coral-Form-fieldlabel"
+        >
+          {label}
+        </label>
+        <coral-select
+          value={value}
+          ref={this.ref}
+        />
+      </>
+    );
+  }
+}
 
 export default EditComponentSelect;

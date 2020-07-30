@@ -5,6 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const pxtorem = require('postcss-pxtorem');
 const autoprefixer = require('autoprefixer');
 const packageJson = require('../package.json');
+const fieldDefinitions = require('./fieldDefinitions');
+
+const defineFieldDefinitions = {};
+
+Object.keys(fieldDefinitions).forEach((definitionName) => {
+  defineFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
+});
 
 module.exports = {
   mode: 'production',
@@ -104,6 +111,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       CONFIG: JSON.stringify(packageJson.projectConfig),
+      ...defineFieldDefinitions,
     }),
   ],
 };

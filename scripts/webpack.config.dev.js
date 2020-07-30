@@ -4,6 +4,13 @@ const pxtorem = require('postcss-pxtorem');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const packageJson = require('../package.json');
+const fieldDefinitions = require('./fieldDefinitions');
+
+const defineFieldDefinitions = {};
+
+Object.keys(fieldDefinitions).forEach((definitionName) => {
+  defineFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
+});
 
 module.exports = {
   mode: 'development',
@@ -116,6 +123,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       CONFIG: JSON.stringify(packageJson.projectConfig),
+      ...defineFieldDefinitions,
     }),
   ],
 };

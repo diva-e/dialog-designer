@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const textfield = {
@@ -7,10 +8,10 @@ const textfield = {
   description: 'Textfield for entering text',
   id: 'textfield',
   fields: [
-    coralConstants.fieldDefinitions.ID,
-    coralConstants.fieldDefinitions.LABEL,
-    coralConstants.fieldDefinitions.DESCRIPTION,
-    coralConstants.fieldDefinitions.REQUIRED,
+    FIELD_DEFINITIONS_ID,
+    FIELD_DEFINITIONS_LABEL,
+    FIELD_DEFINITIONS_DESCRIPTION,
+    FIELD_DEFINITIONS_REQUIRED,
   ],
   // todo: structureToDOM so that no wrapper is needed
   src: `<div><label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>

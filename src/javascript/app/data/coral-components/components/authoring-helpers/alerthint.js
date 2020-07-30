@@ -22,29 +22,44 @@ const alerthint = {
       type: 'String',
       required: true,
     },
-    {
-      id: 'size',
-      label: 'Size',
-      description: '',
-      type: 'String',
-      typeOptions: [
-        Coral.Alert.size.SMALL,
-        Coral.Alert.size.LARGE,
-      ],
-      defaultValue: Coral.Alert.size.SMALL,
-      required: false,
-    },
+    // {
+    //   id: 'size',
+    //   label: 'Size',
+    //   description: '',
+    //   type: 'String',
+    //   options: [
+    //     Coral.Alert.size.SMALL,
+    //     Coral.Alert.size.LARGE,
+    //   ],
+    //   defaultValue: Coral.Alert.size.SMALL,
+    //   required: false,
+    // },
     {
       id: 'variant',
       label: 'Variant',
       description: '',
       type: 'String',
-      typeOptions: [
-        Coral.Alert.variant.ERROR,
-        Coral.Alert.variant.WARNING,
-        Coral.Alert.variant.SUCCESS,
-        Coral.Alert.variant.HELP,
-        Coral.Alert.variant.INFO,
+      options: [
+        {
+          value: Coral.Alert.variant.ERROR,
+          caption: 'Error',
+        },
+        {
+          value: Coral.Alert.variant.WARNING,
+          caption: 'Warning',
+        },
+        {
+          value: Coral.Alert.variant.SUCCESS,
+          caption: 'Success',
+        },
+        {
+          value: Coral.Alert.variant.HELP,
+          caption: 'Help',
+        },
+        {
+          value: Coral.Alert.variant.INFO,
+          caption: 'Info',
+        },
       ],
       defaultValue: Coral.Alert.variant.INFO,
       required: false,

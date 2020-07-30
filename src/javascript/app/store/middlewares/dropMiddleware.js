@@ -7,7 +7,7 @@ const getFields = ({ what }) => {
   // todo prevent duplicate id of fields
   return comp.fields.map((field) => ({
     ...field,
-    value: '',
+    value: field.defaultValue || '',
   }));
 };
 

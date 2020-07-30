@@ -2,6 +2,7 @@ import React from 'react';
 
 import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentTextfield from './EditComponentTextfield';
+import EditComponentSelect from "./EditComponentSelect";
 
 
 const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
@@ -43,6 +44,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                       className="coral-Form-fieldwrapper"
                       key={field.id}
                     >
+                      {/* eslint-disable-next-line no-nested-ternary */}
                       {field.type === 'Boolean' ? (
                         <EditComponentCheckbox
                           id={field.id}
@@ -50,11 +52,21 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                           updateFieldValue={updateFieldValue}
                         />
                       ) : (
-                        <EditComponentTextfield
-                          id={field.id}
-                          value={field.value}
-                          updateFieldValue={updateFieldValue}
-                        />
+                        field.options && field.options.length ? (
+                          <EditComponentSelect
+                            id={field.id}
+                            label={field.label}
+                            value={field.value}
+                            options={field.options}
+                            updateFieldValue={updateFieldValue}
+                          />
+                        ) : (
+                          <EditComponentTextfield
+                            id={field.id}
+                            value={field.value}
+                            updateFieldValue={updateFieldValue}
+                          />
+                        )
                       )}
                     </div>
                   ))}

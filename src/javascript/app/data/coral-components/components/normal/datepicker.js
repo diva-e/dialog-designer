@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const datepicker = {
@@ -6,6 +7,12 @@ const datepicker = {
   category: coralConstants.fieldCategories.STANDARD,
   description: 'Datepicker Field',
   id: 'datepicker',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
+  ],
   /* todo: preview output */
   src: `<input class="_"
     type="text"

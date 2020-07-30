@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const tab = {
@@ -6,6 +7,10 @@ const tab = {
   category: coralConstants.fieldCategories.LAYOUT,
   description: 'Clickable Tab',
   id: 'tab',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+  ],
   src: `<coral-tab id={id}>
   <coral-tab-label>
     {label}

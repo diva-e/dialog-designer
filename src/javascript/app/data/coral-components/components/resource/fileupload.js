@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const fielupload = {
@@ -6,6 +7,12 @@ const fielupload = {
   category: coralConstants.fieldCategories.RESOURCE,
   description: 'Fielupload / Image',
   id: 'fielupload',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
+  ],
   /* todo: preview output */
   src: `<input class="_"
     type="text"

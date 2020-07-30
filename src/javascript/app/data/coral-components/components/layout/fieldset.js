@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const fieldset = {
@@ -6,8 +7,8 @@ const fieldset = {
   category: coralConstants.fieldCategories.LAYOUT,
   description: 'Fieldset',
   id: 'fieldset',
-  config: [
-    coralConstants.fieldDefinitions.ID,
+  fields: [
+    FIELD_DEFINITION_ID,
     {
       id: 'title',
       label: 'Title',
@@ -22,6 +23,7 @@ const fieldset = {
         class="coral-Form-fieldset-legend">
         {title}</h3>
         <!-- other fields here -->
+         <droptarget data-accept="datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
     </section>`,
   xml: `<{id}
     jcr:primaryType="nt:unstructured"
@@ -30,6 +32,7 @@ const fieldset = {
     >
       <items jcr:primaryType="nt:unstructured">
         <!-- other fields here -->
+        <droptarget data-name="content" />
       </items>
     </{id}>`,
 };

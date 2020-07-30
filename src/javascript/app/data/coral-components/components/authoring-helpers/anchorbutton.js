@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const anchorbutton = {
@@ -6,11 +7,11 @@ const anchorbutton = {
   category: coralConstants.fieldCategories.AUTHORING_HELPER,
   description: 'Button in different forms / Links',
   id: 'anchorbutton',
-  config: [
-    coralConstants.fieldDefinitions.ID,
-    coralConstants.fieldDefinitions.LABEL,
-    coralConstants.fieldDefinitions.DESCRIPTION,
-    coralConstants.fieldDefinitions.REQUIRED,
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
   ],
   // createNode: {
   //   is: 'coral-button',

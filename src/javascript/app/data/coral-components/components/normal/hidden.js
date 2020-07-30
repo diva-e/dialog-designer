@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const hidden = {
@@ -6,6 +7,12 @@ const hidden = {
   category: coralConstants.fieldCategories.STANDARD,
   description: 'Hidden Field',
   id: 'hidden',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
+  ],
   /* todo: preview output */
   src: `<input class="_"
     type="hidden"
@@ -18,7 +25,7 @@ const hidden = {
     fieldDescription="{label}"
     fieldLabel="{label}"
     name="./{id}"
-    required="{Boolean:required}"
+    required="{required}"
     value="{value}"/>`,
 };
 

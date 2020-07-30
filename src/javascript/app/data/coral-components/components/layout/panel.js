@@ -1,12 +1,22 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
-/* todo: delete => deprecated */
 const panel = {
   name: 'Content Panel',
   tag: 'CP',
   category: coralConstants.fieldCategories.LAYOUT,
   description: 'Panel holding further content (e.g. for tabs)',
   id: 'panel',
+  fields: [
+    FIELD_DEFINITION_ID,
+    {
+      id: 'heading',
+      label: 'Headline',
+      description: '',
+      type: 'String',
+      required: true,
+    },
+  ],
   src: `<coral-panel aria-labelledby={id} selected>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">
@@ -21,7 +31,7 @@ const panel = {
     </div>
   </coral-panel-content>
 </coral-panel>`,
-  xml: '',
+  xml: ' <droptarget data-name="content"/>',
 };
 
 export default panel;

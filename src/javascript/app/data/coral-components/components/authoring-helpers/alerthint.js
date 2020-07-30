@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const alerthint = {
@@ -7,7 +8,7 @@ const alerthint = {
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
   fields: [
-    coralConstants.fieldDefinitions.ID,
+    FIELD_DEFINITION_ID,
     {
       id: 'header',
       label: 'Headertext',
@@ -22,18 +23,24 @@ const alerthint = {
       type: 'String',
       required: true,
     },
-    // {
-    //   id: 'size',
-    //   label: 'Size',
-    //   description: '',
-    //   type: 'String',
-    //   options: [
-    //     Coral.Alert.size.SMALL,
-    //     Coral.Alert.size.LARGE,
-    //   ],
-    //   defaultValue: Coral.Alert.size.SMALL,
-    //   required: false,
-    // },
+    {
+      id: 'size',
+      label: 'Size',
+      description: '',
+      type: 'String',
+      options: [
+        {
+          value: Coral.Alert.size.SMALL,
+          caption: 'Small',
+        },
+        {
+          value: Coral.Alert.size.LARGE,
+          caption: 'Large',
+        },
+      ],
+      defaultValue: Coral.Alert.size.SMALL,
+      required: false,
+    },
     {
       id: 'variant',
       label: 'Variant',

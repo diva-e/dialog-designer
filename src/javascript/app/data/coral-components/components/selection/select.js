@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const select = {
@@ -6,42 +7,11 @@ const select = {
   category: coralConstants.fieldCategories.SELECTION,
   description: 'Select field',
   id: 'select',
-  config: [
-    {
-      id: 'id',
-      label: 'Id',
-      description: '',
-      type: 'String',
-      required: true,
-    },
-    {
-      id: 'label',
-      label: 'Label',
-      description: '',
-      type: 'String',
-      required: false,
-    },
-    {
-      id: 'required',
-      label: 'Required',
-      description: '',
-      type: 'Boolean',
-      required: false,
-    },
-    {
-      id: 'description',
-      label: 'Description',
-      description: '',
-      type: 'String',
-      required: false,
-    },
-    {
-      id: 'selectValues',
-      label: 'Select Value Pairs',
-      description: '',
-      type: 'KeyValue',
-      required: false,
-    },
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
     {
       id: 'selectDatasource',
       label: 'Select Datasource',

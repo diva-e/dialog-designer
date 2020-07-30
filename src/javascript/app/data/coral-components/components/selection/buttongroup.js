@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const buttongroup = {
@@ -6,6 +7,12 @@ const buttongroup = {
   category: coralConstants.fieldCategories.SELECTION,
   description: 'ButtonGroup',
   id: 'buttongroup',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
+  ],
   /* todo: preview output */
   src: `<input class="_"
     type="text"
@@ -16,7 +23,7 @@ const buttongroup = {
     jcr:primaryType="nt:unstructured"
     name="./{id}"
     fieldLabel="{label}"
-    required="{Boolean:required}"
+    required="{required}"
     selectionMode="{selectionMode}"
     sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup">
     <items jcr:primaryType="nt:unstructured">

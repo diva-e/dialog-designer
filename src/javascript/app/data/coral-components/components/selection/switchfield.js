@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const switchfield = {
@@ -6,6 +7,12 @@ const switchfield = {
   category: coralConstants.fieldCategories.SELECTION,
   description: 'Switch / Toggle Field',
   id: 'switchfield',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
+  ],
   src: `<div>
       <label id="label-{id}" class="coral-Form-fieldlabel">{label}</label>
       <coral-switch class="coral-Form-field" labelledby="label-{id}"></coral-switch>
@@ -17,7 +24,7 @@ const switchfield = {
     fieldLabel="{label}"
     name="./{id}"
     checked="{Boolean}true"
-    required="{Boolean:required}"
+    required="{required}"
     value="{value}"/>`,
 };
 

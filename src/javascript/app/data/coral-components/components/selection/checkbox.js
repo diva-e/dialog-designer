@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const checkbox = {
@@ -6,6 +7,12 @@ const checkbox = {
   category: coralConstants.fieldCategories.SELECTION,
   description: 'Checkbox',
   id: 'checkbox',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
+  ],
   src: `<coral-checkbox
       name={id}
       value="true"
@@ -31,7 +38,7 @@ const checkbox = {
     fieldDescription="{label}"
     fieldLabel="{label}"
     name="./{id}"
-    required="{Boolean:required}"
+    required="{required}"
     uncheckedValue="{Boolean}false"
     defaultChecked="{Boolean}true"
     value="{Boolean:value}"/>`,

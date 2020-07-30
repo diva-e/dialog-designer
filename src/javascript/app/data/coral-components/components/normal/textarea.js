@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from "../../constants";
 
 const textarea = {
@@ -6,40 +7,17 @@ const textarea = {
   category: coralConstants.fieldCategories.STANDARD,
   description: 'Textarea',
   id: 'textarea',
-  config: [
-    {
-      id: 'id',
-      label: 'Id',
-      description: '',
-      type: 'String',
-      required: true,
-    },
-    {
-      id: 'label',
-      label: 'Label',
-      description: '',
-      type: 'String',
-      required: false,
-    },
-    {
-      id: 'required',
-      label: 'Required',
-      description: '',
-      type: 'Boolean',
-      required: false,
-    },
-    {
-      id: 'description',
-      label: 'Description',
-      description: '',
-      type: 'String',
-      required: false,
-    },
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
     {
       id: 'rows',
       label: 'Rows',
       description: '',
-      type: 'String',
+      type: 'Long',
+      defaultValue: '5',
       required: false,
     },
     {
@@ -61,9 +39,7 @@ const textarea = {
       name="{id}"
       rows="{rows}"
       labelledby="label_{id}"
-      data-foundation-validation=""
-      data-validation=""
-      is="coral-textarea" id="coral-id-24"
+      is="coral-textarea"
       aria-labelledby="label_{id}"
       variant="default">{value}</textarea>
   </div>`,

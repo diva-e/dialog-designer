@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
 const pathbrowser = {
@@ -6,6 +7,12 @@ const pathbrowser = {
   category: coralConstants.fieldCategories.RESOURCE,
   description: 'Pathbrowser Field',
   id: 'pathbrowser',
+  fields: [
+    FIELD_DEFINITION_ID,
+    FIELD_DEFINITION_LABEL,
+    FIELD_DEFINITION_DESCRIPTION,
+    FIELD_DEFINITION_REQUIRED,
+  ],
   /* todo: preview output */
   src: `<input class="_"
     type="text"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EditComponentCheckbox = ({ id, updateFieldValue }) => (
+const EditComponentCheckbox = ({ id, label, updateFieldValue }) => (
   <div
     name={id}
     value="true"
@@ -20,7 +20,7 @@ const EditComponentCheckbox = ({ id, updateFieldValue }) => (
     <span className="_coral-Checkbox-box" handle="checkbox" />
     <label className="_coral-Checkbox-label" handle="labelWrapper" htmlFor="coral-id-615">
       <span className="u-coral-screenReaderOnly" handle="screenReaderOnly" hidden="">Select</span>
-      <coral-checkbox-label>{id}</coral-checkbox-label>
+      <coral-checkbox-label>{label}</coral-checkbox-label>
     </label>
   </div>
 );

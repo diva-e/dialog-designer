@@ -48,6 +48,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                       {field.type === 'Boolean' ? (
                         <EditComponentCheckbox
                           id={field.id}
+                          label={field.label}
                           value={field.value}
                           updateFieldValue={updateFieldValue}
                         />
@@ -63,6 +64,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                         ) : (
                           <EditComponentTextfield
                             id={field.id}
+                            label={field.label}
                             value={field.value}
                             updateFieldValue={updateFieldValue}
                           />

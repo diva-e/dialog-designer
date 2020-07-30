@@ -1,12 +1,12 @@
 import React from 'react';
 
-const EditComponentTextfield = ({ id, value, updateFieldValue }) => (
+const EditComponentTextfield = ({ id, label, value, updateFieldValue }) => (
   <>
     <label
       id={`label_${id}`}
       className="coral-Form-fieldlabel"
     >
-      {id}
+      {label}
     </label>
     <input
       className="coral-Form-field _coral-Textfield"

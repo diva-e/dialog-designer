@@ -35,7 +35,7 @@
         z-index: 30;
         color: #fff;
         text-transform: capitalize;
-        content: attr(data-title);
+        content: attr(title);
       }
     }
   }

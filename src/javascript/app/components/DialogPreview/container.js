@@ -5,6 +5,13 @@ const mapStateToProps = (state) => ({
   formDom: structureToDom(state.structure),
 });
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+  startEdit: (path) => {
+    dispatch({
+      type: 'START_EDIT_COMPONENT',
+      payload: path,
+    });
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps);

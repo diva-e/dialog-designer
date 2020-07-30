@@ -50,6 +50,7 @@ const structureToDom = (structureNode, path = '') => {
         const newChild = document.createElement('div');
         newChild.classList.add('coral-Form-fieldwrapper');
         newChild.dataset.title = fieldData.name;
+        newChild.dataset.path = `${childPath}.${index}`;
         newChild.appendChild(structureToDom(childNode, `${childPath}.${index}.`));
         if (newChild) {
           droptarget.parentNode.insertBefore(newChild, droptarget);

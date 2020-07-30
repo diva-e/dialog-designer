@@ -14,7 +14,7 @@ Object.keys(fieldDefinitions).forEach((definitionName) => {
 
 module.exports = {
   mode: 'development',
-  devtool: 'cheap-module-source-map',
+  // devtool: 'cheap-module-source-map',
   devServer: {
     // hot: true,
     inline: true,

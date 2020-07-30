@@ -1,8 +1,11 @@
 import { applyMiddleware } from 'redux';
 import dropMiddleware from './middlewares/dropMiddleware';
 import downloadsMiddleware from './middlewares/downloadsMiddleware';
+import startEditComponentMiddleware from './middlewares/startEditComponentMiddleware';
+
 
 export default applyMiddleware(
   dropMiddleware,
   downloadsMiddleware,
+  startEditComponentMiddleware,
 );

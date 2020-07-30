@@ -1,4 +1,5 @@
 import React from 'react';
+import addClassesToRef from '../../../../tools/addClassesToRef';
 
 const EditComponentTextfield = ({ id, label, value, description, updateFieldValue }) => (
   <>
@@ -26,7 +27,7 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
     { description ? (
       <>
         <coral-icon
-          class="coral-Form-fieldinfo _coral-Icon _coral-Icon--sizeS"
+          ref={addClassesToRef('coral-Form-fieldinfo')}
           icon="infoCircle"
           alt="description"
           role="img"
@@ -48,7 +49,7 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
           variant="default"
           style={{
             position: 'absolute',
-            'will-change': 'transform',
+            willChange: 'transform',
             display: 'none',
             top: '0px',
             left: '0px',

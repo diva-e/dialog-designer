@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import coralConstants from "../../constants";
+import coralConstants from '../../constants';
 
 const textarea = {
   name: 'Textarea',

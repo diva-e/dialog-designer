@@ -14,12 +14,13 @@ const getFields = ({ what }) => {
 const dropMiddleware = (store) => (next) => (action) => {
 
   if (action.type === 'DROP_NEW_COMPONENT') {
+    // todo: map payload.properties to fields if editing existing components
     Object.assign(action.payload, { fields: getFields(action.payload) });
   }
 
   if (action.type === 'SAVE_EDIT_COMPONENT') {
     const { structure, editComponent } = store.getState();
-
+    // todo: use objectpath.set when editing existing components
     objectPath.push(structure, editComponent.where.path, {
       type: editComponent.what,
       properties: editComponent.fields,

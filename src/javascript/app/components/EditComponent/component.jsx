@@ -2,7 +2,7 @@ import React from 'react';
 
 import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentTextfield from './EditComponentTextfield';
-import EditComponentSelect from "./EditComponentSelect";
+import EditComponentSelect from './EditComponentSelect';
 
 
 const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (

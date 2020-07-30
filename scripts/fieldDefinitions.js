@@ -16,7 +16,7 @@ module.exports = {
   },
   FIELD_DEFINITION_REQUIRED: {
     id: 'required',
-    label: 'Field will be required',
+    label: 'Field is required',
     description: '',
     type: 'Boolean',
     required: false,

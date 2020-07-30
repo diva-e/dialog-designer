@@ -66,6 +66,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                             id={field.id}
                             label={field.label}
                             value={field.value}
+                            description={field.description}
                             updateFieldValue={updateFieldValue}
                           />
                         )

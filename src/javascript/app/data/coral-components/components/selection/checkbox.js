@@ -25,6 +25,7 @@ const checkbox = {
         class="_coral-Checkbox-input"
         id={id}
         name={id}
+        label={label}
         value="true"
       />
       <span class="_coral-Checkbox-box" handle="checkbox" />
@@ -35,14 +36,13 @@ const checkbox = {
     </coral-checkbox>`,
   xml: `<{id}
     jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
-    fieldDescription="{label}"
+    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+    text="Hide Mismatches"
+    fieldDescription="{description}"
     fieldLabel="{label}"
-    name="./{id}"
-    required="{required}"
-    uncheckedValue="{Boolean}false"
-    defaultChecked="{Boolean}true"
-    value="{Boolean:value}"/>`,
+    name="./{id}}"
+    value="{Boolean}true"
+    uncheckedValue="{Boolean}false"/>`,
 };
 
 export default checkbox;

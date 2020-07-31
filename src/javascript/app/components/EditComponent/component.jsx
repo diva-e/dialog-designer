@@ -44,6 +44,46 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                       className="coral-Form-fieldwrapper"
                       key={field.id}
                     >
+                      { /*
+                      switch (field.type) {
+                          case 'Boolean':
+                            return
+                            <EditComponentCheckbox
+                              id={field.id}
+                              label={field.label}
+                              value={field.value}
+                              updateFieldValue={updateFieldValue}
+                            />;
+                          case 'Long':
+                            return
+                            <EditComponentTextfield
+                              id={field.id}
+                              label={field.label}
+                              value={field.value}
+                              description={field.description}
+                              updateFieldValue={updateFieldValue}
+                            />;
+                          case 'String':
+                          default:
+                            return
+                              field.options && field.options.length ?
+                                ( <EditComponentSelect
+                                  id={field.id}
+                                  label={field.label}
+                                  value={field.value}
+                                  options={field.options}
+                                  updateFieldValue={updateFieldValue}
+                                />): (
+                                <EditComponentTextfield
+                                  id={field.id}
+                                  label={field.label}
+                                  value={field.value}
+                                  description={field.description}
+                                  updateFieldValue={updateFieldValue}
+                                />);
+                        }
+                      } */
+                      }
                       {/* eslint-disable-next-line no-nested-ternary */}
                       {field.type === 'Boolean' ? (
                         <EditComponentCheckbox

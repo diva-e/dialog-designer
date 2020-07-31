@@ -35,7 +35,6 @@ const numberfield = {
       required: false,
     },
   ],
-  /* todo: preview output */
   src: `<coral-numberinput
     max={max}
     min={min}

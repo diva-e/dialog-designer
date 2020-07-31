@@ -13,17 +13,16 @@ const tabView = {
   ],
   src: `<coral-tabview>
     <coral-tablist target="{id}">
-      <droptarget data-accept="tab" data-name="tabs"/>
+      <droptarget data-accept="tab" data-name="tabs" />
     </coral-tablist>
     <coral-panelstack id="{id}">
-      <droptarget data-accept="panel" data-name="panels"/>
+      <adapt data-from="tabs" data-to="panel" />
     </coral-panelstack>
   </coral-tabview>`,
   /* todo: xml output */
-  xml: `
-<droptarget data-name="tabs"/>
-<droptarget data-name="panels"/>
-`,
+  xml: `<span>
+tabview
+</span>`,
 };
 
 export default tabView;

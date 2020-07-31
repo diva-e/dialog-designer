@@ -34,22 +34,23 @@ const textarea = {
     <label
       id="label_{id}"
       class="coral-Form-fieldlabel"
-      for="{id}">{label}x</label>
+      for="{id}">{label}</label>
     <textarea
       class="coral-Form-field foundation-layout-util-resizable-none _coral-Textfield _coral-Textfield--multiline"
       name="{id}"
       rows="{rows}"
       labelledby="label_{id}"
       is="coral-textarea"
-      value="{value}x"
+      value="{value}"
       aria-labelledby="label_{id}"
-      variant="default">{value}x</textarea>
+      readOnly="readonly"
+      variant="default" />
   </div>`,
   xml: `<{id}
      sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
      jcr:primaryType="nt:unstructured"
      name="./{id}"
-     value="x{value}"
+     value="{value}"
      fieldLabel="{label}"
      fieldDescription="{description}" />`,
 };

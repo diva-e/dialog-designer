@@ -12,11 +12,11 @@ const tabView = {
     FIELD_DEFINITION_ID,
   ],
   src: `<coral-tabview>
-    <coral-tablist target="#{id}">
-      <droptarget data-accept="coral-tab" data-name="tabs"/>
+    <coral-tablist target="{id}">
+      <droptarget data-accept="tab" data-name="tabs"/>
     </coral-tablist>
     <coral-panelstack id="{id}">
-      <droptarget data-accept="coral-panel" data-name="panels"/>
+      <droptarget data-accept="panel" data-name="panels"/>
     </coral-panelstack>
   </coral-tabview>`,
   /* todo: xml output */

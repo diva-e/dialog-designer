@@ -37,6 +37,13 @@ const structureToDom = (structureNode, path = '') => {
     });
   }
 
+  [...doc.querySelectorAll('adapt')].forEach((adapt) => {
+    const adaptFrom = adapt.dataset.from;
+    // eslint-disable-next-line no-param-reassign
+    adapt.dataset.path = `${path}children.${adaptFrom}`;
+  });
+
+
   // Add childnodes for all contents defined by the names of droptargets
   [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {
     const childContainerName = droptarget.dataset.name;
@@ -58,13 +65,6 @@ const structureToDom = (structureNode, path = '') => {
       });
     }
   });
-
-  [...doc.querySelectorAll('adapt')].forEach((adapt) => {
-    const adaptFrom = adapt.dataset.from;
-    // eslint-disable-next-line no-param-reassign
-    adapt.dataset.path = `${path}children.${adaptFrom}`;
-  });
-
 
   return doc.body.firstElementChild;
 };

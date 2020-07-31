@@ -13,7 +13,7 @@ const panel = {
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,
   ],
-  src: `<coral-panel aria-labelledby={id}>
+  src: `<coral-panel selected>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">
       <div class="coral-FixedColumn foundation-layout-util-vmargin">

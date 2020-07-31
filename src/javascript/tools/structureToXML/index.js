@@ -28,7 +28,6 @@ const structureToXML = (structureNode) => {
   const textReplace = {};
   if (structureNode.properties && structureNode.properties.forEach) {
     structureNode.properties.forEach((field) => {
-      console.log(field);
       switch (field.type) {
         case 'Boolean':
           textReplace[field.id] = `{Boolean}${field.value ? 'true' : 'false'}`;

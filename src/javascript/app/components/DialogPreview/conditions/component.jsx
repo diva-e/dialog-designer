@@ -10,9 +10,9 @@ const component = {
       className="coral-Form-fieldwrapper"
       title={node.dataset.title}
       key={key}
-      onClick={() => {
-        this.props.startEdit(node.dataset.path);
-      }}
+      // onClick={() => {
+      //   this.props.startEdit(node.dataset.path);
+      // }}
     >
       { parser.prepareChildren(node.childNodes, level) }
     </div>

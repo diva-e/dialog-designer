@@ -23,7 +23,6 @@ const newComponentReducer = (value = null, action) => {
       console.log('AAAAA', action.payload);
       return action.payload;
     case 'UPDATE_EDIT_FIELD_VALUE':
-      console.log(action.payload);
       return updateField(value, action.payload);
     case 'SAVE_EDIT_COMPONENT':
     case 'CLOSE_EDIT_COMPONENT':

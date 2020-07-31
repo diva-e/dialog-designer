@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-import Dom2react from 'dom-to-react';
-import droptarget from './conditions/droptarget';
-import component from './conditions/component';
-import adapt from './conditions/adapt';
+import dom2reactRenderer from '../../../tools/dom2reactRenderer';
 
 class DialogPreview extends Component {
   constructor(props) {
     super(props);
 
-    this.d2r = new Dom2react([
-      droptarget,
-      component,
-      adapt,
-    ]);
+    this.d2r = dom2reactRenderer();
   }
 
   render() {

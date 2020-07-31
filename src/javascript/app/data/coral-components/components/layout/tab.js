@@ -12,7 +12,7 @@ const tab = {
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,
   ],
-  src: `<coral-tab id={id}>
+  src: `<coral-tab>
   <coral-tab-label>
     {label}
   </coral-tab-label>

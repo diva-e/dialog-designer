@@ -1,12 +1,16 @@
 import React from 'react';
-import Adapt from '../../Adapt/component';
+import Adapt from '../../Adapt';
 
 const adapt = {
   condition: (node) => (
     node.nodeName.toLowerCase() === 'adapt'
   ),
-  action: () => (
-    <Adapt />
+  action: (node, key) => (
+    <Adapt
+      key={key}
+      to={node.dataset.to}
+      path={node.dataset.path}
+    />
   ),
 };
 

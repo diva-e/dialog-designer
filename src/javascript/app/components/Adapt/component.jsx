@@ -1,16 +1,11 @@
 import React from 'react';
 
-const Adapt = () => {
-
-  const emptyfun = () => {
-    //
-  };
-
-  return (
-    <div>
-      Adapt
-    </div>
-  );
-};
+const Adapt = ({ to, path }) => (
+  <div>
+    {path}
+    <br />
+    {to}
+  </div>
+);
 
 export default Adapt;

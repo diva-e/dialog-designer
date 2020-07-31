@@ -59,6 +59,13 @@ const structureToDom = (structureNode, path = '') => {
     }
   });
 
+  [...doc.querySelectorAll('adapt')].forEach((adapt) => {
+    const adaptFrom = adapt.dataset.from;
+    // eslint-disable-next-line no-param-reassign
+    adapt.dataset.path = `${path}children.${adaptFrom}`;
+  });
+
+
   return doc.body.firstElementChild;
 };
 

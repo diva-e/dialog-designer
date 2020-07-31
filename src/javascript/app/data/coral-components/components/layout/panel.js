@@ -5,6 +5,7 @@ const panel = {
   name: 'Content Panel',
   tag: 'CP',
   category: coralConstants.fieldCategories.LAYOUT,
+  tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Panel holding further content (e.g. for tabs)',
   id: 'panel',
   fields: [

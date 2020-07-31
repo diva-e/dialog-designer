@@ -5,6 +5,7 @@ const textfield = {
   name: 'Textfield',
   tag: 'TF',
   category: coralConstants.fieldCategories.STANDARD,
+  tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Textfield for entering text',
   id: 'textfield',
   fields: [

@@ -5,6 +5,7 @@ const fielupload = {
   name: 'Fileupload',
   tag: 'FU',
   category: coralConstants.fieldCategories.RESOURCE,
+  tagColor: coralConstants.fieldCategoryColors.RESOURCE,
   description: 'Fielupload / Image',
   id: 'fielupload',
   fields: [

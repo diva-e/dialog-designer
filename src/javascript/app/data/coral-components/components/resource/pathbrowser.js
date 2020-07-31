@@ -5,6 +5,7 @@ const pathbrowser = {
   name: 'Pathbrowser',
   tag: 'PB',
   category: coralConstants.fieldCategories.RESOURCE,
+  tagColor: coralConstants.fieldCategoryColors.RESOURCE,
   description: 'Pathbrowser Field',
   id: 'pathbrowser',
   fields: [

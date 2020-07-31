@@ -5,6 +5,7 @@ const numberfield = {
   name: 'Numberfield',
   tag: 'NF',
   category: coralConstants.fieldCategories.STANDARD,
+  tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Number Field',
   id: 'numberfield',
   fields: [

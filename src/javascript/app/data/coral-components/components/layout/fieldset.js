@@ -5,6 +5,7 @@ const fieldset = {
   name: 'Fieldset',
   tag: 'FS',
   category: coralConstants.fieldCategories.LAYOUT,
+  tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Fieldset',
   id: 'fieldset',
   fields: [

@@ -5,6 +5,7 @@ const hidden = {
   name: 'Hidden',
   tag: 'Hi',
   category: coralConstants.fieldCategories.STANDARD,
+  tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Hidden Field',
   id: 'hidden',
   fields: [

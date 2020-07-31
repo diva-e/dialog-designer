@@ -5,6 +5,7 @@ const textarea = {
   name: 'Textarea',
   tag: 'TA',
   category: coralConstants.fieldCategories.STANDARD,
+  tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Textarea',
   id: 'textarea',
   fields: [

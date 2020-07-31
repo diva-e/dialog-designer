@@ -5,6 +5,7 @@ const heading = {
   name: 'Heading',
   tag: 'He',
   category: coralConstants.fieldCategories.AUTHORING_HELPER,
+  tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
   description: 'Headline',
   id: 'heading',
   fields: [

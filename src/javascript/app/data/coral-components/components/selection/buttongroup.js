@@ -5,6 +5,7 @@ const buttongroup = {
   name: 'Buttongroup',
   tag: 'BG',
   category: coralConstants.fieldCategories.SELECTION,
+  tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'ButtonGroup',
   id: 'buttongroup',
   fields: [

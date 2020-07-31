@@ -5,6 +5,7 @@ const radio = {
   name: 'Radio',
   tag: 'Ra',
   category: coralConstants.fieldCategories.SELECTION,
+  tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Radio Button Field',
   id: 'radio',
   fields: [

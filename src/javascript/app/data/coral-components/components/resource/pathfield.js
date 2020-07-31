@@ -5,6 +5,7 @@ const pathfield = {
   name: 'Pathfield',
   tag: 'PF',
   category: coralConstants.fieldCategories.RESOURCE,
+  tagColor: coralConstants.fieldCategoryColors.RESOURCE,
   description: 'Path Field',
   id: 'pathfield',
   fields: [

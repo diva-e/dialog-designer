@@ -5,6 +5,7 @@ const alerthint = {
   name: 'Alert',
   tag: 'Al',
   category: coralConstants.fieldCategories.AUTHORING_HELPER,
+  tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
   fields: [

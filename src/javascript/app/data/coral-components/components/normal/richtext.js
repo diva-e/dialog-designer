@@ -5,6 +5,7 @@ const richtext = {
   name: 'Richtext',
   tag: 'RT',
   category: coralConstants.fieldCategories.STANDARD,
+  tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'RTE Field',
   id: 'richtext',
   fields: [

@@ -5,6 +5,7 @@ const switchfield = {
   name: 'Switch',
   tag: 'Sw',
   category: coralConstants.fieldCategories.SELECTION,
+  tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Switch / Toggle Field',
   id: 'switchfield',
   fields: [

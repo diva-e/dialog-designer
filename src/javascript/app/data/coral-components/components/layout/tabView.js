@@ -5,6 +5,7 @@ const tabView = {
   name: 'Tab View',
   tag: 'TV',
   category: coralConstants.fieldCategories.LAYOUT,
+  tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Switchable tabs with multiple panels',
   id: 'tabview',
   fields: [

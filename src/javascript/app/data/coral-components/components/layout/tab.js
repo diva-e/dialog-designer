@@ -5,6 +5,7 @@ const tab = {
   name: 'Tab',
   tag: 'Tb',
   category: coralConstants.fieldCategories.LAYOUT,
+  tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Clickable Tab',
   id: 'tab',
   fields: [

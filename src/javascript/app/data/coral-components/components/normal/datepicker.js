@@ -5,6 +5,7 @@ const datepicker = {
   name: 'Datepicker',
   tag: 'DP',
   category: coralConstants.fieldCategories.STANDARD,
+  tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Datepicker Field',
   id: 'datepicker',
   fields: [

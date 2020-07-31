@@ -39,8 +39,8 @@ const Sidepanel = ({ dropNewComponent }) => (
               <div className="_coral-Menu-itemLabel">
                 <div className="editor-ComponentBrowser-component cq-draggable u-coral-openHand">
                   <div className="editor-ComponentBrowser-component-icon">
-                    <coral-tag size="M" className="_coral-Label _coral-Label--medium _coral-Label--grey" color="grey">
-                      <coral-tag-label className="_coral-Tags-itemLabel">{component.tag}</coral-tag-label>
+                    <coral-tag size="M" color={component.tagColor}>
+                      <coral-tag-label>{component.tag}</coral-tag-label>
                     </coral-tag>
                   </div>
                   <div className="editor-ComponentBrowser-component-title">

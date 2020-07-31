@@ -5,6 +5,7 @@ const checkbox = {
   name: 'Checkbox',
   tag: 'CB',
   category: coralConstants.fieldCategories.SELECTION,
+  tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Checkbox',
   id: 'checkbox',
   fields: [

@@ -5,6 +5,7 @@ const anchorbutton = {
   name: 'Anchorbutton',
   tag: 'AB',
   category: coralConstants.fieldCategories.AUTHORING_HELPER,
+  tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
   description: 'Button in different forms / Links',
   id: 'anchorbutton',
   fields: [

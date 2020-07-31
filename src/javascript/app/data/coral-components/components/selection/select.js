@@ -5,6 +5,7 @@ const select = {
   name: 'DropDown',
   tag: 'DD',
   category: coralConstants.fieldCategories.SELECTION,
+  tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Select field',
   id: 'select',
   fields: [

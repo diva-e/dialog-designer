@@ -32,7 +32,7 @@ const panel = {
     </div>
   </coral-panel-content>
 </coral-panel>`,
-  xml: ' <droptarget data-name="content"/>',
+  xml: ' <droptarget data-name="tabcontent"/>',
 };
 
 export default panel;

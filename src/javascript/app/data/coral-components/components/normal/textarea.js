@@ -43,8 +43,7 @@ const textarea = {
       is="coral-textarea"
       value="{value}"
       aria-labelledby="label_{id}"
-      readOnly="readonly"
-      variant="default" />
+      variant="default">{value}</textarea>
   </div>`,
   xml: `<{id}
      sling:resourceType="granite/ui/components/coral/foundation/form/textarea"

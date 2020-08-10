@@ -29,7 +29,7 @@ const tabView = {
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
             <!-- insert tabs here -->
-            <adapt data-from="tabs" data-to="panel" />
+            <droptarget data-accept="tab" data-name="tabs" />
         </items>
     </content>`,
 };

@@ -32,24 +32,7 @@ const panel = {
     </div>
   </coral-panel-content>
 </coral-panel>`,
-  xml: `<{id}
-        jcr:primaryType="nt:unstructured"
-        jcr:title="{title}"
-        sling:resourceType="granite/ui/components/foundation/section">
-        <layout
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-            margin="{Boolean}false"/>
-        <items jcr:primaryType="nt:unstructured">
-            <column
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/foundation/container">
-                <items jcr:primaryType="nt:unstructured">
-                     <droptarget data-accept="fieldset,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="tabcontent" />
-                </items>
-            </column>
-        </items>
-    </{id}>`,
+  xml: '<!-- comment -->',
 };
 
 export default panel;

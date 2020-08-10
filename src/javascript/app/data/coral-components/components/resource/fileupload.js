@@ -11,6 +11,13 @@ const fielupload = {
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_REQUIRED,
+    {
+      id: 'title',
+      label: 'Title',
+      description: '',
+      type: 'String',
+      required: true,
+    },
   ],
   src: `<div
   className="coral-Form-field cq-FileUpload cq-droptarget _coral-FileUpload"
@@ -44,11 +51,9 @@ const fielupload = {
       </div>
       <span className="cq-FileUpload-label">
         Drop an asset here or <a
-          tabindex="0"
           aria-label="Browse for a file to upload"
           class="coral-Link cq-FileUpload-browse"
-          coral-fileupload-select=""
-          id="coral-id-614">browse</a>
+          coral-fileupload-select="">browse</a>
         for a file to upload.</span>
     </div>
   </div>
@@ -63,7 +68,6 @@ const fielupload = {
     mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
     multiple="{Boolean}false"
     name="./file"
-    title="Upload Image Asset"
     uploadUrl=""
     useHTML5="{Boolean}true"/>`,
 };

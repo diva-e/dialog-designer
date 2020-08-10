@@ -41,15 +41,15 @@ const textarea = {
       rows="{rows}"
       labelledby="label_{id}"
       is="coral-textarea"
-      value="{value}x"
+      value="{value}"
       aria-labelledby="label_{id}"
-      variant="default">{value}x</textarea>
+      variant="default">{value}</textarea>
   </div>`,
   xml: `<{id}
      sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
      jcr:primaryType="nt:unstructured"
      name="./{id}"
-     value="x{value}"
+     value="{value}"
      fieldLabel="{label}"
      fieldDescription="{description}" />`,
 };

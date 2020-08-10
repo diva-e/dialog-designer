@@ -1,4 +1,5 @@
 import React from 'react';
+import FormFieldWrapper from "../../../app/components/FormFieldWrapper";
 
 const component = {
   condition: (node) => (
@@ -6,16 +7,12 @@ const component = {
   ),
   action: (node, key, level, parser) => (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events
-    <div
-      className="coral-Form-fieldwrapper"
-      title={node.dataset.title}
+    <FormFieldWrapper
       key={key}
-      // onClick={() => {
-      //   this.props.startEdit(node.dataset.path);
-      // }}
-    >
-      { parser.prepareChildren(node.childNodes, level) }
-    </div>
+      node={node}
+      level={level}
+      parser={parser}
+    />
   ),
 };
 

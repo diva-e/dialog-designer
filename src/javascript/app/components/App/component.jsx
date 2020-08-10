@@ -8,6 +8,7 @@ import EditComponent from '../EditComponent';
 import Structure from '../Structure';
 import Footer from '../Footer';
 import ErrorBoundary from '../ErrorBoundary';
+import Contextmenu from '../Contextmenu';
 
 const App = () => (
   <div className="app-layout">
@@ -25,6 +26,7 @@ const App = () => (
       <Footer />
     </DndProvider>
     <EditComponent />
+    <Contextmenu />
   </div>
 );
 

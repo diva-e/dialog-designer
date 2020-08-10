@@ -20,7 +20,6 @@ const updateField = (value, payload) => {
 const newComponentReducer = (value = null, action) => {
   switch (action.type) {
     case 'DROP_NEW_COMPONENT':
-      console.log('AAAAA', action.payload);
       return action.payload;
     case 'UPDATE_EDIT_FIELD_VALUE':
       return updateField(value, action.payload);

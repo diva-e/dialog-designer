@@ -20,9 +20,18 @@ const tabView = {
     </coral-panelstack>
   </coral-tabview>`,
   /* todo: xml output */
-  xml: `<span>
-tabview
-</span>`,
+  xml: `<content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <!-- insert tabs here -->
+            <droptarget data-accept="tab" data-name="tabs" />
+        </items>
+    </content>`,
 };
 
 export default tabView;

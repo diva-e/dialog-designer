@@ -15,16 +15,18 @@ const textfield = {
     FIELD_DEFINITION_REQUIRED,
   ],
   // todo: structureToDOM so that no wrapper is needed
-  src: `<div><label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
-  <input className="coral-Form-field _coral-Textfield"
-    type="text"
-    name="{id}"
-    labelledby="label_{id}"
-    is="coral-textfield"
-    id="{id}"
-    aria-labelledby="label_{id}"
-    variant="default"
-  /></div>`,
+  src: `<div>
+    <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
+      <input className="coral-Form-field _coral-Textfield"
+        type="text"
+        name="{id}"
+        labelledby="label_{id}"
+        is="coral-textfield"
+        id="{id}"
+        aria-labelledby="label_{id}"
+        variant="default"
+      />
+  </div>`,
   xml: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -48,5 +50,4 @@ export default textfield;
      <span class=" _coral-Tooltip-tip" handle="tip"></span>
      <coral-tooltip-content class="_coral-Tooltip-label">HTML ID attribute to apply to the component.</coral-tooltip-content>
  </coral-tooltip>
-
 */

@@ -1,6 +1,6 @@
 
-const Adapt = ({ children, parser }) => (
-  parser.prepareChildren(children, 0)
+const Adapt = ({ children, parser, level }) => (
+  parser.prepareChildren(children, level)
 );
 
 export default Adapt;

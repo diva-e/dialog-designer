@@ -10,6 +10,7 @@ const adapt = {
       key={key}
       to={node.dataset.to}
       path={node.dataset.path}
+      level={level}
       parser={parser}
     />
   ),

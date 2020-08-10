@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => ({
       path,
       x,
       y,
-    })
+    });
   },
 });
 

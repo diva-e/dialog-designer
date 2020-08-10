@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import dom2reactRenderer from '../../../tools/dom2reactRenderer';
+import dom2reactRenderer from '../../../tools/d2rRenderer';
 
 class DialogPreview extends Component {
   constructor(props) {

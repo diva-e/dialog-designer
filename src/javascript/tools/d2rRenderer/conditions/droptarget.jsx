@@ -1,5 +1,5 @@
 import React from 'react';
-import DropTarget from '../../DropTarget';
+import DropTarget from '../../../app/components/DropTarget';
 
 const droptarget = {
   condition: (node) => (

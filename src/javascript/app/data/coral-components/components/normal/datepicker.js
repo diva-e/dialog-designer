@@ -39,7 +39,6 @@ const datepicker = {
       label: 'Startday',
       description: '',
       type: 'Long',
-      min:
       defaultValue: 'Choose a date',
     },
   ],

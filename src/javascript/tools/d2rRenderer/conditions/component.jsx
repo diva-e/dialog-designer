@@ -1,5 +1,5 @@
 import React from 'react';
-import FormFieldWrapper from "../../../app/components/FormFieldWrapper";
+import FormFieldWrapper from '../../../app/components/FormFieldWrapper';
 
 const component = {
   condition: (node) => (

@@ -35,12 +35,18 @@ const numberfield = {
       required: false,
     },
   ],
-  src: `<coral-numberinput
-    max={max}
-    min={min}
-    step={step}
-    name={id}>
-  </coral-numberinput>`,
+  src: `<div>
+    <label
+      id="label_{id}"
+      class="coral-Form-fieldlabel"
+      for="{id}">{label}</label>
+    <coral-numberinput
+      max={max}
+      min={min}
+      step={step}
+      name={id}>
+    </coral-numberinput>
+    </div>`,
   xml: `<{id}
          granite:class="cq-AspectRatio-ratio"
          jcr:primaryType="nt:unstructured"

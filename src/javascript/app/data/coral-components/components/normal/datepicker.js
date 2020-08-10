@@ -57,14 +57,20 @@ const datepicker = {
       defaultValue: '0',
     },
   ],
-  src: `<coral-datepicker
-      placeholder={placeholder}
-      name={id}
-      value=""
-      valueformat={displayformat}
-      displayformat={displayformat}
-      startday="0">
-    </coral-datepicker>`,
+  src: `<div>
+      <label
+        id="label_{id}"
+        class="coral-Form-fieldlabel"
+        for="{id}">{label}</label>
+      <coral-datepicker
+        placeholder={placeholder}
+        name={id}
+        value=""
+        valueformat={displayformat}
+        displayformat={displayformat}
+        startday="0">
+      </coral-datepicker>
+    </div>`,
   xml: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"

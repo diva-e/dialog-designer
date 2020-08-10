@@ -14,7 +14,6 @@ const richtext = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  /* todo: preview output */
   src: `<div
   class="cq-RichText richtext-container coral-Form-field coral-DecoratedTextfield">
   <input type="hidden"

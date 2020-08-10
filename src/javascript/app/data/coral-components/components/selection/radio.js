@@ -14,12 +14,18 @@ const radio = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  /* todo: preview output */
-  src: `<input class="_"
-    type="text"
-    name="{id}"
-    id="{id}"
-  />`,
+  src: `<div>
+    <label
+      id="label_{id}"
+      class="coral-Form-fieldlabel"
+      for="{id}">{label}</label>
+      <coral-radio
+        name={id}
+        value="one">Option One</coral-radio>
+      <coral-radio
+        name={id}
+        value="two">Option Two</coral-radio>
+    </div>`,
   xml: `<{id}
    jcr:primaryType="nt:unstructured"
    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
@@ -36,7 +42,7 @@ const radio = {
             text="Option Two"
             value="two"/>
      </items>
- </{id}>`,
+   </{id}>`,
 };
 
 // todo: anti sample it

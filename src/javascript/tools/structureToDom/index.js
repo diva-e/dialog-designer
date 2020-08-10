@@ -28,11 +28,11 @@ const structureToDom = (structureNode, path = '') => {
 
   // error reporting
   if (doc.querySelector('parsererror')) {
-    console.error(`parseerror structureToDom [${structureNode.type}]`);
+    console.error(`parse-error structureToDom [${structureNode.type}]`);
     [...doc.querySelectorAll('parsererror')].forEach((parseError) => {
       const actualParseError = parseError.querySelector('div');
       if (actualParseError) {
-        console.error(actualParseError.innerText);
+        throw new Error(`in component ${nodeData.name}: ${actualParseError.innerText}`);
       }
     });
   }
@@ -42,7 +42,6 @@ const structureToDom = (structureNode, path = '') => {
     // eslint-disable-next-line no-param-reassign
     adapt.dataset.path = `${path}children.${adaptFrom}`;
   });
-
 
   // Add childnodes for all contents defined by the names of droptargets
   [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {

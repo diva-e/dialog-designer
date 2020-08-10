@@ -10,15 +10,22 @@ const tab = {
   id: 'tab',
   fields: [
     FIELD_DEFINITION_ID,
-    FIELD_DEFINITION_LABEL,
+    {
+      id: 'title',
+      label: 'Title',
+      description: '',
+      type: 'String',
+      required: true,
+    },
   ],
   src: `<coral-tab>
-  <coral-tab-label>
-    {label}
-  </coral-tab-label>
-</coral-tab>`,
-  /* todo: xml output */
-  xml: '<span>{label}</span>',
+      <coral-tab-label>
+        {title}
+      </coral-tab-label>
+    </coral-tab>`,
+  xml: `<no-dedicated-xml-rendering>
+        {title}
+    </no-dedicated-xml-rendering>`,
 };
 
 export default tab;

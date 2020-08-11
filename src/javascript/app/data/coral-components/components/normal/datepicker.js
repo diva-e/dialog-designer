@@ -9,6 +9,7 @@ const datepicker = {
   tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Datepicker Field',
   id: 'datepicker',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

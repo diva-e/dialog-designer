@@ -8,6 +8,7 @@ const heading = {
   tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
   description: 'Headline',
   id: 'heading',
+  fieldWrapperNeeded: false,
   fields: [
     FIELD_DEFINITION_ID,
     {

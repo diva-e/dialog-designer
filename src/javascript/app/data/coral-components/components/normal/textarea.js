@@ -8,6 +8,7 @@ const textarea = {
   tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Textarea',
   id: 'textarea',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

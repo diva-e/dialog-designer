@@ -8,6 +8,7 @@ const pathfield = {
   tagColor: coralConstants.fieldCategoryColors.RESOURCE,
   description: 'Path Field',
   id: 'pathfield',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

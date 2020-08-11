@@ -8,6 +8,7 @@ const richtext = {
   tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'RTE Field',
   id: 'richtext',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

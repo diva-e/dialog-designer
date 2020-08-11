@@ -8,6 +8,7 @@ const textfield = {
   tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Textfield for entering text',
   id: 'textfield',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

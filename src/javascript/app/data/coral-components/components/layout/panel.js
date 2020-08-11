@@ -9,6 +9,7 @@ const panel = {
   description: 'Tab Panel',
   id: 'panel',
   hidden: true,
+  fieldWrapperNeeded: false,
   fields: [
     FIELD_DEFINITION_ID,
     {

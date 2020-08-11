@@ -8,6 +8,7 @@ const hidden = {
   tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Hidden Field',
   id: 'hidden',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     {

@@ -8,6 +8,7 @@ const numberfield = {
   tagColor: coralConstants.fieldCategoryColors.STANDARD,
   description: 'Number Field',
   id: 'numberfield',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

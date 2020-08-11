@@ -8,6 +8,7 @@ const pathbrowser = {
   tagColor: coralConstants.fieldCategoryColors.RESOURCE,
   description: 'Pathbrowser Field',
   id: 'pathbrowser',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

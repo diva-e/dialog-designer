@@ -8,6 +8,7 @@ const checkbox = {
   tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Checkbox',
   id: 'checkbox',
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

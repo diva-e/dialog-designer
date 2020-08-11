@@ -5,6 +5,7 @@ const startDeleteComponentMiddleware = (store) => (next) => (action) => {
     next(action);
     return;
   }
+
   const state = store.getState();
   const structure = state.structure;
   const path = state.contextmenu.path;

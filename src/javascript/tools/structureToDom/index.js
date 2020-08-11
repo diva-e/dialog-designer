@@ -54,14 +54,18 @@ const structureToDom = (structureNode, path = '') => {
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode, index) => {
         const fieldData = coralComponents.find((coralComponent) => coralComponent.id === childNode.type);
-        const newChild = document.createElement('div');
-        newChild.classList.add('coral-Form-fieldwrapper');
-        newChild.dataset.title = fieldData.name;
-        newChild.dataset.path = `${childPath}.${index}`;
-        console.log('Inner-Path: ', `${childPath}.${index}`);
-        newChild.appendChild(structureToDom(childNode, `${childPath}.${index}.`));
-        if (newChild) {
-          droptarget.parentNode.insertBefore(newChild, droptarget);
+        if (fieldData.fieldWrapperNeeded) {
+          const newChild = document.createElement('div');
+          newChild.classList.add('coral-Form-fieldwrapper');
+          newChild.dataset.title = fieldData.name;
+          newChild.dataset.path = `${childPath}.${index}`;
+          console.log('Inner-Path: ', `${childPath}.${index}`);
+          newChild.appendChild(structureToDom(childNode, `${childPath}.${index}.`));
+          if (newChild) {
+            droptarget.parentNode.insertBefore(newChild, droptarget);
+          }
+        } else {
+          droptarget.parentNode.insertBefore(structureToDom(childNode, `${childPath}.${index}.`), droptarget);
         }
       });
     }

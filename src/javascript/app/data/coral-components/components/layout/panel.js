@@ -10,17 +10,8 @@ const panel = {
   id: 'panel',
   hidden: true,
   fieldWrapperNeeded: false,
-  fields: [
-    FIELD_DEFINITION_ID,
-    {
-      id: 'title',
-      label: 'Title',
-      description: '',
-      type: 'String',
-      required: true,
-    },
-  ],
-  src: `<coral-panel selected>
+  fields: [],
+  src: `<coral-panel>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">
       <div class="coral-FixedColumn foundation-layout-util-vmargin">

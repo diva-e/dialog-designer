@@ -16,27 +16,30 @@ const Contextmenu = ({ editComponent, deleteComponent, x, y }) => {
       }}
     >
       <button
+        is="coral-anchorbutton"
         type="button"
-        icon="edit"
-        variant="primary"
-        className="_coral-Button _coral-Button--warning"
+        icon="wrench"
+        variant="quiet"
         title="Edit"
         size="M"
+        block
         onClick={() => editComponent()}
       >
         <coral-button-label className="_coral-Button-label">Edit</coral-button-label>
       </button>
       <button
+        is="coral-anchorbutton"
         icon="delete"
         variant="warning"
-        className="_coral-Button _coral-Button--cta"
         title="Delete"
         size="M"
         type="submit"
+        block
         onClick={() => deleteComponent()}
       >
         <coral-button-label className="_coral-Button-label">Delete</coral-button-label>
       </button>
+
     </div>
   );
 };

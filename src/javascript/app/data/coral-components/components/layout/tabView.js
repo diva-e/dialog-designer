@@ -13,7 +13,7 @@ const tabView = {
   ],
   src: `<coral-tabview>
     <coral-tablist target="{id}">
-      <droptarget data-accept="tab" data-name="tabs" />
+      <droptarget data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>
     </coral-tablist>
     <coral-panelstack id="{id}">
       <adapt data-from="tabs" data-to="panel" />

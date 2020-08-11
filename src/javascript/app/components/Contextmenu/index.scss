@@ -5,16 +5,23 @@
   position: absolute;
   top: 25rem;
   left: 25rem;
-  border: 1px solid #dedede;
+  border: 1px solid #cacaca;
   background: white;
   padding: 6px;
   z-index: 30000000;
-
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+  // display: none;
 
   ._coral-Button {
     border-radius: 0;
     border-color: transparent;
   }
+/*
+  &--open {
+    display: block;
+  }
+
+ */
 }
 
 .coral--dark {

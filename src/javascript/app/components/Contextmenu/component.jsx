@@ -1,8 +1,21 @@
 import React from 'react';
 
-console.log('Sdsjjdgsfhhjsgjfsf');
+const Contextmenu = ({ editComponent, deleteComponent, closeContextmenu, x, y }) => {
 
-const Contextmenu = ({ editComponent, deleteComponent, x, y }) => {
+  // todo: discuss location / approach
+  document.addEventListener('click', (ev) => {
+    // optout if no contextmenu is open
+    if (!document.getElementsByClassName('contextmenu').length) {
+      return;
+    }
+
+    // close contextmenu if click outside
+    if (ev.target.closest('.contextmenu') === null) {
+      // console.log('click outside of context menu -> close contextmenu');
+      closeContextmenu();
+    }
+  });
+
   if (!x || !y) {
     return null;
   }
@@ -39,7 +52,6 @@ const Contextmenu = ({ editComponent, deleteComponent, x, y }) => {
       >
         <coral-button-label className="_coral-Button-label">Delete</coral-button-label>
       </button>
-
     </div>
   );
 };

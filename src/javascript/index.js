@@ -4,5 +4,4 @@ import initApp from './app/initApp';
 
 document.addEventListener('DOMContentLoaded', () => {
   initApp();
-  // console.log(Coral);
 });

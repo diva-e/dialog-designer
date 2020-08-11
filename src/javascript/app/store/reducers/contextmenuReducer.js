@@ -6,6 +6,8 @@ const contextmenuReducer = (value = {}, action) => {
         x: action.x,
         path: action.path,
       };
+    case 'CLOSE_CONTEXTMENU':
+      return {};
     default:
       return value;
   }

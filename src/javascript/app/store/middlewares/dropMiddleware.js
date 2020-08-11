@@ -1,5 +1,4 @@
 import objectPath from 'object-path';
-
 import coralComponents from '../../data/coral-components';
 
 const getFields = ({ what }) => {

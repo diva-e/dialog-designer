@@ -8,12 +8,17 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   editComponent: () => {
     dispatch({
-      type: 'EDIT_COMPONENT',
+      type: 'START_EDIT_COMPONENT',
     });
   },
   deleteComponent: () => {
     dispatch({
       type: 'DELETE_COMPONENT',
+    });
+  },
+  closeContextmenu: () => {
+    dispatch({
+      type: 'CLOSE_CONTEXTMENU',
     });
   },
 });

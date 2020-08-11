@@ -16,7 +16,6 @@ const updateField = (value, payload) => {
   };
 };
 
-
 const newComponentReducer = (value = null, action) => {
   switch (action.type) {
     case 'DROP_NEW_COMPONENT':

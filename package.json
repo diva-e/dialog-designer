@@ -20,6 +20,7 @@
     "PROJECT_NAME": "dnd-aem-dialogs"
   },
   "devDependencies": {
+    "@adobe/coral-spectrum": "^4.9.0",
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",

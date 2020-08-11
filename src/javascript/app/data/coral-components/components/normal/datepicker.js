@@ -1,3 +1,4 @@
+import { Datepicker } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
@@ -20,19 +21,19 @@ const datepicker = {
       type: 'String',
       options: [
         {
-          value: Coral.Datepicker.type.DATE,
+          value: Datepicker.type.DATE,
           caption: 'Date',
         },
         {
-          value: Coral.Datepicker.type.DATETIME,
+          value: Datepicker.type.DATETIME,
           caption: 'Date Time',
         },
         {
-          value: Coral.Datepicker.type.TIME,
+          value: Datepicker.type.TIME,
           caption: 'Time',
         },
       ],
-      defaultValue: Coral.Datepicker.type.DATETIME,
+      defaultValue: Datepicker.type.DATETIME,
       required: true,
     },
     {

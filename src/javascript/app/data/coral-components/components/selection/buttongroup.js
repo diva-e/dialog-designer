@@ -1,3 +1,4 @@
+import { ButtonGroup } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
 import coralConstants from '../../constants';
 
@@ -20,15 +21,15 @@ const buttongroup = {
       type: 'String',
       options: [
         {
-          value: Coral.ButtonGroup.selectionMode.SINGLE,
+          value: ButtonGroup.selectionMode.SINGLE,
           caption: 'Single',
         },
         {
-          value: Coral.ButtonGroup.selectionMode.MULTIPLE,
+          value: ButtonGroup.selectionMode.MULTIPLE,
           caption: 'Multiple',
         },
       ],
-      defaultValue: Coral.ButtonGroup.selectionMode.SINGLE,
+      defaultValue: ButtonGroup.selectionMode.SINGLE,
       required: false,
     },
   ],

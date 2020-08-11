@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import { Alert } from '@adobe/coral-spectrum';
 import coralConstants from '../../constants';
 
 const alerthint = {
@@ -31,15 +32,15 @@ const alerthint = {
       type: 'String',
       options: [
         {
-          value: Coral.Alert.size.SMALL,
+          value: Alert.size.SMALL,
           caption: 'Small',
         },
         {
-          value: Coral.Alert.size.LARGE,
+          value: Alert.size.LARGE,
           caption: 'Large',
         },
       ],
-      defaultValue: Coral.Alert.size.SMALL,
+      defaultValue: Alert.size.SMALL,
       required: false,
     },
     {
@@ -49,27 +50,27 @@ const alerthint = {
       type: 'String',
       options: [
         {
-          value: Coral.Alert.variant.ERROR,
+          value: Alert.variant.ERROR,
           caption: 'Error',
         },
         {
-          value: Coral.Alert.variant.WARNING,
+          value: Alert.variant.WARNING,
           caption: 'Warning',
         },
         {
-          value: Coral.Alert.variant.SUCCESS,
+          value: Alert.variant.SUCCESS,
           caption: 'Success',
         },
         {
-          value: Coral.Alert.variant.HELP,
+          value: Alert.variant.HELP,
           caption: 'Help',
         },
         {
-          value: Coral.Alert.variant.INFO,
+          value: Alert.variant.INFO,
           caption: 'Info',
         },
       ],
-      defaultValue: Coral.Alert.variant.INFO,
+      defaultValue: Alert.variant.INFO,
       required: false,
     },
   ],

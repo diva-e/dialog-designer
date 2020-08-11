@@ -14,7 +14,7 @@ const tabView = {
   ],
   src: `<coral-tabview>
     <coral-tablist target="{id}">
-      <droptarget data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>
+      <drop-target data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>
     </coral-tablist>
     <coral-panelstack id="{id}">
       <adapt data-from="tabs" data-to="panel" />
@@ -30,7 +30,7 @@ const tabView = {
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
             <!-- insert tabs here -->
-            <droptarget data-accept="tab" data-name="tabs" />
+            <drop-target data-accept="tab" data-name="tabs" />
         </items>
     </content>`,
 };

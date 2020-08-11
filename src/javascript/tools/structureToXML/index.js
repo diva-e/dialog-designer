@@ -66,7 +66,7 @@ const structureToXML = (structureNode, path = '') => {
   });
 
   // Add childnodes for all contend defined by the names of droptargets
-  [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {
+  [...doc.querySelectorAll('drop-target')].forEach((droptarget) => {
     const childContainerName = droptarget.getAttribute('data-name');
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode) => {

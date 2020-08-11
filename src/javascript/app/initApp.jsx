@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import App from './components/App';
 import getStore from './store';
 import appRootProxy from '../tools/appRootProxy';
+import initDropTargetWebComponent from '../tools/dropTargetWebComponent';
 
 const initApp = () => {
   const appRoot = document.getElementById('app');
@@ -20,6 +21,8 @@ const initApp = () => {
 
   const store = getStore(initialState);
   window.store = store;
+
+  initDropTargetWebComponent(store);
 
   render(
     <Provider store={store}>

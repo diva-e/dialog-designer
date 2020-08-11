@@ -11,8 +11,6 @@ const droptarget = {
         key={key}
         accepts={node.dataset.accept.split(',')}
         path={node.dataset.path}
-        dropped={() => {
-        }}
       />
     );
 

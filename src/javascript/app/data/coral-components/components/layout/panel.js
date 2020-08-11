@@ -17,7 +17,7 @@ const panel = {
       <div class="coral-FixedColumn foundation-layout-util-vmargin">
         <div class="coral-FixedColumn-column">
           <div class="coral-Well">
-             <droptarget data-accept="fieldset,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="tabcontent" />
+             <drop-target data-accept="fieldset,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="tabcontent" />
           </div>
         </div>
       </div>

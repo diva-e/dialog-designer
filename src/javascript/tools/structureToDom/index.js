@@ -45,7 +45,7 @@ const structureToDom = (structureNode, path = '') => {
 
   console.log('Outer-Path: ', path);
   // Add childnodes for all contents defined by the names of droptargets
-  [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {
+  [...doc.querySelectorAll('drop-target')].forEach((droptarget) => {
     const childContainerName = droptarget.dataset.name;
     const childPath = `${path}children.${childContainerName}`;
     // eslint-disable-next-line no-param-reassign

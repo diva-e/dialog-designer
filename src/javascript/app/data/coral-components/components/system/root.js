@@ -20,7 +20,7 @@ const root = {
       </div>
       <coral-dialog-content id="coral-id-632" class="_coral-Dialog-content">
         <div class="cq-dialog-content">
-          <droptarget data-accept="fieldset,panel,tabview,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
+          <drop-target data-accept="fieldset,panel,tabview,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
         </div>
       </coral-dialog-content>
       <coral-dialog-footer class="_coral-Dialog-footer">
@@ -45,7 +45,7 @@ const root = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/container">
     <items jcr:primaryType="nt:unstructured">
-      <droptarget data-name="content" />
+      <drop-target data-name="content" />
     </items>
   </content>
 </jcr:root>`,

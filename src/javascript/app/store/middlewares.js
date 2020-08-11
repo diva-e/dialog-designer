@@ -4,6 +4,7 @@ import downloadsMiddleware from './middlewares/downloadsMiddleware';
 import startCreateComponentMiddleware from './middlewares/startCreateComponentMiddleware';
 import startUpdateComponentMiddleware from './middlewares/startUpdateComponentMiddleware';
 import startDeleteComponentMiddleware from './middlewares/startDeleteComponentMiddleware';
+import updateDialogPreviewMiddleware from './middlewares/updateDialogPreviewMiddleware';
 
 export default applyMiddleware(
   dropMiddleware,
@@ -11,4 +12,5 @@ export default applyMiddleware(
   startCreateComponentMiddleware,
   startUpdateComponentMiddleware,
   startDeleteComponentMiddleware,
+  updateDialogPreviewMiddleware,
 );

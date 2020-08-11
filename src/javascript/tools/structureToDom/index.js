@@ -43,6 +43,7 @@ const structureToDom = (structureNode, path = '') => {
     adapt.dataset.path = `${path}children.${adaptFrom}`;
   });
 
+  console.log('Outer-Path: ', path);
   // Add childnodes for all contents defined by the names of droptargets
   [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {
     const childContainerName = droptarget.dataset.name;
@@ -57,6 +58,7 @@ const structureToDom = (structureNode, path = '') => {
         newChild.classList.add('coral-Form-fieldwrapper');
         newChild.dataset.title = fieldData.name;
         newChild.dataset.path = `${childPath}.${index}`;
+        console.log('Inner-Path: ', `${childPath}.${index}`);
         newChild.appendChild(structureToDom(childNode, `${childPath}.${index}.`));
         if (newChild) {
           droptarget.parentNode.insertBefore(newChild, droptarget);

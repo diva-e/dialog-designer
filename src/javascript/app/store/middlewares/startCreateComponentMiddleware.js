@@ -1,6 +1,6 @@
 import objectPath from 'object-path';
 
-const startEditComponentMiddleware = (store) => (next) => (action) => {
+const startCreateComponentMiddleware = (store) => (next) => (action) => {
   if (action.type === 'START_EDIT_COMPONENT') {
     const { structure } = store.getState();
     const componentData = objectPath.get(structure, action.payload);
@@ -17,4 +17,4 @@ const startEditComponentMiddleware = (store) => (next) => (action) => {
   next(action);
 };
 
-export default startEditComponentMiddleware;
+export default startCreateComponentMiddleware;

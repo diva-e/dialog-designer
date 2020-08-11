@@ -19,12 +19,21 @@ const dropMiddleware = (store) => (next) => (action) => {
 
   if (action.type === 'SAVE_EDIT_COMPONENT') {
     const { structure, editComponent } = store.getState();
-    // todo: use objectpath.set when editing existing components
-    objectPath.push(structure, editComponent.where.path, {
-      type: editComponent.what,
-      properties: editComponent.fields,
-      children: {},
-    });
+    switch (editComponent.where.mode) {
+      case 'update':
+        objectPath.set(structure, editComponent.where.path, {
+          type: editComponent.what,
+          properties: editComponent.fields,
+          children: editComponent.children,
+        });
+        break;
+      default:
+        objectPath.push(structure, editComponent.where.path, {
+          type: editComponent.what,
+          properties: editComponent.fields,
+          children: {},
+        });
+    }
 
     store.dispatch({
       type: 'SET_STRUCTURE',

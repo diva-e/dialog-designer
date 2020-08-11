@@ -12,7 +12,6 @@ const initApp = () => {
   }
 
   const initialState = {};
-
   const loadedStructure = JSON.parse(window.localStorage.getItem('dndd-test-structure'));
 
   if (loadedStructure) {
@@ -20,10 +19,14 @@ const initApp = () => {
   }
 
   const store = getStore(initialState);
-
   window.store = store;
 
-  render(<Provider store={store}><App /></Provider>, appRootProxy(appRoot));
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    appRootProxy(appRoot),
+  );
 };
 
 export default initApp;

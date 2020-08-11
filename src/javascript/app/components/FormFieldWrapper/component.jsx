@@ -6,6 +6,7 @@ const FormFieldWrapper = ({ node, level, parser, openContentMenu }) => (
     title={node.dataset.title}
     onContextMenu={(ev) => {
       ev.preventDefault();
+      ev.stopPropagation();
       openContentMenu(node.dataset.path, ev.pageX, ev.pageY);
     }}
   >

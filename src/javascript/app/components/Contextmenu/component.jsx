@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Contextmenu = ({ editComponent, deleteComponent, closeContextmenu, x, y }) => {
+const Contextmenu = ({ startUpdateComponent, deleteComponent, closeContextmenu, x, y }) => {
 
   // todo: discuss location / approach
   document.addEventListener('click', (ev) => {
@@ -36,7 +36,7 @@ const Contextmenu = ({ editComponent, deleteComponent, closeContextmenu, x, y })
         title="Edit"
         size="M"
         block
-        onClick={() => editComponent()}
+        onClick={() => startUpdateComponent()}
       >
         <coral-button-label className="_coral-Button-label">Edit</coral-button-label>
       </button>

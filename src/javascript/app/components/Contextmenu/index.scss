@@ -8,7 +8,7 @@
   border: 1px solid #cacaca;
   background: white;
   padding: 6px;
-  z-index: 30000000;
+  z-index: $z-index-context-menu;
   box-shadow: 0 1px 4px rgba(0,0,0,.15);
   // display: none;
 

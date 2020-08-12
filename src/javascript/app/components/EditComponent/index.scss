@@ -9,8 +9,8 @@
   top: calc(50vh - 250px);
   padding: 20px;
   */
-  // todo: varify
-  z-index: 10;
+
+  z-index: $z-index-edit-component;
 
   &__backdrop {
     position: fixed;
@@ -19,7 +19,7 @@
     background: rgba($color-grey-70, 0.7);
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: $z-index-edit-component-backdrop;
   }
 }
 

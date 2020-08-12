@@ -12,11 +12,6 @@
 @import '../../node_modules/@spectrum-css/button/dist/index-vars.css';
 
 body {
-  //background: $color-white;
-  //color: $color-black;
-  //font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-coral-dialog-preview.cq-Dialog {
-  z-index: $z-index-coral-dialog-preview;
+  overflow: hidden;
+  height: 100%
 }

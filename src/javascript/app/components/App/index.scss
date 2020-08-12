@@ -43,3 +43,129 @@
     outline: none;
   }
 }
+
+/* todo: move to dialog preview ? */
+/* todo: further cleanup / removals */
+
+.cq-RichText {
+  overflow:auto;
+  position:static;
+}
+
+.cq-RichText-editable {
+  box-sizing:border-box;
+  min-height:2.75rem;
+  border-radius:4px;
+  padding:15px;
+
+  &.is-edited {
+    outline:0;
+    box-shadow:0 0 3px #326ec8;
+    border:1px solid #326ec8;
+  }
+}
+
+.cq-Dialog {
+  .cq-RichText-editable {
+    height: 13.2rem;
+
+    &.is-edited {
+      table {
+        border: 1px solid #777;
+      }
+
+      .cq-RichText-hiddenHeader--editing {
+        background-color: #555;
+      }
+    }
+  }
+
+  .cq-dialog-header-action {
+    line-height: 4.125rem;
+  }
+}
+
+.cq-dialog {
+  .rte-toolbar {
+    background-color: transparent;
+    position: relative;
+    box-shadow: none;
+  }
+
+  .cq-RichText-editable {
+    overflow-y: auto;
+  }
+}
+
+.cq-FileUpload {
+  position:relative;
+  display:block;
+  width:100%;
+
+  &.is-active {
+    .cq-FileUpload-thumbnail{
+      border-color:#a0a0a0;
+    }
+    .cq-FileUpload-thumbnail-dropHere{
+      color:#a0a0a0;
+    }
+  }
+}
+
+.cq-FileUpload-thumbnail {
+  position:relative;
+  max-width:100%;
+  padding:15px;
+  margin:15px auto;
+  border:1px dashed rgba(0,0,0,0.2);
+  border-radius:5px;
+  text-align:center;
+}
+
+.cq-FileUpload-thumbnail-img {
+  position:relative;
+  max-width:200px;
+  margin:auto;
+  word-wrap:break-word;
+}
+
+.cq-FileUpload-thumbnail-img img {
+  max-width:100%;
+  max-height:200px;
+  vertical-align:bottom;
+}
+
+.cq-FileUpload-edit,
+.cq-FileUpload-clear,
+.cq-FileUpload-picker {
+  display:none;
+}
+
+.cq-FileUpload-icon {
+  display:block;
+  margin:5px auto;
+}
+
+.cq-FileUpload-browse {
+  position:relative;
+  cursor:pointer;
+}
+
+.cq-dialog-header-action {
+  padding:0 .9375rem;
+  line-height:3.125rem;
+}
+
+.cq-dialog-floating .cq-dialog-content .coral-FileUpload-input {
+  font-size: 0;
+}
+
+.coral--dark {
+  .cq-RichText-editable.is-edited {
+    box-shadow:0 0 3px #87beff;
+    border-color:#87beff;
+  }
+  .cq-FileUpload-thumbnail {
+    background: #464646;
+  }
+}

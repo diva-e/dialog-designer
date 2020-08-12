@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
-import DropTarget from '../../app/components/DropTarget';
+import DropTarget from '../../components/DropTarget';
 
-const initDropTargetWebComponent = (store) => {
+const initDropTarget = (store) => {
   class DropTargetWebComponent extends HTMLElement {
     constructor() {
       super();
@@ -26,4 +26,4 @@ const initDropTargetWebComponent = (store) => {
   window.customElements.define('drop-target', DropTargetWebComponent);
 };
 
-export default initDropTargetWebComponent;
+export default initDropTarget;

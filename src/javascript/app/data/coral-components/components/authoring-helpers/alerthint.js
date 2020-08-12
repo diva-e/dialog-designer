@@ -9,7 +9,7 @@ const alerthint = {
   tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
-  fieldWrapperNeeded: false,
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     {

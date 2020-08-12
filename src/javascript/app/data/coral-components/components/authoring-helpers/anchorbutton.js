@@ -8,7 +8,7 @@ const anchorbutton = {
   tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
   description: 'Button in different forms / Links',
   id: 'anchorbutton',
-  fieldWrapperNeeded: false,
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

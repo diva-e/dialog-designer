@@ -1,5 +1,6 @@
 import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
+import changeNodeName from '../changeNodeName';
 
 const compAll = coralComponents.map(({ id }) => (id)).join(',');
 
@@ -18,7 +19,9 @@ const structureToDom = (structureNode, path = '') => {
     });
   }
 
-  const nodeDomString = stringFormat(nodeData.src, textReplace)
+  const htmlSource = nodeData.src.trim();
+
+  const nodeDomString = stringFormat(htmlSource, textReplace)
     // replace * with a list of all components
     // ToDo: add scope sort of "contentgroups" ???
     .replace(/data-accept="\*"/gi, `data-accept="${compAll}"`);
@@ -43,7 +46,6 @@ const structureToDom = (structureNode, path = '') => {
     adapt.dataset.path = `${path}children.${adaptFrom}`;
   });
 
-  console.log('Outer-Path: ', path);
   // Add childnodes for all contents defined by the names of droptargets
   [...doc.querySelectorAll('drop-target')].forEach((droptarget) => {
     const childContainerName = droptarget.dataset.name;
@@ -54,19 +56,23 @@ const structureToDom = (structureNode, path = '') => {
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode, index) => {
         const fieldData = coralComponents.find((coralComponent) => coralComponent.id === childNode.type);
-        if (fieldData.fieldWrapperNeeded) {
-          const newChild = document.createElement('div');
-          newChild.classList.add('coral-Form-fieldwrapper');
-          newChild.dataset.title = fieldData.name;
-          newChild.dataset.path = `${childPath}.${index}`;
-          console.log('Inner-Path: ', `${childPath}.${index}`);
-          newChild.appendChild(structureToDom(childNode, `${childPath}.${index}.`));
-          if (newChild) {
-            droptarget.parentNode.insertBefore(newChild, droptarget);
-          }
-        } else {
-          droptarget.parentNode.insertBefore(structureToDom(childNode, `${childPath}.${index}.`), droptarget);
-        }
+        const instancePath = `${childPath}.${index}`;
+        const nextChild = structureToDom(childNode, `${instancePath}.`);
+        nextChild.setAttribute('title', fieldData.name);
+        nextChild.dataset.path = instancePath;
+        nextChild.classList.add('has-contextmenu');
+
+        // if (fieldData.fieldWrapperNeeded) {
+        //   if (nextChild.nodeName.toLowerCase().startsWith('coral-')) {
+        //     nextChild = changeNodeName(nextChild, `wrapped-${nextChild.nodeName.toLowerCase()}`);
+        //   } else if (nextChild.hasAttribute('is')) {
+        //     nextChild.setAttribute('is', `coral-${nextChild.getAttribute('is')}`);
+        //   } else {
+        //     nextChild.setAttribute('is', 'wrapped-component');
+        //   }
+        // }
+
+        droptarget.parentNode.insertBefore(nextChild, droptarget);
       });
     }
   });

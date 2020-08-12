@@ -8,11 +8,11 @@ const tabView = {
   tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Switchable tabs with multiple panels',
   id: 'tabview',
-  fieldWrapperNeeded: false,
+  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
   ],
-  src: `<coral-tabview>
+  src: `<coral-tabview title="tt" data-horst="horst">
     <coral-tablist target="{id}">
       <drop-target data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>
     </coral-tablist>

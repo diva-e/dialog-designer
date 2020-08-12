@@ -9,7 +9,7 @@ const panel = {
   description: 'Tab Panel',
   id: 'panel',
   hidden: true,
-  fieldWrapperNeeded: false,
+  fieldWrapperNeeded: true,
   fields: [],
   src: `<coral-panel>
   <coral-panel-content>

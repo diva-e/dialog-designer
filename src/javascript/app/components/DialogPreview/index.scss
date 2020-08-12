@@ -2,6 +2,10 @@
   flex: 500px 0 0;
   margin: 0 10px;
 
+  .cq-Dialog {
+    z-index: $z-index-coral-dialog-preview;
+  }
+
   ._coral-Dialog {
     transform: none;
     display: block;
@@ -42,5 +46,18 @@
 
   .cq-RichText-editable.coral-RichText-editable.coral-RichText {
     min-height: 200px;
+    background-color: white;
+  }
+
+  .rte-toolbar {
+    visibility: visible !important;
+  }
+
+  .cq-FileUpload-thumbnail .cq-FileUpload-icon {
+    display: block;
+  }
+
+  .cq-FileUpload-thumbnail-dropHere span {
+    display: block;
   }
 }

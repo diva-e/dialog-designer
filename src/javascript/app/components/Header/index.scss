@@ -1,11 +1,15 @@
 .header {
-    height: 40px;
-    width: 100vw;
-    background: #1e1e1e;
-    color: rgba(255,255,255,.8);
-    min-width: 100vw;
-    padding-left: 30px;
-    box-sizing: border-box;
-    padding-top: 13px;
+  height: 40px;
+  width: 100vw;
+  background: #1e1e1e;
+  color: rgba(255,255,255,.8);
+  min-width: 100vw;
+  padding-left: 30px;
+  box-sizing: border-box;
+  padding-top: 10px;
+  font-size: 13px;
+  h1 {
+    margin: 0;
     font-size: 13px;
+  }
 }

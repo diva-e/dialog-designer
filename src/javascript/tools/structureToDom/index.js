@@ -43,7 +43,11 @@ const structureToDom = (structureNode, path = '') => {
   [...doc.querySelectorAll('adapt')].forEach((adapt) => {
     const adaptFrom = adapt.dataset.from;
     // eslint-disable-next-line no-param-reassign
-    adapt.dataset.path = `${path}children.${adaptFrom}`;
+    // adapt.dataset.path = `${path}children.${adaptFrom}`;
+
+    console.log(adapt);
+
+
   });
 
   // Add childnodes for all contents defined by the names of droptargets

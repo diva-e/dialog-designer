@@ -11,7 +11,7 @@
   &__entry {
     user-select: none;
     cursor: grab;
-    padding: 0px;
+    padding: 0;
 
     &:hover {
         // background-color: rgba(44,44,44,.04);
@@ -23,3 +23,41 @@
     }
   }
 }
+
+.editor-ComponentBrowser-component-icon {
+  display: block;
+  position: relative;
+  float: left;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  margin-right: .9375rem;
+}
+
+.editor-ComponentBrowser-component-title {
+  display: block;
+  padding-top: .5rem;
+  padding-right: .9375rem;
+  height: 2rem;
+  line-height: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.editor-ComponentBrowser-component-title .foundation-collection-item-title,
+.editor-ComponentBrowser-component-title .foundation-layout-util-subtletext {
+  line-height: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.editor-ComponentBrowser-component coral-tag {
+  margin-top: 10px;
+  padding: .35rem 0;
+  width: 1.75rem;
+  text-align: center;
+}
+

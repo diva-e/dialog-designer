@@ -10,12 +10,7 @@ class DialogPreview extends Component {
 
   render() {
     const { formDom } = this.props;
-    return (
-      <div className="dialog-preview">
-        {this.d2r.prepareNode(formDom)}
-      </div>
-      // <div className="dialog-preview" ref={(node) => node.appendChild(formDom)} />
-    );
+    return ({ this.d2r.prepareNode(formDom) });
   }
 }
 

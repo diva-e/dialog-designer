@@ -18,7 +18,7 @@ const root = {
           Dialog Preview
         </coral-dialog-header>
       </div>
-      <coral-dialog-content id="coral-id-632" class="_coral-Dialog-content">
+      <coral-dialog-content id="dialog-preview-content" class="_coral-Dialog-content">
         <div class="cq-dialog-content">
           <drop-target data-accept="fieldset,panel,tabview,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
         </div>

@@ -23,16 +23,6 @@
   cursor: default;
 }
 
-._coral-Dialog {
-  min-width: 560px;
-}
-
-.cq-Dialog {
-  &:focus {
-    outline: none;
-  }
-}
-
 .cq-dialog-floating .cq-dialog-content {
   width: 35rem;
   overflow-y: auto;
@@ -42,4 +32,14 @@
 ._coral-Textfield,
 .coral-InputGroup {
   width: 100%;
+}
+
+._coral-Dialog {
+  min-width: 560px;
+}
+
+.cq-Dialog {
+  &:focus {
+    outline: none;
+  }
 }

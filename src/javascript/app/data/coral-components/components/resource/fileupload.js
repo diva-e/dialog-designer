@@ -39,20 +39,14 @@ const fielupload = {
         class="cq-FileUpload-thumbnail-img"
         data-cq-fileupload-thumbnail-img="">
       </div>
-      <div
-        class="cq-FileUpload-thumbnail-dropHere">
-        <div icon="image"
+      <div class="cq-FileUpload-thumbnail-dropHere">
+        <coral-icon
+          icon="image"
+          title="Drag image here."
           class="cq-FileUpload-icon _coral-Icon _coral-Icon--sizeS"
-          role="img" size="S">
-          <svg focusable="false"
-            aria-hidden="true"
-            class="_coral-Icon--svg _coral-Icon">
-            <use
-              xlink:href="/dist/resources/spectrum-icons.svg#spectrum-icon-18-Image">
-            </use>
-          </svg>
-        </div>
-        <span className="cq-FileUpload-label">
+          role="img"
+          size="S"></coral-icon>
+        <span class="cq-FileUpload-label">
           Drop an asset here or <a
             aria-label="Browse for a file to upload"
             class="coral-Link cq-FileUpload-browse"

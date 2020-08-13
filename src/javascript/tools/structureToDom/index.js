@@ -1,6 +1,5 @@
 import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
-import changeNodeName from '../changeNodeName';
 
 const compAll = coralComponents.map(({ id }) => (id)).join(',');
 
@@ -23,7 +22,7 @@ const structureToDom = (structureNode, path = '') => {
 
   const nodeDomString = stringFormat(htmlSource, textReplace)
     // replace * with a list of all components
-    // ToDo: add scope sort of "contentgroups" ???
+    // ToDo: add scope sort of "component-categories" ???
     .replace(/data-accept="\*"/gi, `data-accept="${compAll}"`);
 
   const parser = new DOMParser();
@@ -41,21 +40,45 @@ const structureToDom = (structureNode, path = '') => {
   }
 
   [...doc.querySelectorAll('adapt')].forEach((adapt) => {
-    const adaptFrom = adapt.dataset.from;
-    // eslint-disable-next-line no-param-reassign
-    // adapt.dataset.path = `${path}children.${adaptFrom}`;
+    const to = adapt.dataset.to;
+    const from = adapt.dataset.from;
+    const childPath = `${path}children.${from}`;
+    const childContainerName = adapt.dataset.from;
 
-    console.log(adapt);
+    if (structureNode.children && structureNode.children[childContainerName]) {
+      structureNode.children[childContainerName].forEach((childNode, index) => {
+        const instancePath = `${childPath}.${index}`;
+        const nextChild = structureToDom({
+          ...childNode,
+          type: to,
+        }, `${instancePath}.`);
 
+        console.log(nextChild.outerHTML);
 
+        adapt.parentNode.insertBefore(nextChild, adapt);
+      });
+    }
   });
 
   // Add childnodes for all contents defined by the names of droptargets
   [...doc.querySelectorAll('drop-target')].forEach((droptarget) => {
     const childContainerName = droptarget.dataset.name;
     const childPath = `${path}children.${childContainerName}`;
+
+    // checking if a path is already set so that the droptargets inside the
+    // previously created <adapt> block does not get re-writtem
+    // This needs to be changed and cleaned! ToDo!
+    if (droptarget.dataset.path) {
+      return;
+    }
+
     // eslint-disable-next-line no-param-reassign
     droptarget.dataset.path = childPath;
+
+    console.log({
+      childContainerName,
+      childPath,
+    });
 
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode, index) => {
@@ -65,16 +88,6 @@ const structureToDom = (structureNode, path = '') => {
         nextChild.setAttribute('title', fieldData.name);
         nextChild.dataset.path = instancePath;
         nextChild.classList.add('has-contextmenu');
-
-        // if (fieldData.fieldWrapperNeeded) {
-        //   if (nextChild.nodeName.toLowerCase().startsWith('coral-')) {
-        //     nextChild = changeNodeName(nextChild, `wrapped-${nextChild.nodeName.toLowerCase()}`);
-        //   } else if (nextChild.hasAttribute('is')) {
-        //     nextChild.setAttribute('is', `coral-${nextChild.getAttribute('is')}`);
-        //   } else {
-        //     nextChild.setAttribute('is', 'wrapped-component');
-        //   }
-        // }
 
         droptarget.parentNode.insertBefore(nextChild, droptarget);
       });

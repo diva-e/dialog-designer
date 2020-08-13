@@ -1,13 +1,12 @@
 .has-contextmenu {
   min-height: 22px;
   border: 1px solid transparent;
-  box-shadow: 0 0 0 1px transparent;
   display: block;
+  position: relative;
+  box-sizing: border-box;
 
   &:hover {
-    color: #2680eb;
     border: 1px solid #2680eb;
-    box-shadow: 0 0 0 1px #2680eb;
     border-radius: 4px;
 
     &:after {
@@ -27,4 +26,16 @@
       content: attr(title);
     }
   }
+}
+
+.coral--light ._coral-Checkbox {
+  border-color: transparent;
+
+  &.has-contextmenu:hover {
+    border-color: #2680eb;
+  }
+}
+
+.cq-RichText.has-contextmenu {
+  position: relative;
 }

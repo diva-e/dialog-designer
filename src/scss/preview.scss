@@ -41,18 +41,18 @@
   }
 }
 
-.contextmenu-opened {
-  border: 1px solid #ff8800;
-
-  &:hover {
-    border: 1px solid #ff8800;
-  }
-
-  &:after {
-    background-color: #ff8800;
-    display: block;
-  }
-}
+//.contextmenu-opened {
+//  border-color: #ff8800;
+//
+//  &:hover {
+//    border-color: #ff8800;
+//  }
+//
+//  &:after {
+//    background-color: #ff8800;
+//    display: block;
+//  }
+//}
 
 .cq-RichText.has-contextmenu {
   position: relative;

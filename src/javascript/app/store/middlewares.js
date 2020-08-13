@@ -5,6 +5,7 @@ import startCreateComponentMiddleware from './middlewares/startCreateComponentMi
 import startUpdateComponentMiddleware from './middlewares/startUpdateComponentMiddleware';
 import startDeleteComponentMiddleware from './middlewares/startDeleteComponentMiddleware';
 import updateDialogPreviewMiddleware from './middlewares/updateDialogPreviewMiddleware';
+import contextMenuMiddleware from './middlewares/contextMenuMiddleware';
 
 export default applyMiddleware(
   dropMiddleware,
@@ -13,4 +14,5 @@ export default applyMiddleware(
   startUpdateComponentMiddleware,
   startDeleteComponentMiddleware,
   updateDialogPreviewMiddleware,
+  contextMenuMiddleware,
 );

@@ -16,11 +16,6 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'START_DELETE_COMPONENT',
     });
   },
-  closeContextmenu: () => {
-    dispatch({
-      type: 'CLOSE_CONTEXTMENU',
-    });
-  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

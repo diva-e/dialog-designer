@@ -33,8 +33,6 @@ const DropTarget = ({ accepts, path }) => {
         Drag field component here:
         <br />
         {path}
-        <br />
-        {accepts}
       </span>
     </div>
   );

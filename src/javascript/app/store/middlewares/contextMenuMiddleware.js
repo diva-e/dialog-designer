@@ -45,7 +45,7 @@ const contextMenuMiddleware = (store) => {
       type: 'OPEN_CONTEXTMENU',
       path: componentWrapper.dataset.path,
       x: left,
-      y: top - 78,
+      y: top - 49,
     });
   });
 

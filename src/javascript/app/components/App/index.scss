@@ -44,7 +44,11 @@
   }
 }
 
-/* todo: move to dialog preview ? */
+.coral-Form--vertical .coral-Form-field._coral-Checkbox {
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 4px;
+}
 
 #preview {
   flex: 500px 0 0;
@@ -235,8 +239,4 @@
   .cq-FileUpload-thumbnail {
     background: #464646;
   }
-}
-
-.coral-Form-field._coral-Checkbox {
-  // border-color: transparent;
 }

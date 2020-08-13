@@ -21,22 +21,20 @@ const Contextmenu = ({ startUpdateComponent, deleteComponent, x, y }) => {
         variant="quiet"
         title="Edit"
         size="M"
-        block
         onClick={() => startUpdateComponent()}
       >
-        <coral-button-label className="_coral-Button-label">Edit</coral-button-label>
+        <coral-button-label className="_coral-Button-label" />
       </button>
       <button
         is="coral-anchorbutton"
         icon="delete"
-        variant="warning"
+        variant="quiet"
         title="Delete"
         size="M"
         type="submit"
-        block
         onClick={() => deleteComponent()}
       >
-        <coral-button-label className="_coral-Button-label">Delete</coral-button-label>
+        <coral-button-label className="_coral-Button-label" />
       </button>
     </div>
   );

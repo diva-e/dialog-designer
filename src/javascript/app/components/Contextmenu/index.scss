@@ -1,27 +1,39 @@
 .contextmenu {
-  width: 130px;
   min-height: 30px;
   transition: max-height 0.8s;
   position: absolute;
   top: 25rem;
   left: 25rem;
-  border: 1px solid #cacaca;
-  background: white;
   padding: 6px;
   z-index: $z-index-context-menu;
+  border-radius: 4px;
+  border: 1px solid #cacaca;
   box-shadow: 0 1px 4px rgba(0,0,0,.15);
-  // display: none;
+  background-color: #fff;
 
   ._coral-Button {
-    border-radius: 0;
     border-color: transparent;
-  }
-/*
-  &--open {
-    display: block;
-  }
+    background-color: transparent;
+    color: #6e6e6e;
+    border-radius: 4px;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 6px;
 
- */
+    +._coral-Button {
+      margin-left: 8px;
+    }
+
+    ._coral-Button-label {
+      display: none;
+    }
+
+    &._coral-Button--quiet:hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: #2c2c2c;
+    }
+  }
 }
 
 .coral--dark {
@@ -29,3 +41,4 @@
     background: #323232;
   }
 }
+

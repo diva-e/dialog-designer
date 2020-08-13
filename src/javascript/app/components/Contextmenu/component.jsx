@@ -12,6 +12,12 @@ const Contextmenu = ({ startUpdateComponent, deleteComponent, closeContextmenu, 
     // close contextmenu if click outside
     if (ev.target.closest('.contextmenu') === null) {
       // console.log('click outside of context menu -> close contextmenu');
+      // todo: find correct location for this
+      const openedContextmenuField = document.getElementsByClassName('contextmenu-opened');
+      if (openedContextmenuField) {
+        openedContextmenuField[0].classList.remove('contextmenu-opened');
+      }
+
       closeContextmenu();
     }
   });

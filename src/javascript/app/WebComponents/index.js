@@ -22,6 +22,13 @@ const initWebComponents = (store) => {
       y: ev.pageY,
     });
 
+    const potentialOpenedContextmenuField = document.getElementsByClassName('contextmenu-opened');
+    if (potentialOpenedContextmenuField) {
+     // potentialOpenedContextmenuField[0].classList.remove('contextmenu-opened');
+    }
+
+    componentWrapper.classList.add('contextmenu-opened');
+
     store.dispatch({
       type: 'OPEN_CONTEXTMENU',
       path: componentWrapper.dataset.path,

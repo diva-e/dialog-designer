@@ -53,8 +53,6 @@ const structureToDom = (structureNode, path = '') => {
           type: to,
         }, `${instancePath}.`);
 
-        console.log(nextChild.outerHTML);
-
         adapt.parentNode.insertBefore(nextChild, adapt);
       });
     }
@@ -74,11 +72,6 @@ const structureToDom = (structureNode, path = '') => {
 
     // eslint-disable-next-line no-param-reassign
     droptarget.dataset.path = childPath;
-
-    console.log({
-      childContainerName,
-      childPath,
-    });
 
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode, index) => {

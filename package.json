@@ -69,6 +69,7 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
+    "walk-object": "^4.0.0",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0",
     "xml-formatter": "^2.1.3"

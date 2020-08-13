@@ -50,6 +50,11 @@ const contextMenuMiddleware = (store) => {
   });
 
   return (next) => (action) => {
+
+    if (action.type === 'CLOSE_EDIT_COMPONENT') {
+      unselectActiveComponentWrappers();
+    }
+
     next(action);
   };
 };

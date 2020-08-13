@@ -24,11 +24,13 @@ const contextMenuMiddleware = (store) => {
       return;
     }
 
+    const { top, left } = componentWrapper.getBoundingClientRect();
+
     store.dispatch({
       type: 'OPEN_CONTEXTMENU',
       path: componentWrapper.dataset.path,
-      x: ev.pageX,
-      y: ev.pageY,
+      x: left,
+      y: top - 78,
     });
   });
 

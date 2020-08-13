@@ -1,4 +1,13 @@
+const CONTEXTMENU_OPEN_CLASS = 'contextmenu-opened';
+
 const contextMenuMiddleware = (store) => {
+
+  const unselectActiveComponentWrappers = () => {
+    [...document.getElementsByClassName(CONTEXTMENU_OPEN_CLASS)]
+      .forEach((openedContextmenuField) => {
+        openedContextmenuField.classList.remove(CONTEXTMENU_OPEN_CLASS);
+      });
+  };
 
   document.addEventListener('click', (ev) => {
     // optout if no contextmenu is open
@@ -8,6 +17,9 @@ const contextMenuMiddleware = (store) => {
 
     // close contextmenu if click outside
     if (ev.target.closest('.contextmenu') === null) {
+
+      unselectActiveComponentWrappers();
+
       store.dispatch({
         type: 'CLOSE_CONTEXTMENU',
       });
@@ -23,6 +35,9 @@ const contextMenuMiddleware = (store) => {
     if (!componentWrapper) {
       return;
     }
+
+    unselectActiveComponentWrappers();
+    componentWrapper.classList.add(CONTEXTMENU_OPEN_CLASS);
 
     const { top, left } = componentWrapper.getBoundingClientRect();
 

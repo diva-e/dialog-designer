@@ -3,6 +3,7 @@ import React from 'react';
 import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentTextfield from './EditComponentTextfield';
 import EditComponentSelect from './EditComponentSelect';
+import allFieldsValid from '../../../tools/allFieldsValid';
 
 
 const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
@@ -21,12 +22,8 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
       >
         <div handle="topTabCapture" coral-tabcapture="top" role="presentation" />
         <div handle="wrapper">
-          <form
+          <div
             className="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open"
-            action="#"
-            method="post"
-            data-foundation-form-ajax="true"
-            coral-dialog-size=""
           >
             <div className="_coral-Dialog-header u-coral-openHand" handle="headerWrapper">
               <div className="_coral-Dialog-dragZone" handle="dragZone" />
@@ -94,18 +91,19 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                 <coral-button-label class="_coral-Button-label">Cancel</coral-button-label>
               </button>
               <button
+                disabled={!allFieldsValid(fields)}
                 icon=""
                 variant="cta"
                 className="_coral-Button _coral-Button--cta"
                 title="Save"
                 size="M"
-                type="submit"
+                type="button"
                 onClick={() => saveEdit()}
               >
                 <coral-button-label className="_coral-Button-label">Save</coral-button-label>
               </button>
             </div>
-          </form>
+          </div>
         </div>
         <div handle="intermediateTabCapture" coral-tabcapture="intermediate" role="presentation" />
         <div handle="bottomTabCapture" coral-tabcapture="bottom" role="presentation" />

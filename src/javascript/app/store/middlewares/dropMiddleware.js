@@ -1,6 +1,8 @@
 import objectPath from 'object-path';
 import { walkObject } from 'walk-object';
 import coralComponents from '../../data/coral-components';
+import allFieldsValid from '../../../tools/allFieldsValid';
+import fieldValidation from '../../../tools/fieldValidation';
 
 const getFields = ({ what }, getUniqueFieldValue) => {
   const comp = coralComponents.find(({ id }) => id === what);
@@ -54,6 +56,17 @@ const dropMiddleware = (store) => (next) => (action) => {
 
   if (action.type === 'SAVE_EDIT_COMPONENT') {
     const { structure, editComponent } = store.getState();
+
+    console.log(fieldValidation(editComponent.fields));
+    console.log(allFieldsValid(fieldValidation(editComponent.fields)));
+
+    if (!allFieldsValid(fieldValidation(editComponent.fields))) {
+      console.log('nöööp');
+      return;
+    }
+
+    console.log('yöööp');
+
     switch (editComponent.where.mode) {
       case 'update':
         objectPath.set(structure, editComponent.where.path, {

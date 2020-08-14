@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
-import structureToDom from '../../../tools/structureToDom';
 
 const mapStateToProps = (state) => ({
-  formDom: structureToDom(state.structure),
+  x: state.contextmenu.x,
+  y: state.contextmenu.y,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  startEdit: (path) => {
+  startUpdateComponent: () => {
     dispatch({
-      type: 'START_EDIT_COMPONENT',
-      payload: path,
+      type: 'START_UPDATE_COMPONENT',
+    });
+  },
+  deleteComponent: () => {
+    dispatch({
+      type: 'START_DELETE_COMPONENT',
     });
   },
 });

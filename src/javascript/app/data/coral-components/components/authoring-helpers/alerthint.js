@@ -1,11 +1,12 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import { Alert } from '@adobe/coral-spectrum';
+import constants from '../../constants';
 
 const alerthint = {
   name: 'Alert',
   tag: 'Al',
-  category: coralConstants.fieldCategories.AUTHORING_HELPER,
-  tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
+  category: constants.fieldCategories.AUTHORING_HELPER.name,
+  tagColor: constants.fieldCategories.AUTHORING_HELPER.color,
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
   fields: [
@@ -31,15 +32,15 @@ const alerthint = {
       type: 'String',
       options: [
         {
-          value: Coral.Alert.size.SMALL,
+          value: Alert.size.SMALL,
           caption: 'Small',
         },
         {
-          value: Coral.Alert.size.LARGE,
+          value: Alert.size.LARGE,
           caption: 'Large',
         },
       ],
-      defaultValue: Coral.Alert.size.SMALL,
+      defaultValue: Alert.size.SMALL,
       required: false,
     },
     {
@@ -49,27 +50,27 @@ const alerthint = {
       type: 'String',
       options: [
         {
-          value: Coral.Alert.variant.ERROR,
+          value: Alert.variant.ERROR,
           caption: 'Error',
         },
         {
-          value: Coral.Alert.variant.WARNING,
+          value: Alert.variant.WARNING,
           caption: 'Warning',
         },
         {
-          value: Coral.Alert.variant.SUCCESS,
+          value: Alert.variant.SUCCESS,
           caption: 'Success',
         },
         {
-          value: Coral.Alert.variant.HELP,
+          value: Alert.variant.HELP,
           caption: 'Help',
         },
         {
-          value: Coral.Alert.variant.INFO,
+          value: Alert.variant.INFO,
           caption: 'Info',
         },
       ],
-      defaultValue: Coral.Alert.variant.INFO,
+      defaultValue: Alert.variant.INFO,
       required: false,
     },
   ],

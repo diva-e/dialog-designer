@@ -16,14 +16,12 @@ const updateField = (value, payload) => {
   };
 };
 
-
 const newComponentReducer = (value = null, action) => {
   switch (action.type) {
     case 'DROP_NEW_COMPONENT':
-      console.log('AAAAA', action.payload);
+    case 'START_UPDATE_COMPONENT':
       return action.payload;
     case 'UPDATE_EDIT_FIELD_VALUE':
-      console.log(action.payload);
       return updateField(value, action.payload);
     case 'SAVE_EDIT_COMPONENT':
     case 'CLOSE_EDIT_COMPONENT':

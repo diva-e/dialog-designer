@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const select = {
-  name: 'DropDown',
-  tag: 'DD',
-  category: coralConstants.fieldCategories.SELECTION,
-  tagColor: coralConstants.fieldCategoryColors.SELECTION,
+  name: 'Select',
+  tag: 'Se',
+  category: constants.fieldCategories.SELECTION.name,
+  tagColor: constants.fieldCategories.SELECTION.color,
   description: 'Select field',
   id: 'select',
   fields: [

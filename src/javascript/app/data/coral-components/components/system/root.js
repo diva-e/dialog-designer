@@ -7,28 +7,25 @@ const root = {
   hidden: true,
   fields: [],
   src: `
-<coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" closable="off" open="open" aria-hidden="false" movable="false" style="z-index: 10010;">
-  <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
+<coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" closable="off" open="open" aria-hidden="false" movable="false">
   <div handle="wrapper">
     <div class="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open">
       <div class="_coral-Dialog-header u-coral-openHand" handle="headerWrapper">
         <div class=" _coral-Dialog-dragZone" handle="dragZone"></div>
-        <coral-dialog-header class="cq-dialog-header _coral-Dialog-title" id="coral-id-631">
+        <coral-dialog-header class="cq-dialog-header _coral-Dialog-title">
           <div class="cq-dialog-actions u-coral-pullRight"></div>
           Dialog Preview
         </coral-dialog-header>
       </div>
-      <coral-dialog-content id="coral-id-632" class="_coral-Dialog-content">
+      <coral-dialog-content id="dialog-preview-content" class="_coral-Dialog-content">
         <div class="cq-dialog-content">
-          <droptarget data-accept="fieldset,panel,tabview,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
+          <drop-target data-accept="fieldset,panel,tabview,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
         </div>
       </coral-dialog-content>
       <coral-dialog-footer class="_coral-Dialog-footer">
       </coral-dialog-footer>
     </div>
   </div>
-  <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation"></div>
-  <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
 </coral-dialog-preview>`,
   xml: `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root
@@ -45,7 +42,7 @@ const root = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/container">
     <items jcr:primaryType="nt:unstructured">
-      <droptarget data-name="content" />
+      <drop-target data-name="content" />
     </items>
   </content>
 </jcr:root>`,

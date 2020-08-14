@@ -1,7 +1,7 @@
 {
   "name": "dnd-aem-dialogs",
   "version": "0.0.1",
-  "description": "dnd-aem-dialogs",
+  "description": "AEM Dialog Creator",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "npm run build:clean && npm run build:webpack",
@@ -9,20 +9,42 @@
     "build:webpack": "node scripts/build.js"
   },
   "author": {
-    "name": "diva-e Platforms GmbH - Andreas Hahn"
+    "name": "Andreas Hahn",
+    "email": "andreas.hahn@diva-e.com"
   },
+  "contributors": [
+    {
+      "name": "Andrei Shilov",
+      "email": "andrei.shilov@diva-e.com"
+    },
+    {
+      "name": "Jannik Egger",
+      "email": "jannik.egger@diva-e.com"
+    },
+    {
+      "name": "Thomas Vogt",
+      "email": "thomas.vogt@diva-e.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git@gitlab.diva-e.com:adaptto/dnd-aem-dialogs.git"
   },
   "private": true,
   "projectConfig": {
-    "PROJECT_NAME": "dnd-aem-dialogs"
+    "PROJECT_NAME": "AEM Dialog Creator"
   },
   "devDependencies": {
+    "@adobe/coral-spectrum": "^4.9.0",
+    "@adobe/spectrum-css-workflow-icons": "^1.0.0",
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.10.1",
+    "@spectrum-css/button": "^3.0.0-beta.3",
+    "@spectrum-css/icon": "^2.1.1",
+    "@spectrum-css/page": "^2.0.7",
+    "@spectrum-css/typography": "^2.1.3",
+    "@spectrum-css/vars": "^2.3.0",
     "autoprefixer": "^9.8.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
@@ -43,6 +65,7 @@
     "html-webpack-plugin": "^3.2.0",
     "jsoneditor": "^9.0.1",
     "jsoneditor-react": "^3.0.0",
+    "loadicons": "^1.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "node-watch": "^0.6.4",
@@ -61,6 +84,7 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
+    "walk-object": "^4.0.0",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0",
     "xml-formatter": "^2.1.3"

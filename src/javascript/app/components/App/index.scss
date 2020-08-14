@@ -23,11 +23,220 @@
   cursor: default;
 }
 
+.cq-dialog-floating .cq-dialog-content {
+  width: 35rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+._coral-Textfield,
+.coral-InputGroup {
+  width: 100%;
+}
+
 ._coral-Dialog {
   min-width: 560px;
 }
+
 .cq-Dialog {
   &:focus {
     outline: none;
+  }
+}
+
+.coral-Form--vertical .coral-Form-field._coral-Checkbox {
+  border-color: transparent;
+  margin-right: 0;
+  border-radius: 4px;
+}
+
+#preview {
+  flex: 500px 0 0;
+  margin: 0 10px;
+
+  .cq-Dialog {
+    z-index: $z-index-coral-dialog-preview;
+  }
+
+  ._coral-Dialog {
+    transform: none;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 40px;
+  }
+
+  .coral-Form-fieldwrapper {
+    min-height: 22px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 1px transparent;
+
+    &:hover {
+      color: #2680eb;
+      border: 1px solid #2680eb;
+      box-shadow: 0 0 0 1px #2680eb;
+      border-radius: 4px;
+
+      &:after {
+        background-color: #2680eb;
+        font-size: 12px;
+        line-height: 1.3;
+        font-weight: 500;
+        letter-spacing: normal;
+        padding: 4px 6px 4px 8px;
+        border-top-left-radius: 8px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: $z-index-field-wrapper-border;
+        color: #fff;
+        text-transform: capitalize;
+        content: attr(title);
+      }
+    }
+  }
+
+  .cq-RichText-editable.coral-RichText-editable.coral-RichText {
+    min-height: 200px;
+    background-color: white;
+  }
+
+  .cq-dialog .rte-toolbar {
+    visibility: visible !important;
+  }
+
+  .cq-FileUpload-thumbnail .cq-FileUpload-icon {
+    display: block;
+  }
+
+  .cq-FileUpload-label {
+    display: block;
+  }
+}
+
+/* todo: further cleanup / removals */
+
+.cq-RichText {
+  overflow:auto;
+  position:static;
+}
+
+.cq-RichText-editable {
+  box-sizing:border-box;
+  min-height:2.75rem;
+  border-radius:4px;
+  padding:15px;
+
+  &.is-edited {
+    outline:0;
+    box-shadow:0 0 3px #326ec8;
+    border:1px solid #326ec8;
+  }
+}
+
+.cq-Dialog {
+  .cq-RichText-editable {
+    height: 13.2rem;
+
+    &.is-edited {
+      table {
+        border: 1px solid #777;
+      }
+
+      .cq-RichText-hiddenHeader--editing {
+        background-color: #555;
+      }
+    }
+  }
+
+  .cq-dialog-header-action {
+    padding: 0 15px;
+    line-height: 18px;
+  }
+}
+
+.cq-dialog {
+  .rte-toolbar {
+    background-color: transparent;
+    position: relative;
+    box-shadow: none;
+  }
+
+  .cq-RichText-editable {
+    overflow-y: auto;
+  }
+}
+
+.cq-FileUpload {
+  position:relative;
+  display:block;
+  width:100%;
+
+  &.is-active {
+    .cq-FileUpload-thumbnail{
+      border-color:#a0a0a0;
+    }
+    .cq-FileUpload-thumbnail-dropHere{
+      color:#a0a0a0;
+    }
+  }
+}
+
+.cq-FileUpload-thumbnail {
+  position:relative;
+  max-width:100%;
+  padding:15px;
+  margin:15px auto;
+  border:1px dashed rgba(0,0,0,0.2);
+  border-radius:5px;
+  text-align:center;
+}
+
+.cq-FileUpload-thumbnail-img {
+  position:relative;
+  max-width:200px;
+  margin:auto;
+  word-wrap:break-word;
+}
+
+.cq-FileUpload-thumbnail-img img {
+  max-width:100%;
+  max-height:200px;
+  vertical-align:bottom;
+}
+
+.cq-FileUpload-edit,
+.cq-FileUpload-clear,
+.cq-FileUpload-picker {
+  display:none;
+}
+
+.cq-FileUpload-icon {
+  display:block;
+  margin:5px auto;
+}
+
+.cq-FileUpload-browse {
+  position:relative;
+  cursor:pointer;
+}
+
+.cq-dialog-header-action {
+  padding:0 .9375rem;
+  line-height:3.125rem;
+}
+
+.cq-dialog-floating .cq-dialog-content .coral-FileUpload-input {
+  font-size: 0;
+}
+
+.coral--dark {
+  .cq-RichText-editable.is-edited {
+    box-shadow:0 0 3px #87beff;
+    border-color:#87beff;
+  }
+  .cq-FileUpload-thumbnail {
+    background: #464646;
   }
 }

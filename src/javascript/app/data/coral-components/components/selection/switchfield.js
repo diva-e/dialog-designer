@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const switchfield = {
   name: 'Switch',
   tag: 'Sw',
-  category: coralConstants.fieldCategories.SELECTION,
-  tagColor: coralConstants.fieldCategoryColors.SELECTION,
+  category: constants.fieldCategories.SELECTION.name,
+  tagColor: constants.fieldCategories.SELECTION.color,
   description: 'Switch / Toggle Field',
   id: 'switchfield',
   fields: [

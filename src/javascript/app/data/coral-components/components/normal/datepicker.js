@@ -1,11 +1,12 @@
+import { Datepicker } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const datepicker = {
   name: 'Datepicker',
   tag: 'DP',
-  category: coralConstants.fieldCategories.STANDARD,
-  tagColor: coralConstants.fieldCategoryColors.STANDARD,
+  category: constants.fieldCategories.STANDARD.name,
+  tagColor: constants.fieldCategories.STANDARD.color,
   description: 'Datepicker Field',
   id: 'datepicker',
   fields: [
@@ -14,15 +15,30 @@ const datepicker = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
     {
-      id: 'placeholder',
-      label: 'Placeholder',
+      id: 'type',
+      label: 'Type',
       description: '',
       type: 'String',
-      defaultValue: 'Choose a date',
+      options: [
+        {
+          value: Datepicker.type.DATE,
+          caption: 'Date',
+        },
+        {
+          value: Datepicker.type.DATETIME,
+          caption: 'Date Time',
+        },
+        {
+          value: Datepicker.type.TIME,
+          caption: 'Time',
+        },
+      ],
+      defaultValue: Datepicker.type.DATETIME,
+      required: true,
     },
     {
-      id: 'valueformat',
-      label: 'Value Format',
+      id: 'placeholder',
+      label: 'Placeholder',
       description: '',
       type: 'String',
       defaultValue: 'Choose a date',
@@ -32,33 +48,37 @@ const datepicker = {
       label: 'Display Format',
       description: '',
       type: 'String',
-      defaultValue: 'Choose a date',
+      defaultValue: 'YYYY-MM-DD',
     },
     {
       id: 'startday',
       label: 'Startday',
       description: '',
       type: 'Long',
-      min:
-      defaultValue: 'Choose a date',
+      defaultValue: '0',
     },
   ],
-  /* todo: preview output */
-  src: `<coral-datepicker
-      placeholder="Choose a date"
-      name="field"
-      value="2015-01-15"
-      valueformat="YYYY-MM-DD"
-      displayformat="YYYY-MM-DD"
-      startday="0">
-    </coral-datepicker>`,
+  src: `<div>
+      <label
+        id="label_{id}"
+        class="coral-Form-fieldlabel"
+        for="{id}">{label}</label>
+      <coral-datepicker
+        placeholder={placeholder}
+        name={id}
+        value=""
+        valueformat={displayformat}
+        displayformat={displayformat}
+        startday="0">
+      </coral-datepicker>
+    </div>`,
   xml: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
-    displayedFormat="MM-DD-YYYY HH:mm"
+    displayedFormat="{displayformat}"
     fieldLabel="{label}"
     name="./{id}"
-    type="datetime"
+    type="{datetime}"
     typeHint="Date"/>`,
 };
 

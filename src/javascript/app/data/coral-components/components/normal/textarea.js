@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const textarea = {
   name: 'Textarea',
   tag: 'TA',
-  category: coralConstants.fieldCategories.STANDARD,
-  tagColor: coralConstants.fieldCategoryColors.STANDARD,
+  category: constants.fieldCategories.STANDARD.name,
+  tagColor: constants.fieldCategories.STANDARD.color,
   description: 'Textarea',
   id: 'textarea',
   fields: [
@@ -34,7 +34,7 @@ const textarea = {
     <label
       id="label_{id}"
       class="coral-Form-fieldlabel"
-      for="{id}">{label}x</label>
+      for="{id}">{label}</label>
     <textarea
       class="coral-Form-field foundation-layout-util-resizable-none _coral-Textfield _coral-Textfield--multiline"
       name="{id}"

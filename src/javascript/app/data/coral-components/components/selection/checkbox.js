@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const checkbox = {
   name: 'Checkbox',
   tag: 'CB',
-  category: coralConstants.fieldCategories.SELECTION,
-  tagColor: coralConstants.fieldCategoryColors.SELECTION,
+  category: constants.fieldCategories.SELECTION.name,
+  tagColor: constants.fieldCategories.SELECTION.color,
   description: 'Checkbox',
   id: 'checkbox',
   fields: [

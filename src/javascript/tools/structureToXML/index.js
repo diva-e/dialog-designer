@@ -16,7 +16,7 @@ const wrapNS = (xml) => {
   );
 };
 
-const structureToXML = (structureNode) => {
+const structureToXML = (structureNode, path = '') => {
 
   const nodeData = coralComponents.find((coralComponent) => coralComponent.id === structureNode.type);
 
@@ -28,7 +28,6 @@ const structureToXML = (structureNode) => {
   const textReplace = {};
   if (structureNode.properties && structureNode.properties.forEach) {
     structureNode.properties.forEach((field) => {
-      console.log(field);
       switch (field.type) {
         case 'Boolean':
           textReplace[field.id] = `{Boolean}${field.value ? 'true' : 'false'}`;
@@ -51,7 +50,7 @@ const structureToXML = (structureNode) => {
   const doc = parser.parseFromString(wrapNS(nodeDomString), 'text/xml');
 
   if (doc.querySelector('parsererror')) {
-    console.error(`parseerror structureToXML [${structureNode.type}]`);
+    console.error(`parse-error structureToXML [${structureNode.type}]`);
     [...doc.querySelectorAll('parsererror')].forEach((parseError) => {
       const actualParseError = parseError.querySelector('div');
       if (actualParseError) {
@@ -60,24 +59,24 @@ const structureToXML = (structureNode) => {
     });
   }
 
+  [...doc.querySelectorAll('adapt')].forEach((adapt) => {
+    const adaptFrom = adapt.getAttribute('data-from');
+    // eslint-disable-next-line no-param-reassign
+    adapt.setAttribute('path', `${path}children.${adaptFrom}`);
+  });
+
   // Add childnodes for all contend defined by the names of droptargets
-  [...doc.querySelectorAll('droptarget')].forEach((droptarget) => {
-
+  [...doc.querySelectorAll('drop-target')].forEach((droptarget) => {
     const childContainerName = droptarget.getAttribute('data-name');
-
     if (structureNode.children && structureNode.children[childContainerName]) {
       structureNode.children[childContainerName].forEach((childNode) => {
-
         const xmlDoc = structureToXML(childNode);
-
         if (!xmlDoc) {
           return;
         }
 
         const XMLchildNode = xmlDoc.firstElementChild;
-
         const XMLappendNode = XMLchildNode.nodeName.toLowerCase() === 'wrapns' ? XMLchildNode.firstElementChild : XMLchildNode;
-
         droptarget.parentNode.insertBefore(XMLappendNode, droptarget);
       });
     }

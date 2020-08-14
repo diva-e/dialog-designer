@@ -6,6 +6,7 @@ module.exports = {
     type: 'String',
     validation: '^([a-zA-z])+([a-zA-Z0-9-_])*',
     required: true,
+    uniqueAutoValue: true,
   },
   FIELD_DEFINITION_LABEL: {
     id: 'label',

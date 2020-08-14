@@ -1,23 +1,28 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const hidden = {
   name: 'Hidden',
   tag: 'Hi',
-  category: coralConstants.fieldCategories.STANDARD,
-  tagColor: coralConstants.fieldCategoryColors.STANDARD,
+  category: constants.fieldCategories.STANDARD.name,
+  tagColor: constants.fieldCategories.STANDARD.color,
   description: 'Hidden Field',
   id: 'hidden',
   fields: [
     FIELD_DEFINITION_ID,
-    FIELD_DEFINITION_LABEL,
-    FIELD_DEFINITION_DESCRIPTION,
-    FIELD_DEFINITION_REQUIRED,
+    {
+      id: 'value',
+      label: 'Value',
+      description: '',
+      type: 'String',
+      required: false,
+    },
   ],
-  /* todo: preview output */
-  src: `<input class="_"
-    type="hidden"
+  src: `<input class="disabled"
+    type="text"
     name="{id}"
+    value="{value}"
+    disabled="true"
     id="{id}"
   />`,
   xml: `<{id}

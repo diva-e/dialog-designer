@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const richtext = {
   name: 'Richtext',
   tag: 'RT',
-  category: coralConstants.fieldCategories.STANDARD,
-  tagColor: coralConstants.fieldCategoryColors.STANDARD,
+  category: constants.fieldCategories.STANDARD.name,
+  tagColor: constants.fieldCategories.STANDARD.color,
   description: 'RTE Field',
   id: 'richtext',
   fields: [
@@ -14,7 +14,6 @@ const richtext = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  /* todo: preview output */
   src: `<div
   class="cq-RichText richtext-container coral-Form-field coral-DecoratedTextfield">
   <input type="hidden"

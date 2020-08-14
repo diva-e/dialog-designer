@@ -1,11 +1,12 @@
+import { ButtonGroup } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const buttongroup = {
   name: 'Buttongroup',
   tag: 'BG',
-  category: coralConstants.fieldCategories.SELECTION,
-  tagColor: coralConstants.fieldCategoryColors.SELECTION,
+  category: constants.fieldCategories.SELECTION.name,
+  tagColor: constants.fieldCategories.SELECTION.color,
   description: 'ButtonGroup',
   id: 'buttongroup',
   fields: [
@@ -13,13 +14,38 @@ const buttongroup = {
     FIELD_DEFINITION_LABEL,
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
+    {
+      id: 'selectionmode',
+      label: 'Selection Mode',
+      description: '',
+      type: 'String',
+      options: [
+        {
+          value: ButtonGroup.selectionMode.SINGLE,
+          caption: 'Single',
+        },
+        {
+          value: ButtonGroup.selectionMode.MULTIPLE,
+          caption: 'Multiple',
+        },
+      ],
+      defaultValue: ButtonGroup.selectionMode.SINGLE,
+      required: false,
+    },
   ],
-  /* todo: preview output */
-  src: `<input class="_"
-    type="text"
-    name="{id}"
-    id="{id}"
-  />`,
+  src: `<div>
+        <label
+          id="label_{id}"
+          class="coral-Form-fieldlabel"
+          for="{id}">{label}</label>
+          <coral-buttongroup
+      selectionmode="{selectionmode}"
+      name="{id}">
+        <button is="coral-button" variant="secondary">One</button>
+        <button is="coral-button" variant="secondary">Two</button>
+        <button is="coral-button" variant="secondary">Three</button>
+      </coral-buttongroup>
+    </div>`,
   xml: `<{id}
     jcr:primaryType="nt:unstructured"
     name="./{id}"
@@ -28,15 +54,15 @@ const buttongroup = {
     selectionMode="{selectionMode}"
     sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup">
     <items jcr:primaryType="nt:unstructured">
-        <left jcr:primaryType="nt:unstructured"
+        <one jcr:primaryType="nt:unstructured"
             name="./one"
             text="One"
             value="one" />
-        <center jcr:primaryType="nt:unstructured"
+        <two jcr:primaryType="nt:unstructured"
             name="./two"
             text="Two"
             value="two" />
-        <right jcr:primaryType="nt:unstructured"
+        <three jcr:primaryType="nt:unstructured"
             name="./three"
             text="Option three"
             value="three" />

@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import fieldValidation from '../../../tools/fieldValidation';
 
 const mapStateToProps = (state) => ({
   component: state.editComponent,
-  fields: state.editComponent && state.editComponent.fields ? state.editComponent.fields : null,
+  fields: state.editComponent && state.editComponent.fields ? fieldValidation(state.editComponent.fields) : null,
 });
 
 const mapDispatchToProps = (dispatch) => ({

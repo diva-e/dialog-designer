@@ -13,6 +13,10 @@ const DropTarget = ({ accepts, path }) => {
     }),
   });
 
+  if (!canDrop) {
+    return null;
+  }
+
   return (
     <div
       ref={drop}

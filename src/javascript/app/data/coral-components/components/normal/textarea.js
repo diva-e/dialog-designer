@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const textarea = {
   name: 'Textarea',
   tag: 'TA',
-  category: coralConstants.fieldCategories.STANDARD,
-  tagColor: coralConstants.fieldCategoryColors.STANDARD,
+  category: constants.fieldCategories.STANDARD.name,
+  tagColor: constants.fieldCategories.STANDARD.color,
   description: 'Textarea',
   id: 'textarea',
   fields: [

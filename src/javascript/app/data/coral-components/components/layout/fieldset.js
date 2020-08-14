@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const fieldset = {
   name: 'Fieldset',
   tag: 'FS',
-  category: coralConstants.fieldCategories.LAYOUT,
-  tagColor: coralConstants.fieldCategoryColors.LAYOUT,
+  category: constants.fieldCategories.LAYOUT.name,
+  tagColor: constants.fieldCategories.LAYOUT.color,
   description: 'Fieldset',
   id: 'fieldset',
   fields: [
@@ -18,12 +18,10 @@ const fieldset = {
       required: true,
     },
   ],
-  /* todo: include sub dropzone */
   src: `<section class="coral-Form-fieldset">
       <h3
         class="coral-Form-fieldset-legend">
         {title}</h3>
-        <!-- other fields here -->
          <drop-target data-accept="datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
     </section>`,
   xml: `<{id}

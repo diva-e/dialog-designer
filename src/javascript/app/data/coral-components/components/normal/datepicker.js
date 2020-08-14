@@ -1,12 +1,12 @@
 import { Datepicker } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const datepicker = {
   name: 'Datepicker',
   tag: 'DP',
-  category: coralConstants.fieldCategories.STANDARD,
-  tagColor: coralConstants.fieldCategoryColors.STANDARD,
+  category: constants.fieldCategories.STANDARD.name,
+  tagColor: constants.fieldCategories.STANDARD.color,
   description: 'Datepicker Field',
   id: 'datepicker',
   fields: [

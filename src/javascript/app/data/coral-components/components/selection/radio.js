@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const radio = {
   name: 'Radio',
   tag: 'Ra',
-  category: coralConstants.fieldCategories.SELECTION,
-  tagColor: coralConstants.fieldCategoryColors.SELECTION,
+  category: constants.fieldCategories.SELECTION.name,
+  tagColor: constants.fieldCategories.SELECTION.color,
   description: 'Radio Button Field',
   id: 'radio',
   fields: [

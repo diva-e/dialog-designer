@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const pathfield = {
   name: 'Pathfield',
   tag: 'PF',
-  category: coralConstants.fieldCategories.RESOURCE,
-  tagColor: coralConstants.fieldCategoryColors.RESOURCE,
+  category: constants.fieldCategories.RESOURCE.name,
+  tagColor: constants.fieldCategories.RESOURCE.color,
   description: 'Path Field',
   id: 'pathfield',
   fields: [

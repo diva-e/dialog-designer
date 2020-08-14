@@ -1,19 +1,26 @@
-// todo: merge into object
-const coralConstants = {
+const constants = {
   fieldCategories: {
-    STANDARD: 'Standard',
-    LAYOUT: 'Layout',
-    AUTHORING_HELPER: 'Authoring Helper',
-    RESOURCE: 'Resource',
-    SELECTION: 'Selection',
-  },
-  fieldCategoryColors: {
-    STANDARD: 'green',
-    LAYOUT: 'orange',
-    AUTHORING_HELPER: 'yellow',
-    RESOURCE: 'lightblue',
-    SELECTION: 'fuchsia',
+    STANDARD: {
+      name: 'Standard',
+      color: 'green',
+    },
+    LAYOUT: {
+      name: 'Layout',
+      color: 'orange',
+    },
+    AUTHORING_HELPER: {
+      name: 'Authoring Helper',
+      color: 'yellow',
+    },
+    RESOURCE: {
+      name: 'Resource',
+      color: 'lightblue',
+    },
+    SELECTION: {
+      name: 'Selection',
+      color: 'fuchsia',
+    },
   },
 };
 
-export default coralConstants;
+export default constants;

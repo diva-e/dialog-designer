@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 import { Alert } from '@adobe/coral-spectrum';
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const alerthint = {
   name: 'Alert',
   tag: 'Al',
-  category: coralConstants.fieldCategories.AUTHORING_HELPER,
-  tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
+  category: constants.fieldCategories.AUTHORING_HELPER.name,
+  tagColor: constants.fieldCategories.AUTHORING_HELPER.color,
   description: 'Helpertext (Hints / Info / Warnings etc.)',
   id: 'alerthint',
   fields: [

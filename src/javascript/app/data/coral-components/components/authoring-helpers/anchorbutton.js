@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const anchorbutton = {
   name: 'Anchorbutton',
   tag: 'AB',
-  category: coralConstants.fieldCategories.AUTHORING_HELPER,
-  tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
+  category: constants.fieldCategories.AUTHORING_HELPER.name,
+  tagColor: constants.fieldCategories.AUTHORING_HELPER.color,
   description: 'Button in different forms / Links',
   id: 'anchorbutton',
   fields: [
@@ -14,12 +14,6 @@ const anchorbutton = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  // createNode: {
-  //   is: 'coral-button',
-  //   creator: () => (
-  //     Coral.Button()
-  //   ),
-  // },
   /* todo: preview output */
   src: '<coral-button>{label}</coral-button>',
   xml: `<{id}

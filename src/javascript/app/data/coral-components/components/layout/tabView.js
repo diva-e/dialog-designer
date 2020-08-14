@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const tabView = {
   name: 'Tab View',
   tag: 'TV',
-  category: coralConstants.fieldCategories.LAYOUT,
-  tagColor: coralConstants.fieldCategoryColors.LAYOUT,
+  category: constants.fieldCategories.LAYOUT.name,
+  tagColor: constants.fieldCategories.LAYOUT.color,
   description: 'Switchable tabs with multiple panels',
   id: 'tabview',
   fields: [
@@ -19,7 +19,6 @@ const tabView = {
       <adapt data-from="tabs" data-to="panel" />
     </coral-panelstack>
   </coral-tabview>`,
-  /* todo: xml output */
   xml: `<content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/foundation/container">
@@ -28,7 +27,6 @@ const tabView = {
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <!-- insert tabs here -->
             <drop-target data-accept="tab" data-name="tabs" />
         </items>
     </content>`,

@@ -8,12 +8,11 @@ const root = {
   fields: [],
   src: `
 <coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" closable="off" open="open" aria-hidden="false" movable="false">
-  <div handle="topTabCapture" coral-tabcapture="top" tabindex="0" role="presentation"></div>
   <div handle="wrapper">
     <div class="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open">
       <div class="_coral-Dialog-header u-coral-openHand" handle="headerWrapper">
         <div class=" _coral-Dialog-dragZone" handle="dragZone"></div>
-        <coral-dialog-header class="cq-dialog-header _coral-Dialog-title" id="coral-id-631">
+        <coral-dialog-header class="cq-dialog-header _coral-Dialog-title">
           <div class="cq-dialog-actions u-coral-pullRight"></div>
           Dialog Preview
         </coral-dialog-header>
@@ -27,8 +26,6 @@ const root = {
       </coral-dialog-footer>
     </div>
   </div>
-  <div handle="intermediateTabCapture" coral-tabcapture="intermediate" tabindex="0" role="presentation"></div>
-  <div handle="bottomTabCapture" coral-tabcapture="bottom" tabindex="0" role="presentation"></div>
 </coral-dialog-preview>`,
   xml: `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root

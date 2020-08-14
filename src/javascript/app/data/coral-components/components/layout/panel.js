@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const panel = {
   name: 'Tab Panel',
   tag: 'TP',
-  category: coralConstants.fieldCategories.LAYOUT,
-  tagColor: coralConstants.fieldCategoryColors.LAYOUT,
+  category: constants.fieldCategories.LAYOUT.name,
+  tagColor: constants.fieldCategories.LAYOUT.color,
   description: 'Tab Panel',
   id: 'panel',
   hidden: true,

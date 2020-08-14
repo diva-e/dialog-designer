@@ -1,12 +1,12 @@
 import { ButtonGroup } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const buttongroup = {
   name: 'Buttongroup',
   tag: 'BG',
-  category: coralConstants.fieldCategories.SELECTION,
-  tagColor: coralConstants.fieldCategoryColors.SELECTION,
+  category: constants.fieldCategories.SELECTION.name,
+  tagColor: constants.fieldCategories.SELECTION.color,
   description: 'ButtonGroup',
   id: 'buttongroup',
   fields: [

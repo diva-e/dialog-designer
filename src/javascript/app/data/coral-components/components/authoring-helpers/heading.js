@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import coralConstants from '../../constants';
+import constants from '../../constants';
 
 const heading = {
   name: 'Heading',
   tag: 'He',
-  category: coralConstants.fieldCategories.AUTHORING_HELPER,
-  tagColor: coralConstants.fieldCategoryColors.AUTHORING_HELPER,
+  category: constants.fieldCategories.AUTHORING_HELPER.name,
+  tagColor: constants.fieldCategories.AUTHORING_HELPER.color,
   description: 'Headline',
   id: 'heading',
   fields: [

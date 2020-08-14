@@ -11,13 +11,14 @@
     z-index: $z-index-edit-component-backdrop;
   }
 
-  input[invalid="true"],
-  input[invalid="true"]:focus,
-  input[invalid="true"]:hover {
+  input[data-is-invalid="true"],
+  input[data-is-invalid="true"]:focus,
+  input[data-is-invalid="true"]:hover {
     border-color: #e14132;
   }
 
-  label[invalid="true"] {
+  label[data-is-invalid="true"],
+  [data-is-error="true"]{
     color: #e14132;
   }
 }

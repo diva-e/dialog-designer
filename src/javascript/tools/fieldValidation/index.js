@@ -23,7 +23,6 @@ const fieldValidation = (fields) => {
     ...field,
     isValid: isValid(field.required, field.validation, field.value),
   }));
-  console.log(enhancedFields);
   return enhancedFields;
 };
 

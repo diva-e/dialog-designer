@@ -59,6 +59,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                             label={field.label}
                             value={field.value}
                             options={field.options}
+                            description={field.description}
                             isValid={field.isValid}
                             required={field.required}
                             updateFieldValue={updateFieldValue}

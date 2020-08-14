@@ -17,7 +17,7 @@ const textfield = {
   ],
   // todo: structureToDOM so that no wrapper is needed
   src: `<div>
-    <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
+      <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
       <input className="coral-Form-field _coral-Textfield"
         type="text"
         name="{id}"

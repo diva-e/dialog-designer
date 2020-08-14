@@ -6,7 +6,7 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
     <label
       id={`label_${id}`}
       className="coral-Form-fieldlabel"
-      invalid={`${!isValid}`}
+      data-is-invalid={`${!isValid}`}
     >
       {label}
       {required ? ' *' : ''}
@@ -20,12 +20,12 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
       id={id}
       aria-labelledby={`label_${id}`}
       variant="default"
-      invalid={`${!isValid}`}
+      data-is-invalid={`${!isValid}`}
       value={value}
       onChange={({ target }) => updateFieldValue(id, target.value)}
     />
 
-    { description ? (
+    { description || !isValid ? (
       <>
         <coral-icon
           ref={addClassesToRef('coral-Form-fieldinfo')}
@@ -34,6 +34,7 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
           role="img"
           aria-label="description"
           size="S"
+          data-is-error={!isValid}
         >
           <svg focusable="false" aria-hidden="true" className="_coral-Icon--svg _coral-Icon">
             <use xlinkHref="/dist/resources/spectrum-icons.svg#spectrum-icon-18-Info" />
@@ -47,7 +48,7 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
           x-out-of-boundaries=""
           className="_coral-Overlay _coral-Tooltip _coral-Tooltip--default _coral-Tooltip--right"
           role="tooltip"
-          variant="default"
+          variant={!isValid ? 'error' : 'default'}
           style={{
             position: 'absolute',
             willChange: 'transform',
@@ -58,7 +59,7 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
           }}
         >
           <span className=" _coral-Tooltip-tip" handle="tip" />
-          <coral-tooltip-content className="_coral-Tooltip-label">{description}</coral-tooltip-content>
+          <coral-tooltip-content className="_coral-Tooltip-label">{!isValid ? 'Current value is not valid' : description}</coral-tooltip-content>
         </coral-tooltip>
       </>
     ) : (

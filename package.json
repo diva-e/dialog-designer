@@ -1,7 +1,7 @@
 {
   "name": "dnd-aem-dialogs",
   "version": "0.0.1",
-  "description": "dnd-aem-dialogs",
+  "description": "AEM Dialog Creator",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "npm run build:clean && npm run build:webpack",
@@ -9,8 +9,23 @@
     "build:webpack": "node scripts/build.js"
   },
   "author": {
-    "name": "diva-e Platforms GmbH - Andreas Hahn"
+    "name": "Andreas Hahn",
+    "email": "andreas.hahn@diva-e.com"
   },
+  "contributors": [
+    {
+      "name":"Andrei Shilov",
+      "email":"andrei.shilov@diva-e.com"
+    },
+    {
+      "name":"Jannik Egger",
+      "email":"jannik.egger@diva-e.com"
+    },
+    {
+      "name":"Thomas Vogt",
+      "email":"thomas.vogt@diva-e.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git@gitlab.diva-e.com:adaptto/dnd-aem-dialogs.git"

@@ -12,10 +12,7 @@ const mapStateToProps = (state, { path, to }) => {
     .map((child) => (
       structureToDom(child, `${path}.`)
     ));
-
-  console.log(children);
-
-  return ({
+return ({
     children,
   });
 };

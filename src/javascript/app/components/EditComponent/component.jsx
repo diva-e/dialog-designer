@@ -54,15 +54,14 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                               value={field.value}
                               updateFieldValue={updateFieldValue}
                             />;
-                          case 'Long':
-                            return
-                            <EditComponentTextfield
+                         case 'Long':
+                         <EditComponentTextfield
                               id={field.id}
                               label={field.label}
-                              value={field.value}
+                           value={field.value}
                               description={field.description}
                               updateFieldValue={updateFieldValue}
-                            />;
+                />;
                           case 'String':
                           default:
                             return
@@ -71,7 +70,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                                   id={field.id}
                                   label={field.label}
                                   value={field.value}
-                                  options={field.options}
+                           options={field.options}
                                   updateFieldValue={updateFieldValue}
                                 />): (
                                 <EditComponentTextfield
@@ -107,6 +106,7 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                             label={field.label}
                             value={field.value}
                             description={field.description}
+                            isValid={field.isValid}
                             updateFieldValue={updateFieldValue}
                           />
                         )

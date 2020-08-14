@@ -1,14 +1,12 @@
 import React from 'react';
 import addClassesToRef from '../../../../tools/addClassesToRef';
 
-const EditComponentTextfield = ({ id, label, value, description, updateFieldValue }) => (
+const EditComponentTextfield = ({ id, label, value, description, updateFieldValue, isValid }) => (
   <>
     <label
       id={`label_${id}`}
       className="coral-Form-fieldlabel"
-    >
-      {label}
-    </label>
+   </label>
     <input
       className="coral-Form-field _coral-Textfield"
       type="text"
@@ -20,6 +18,8 @@ const EditComponentTextfield = ({ id, label, value, description, updateFieldValu
       id={id}
       aria-labelledby={`label_${id}`}
       variant="default"
+      data-isvalid={isValid}
+      invalid={`${!isValid}`}
       value={value}
       onChange={({ target }) => updateFieldValue(id, target.value)}
     />

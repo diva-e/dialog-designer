@@ -15,6 +15,7 @@
   input[data-is-invalid="true"]:focus,
   input[data-is-invalid="true"]:hover {
     border-color: #e14132;
+    color: #e14132;
   }
 
   label[data-is-invalid="true"],

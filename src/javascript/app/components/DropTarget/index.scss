@@ -1,5 +1,5 @@
 .drop-target {
-  display: inline-block;
+  display: block;
   padding: 15px;
   margin: 15px auto;
   border-radius: 5px;
@@ -8,7 +8,7 @@
   color: #2680eb;
   border: 1px solid #2680eb;
   font-size: 12px;
-  width: 446px;
+  width: 90%;
 
   &--can-drop {
     // background: #119911;

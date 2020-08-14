@@ -1,15 +1,4 @@
 .edit-component {
- /*
-  position: fixed;
-  width: 400px;
-  height: 500px;
-  border: $color-grey-30;
-  background: $color-grey-70;
-  left: calc(50vw - 200px);
-  top: calc(50vh - 250px);
-  padding: 20px;
-  */
-
   z-index: $z-index-edit-component;
 
   &__backdrop {
@@ -20,6 +9,16 @@
     top: 0;
     left: 0;
     z-index: $z-index-edit-component-backdrop;
+  }
+
+  input[invalid="true"],
+  input[invalid="true"]:focus,
+  input[invalid="true"]:hover {
+    border-color: #e14132;
+  }
+
+  label[invalid="true"] {
+    color: #e14132;
   }
 }
 

@@ -1,24 +1,25 @@
 import React from 'react';
 import addClassesToRef from '../../../../tools/addClassesToRef';
 
-const EditComponentTextfield = ({ id, label, value, description, updateFieldValue, isValid }) => (
+const EditComponentTextfield = ({ id, label, value, description, updateFieldValue, isValid, required }) => (
   <>
     <label
       id={`label_${id}`}
       className="coral-Form-fieldlabel"
-   </label>
+      invalid={`${!isValid}`}
+    >
+      {label}
+      {required ? ' *' : ''}
+    </label>
     <input
       className="coral-Form-field _coral-Textfield"
       type="text"
       key={id}
       name={id}
       labelledby={`label_${id}`}
-      data-foundation-validation=""
-      data-validation=""
       id={id}
       aria-labelledby={`label_${id}`}
       variant="default"
-      data-isvalid={isValid}
       invalid={`${!isValid}`}
       value={value}
       onChange={({ target }) => updateFieldValue(id, target.value)}

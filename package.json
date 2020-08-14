@@ -14,16 +14,16 @@
   },
   "contributors": [
     {
-      "name":"Andrei Shilov",
-      "email":"andrei.shilov@diva-e.com"
+      "name": "Andrei Shilov",
+      "email": "andrei.shilov@diva-e.com"
     },
     {
-      "name":"Jannik Egger",
-      "email":"jannik.egger@diva-e.com"
+      "name": "Jannik Egger",
+      "email": "jannik.egger@diva-e.com"
     },
     {
-      "name":"Thomas Vogt",
-      "email":"thomas.vogt@diva-e.com"
+      "name": "Thomas Vogt",
+      "email": "thomas.vogt@diva-e.com"
     }
   ],
   "repository": {
@@ -32,7 +32,7 @@
   },
   "private": true,
   "projectConfig": {
-    "PROJECT_NAME": "dnd-aem-dialogs"
+    "PROJECT_NAME": "AEM Dialog Creator"
   },
   "devDependencies": {
     "@adobe/coral-spectrum": "^4.9.0",

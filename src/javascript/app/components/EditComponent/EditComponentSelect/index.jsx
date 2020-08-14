@@ -35,17 +35,20 @@ class EditComponentSelect extends React.Component {
   }
 
   render() {
-    const { label, value } = this.props;
+    const { label, value, isValid, required } = this.props;
     return (
       <>
         <label
           className="coral-Form-fieldlabel"
+          invalid={`${!isValid}`}
         >
           {label}
+          {required ? ' *' : ''}
         </label>
         <coral-select
           value={value}
           ref={this.ref}
+          invalid={`${!isValid}`}
         />
       </>
     );

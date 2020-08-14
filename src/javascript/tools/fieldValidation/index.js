@@ -10,7 +10,7 @@ const isValid = (required, validationRegexString, value) => {
     return false;
   }
 
-  if (isEmpty(validationRegexString)) {
+  if (!isEmpty(validationRegexString)) {
     const vReg = new RegExp(validationRegexString);
     return vReg.test(value);
   }

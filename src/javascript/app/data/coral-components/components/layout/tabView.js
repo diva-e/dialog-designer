@@ -8,7 +8,6 @@ const tabView = {
   tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Switchable tabs with multiple panels',
   id: 'tabview',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
   ],

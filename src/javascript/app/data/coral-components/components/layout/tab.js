@@ -8,7 +8,6 @@ const tab = {
   tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Clickable Tab',
   id: 'tab',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     {

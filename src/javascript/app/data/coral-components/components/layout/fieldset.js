@@ -8,7 +8,6 @@ const fieldset = {
   tagColor: coralConstants.fieldCategoryColors.LAYOUT,
   description: 'Fieldset',
   id: 'fieldset',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     {

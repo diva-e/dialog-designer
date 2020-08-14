@@ -8,7 +8,6 @@ const select = {
   tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Select field',
   id: 'select',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

@@ -9,7 +9,6 @@ const buttongroup = {
   tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'ButtonGroup',
   id: 'buttongroup',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

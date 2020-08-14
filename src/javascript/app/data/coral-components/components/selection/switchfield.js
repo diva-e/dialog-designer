@@ -8,7 +8,6 @@ const switchfield = {
   tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Switch / Toggle Field',
   id: 'switchfield',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

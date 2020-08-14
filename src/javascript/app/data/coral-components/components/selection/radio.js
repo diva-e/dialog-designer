@@ -8,7 +8,6 @@ const radio = {
   tagColor: coralConstants.fieldCategoryColors.SELECTION,
   description: 'Radio Button Field',
   id: 'radio',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_LABEL,

@@ -8,7 +8,6 @@ const fielupload = {
   tagColor: coralConstants.fieldCategoryColors.RESOURCE,
   description: 'Fielupload / Image',
   id: 'fileupload',
-  fieldWrapperNeeded: true,
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_REQUIRED,

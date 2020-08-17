@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { JsonEditor as Editor } from 'jsoneditor-react';
 import 'jsoneditor-react/es/editor.min.css';
 
-const Structure = ({ structure, updateStructure, xmlOutput }) => (
+const Structure = ({
+  structure,
+  updateStructure,
+  xmlOutput,
+}) => (
   <div
     className="structure"
   >
@@ -21,5 +27,11 @@ const Structure = ({ structure, updateStructure, xmlOutput }) => (
     </pre>
   </div>
 );
+
+Structure.propTypes = {
+  structure: PropTypes.object.isRequired,
+  updateStructure: PropTypes.func.isRequired,
+  xmlOutput: PropTypes.string.isRequired,
+};
 
 export default Structure;

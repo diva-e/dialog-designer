@@ -9,7 +9,7 @@
     "Coral": true
   },
   "rules": {
-    "react/prop-types": "off",
+    "react/prop-types": "error",
     // Airbnb overwrites
     "import/no-extraneous-dependencies": [
       "off"

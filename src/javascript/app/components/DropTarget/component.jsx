@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDrop } from 'react-dnd';
 import classNames from 'class-names';
 
@@ -36,4 +37,10 @@ const DropTarget = ({ accepts, path }) => {
   );
 };
 
+DropTarget.propTypes = {
+  accepts: PropTypes.array.isRequired,
+  path: PropTypes.string.isRequired,
+};
+
 export default DropTarget;
+

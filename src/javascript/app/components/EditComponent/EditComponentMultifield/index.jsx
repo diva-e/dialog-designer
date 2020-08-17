@@ -1,7 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import EditComponentTooltip from '../EditComponentTooltip';
 
-const EditComponentMultifield = ({ id, isValid, label, value, description, updateFieldValue }) => (
+const EditComponentMultifield = ({
+  id,
+  isValid,
+  label,
+  value,
+  description,
+  updateFieldValue,
+}) => (
   <>
     <label
       id={`label_${id}`}
@@ -41,5 +50,20 @@ const EditComponentMultifield = ({ id, isValid, label, value, description, updat
     />
   </>
 );
+
+EditComponentMultifield.propTypes = {
+  description: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  isValid: PropTypes.bool.isRequired,
+  label: PropTypes.string,
+  updateFieldValue: PropTypes.func.isRequired,
+  value: PropTypes.string,
+};
+
+EditComponentMultifield.defaultProps = {
+  description: null,
+  label: null,
+  value: null,
+};
 
 export default EditComponentMultifield;

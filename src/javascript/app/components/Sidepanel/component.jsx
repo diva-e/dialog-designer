@@ -1,9 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { useDrag } from 'react-dnd';
 import classNames from 'class-names';
 import coralComponents from '../../data/coral-components';
 
-const Sidepanel = ({ dropNewComponent }) => (
+const Sidepanel = ({
+  dropNewComponent,
+}) => (
   <ul
     className="sidepanel"
   >
@@ -55,5 +59,9 @@ const Sidepanel = ({ dropNewComponent }) => (
     }
   </ul>
 );
+
+Sidepanel.propTypes = {
+  dropNewComponent: PropTypes.object.isRequired,
+};
 
 export default Sidepanel;

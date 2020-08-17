@@ -1,13 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentTextfield from './EditComponentTextfield';
+import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentSelect from './EditComponentSelect';
+import EditComponentNumberfield from './EditComponentNumberfield';
+import EditComponentMultifield from './EditComponentMultifield';
+
+
 import allFieldsValid from '../../../tools/allFieldsValid';
 
-
-const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
-
+const EditComponent = ({
+  fields,
+  updateFieldValue,
+  saveEdit,
+  closeEdit,
+}) => (
   fields ? (
     <>
       <div className="edit-component__backdrop" />
@@ -42,35 +50,56 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
                       key={field.id}
                     >
                       {/* eslint-disable-next-line no-nested-ternary */}
-                      {field.type === 'Boolean' ? (
-                        <EditComponentCheckbox
+                      { field.type === 'Long' ? (
+                        <EditComponentNumberfield
                           id={field.id}
                           label={field.label}
                           value={field.value}
+                          isValid={field.isValid}
                           updateFieldValue={updateFieldValue}
                         />
                       ) : (
-                        field.options && field.options.length ? (
-                          <EditComponentSelect
+                        // eslint-disable-next-line no-nested-ternary
+                        field.type === 'KeyValue' ? (
+                          <EditComponentMultifield
                             id={field.id}
                             label={field.label}
                             value={field.value}
-                            options={field.options}
-                            description={field.description}
-                            isValid={field.isValid}
-                            required={field.required}
                             updateFieldValue={updateFieldValue}
                           />
                         ) : (
-                          <EditComponentTextfield
-                            id={field.id}
-                            label={field.label}
-                            value={field.value}
-                            description={field.description}
-                            isValid={field.isValid}
-                            required={field.required}
-                            updateFieldValue={updateFieldValue}
-                          />
+                          // eslint-disable-next-line no-nested-ternary
+                          field.type === 'Boolean' ? (
+                            <EditComponentCheckbox
+                              id={field.id}
+                              label={field.label}
+                              value={field.value}
+                              updateFieldValue={updateFieldValue}
+                            />
+                          ) : (
+                            field.options && field.options.length ? (
+                              <EditComponentSelect
+                                id={field.id}
+                                label={field.label}
+                                value={field.value}
+                                options={field.options}
+                                description={field.description}
+                                isValid={field.isValid}
+                                required={field.required}
+                                updateFieldValue={updateFieldValue}
+                              />
+                            ) : (
+                              <EditComponentTextfield
+                                id={field.id}
+                                label={field.label}
+                                value={field.value}
+                                description={field.description}
+                                isValid={field.isValid}
+                                required={field.required}
+                                updateFieldValue={updateFieldValue}
+                              />
+                            )
+                          )
                         )
                       )}
                     </div>
@@ -111,5 +140,12 @@ const EditComponent = ({ fields, updateFieldValue, saveEdit, closeEdit }) => (
     </>
   ) : null
 );
+
+EditComponent.propTypes = {
+  closeEdit: PropTypes.func.isRequired,
+  fields: PropTypes.object.isRequired,
+  saveEdit: PropTypes.func.isRequired,
+  updateFieldValue: PropTypes.func.isRequired,
+};
 
 export default EditComponent;

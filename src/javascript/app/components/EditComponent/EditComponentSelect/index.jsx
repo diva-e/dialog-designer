@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import EditComponentTooltip from '../EditComponentTooltip';
 
 class EditComponentSelect extends React.Component {
@@ -21,7 +23,6 @@ class EditComponentSelect extends React.Component {
     });
 
     select.value = this.props.value;
-
     select.addEventListener('change', this.onChange);
   }
 
@@ -36,7 +37,13 @@ class EditComponentSelect extends React.Component {
   }
 
   render() {
-    const { label, value, description, isValid, required } = this.props;
+    const {
+      label,
+      value,
+      description,
+      isValid,
+      required,
+    } = this.props;
     return (
       <>
         <label
@@ -59,5 +66,23 @@ class EditComponentSelect extends React.Component {
     );
   }
 }
+
+EditComponentSelect.propTypes = {
+  description: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  isValid: PropTypes.bool.isRequired,
+  label: PropTypes.string,
+  options: PropTypes.object.isRequired,
+  required: PropTypes.bool,
+  updateFieldValue: PropTypes.func.isRequired,
+  value: PropTypes.string,
+};
+
+EditComponentSelect.defaultProps = {
+  description: null,
+  label: null,
+  required: false,
+  value: null,
+};
 
 export default EditComponentSelect;

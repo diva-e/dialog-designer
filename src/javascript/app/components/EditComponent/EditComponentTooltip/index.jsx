@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import addClassesToRef from '../../../../tools/addClassesToRef';
 
-const EditComponentTooltip = ({ isValid, description }) => {
+const EditComponentTooltip = ({
+  isValid,
+  description,
+}) => {
 
   if (!description && isValid) {
     return null;
@@ -51,4 +56,15 @@ const EditComponentTooltip = ({ isValid, description }) => {
   );
 };
 
+EditComponentTooltip.propTypes = {
+  description: PropTypes.string,
+  isValid: PropTypes.bool.isRequired,
+};
+
+EditComponentTooltip.defaultProps = {
+  description: null,
+};
+
 export default EditComponentTooltip;
+
+

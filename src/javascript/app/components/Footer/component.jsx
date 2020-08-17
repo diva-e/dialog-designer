@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Footer = ({ executeCompleteReset, downloadXML, downloadJSON }) => (
+const Footer = ({
+  executeCompleteReset,
+  downloadXML,
+  downloadJSON,
+}) => (
   <div className="footer">
     <div className="footer_left">
       <button
@@ -41,5 +46,11 @@ const Footer = ({ executeCompleteReset, downloadXML, downloadJSON }) => (
     </div>
   </div>
 );
+
+Footer.propTypes = {
+  downloadJSON: PropTypes.func.isRequired,
+  downloadXML: PropTypes.func.isRequired,
+  executeCompleteReset: PropTypes.func.isRequired,
+};
 
 export default Footer;

@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import EditComponentTooltip from '../EditComponentTooltip';
 
-const EditComponentCheckbox = ({ id, label, updateFieldValue }) => (
-  <div
-    name={id}
-    value="true"
-    data-foundation-validation=""
-    data-validation=""
-    className="coral-Form-field _coral-Checkbox"
-  >
+const EditComponentCheckbox = ({
+  id,
+  label,
+  description,
+  updateFieldValue,
+}) => (
+  <div className="coral-Form-field _coral-Checkbox">
     <input
       type="checkbox"
       handle="input"
@@ -22,7 +23,23 @@ const EditComponentCheckbox = ({ id, label, updateFieldValue }) => (
       <span className="u-coral-screenReaderOnly" handle="screenReaderOnly" hidden="">Select</span>
       <coral-checkbox-label>{label}</coral-checkbox-label>
     </label>
+    <EditComponentTooltip
+      description={description}
+      isValid="true"
+    />
   </div>
 );
+
+EditComponentCheckbox.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  description: PropTypes.string,
+  updateFieldValue: PropTypes.func.isRequired,
+};
+
+EditComponentCheckbox.defaultProps = {
+  label: null,
+  description: null,
+};
 
 export default EditComponentCheckbox;

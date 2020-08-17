@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Contextmenu = ({ startUpdateComponent, deleteComponent, x, y }) => {
 
@@ -38,6 +39,18 @@ const Contextmenu = ({ startUpdateComponent, deleteComponent, x, y }) => {
       </button>
     </div>
   );
+};
+
+Contextmenu.propTypes = {
+  startUpdateComponent: PropTypes.func.isRequired,
+  deleteComponent: PropTypes.func.isRequired,
+  x: PropTypes.number,
+  y: PropTypes.number,
+};
+
+Contextmenu.defaultProps = {
+  x: null,
+  y: null,
 };
 
 export default Contextmenu;

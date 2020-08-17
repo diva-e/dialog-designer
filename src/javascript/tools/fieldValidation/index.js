@@ -1,8 +1,7 @@
-// todo: outsource
 const isEmpty = (value) => value === null || value === undefined || value === '';
 
 const isValid = (required, validationRegexString, value) => {
-  if (!required && isEmpty(validationRegexString)) {
+  if ((isEmpty(required) || !required) && isEmpty(validationRegexString)) {
     return true;
   }
 
@@ -18,12 +17,9 @@ const isValid = (required, validationRegexString, value) => {
   return true;
 };
 
-const fieldValidation = (fields) => {
-  const enhancedFields = fields.map((field) => ({
-    ...field,
-    isValid: isValid(field.required, field.validation, field.value),
-  }));
-  return enhancedFields;
-};
+const fieldValidation = (fields) => fields.map((field) => ({
+  ...field,
+  isValid: isValid(field.required, field.validation, field.value),
+}));
 
 export default fieldValidation;

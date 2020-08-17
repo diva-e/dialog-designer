@@ -26,6 +26,7 @@ module.exports = {
       errors: true,
     },
     contentBase: path.join(process.cwd(), 'src', 'assets'),
+    disableHostCheck: true, // for use in ci-env
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],

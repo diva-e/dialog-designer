@@ -143,9 +143,13 @@ const EditComponent = ({
 
 EditComponent.propTypes = {
   closeEdit: PropTypes.func.isRequired,
-  fields: PropTypes.object.isRequired,
+  fields: PropTypes.object,
   saveEdit: PropTypes.func.isRequired,
   updateFieldValue: PropTypes.func.isRequired,
+};
+
+EditComponent.defaultProps = {
+  fields: null,
 };
 
 export default EditComponent;

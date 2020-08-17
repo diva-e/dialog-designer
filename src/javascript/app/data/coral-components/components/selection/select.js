@@ -14,11 +14,14 @@ const select = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
     {
+      id: 'options',
+      label: 'Options',
+      type: 'KeyValue',
+    },
+    {
       id: 'selectDatasource',
       label: 'Select Datasource',
-      description: '',
       type: 'String',
-      required: false,
     },
   ],
   src: `<div>

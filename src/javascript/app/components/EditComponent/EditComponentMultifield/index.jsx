@@ -34,12 +34,10 @@ const EditComponentMultifield = ({
     />
 
     <coral-multifield>
-      <coral-multifield-item>
-        <input is="coral-textfield" aria-label="input" type="text" value="Basel" />
-      </coral-multifield-item>
       <button coral-multifield-add="" type="button" is="coral-button">Add a field</button>
       <template coral-multifield-template="">
-        <input is="coral-textfield" aria-label="input" type="text" />
+        <input is="coral-textfield" aria-label="input" type="text" name="optionName" value="" />
+        <input is="coral-textfield" aria-label="input" type="text" name="optionValue" value="" />
       </template>
     </coral-multifield>
 

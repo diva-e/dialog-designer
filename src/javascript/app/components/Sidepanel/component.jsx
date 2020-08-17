@@ -61,7 +61,7 @@ const Sidepanel = ({
 );
 
 Sidepanel.propTypes = {
-  dropNewComponent: PropTypes.object.isRequired,
+  dropNewComponent: PropTypes.func.isRequired,
 };
 
 export default Sidepanel;

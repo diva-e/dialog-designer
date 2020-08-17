@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => ({ });
 
 const mapDispatchToProps = (dispatch) => ({
-  addItem: () => {
+  addMultifieldItem: () => {
     dispatch({
-      type: 'ADD_MUTLIFIELD_ITEM',
+      type: 'ADD_MULTIFIELD_ITEM',
     });
   },
 });

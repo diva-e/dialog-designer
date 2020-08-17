@@ -13,6 +13,7 @@ const editComponentMultifieldReducer = (value = {}, action) => {
     return null;
   }
 
+  return value;
 };
 
-export default editComponentMultifieldReducer
+export default editComponentMultifieldReducer;

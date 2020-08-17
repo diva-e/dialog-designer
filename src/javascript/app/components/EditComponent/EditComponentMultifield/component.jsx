@@ -13,6 +13,7 @@ const EditComponentMultifield = ({
   description,
   required,
   updateFieldValue,
+  addMultifieldItem,
 }) => (
   <>
     <label
@@ -45,7 +46,13 @@ const EditComponentMultifield = ({
       ))}
     </ul>
 
-    <button type="button" is="coral-button">Add an option</button>
+    <button
+      type="button"
+      is="coral-button"
+      onClick={() => addMultifieldItem()}
+    >
+      Add an option
+    </button>
 
     <EditComponentTooltip
       description={description}
@@ -61,6 +68,7 @@ EditComponentMultifield.propTypes = {
   required: PropTypes.bool,
   label: PropTypes.string,
   updateFieldValue: PropTypes.func.isRequired,
+  addMultifieldItem: PropTypes.func.isRequired,
   value: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape({
     itemValue: PropTypes.number.isRequired,

@@ -7,6 +7,7 @@ import startDeleteComponentMiddleware from './middlewares/startDeleteComponentMi
 import updateDialogPreviewMiddleware from './middlewares/updateDialogPreviewMiddleware';
 import contextMenuMiddleware from './middlewares/contextMenuMiddleware';
 import localStorageMiddleware from './middlewares/localStorageMiddleware';
+import editComponentMultifieldMiddleware from './middlewares/editComponentMultifieldMiddleware';
 
 export default applyMiddleware(
   dropMiddleware,
@@ -17,4 +18,5 @@ export default applyMiddleware(
   updateDialogPreviewMiddleware,
   contextMenuMiddleware,
   localStorageMiddleware,
+  editComponentMultifieldMiddleware,
 );

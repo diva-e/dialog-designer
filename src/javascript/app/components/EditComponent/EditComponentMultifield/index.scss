@@ -1,0 +1,27 @@
+.edit-component {
+  z-index: $z-index-edit-component;
+
+  &__backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color-grey-70, 0.7);
+    top: 0;
+    left: 0;
+    z-index: $z-index-edit-component-backdrop;
+  }
+
+  input[data-is-invalid="true"],
+  input[data-is-invalid="true"]:focus,
+  input[data-is-invalid="true"]:hover {
+    border-color: #e14132;
+    color: #e14132;
+  }
+
+  label[data-is-invalid="true"],
+  [data-is-error="true"]{
+    color: #e14132;
+  }
+}
+
+

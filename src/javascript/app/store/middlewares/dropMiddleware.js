@@ -61,11 +61,8 @@ const dropMiddleware = (store) => (next) => (action) => {
     console.log(allFieldsValid(fieldValidation(editComponent.fields)));
 
     if (!allFieldsValid(fieldValidation(editComponent.fields))) {
-      console.log('nöööp');
       return;
     }
-
-    console.log('yöööp');
 
     switch (editComponent.where.mode) {
       case 'update':

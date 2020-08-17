@@ -14,6 +14,11 @@ const select = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
     {
+      id: 'placeholder',
+      label: 'Placeholder',
+      type: 'String',
+    },
+    {
       id: 'options',
       label: 'Options',
       type: 'KeyValue',
@@ -26,7 +31,11 @@ const select = {
   ],
   src: `<div>
       <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
-      <coral-select placeholder="{placeholder}" name="{id}" id="{id}">
+      <coral-select
+        placeholder={placeholder}
+        name={id}
+        id={id}
+      >
         <coral-select-item>
           Value One
         </coral-select-item>

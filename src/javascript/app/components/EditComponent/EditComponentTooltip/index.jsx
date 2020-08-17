@@ -58,11 +58,12 @@ const EditComponentTooltip = ({
 
 EditComponentTooltip.propTypes = {
   description: PropTypes.string,
-  isValid: PropTypes.bool.isRequired,
+  isValid: PropTypes.bool,
 };
 
 EditComponentTooltip.defaultProps = {
   description: null,
+  isValid: true,
 };
 
 export default EditComponentTooltip;

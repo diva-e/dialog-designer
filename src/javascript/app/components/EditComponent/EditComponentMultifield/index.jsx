@@ -3,56 +3,126 @@ import PropTypes from 'prop-types';
 
 import EditComponentTooltip from '../EditComponentTooltip';
 
-const EditComponentMultifield = ({
-  id,
-  isValid,
-  label,
-  value,
-  description,
-  updateFieldValue,
-}) => (
-  <>
-    <label
-      id={`label_${id}`}
-      className="coral-Form-fieldlabel"
-    >
-      {label}
-    </label>
-    <input
-      className="coral-Form-field _coral-Textfield"
-      type="text"
-      key={id}
-      name={id}
-      labelledby={`label_${id}`}
-      data-foundation-validation=""
-      data-validation=""
-      id={id}
-      aria-labelledby={`label_${id}`}
-      variant="default"
-      value={value}
-      onChange={({ target }) => updateFieldValue(id, target.value)}
-    />
+class EditComponentMultifield extends React.Component {
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
+    this.onChange = this.onChange.bind(this);
+  }
 
-    <coral-multifield>
-      <button coral-multifield-add="" type="button" is="coral-button">Add a field</button>
-      <template coral-multifield-template="">
-        <input is="coral-textfield" aria-label="input" type="text" name="optionName" value="" />
-        <input is="coral-textfield" aria-label="input" type="text" name="optionValue" value="" />
-      </template>
-    </coral-multifield>
+  componentDidMount() {
+    const select = this.ref.current;
 
+    // this.props.options.forEach((option) => {
+    //   select.items.add({
+    //     value: option.value,
+    //     content: {
+    //       textContent: option.caption,
+    //     },
+    //   });
+    // });
 
-    <EditComponentTooltip
-      description={description}
-      isValid={isValid}
-    />
-  </>
-);
+    select.value = this.props.value;
+    select.addEventListener('change', this.onChange);
+  }
+
+  componentWillUnmount() {
+    const select = this.ref.current;
+    select.removeEventListener('change', this.onChange);
+  }
+
+  onChange({ target }) {
+    const { updateFieldValue, id } = this.props;
+    updateFieldValue(id, target.value);
+  }
+
+  render() {
+    const {
+      id,
+      isValid,
+      label,
+      value,
+      description,
+      required,
+      updateFieldValue,
+    } = this.props;
+    return (
+      <>
+        <label
+          id={`label_${id}`}
+          className="coral-Form-fieldlabel"
+        >
+          {label}
+          {required ? ' *' : ''}
+        </label>
+        <input
+          className="coral-Form-field _coral-Textfield"
+          type="text"
+          name={id}
+          labelledby={`label_${id}`}
+          data-foundation-validation=""
+          data-validation=""
+          id={id}
+          aria-labelledby={`label_${id}`}
+          variant="default"
+          value={value}
+          onChange={({ target }) => updateFieldValue(id, target.value)}
+        />
+
+        <coral-multifield
+          ref={this.ref}
+        >
+          <coral-multifield-item>
+            <input
+              className="coral-Form-field _coral-Textfield"
+              type="text"
+              name={`key_${id}`}
+              variant="default"
+              value={value}
+              placeholder="key"
+            />
+            <input
+              className="coral-Form-field _coral-Textfield"
+              type="text"
+              name={`value_${id}`}
+              variant="default"
+              value={value}
+              placeholder="value"
+            />
+          </coral-multifield-item>
+          <button coral-multifield-add type="button" is="coral-button">Add an option</button>
+          <template coral-multifield-template>
+            <input
+              className="coral-Form-field _coral-Textfield"
+              type="text"
+              name={`key_${id}`}
+              variant="default"
+              value={value}
+            />
+            <input
+              className="coral-Form-field _coral-Textfield"
+              type="text"
+              name={`value_${id}`}
+              variant="default"
+              value={value}
+            />
+          </template>
+        </coral-multifield>
+
+        <EditComponentTooltip
+          description={description}
+          isValid={isValid}
+        />
+      </>
+    );
+  }
+}
 
 EditComponentMultifield.propTypes = {
   description: PropTypes.string,
   id: PropTypes.string.isRequired,
   isValid: PropTypes.bool.isRequired,
+  required: PropTypes.bool,
   label: PropTypes.string,
   updateFieldValue: PropTypes.func.isRequired,
   value: PropTypes.string,
@@ -62,6 +132,7 @@ EditComponentMultifield.defaultProps = {
   description: null,
   label: null,
   value: null,
+  required: false,
 };
 
 export default EditComponentMultifield;

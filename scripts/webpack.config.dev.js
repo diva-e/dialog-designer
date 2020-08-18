@@ -5,8 +5,10 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const packageJson = require('../package.json');
 const fieldDefinitions = require('./fieldDefinitions');
+const setupServer = require('./setupServer.js');
 
 const defineFieldDefinitions = {};
+
 
 Object.keys(fieldDefinitions).forEach((definitionName) => {
   defineFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
@@ -27,6 +29,7 @@ module.exports = {
     },
     contentBase: path.join(process.cwd(), 'src', 'assets'),
     disableHostCheck: true, // for use in ci-env
+    before: setupServer,
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],

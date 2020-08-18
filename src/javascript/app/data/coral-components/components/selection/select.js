@@ -30,11 +30,16 @@ const select = {
     },
   ],
   src: `<div>
-      <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
+      <label
+        id="label_{id}"
+        class="coral-Form-fieldlabel"
+      >
+        {label}
+      </label>
       <coral-select
-        placeholder={placeholder}
-        name={id}
-        id={id}
+        name="{id}"
+        id="{id}"
+        placeholder="{placeholder}"
       >
         <coral-select-item>
           Value One

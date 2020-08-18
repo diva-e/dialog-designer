@@ -19,7 +19,6 @@ const getFieldDefaultValue = (type) => {
   }
 };
 
-
 const getFields = ({ what }, getUniqueFieldValue) => {
   const comp = coralComponents.find(({ id }) => id === what);
   // todo: prevent duplicate id of fields
@@ -62,20 +61,13 @@ const getUniqueFieldValue = (store) => (fieldName, prefix) => {
 
 
 const dropMiddleware = (store) => (next) => (action) => {
-
   if (action.type === 'DROP_NEW_COMPONENT') {
-
     const fields = getFields(action.payload, getUniqueFieldValue(store));
-
     Object.assign(action.payload, { fields });
   }
 
   if (action.type === 'SAVE_EDIT_COMPONENT') {
     const { structure, editComponent } = store.getState();
-
-    console.log(fieldValidation(editComponent.fields));
-    console.log(allFieldsValid(fieldValidation(editComponent.fields)));
-
     if (!allFieldsValid(fieldValidation(editComponent.fields))) {
       return;
     }
@@ -100,10 +92,6 @@ const dropMiddleware = (store) => (next) => (action) => {
       type: 'SET_STRUCTURE',
       payload: { ...structure },
     });
-  }
-
-  if (action.type === 'CLOSE_EDIT_COMPONENT') {
-    // nothing for now
   }
 
   next(action);

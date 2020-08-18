@@ -1,7 +1,6 @@
 const CONTEXTMENU_OPEN_CLASS = 'contextmenu-opened';
 
 const contextMenuMiddleware = (store) => {
-
   const unselectActiveComponentWrappers = () => {
     [...document.getElementsByClassName(CONTEXTMENU_OPEN_CLASS)]
       .forEach((openedContextmenuField) => {
@@ -17,9 +16,7 @@ const contextMenuMiddleware = (store) => {
 
     // close contextmenu if click outside
     if (ev.target.closest('.contextmenu') === null) {
-
       unselectActiveComponentWrappers();
-
       store.dispatch({
         type: 'CLOSE_CONTEXTMENU',
       });
@@ -29,18 +26,14 @@ const contextMenuMiddleware = (store) => {
   document.getElementById('preview').addEventListener('contextmenu', (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
-
     const componentWrapper = ev.target.closest('.has-contextmenu');
-
     if (!componentWrapper) {
       return;
     }
 
     unselectActiveComponentWrappers();
     componentWrapper.classList.add(CONTEXTMENU_OPEN_CLASS);
-
     const { top, left } = componentWrapper.getBoundingClientRect();
-
     store.dispatch({
       type: 'OPEN_CONTEXTMENU',
       path: componentWrapper.dataset.path,
@@ -50,7 +43,6 @@ const contextMenuMiddleware = (store) => {
   });
 
   return (next) => (action) => {
-
     if (action.type === 'CLOSE_EDIT_COMPONENT') {
       unselectActiveComponentWrappers();
     }

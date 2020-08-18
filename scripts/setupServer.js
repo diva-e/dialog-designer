@@ -3,7 +3,7 @@ const queryString = require('query-string');
 
 const setupServer = (app) => {
 
-  const basicAuthUserPass = process.argv.indexOf('BASIC_AUTH_USER_PASS');
+  const basicAuthUserPass = process.argv.BASIC_AUTH_USER_PASS;
 
   if (basicAuthUserPass) {
     const users = queryString.parse(basicAuthUserPass);

@@ -14,6 +14,12 @@ const structureToDom = (structureNode, path = '') => {
 
   if (structureNode.properties && structureNode.properties.forEach) {
     structureNode.properties.forEach((field) => {
+      const fieldDefinition = nodeData.fields.find(({ id }) => id === field.id);
+      if (typeof fieldDefinition.renderItem === 'function') {
+        textReplace[field.id] = fieldDefinition.renderItem(field.value);
+        return;
+      }
+
       textReplace[field.id] = field.value;
     });
   }
@@ -86,7 +92,19 @@ const structureToDom = (structureNode, path = '') => {
       });
     }
   });
+  /*
+  [...doc.querySelectorAll('itemproducer')].forEach((itemproducer) => {
+    const template = itemproducer.dataset.template;
+    const items = itemproducer.dataset.items;
+    console.log({ template });
+    console.log({ items });
 
+    if (structureNode.children) {
+        itemproducer.parentNode.insertBefore(nextChild, itemproducer);
+    }
+
+  });
+*/
   return doc.body.firstElementChild;
 };
 

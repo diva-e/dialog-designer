@@ -22,6 +22,12 @@ const select = {
       id: 'options',
       label: 'Options',
       type: 'KeyValue',
+      // Todo: allow optional template string
+      renderItem: (value) => (
+        value.map(({ itemCaption, itemValue }) => (
+          `<coral-select-item data-value="${itemValue}">${itemCaption}</coral-select-item>`
+        )).join('')
+      ),
     },
     {
       id: 'selectDatasource',
@@ -41,15 +47,7 @@ const select = {
         id="{id}"
         placeholder="{placeholder}"
       >
-        <coral-select-item>
-          Value One
-        </coral-select-item>
-        <coral-select-item>
-          Value Two
-        </coral-select-item>
-        <coral-select-item>
-          Value Three
-        </coral-select-item>
+        {options}
       </coral-select>
     </div>`,
   xml: `<{id}

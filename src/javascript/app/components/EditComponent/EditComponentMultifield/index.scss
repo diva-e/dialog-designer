@@ -23,8 +23,30 @@
     color: #e14132;
   }
 
-  input.coral-Form-field._coral-Textfield._coral-Textfield--key-value {
-    width: 40%;
+  .edit-multifield {
+    ul {
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    input.coral-Form-field._coral-Textfield._coral-Textfield--key-value {
+      width: 40%;
+    }
+
+    ._coral-Button--primary._coral-Button--quiet {
+      width: 32px;
+      padding: 2px;
+      min-width: 32px;
+      margin-left: 6px;
+
+      &:hover {
+        border-color: transparent;
+        background-color: transparent;
+      }
+    }
   }
 }
 

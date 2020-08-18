@@ -8,33 +8,37 @@ class EditComponentMultifield extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: props.value || [],
+      value: props.value || [],
     };
     this.updateParent = this.updateParent.bind(this);
   }
 
   addMultifieldItem() {
-    const { items } = this.state;
-    items.push({
+    const { value } = this.state;
+    value.push({
       itemValue: '',
       itemCaption: '',
     });
     this.setState({
-      items: [...items],
+      value: [...value],
     }, this.updateParent);
   }
 
   deleteMultifieldItem(index) {
-    console.log('delete');
-    // , this.updateParent
+    console.log('delete', index);
+    const { value } = this.state;
+    value.splice(index, 1);
+    this.setState({
+      value: [...value],
+    }, this.updateParent);
   }
 
   updateMultifieldItem(updatedItem, updateIndex) {
     console.log('update', updatedItem);
-    const { items } = this.state;
+    const { value } = this.state;
 
     this.setState({
-      items: [...items.map((item, index) => (
+      value: [...value.map((item, index) => (
         (index === updateIndex) ? updatedItem : item
       ))],
     }, this.updateParent);
@@ -42,11 +46,11 @@ class EditComponentMultifield extends React.Component {
 
   updateParent() {
     console.log(this.state);
-    this.props.updateFieldValue(this.props.id, this.state.items);
+    this.props.updateFieldValue(this.props.id, this.state.value);
   }
 
   render() {
-    let {
+    const {
       id,
       isValid,
       label,
@@ -56,7 +60,7 @@ class EditComponentMultifield extends React.Component {
       updateFieldValue,
     } = this.props;
     return (
-      <>
+      <div className="edit-multifield">
         <label
           id={`label_${id}`}
           className="coral-Form-fieldlabel"
@@ -66,7 +70,7 @@ class EditComponentMultifield extends React.Component {
         </label>
 
         <ul>
-          {this.state.items.map((item, index) => (
+          {this.state.value.map((item, index) => (
             <EditComponentMultifieldItem
               key={index}
               itemValue={item.itemValue}
@@ -86,14 +90,14 @@ class EditComponentMultifield extends React.Component {
           is="coral-button"
           onClick={() => this.addMultifieldItem()}
         >
-          Add an option
+          + Add an option
         </button>
 
         <EditComponentTooltip
           description={description}
           isValid={isValid}
         />
-      </>
+      </div>
     );
   }
 }

@@ -6,7 +6,6 @@ const updateDialogPreviewMiddleware = (store) => {
   previewContainer.innerHTML = structureToDom(structure).outerHTML;
   return (next) => (action) => {
     if (action.type === 'SET_STRUCTURE') {
-      console.log(action.payload);
       previewContainer.innerHTML = structureToDom(action.payload).outerHTML;
     }
 

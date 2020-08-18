@@ -4,12 +4,28 @@ import coralComponents from '../../data/coral-components';
 import allFieldsValid from '../../../tools/allFieldsValid';
 import fieldValidation from '../../../tools/fieldValidation';
 
+const getFieldDefaultValue = (type) => {
+  switch (type) {
+    case 'KeyValue':
+      return [];
+    case 'String':
+      return '';
+    case 'Long':
+      return '';
+    case 'Boolean':
+      return '';
+    default:
+      return '';
+  }
+};
+
+
 const getFields = ({ what }, getUniqueFieldValue) => {
   const comp = coralComponents.find(({ id }) => id === what);
-  // todo prevent duplicate id of fields
+  // todo: prevent duplicate id of fields
   return comp.fields.map((field) => {
 
-    let value = field.defaultValue || '';
+    let value = field.defaultValue || getFieldDefaultValue(field.type);
     if (field.uniqueAutoValue) {
       value = getUniqueFieldValue(field.id, what);
     }

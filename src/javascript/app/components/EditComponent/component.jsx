@@ -5,7 +5,7 @@ import EditComponentTextfield from './EditComponentTextfield';
 import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentSelect from './EditComponentSelect';
 import EditComponentNumberfield from './EditComponentNumberfield';
-import EditComponentMultifield from './EditComponentMultifield/component';
+import EditComponentMultifield from './EditComponentMultifield';
 
 
 import allFieldsValid from '../../../tools/allFieldsValid';
@@ -68,7 +68,6 @@ const EditComponent = ({
                             value={field.value}
                             isValid={field.isValid}
                             required={field.required}
-                            items={field.items}
                             description={field.description}
                             updateFieldValue={updateFieldValue}
                           />

@@ -15,8 +15,10 @@ const EditComponentMultifieldItem = ({
         itemCaption: target.value,
         itemValue,
       })}
+      className="coral-Form-field _coral-Textfield _coral-Textfield--key-value"
+      placeholder="Caption"
     />
-    :
+    &nbsp;
     <input
       type="text"
       value={itemValue}
@@ -24,6 +26,8 @@ const EditComponentMultifieldItem = ({
         itemCaption,
         itemValue: target.value,
       })}
+      className="coral-Form-field _coral-Textfield _coral-Textfield--key-value"
+      placeholder="Value"
     />
     <button
       is="coral-anchorbutton"

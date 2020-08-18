@@ -73,9 +73,11 @@ class EditComponentMultifield extends React.Component {
           {this.state.value.map((item, index) => (
             <EditComponentMultifieldItem
               key={index}
+              itemIndex={parseInt(index, 10)}
               itemValue={item.itemValue}
               itemCaption={item.itemCaption}
               deleteMultifieldItem={() => {
+                console.log('predelete');
                 this.deleteMultifieldItem(index);
               }}
               updateMultifieldItem={(updatedItem) => {

@@ -6,7 +6,7 @@ const EditComponentMultifieldItem = ({
   itemValue,
   deleteMultifieldItem,
   updateMultifieldItem,
-  key,
+  itemIndex,
 }) => (
   <li>
     <input
@@ -37,7 +37,7 @@ const EditComponentMultifieldItem = ({
       title="Delete"
       size="M"
       type="submit"
-      onClick={() => deleteMultifieldItem(key)}
+      onClick={() => deleteMultifieldItem(itemIndex)}
     >
       <coral-button-label className="_coral-Button-label" />
     </button>
@@ -49,7 +49,7 @@ EditComponentMultifieldItem.propTypes = {
   itemValue: PropTypes.string.isRequired,
   deleteMultifieldItem: PropTypes.func.isRequired,
   updateMultifieldItem: PropTypes.func.isRequired,
-  key: PropTypes.string.isRequired,
+  itemIndex: PropTypes.number.isRequired,
 };
 
 export default EditComponentMultifieldItem;

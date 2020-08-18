@@ -6,7 +6,7 @@ const setupServer = (app) => {
   const basicAuthUserPass = process.env.BASIC_AUTH_USER_PASS;
 
   if (basicAuthUserPass) {
-    const users = queryString.parse(basicAuthUserPass);
+    const users = queryString.parse(Buffer.from(basicAuthUserPass, 'base64').toString('ascii'));
 
     const config = {
       users,
@@ -20,3 +20,4 @@ const setupServer = (app) => {
 };
 
 module.exports = setupServer;
+

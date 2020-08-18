@@ -1,6 +1,6 @@
 include:
   - project: kingfisher/extensions/ci-jobs
-    ref: v1.1.1
+    ref: v1.1.2
     file: /gitlab-ci.yml
 
 # all pipeline configuration comes from included CI config

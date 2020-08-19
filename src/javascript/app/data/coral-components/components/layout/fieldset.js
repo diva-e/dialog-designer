@@ -14,7 +14,7 @@ const fieldset = {
       id: 'title',
       label: 'Title',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       required: true,
     },
   ],
@@ -27,13 +27,11 @@ const fieldset = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-    jcr:title="{title}"
-    >
+    jcr:title="{title}">
       <items jcr:primaryType="nt:unstructured">
-        <!-- other fields here -->
-        <drop-target data-name="content" />
+        <drop-target data-name="fscontent" />
       </items>
-    </{id}>`,
+  </{id}>`,
 };
 
 export default fieldset;

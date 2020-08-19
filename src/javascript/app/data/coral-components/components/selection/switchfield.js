@@ -26,7 +26,8 @@ const switchfield = {
     name="./{id}"
     checked="{Boolean}true"
     required="{required}"
-    value="{value}"/>`,
+    value="{value}"
+  />`,
 };
 
 export default switchfield;

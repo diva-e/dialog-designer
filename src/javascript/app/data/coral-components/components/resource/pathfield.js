@@ -17,14 +17,14 @@ const pathfield = {
       id: 'rootPath',
       label: 'Root Path',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       required: true,
     },
     {
       id: 'suffix',
       label: 'Suffix',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       defaultValue: '.html',
       required: false,
     },
@@ -80,12 +80,14 @@ const pathfield = {
     </div>
   </div>`,
   xmlOutput: `<{id}
-   jcr:primaryType="nt:unstructured"
-   sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-   fieldLabel="{label}"
-   name="./{id}"
-   rootPath="{rootPath}"
-   suffix="{suffix}"/>`,
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+    name="./{id}"
+    fieldLabel="{label}"
+    fieldDescription="{description}"
+    rootPath="{rootPath}"
+    suffix="{suffix}"
+  />`,
 };
 
 export default pathfield;

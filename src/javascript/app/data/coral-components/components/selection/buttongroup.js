@@ -18,7 +18,7 @@ const buttongroup = {
       id: 'selectionmode',
       label: 'Selection Mode',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       options: [
         {
           value: ButtonGroup.selectionMode.SINGLE,
@@ -35,7 +35,7 @@ const buttongroup = {
     {
       id: 'buttons',
       label: 'Buttons',
-      type: 'KeyValue',
+      type: constants.fieldTypes.KEY_VALUE,
       renderItem: (value, mode) => {
         if (mode === 'xml-output') {
           return value.map(({ itemId, itemCaption, itemValue }) => (
@@ -62,16 +62,17 @@ const buttongroup = {
     </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup"
     name="./{id}"
     fieldLabel="{label}"
+    fieldDescription="{description}"
     required="{required}"
     selectionMode="{selectionMode}"
-    sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup">
+  >
     <items jcr:primaryType="nt:unstructured">
         {buttons}
     </items>
-</{id}>`,
+  </{id}>`,
 };
 
-// todo: anti sample it
 export default buttongroup;

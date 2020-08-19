@@ -37,12 +37,13 @@ const checkbox = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-    text="Hide Mismatches"
-    fieldDescription="{description}"
+    name="./{id}"
     fieldLabel="{label}"
-    name="./{id}}"
+    fieldDescription="{description}"
+    text="{label}"
     value="{Boolean}true"
-    uncheckedValue="{Boolean}false"/>`,
+    uncheckedValue="{Boolean}false"
+  />`,
 };
 
 export default checkbox;

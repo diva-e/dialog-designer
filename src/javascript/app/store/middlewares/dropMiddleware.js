@@ -1,18 +1,20 @@
 import objectPath from 'object-path';
 import { walkObject } from 'walk-object';
+import constants from '../../data/coral-components/constants';
+
 import coralComponents from '../../data/coral-components';
 import allFieldsValid from '../../../tools/allFieldsValid';
 import fieldValidation from '../../../tools/fieldValidation';
 
 const getFieldDefaultValue = (type) => {
   switch (type) {
-    case 'KeyValue':
+    case constants.fieldTypes.KEY_VALUE:
       return [];
-    case 'String':
+    case constants.fieldTypes.STRING:
       return '';
-    case 'Long':
+    case constants.fieldTypes.LONG:
       return '';
-    case 'Boolean':
+    case constants.fieldTypes.BOOLEAN:
       return '';
     default:
       return '';

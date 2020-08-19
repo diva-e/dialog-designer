@@ -27,7 +27,7 @@ const panel = {
     </div>
   </coral-panel-content>
 </coral-panel>`,
-  xmlOutput: '<!-- comment -->',
+  xmlOutput: '<!-- no output -->',
 };
 
 export default panel;

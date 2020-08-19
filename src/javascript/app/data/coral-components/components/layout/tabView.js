@@ -19,17 +19,14 @@ const tabView = {
       <adapt data-from="tabs" data-to="panel" />
     </coral-panelstack>
   </coral-tabview>`,
-  xmlOutput: `<content
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/foundation/container">
-        <layout
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
-            type="nav"/>
-        <items jcr:primaryType="nt:unstructured">
-            <drop-target data-accept="tab" data-name="tabs" />
-        </items>
-    </content>`,
+  xmlOutput: `<{id}
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+    maximized="{Boolean}true">
+    <items jcr:primaryType="nt:unstructured">
+      <drop-target data-accept="tab" data-name="tabs" />
+    </items>
+  </{id}>`,
 };
 
 export default tabView;

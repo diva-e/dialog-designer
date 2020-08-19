@@ -18,7 +18,7 @@ const datepicker = {
       id: 'type',
       label: 'Type',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       options: [
         {
           value: Datepicker.type.DATE,
@@ -40,21 +40,21 @@ const datepicker = {
       id: 'placeholder',
       label: 'Placeholder',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       defaultValue: 'Choose a date',
     },
     {
       id: 'displayformat',
       label: 'Display Format',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       defaultValue: 'YYYY-MM-DD',
     },
     {
       id: 'startday',
       label: 'Startday',
       description: '',
-      type: 'Long',
+      type: constants.fieldTypes.LONG,
       defaultValue: '0',
     },
   ],
@@ -75,11 +75,13 @@ const datepicker = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
-    displayedFormat="{displayformat}"
-    fieldLabel="{label}"
     name="./{id}"
+    fieldLabel="{label}"
+    fieldDescription="{description}"
+    displayedFormat="{displayformat}"
     type="{datetime}"
-    typeHint="Date"/>`,
+    typeHint="Date"
+  />`,
 };
 
 export default datepicker;

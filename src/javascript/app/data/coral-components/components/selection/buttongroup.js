@@ -33,7 +33,7 @@ const buttongroup = {
       required: false,
     },
   ],
-  src: `<div>
+  previewOutput: `<div>
         <label
           id="label_{id}"
           class="coral-Form-fieldlabel"
@@ -46,7 +46,7 @@ const buttongroup = {
         <button is="coral-button" variant="secondary">Three</button>
       </coral-buttongroup>
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     name="./{id}"
     fieldLabel="{label}"

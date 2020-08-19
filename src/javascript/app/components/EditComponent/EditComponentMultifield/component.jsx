@@ -25,7 +25,6 @@ class EditComponentMultifield extends React.Component {
   }
 
   deleteMultifieldItem(index) {
-    console.log('delete', index);
     const { value } = this.state;
     value.splice(index, 1);
     this.setState({
@@ -34,7 +33,6 @@ class EditComponentMultifield extends React.Component {
   }
 
   updateMultifieldItem(updatedItem, updateIndex) {
-    console.log('update', updatedItem);
     const { value } = this.state;
 
     this.setState({
@@ -45,7 +43,6 @@ class EditComponentMultifield extends React.Component {
   }
 
   updateParent() {
-    console.log(this.state);
     this.props.updateFieldValue(this.props.id, this.state.value);
   }
 
@@ -76,7 +73,6 @@ class EditComponentMultifield extends React.Component {
               itemValue={item.itemValue}
               itemCaption={item.itemCaption}
               deleteMultifieldItem={() => {
-                console.log('predelete');
                 this.deleteMultifieldItem(index);
               }}
               updateMultifieldItem={(updatedItem) => {

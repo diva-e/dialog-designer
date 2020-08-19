@@ -14,7 +14,7 @@ const checkbox = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  src: `<coral-checkbox
+  previewOutput: `<coral-checkbox
       name={id}
       value="true"
       class="coral-Form-field _coral-Checkbox"
@@ -34,7 +34,7 @@ const checkbox = {
         <coral-checkbox-label>{label}</coral-checkbox-label>
       </label>
     </coral-checkbox>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
     text="Hide Mismatches"

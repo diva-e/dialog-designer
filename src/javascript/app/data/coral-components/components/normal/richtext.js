@@ -14,7 +14,7 @@ const richtext = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  src: `<div
+  previewOutput: `<div
   class="cq-RichText richtext-container coral-Form-field coral-DecoratedTextfield">
   <input type="hidden"
     data-cq-richtext-input="true"
@@ -845,7 +845,7 @@ const richtext = {
   </div>
 
 </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
     fieldDescription="{label}"

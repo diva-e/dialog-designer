@@ -17,9 +17,7 @@ const wrapNS = (xml) => {
 };
 
 const structureToXML = (structureNode, path = '') => {
-
   const nodeData = coralComponents.find((coralComponent) => coralComponent.id === structureNode.type);
-
   if (!nodeData) {
     return null;
   }
@@ -44,7 +42,7 @@ const structureToXML = (structureNode, path = '') => {
   }
 
   // Fill any textcontent placeholders
-  const nodeDomString = stringFormat(nodeData.xml, textReplace);
+  const nodeDomString = stringFormat(nodeData.xmlOutput, textReplace);
 
   const parser = new DOMParser();
   const doc = parser.parseFromString(wrapNS(nodeDomString), 'text/xml');

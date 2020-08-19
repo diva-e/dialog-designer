@@ -74,11 +74,11 @@ const alerthint = {
       required: false,
     },
   ],
-  src: `<coral-alert size="{size}" variant="{variant}" id="{id}">
+  previewOutput: `<coral-alert size="{size}" variant="{variant}" id="{id}">
           <coral-alert-header>{header}</coral-alert-header>
           <coral-alert-content>{message}</coral-alert-content>
         </coral-alert>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
    granite:class="cmp-form-textfield-readonlyselected-alert"
    jcr:primaryType="nt:unstructured"
    sling:resourceType="granite/ui/components/coral/foundation/alert"

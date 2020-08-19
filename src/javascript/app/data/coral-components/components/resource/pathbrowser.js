@@ -29,7 +29,7 @@ const pathbrowser = {
       required: false,
     },
   ],
-  src: `<div>
+  previewOutput: `<div>
   <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
   <div
       class="coral-Form-field"
@@ -79,7 +79,7 @@ const pathbrowser = {
       </div>
     </div>
   </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
     fieldLabel="{label}"

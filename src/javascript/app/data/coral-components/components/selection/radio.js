@@ -14,7 +14,7 @@ const radio = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  src: `<div>
+  previewOutput: `<div>
     <label
       id="label_{id}"
       class="coral-Form-fieldlabel"
@@ -26,7 +26,7 @@ const radio = {
         name={id}
         value="two">Option Two</coral-radio>
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
    jcr:primaryType="nt:unstructured"
    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
    name="./{id}"

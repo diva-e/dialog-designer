@@ -24,7 +24,7 @@ const structureToDom = (structureNode, path = '') => {
     });
   }
 
-  const htmlSource = nodeData.src.trim();
+  const htmlSource = nodeData.previewOutput.trim();
 
   const nodeDomString = stringFormat(htmlSource, textReplace)
     // replace * with a list of all components
@@ -92,19 +92,7 @@ const structureToDom = (structureNode, path = '') => {
       });
     }
   });
-  /*
-  [...doc.querySelectorAll('itemproducer')].forEach((itemproducer) => {
-    const template = itemproducer.dataset.template;
-    const items = itemproducer.dataset.items;
-    console.log({ template });
-    console.log({ items });
 
-    if (structureNode.children) {
-        itemproducer.parentNode.insertBefore(nextChild, itemproducer);
-    }
-
-  });
-*/
   return doc.body.firstElementChild;
 };
 

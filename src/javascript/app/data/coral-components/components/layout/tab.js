@@ -18,12 +18,12 @@ const tab = {
       required: true,
     },
   ],
-  src: `<coral-tab>
+  previewOutput: `<coral-tab>
       <coral-tab-label>
         {title}
       </coral-tab-label>
     </coral-tab>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
         jcr:primaryType="nt:unstructured"
         jcr:title="{title}"
         sling:resourceType="granite/ui/components/foundation/section">

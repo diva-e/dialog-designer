@@ -19,7 +19,7 @@ const fielupload = {
       required: true,
     },
   ],
-  src: `<div
+  previewOutput: `<div
     class="coral-Form-field cq-FileUpload cq-droptarget _coral-FileUpload"
     name="./file"
     async=""
@@ -54,7 +54,7 @@ const fielupload = {
       </div>
     </div>
   </div>`,
-  xml: `<file
+  xmlOutput: `<file
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
     autoStart="{Boolean}false"

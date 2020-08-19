@@ -52,10 +52,10 @@ const heading = {
       required: true,
     },
   ],
-  src: `<h{level} id="{id}">
+  previewOutput: `<h{level} id="{id}">
         {text}
     </h{level}>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/heading"
     level="{level}"

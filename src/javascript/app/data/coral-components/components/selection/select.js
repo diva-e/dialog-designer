@@ -35,7 +35,7 @@ const select = {
       type: 'String',
     },
   ],
-  src: `<div>
+  previewOutput: `<div>
       <label
         id="label_{id}"
         class="coral-Form-fieldlabel"
@@ -50,7 +50,7 @@ const select = {
         {options}
       </coral-select>
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
    granite:class="cmp-options--editor-type-v1"
    jcr:primaryType="nt:unstructured"
    sling:resourceType="granite/ui/components/coral/foundation/form/select"

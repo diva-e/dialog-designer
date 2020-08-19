@@ -5,6 +5,7 @@ import fieldset from './components/layout/fieldset';
 import panel from './components/layout/panel';
 import tabView from './components/layout/tabView';
 import tab from './components/layout/tab';
+import multifield from './components/layout/multifield';
 // Normal
 import datepicker from './components/normal/datepicker';
 import hidden from './components/normal/hidden';
@@ -33,6 +34,7 @@ const coralComponents = [
   panel,
   tabView,
   tab,
+  multifield,
   datepicker,
   hidden,
   numberfield,

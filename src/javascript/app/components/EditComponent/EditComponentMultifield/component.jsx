@@ -54,8 +54,6 @@ class EditComponentMultifield extends React.Component {
       label,
       description,
       required,
-      // eslint-disable-next-line no-unused-vars
-      value,
     } = this.props;
     return (
       <div className="edit-multifield">

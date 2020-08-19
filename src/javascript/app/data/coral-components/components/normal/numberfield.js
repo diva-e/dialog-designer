@@ -17,21 +17,21 @@ const numberfield = {
       id: 'min',
       label: 'Min',
       description: '',
-      type: 'Long',
+      type: constants.fieldTypes.LONG,
       required: false,
     },
     {
       id: 'max',
       label: 'Max',
       description: '',
-      type: 'Long',
+      type: constants.fieldTypes.LONG,
       required: false,
     },
     {
       id: 'step',
       label: 'Step',
       description: '',
-      type: 'Long',
+      type: constants.fieldTypes.LONG,
       required: false,
     },
   ],
@@ -48,14 +48,15 @@ const numberfield = {
     </coral-numberinput>
     </div>`,
   xmlOutput: `<{id}
-         granite:class="cq-AspectRatio-ratio"
-         jcr:primaryType="nt:unstructured"
-         sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
-         fieldLabel="{label}"
-         min="{min}"
-         max="{max}"
-         name="ratio"
-         step="{step}" />`,
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+    name="./{id}"
+    fieldLabel="{label}"
+    fieldDescription="{description}"
+    min="{min}"
+    max="{max}"
+    step="{step}"
+  />`,
 };
 
 export default numberfield;

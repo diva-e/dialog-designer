@@ -52,10 +52,10 @@ class EditComponentMultifield extends React.Component {
       id,
       isValid,
       label,
-      value,
       description,
       required,
-      updateFieldValue,
+      // eslint-disable-next-line no-unused-vars
+      value,
     } = this.props;
     return (
       <div className="edit-multifield">
@@ -66,7 +66,6 @@ class EditComponentMultifield extends React.Component {
           {label}
           {required ? ' *' : ''}
         </label>
-
         <ul>
           {this.state.value.map((item, index) => (
             <EditComponentMultifieldItem
@@ -83,7 +82,6 @@ class EditComponentMultifield extends React.Component {
             />
           ))}
         </ul>
-
         <button
           type="button"
           is="coral-button"
@@ -91,7 +89,6 @@ class EditComponentMultifield extends React.Component {
         >
           + Add an option
         </button>
-
         <EditComponentTooltip
           description={description}
           isValid={isValid}

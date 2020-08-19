@@ -1,3 +1,4 @@
+import constants from '../../app/data/coral-components/constants';
 import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
 
@@ -28,13 +29,13 @@ const structureToXML = (structureNode, path = '') => {
     structureNode.properties.forEach((field) => {
       let fieldDefinition;
       switch (field.type) {
-        case 'Boolean':
+        case constants.fieldTypes.BOOLEAN:
           textReplace[field.id] = `{Boolean}${field.value ? 'true' : 'false'}`;
           break;
-        case 'Long':
+        case constants.fieldTypes.LONG:
           textReplace[field.id] = `{Long}${parseInt(field.value, 10)}`;
           break;
-        case 'KeyValue':
+        case constants.fieldTypes.KEY_VALUE:
           fieldDefinition = nodeData.fields.find(({ id }) => id === field.id);
           if (typeof fieldDefinition.renderItem === 'function') {
             textReplace[field.id] = fieldDefinition.renderItem(field.value, 'xml-output');
@@ -47,7 +48,7 @@ const structureToXML = (structureNode, path = '') => {
           }
 
           break;
-        case 'String':
+        case constants.fieldTypes.STRING:
         default:
           textReplace[field.id] = field.value;
           break;

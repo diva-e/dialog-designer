@@ -15,7 +15,7 @@ const fielupload = {
       id: 'title',
       label: 'Title',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       required: true,
     },
   ],
@@ -30,7 +30,8 @@ const fielupload = {
     data-cq-fileupload-temporaryfiledelete="./file.sftmp@Delete"
     data-cq-fileupload-temporaryfilepath=""
     data-cq-fileupload-allowupload=""
-    id="{id}">
+    id="{id}"
+  >
     <div
       coral-fileupload-dropzone=""
       class="cq-FileUpload-thumbnail">
@@ -44,7 +45,7 @@ const fielupload = {
           title="Drag image here."
           class="cq-FileUpload-icon _coral-Icon _coral-Icon--sizeS"
           role="img"
-          size="S"></coral-icon>
+          size="S" />
         <span class="cq-FileUpload-label">
           Drop an asset here or <a
             aria-label="Browse for a file to upload"
@@ -65,8 +66,10 @@ const fielupload = {
     multiple="{Boolean}false"
     name="./file"
     uploadUrl=""
-    useHTML5="{Boolean}true"/>`,
+    useHTML5="{Boolean}true"
+  />`,
 };
+
 // todo: find solution for / disable substitution logic
 // uploadUrl="${suffix.path}"
 

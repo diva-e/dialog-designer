@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import constants from '../../data/coral-components/constants';
+
 import EditComponentTextfield from './EditComponentTextfield';
 import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentSelect from './EditComponentSelect';
 import EditComponentNumberfield from './EditComponentNumberfield';
 import EditComponentMultifield from './EditComponentMultifield';
-
 
 import allFieldsValid from '../../../tools/allFieldsValid';
 
@@ -50,7 +51,7 @@ const EditComponent = ({
                       key={field.id}
                     >
                       {/* eslint-disable-next-line no-nested-ternary */}
-                      { field.type === 'Long' ? (
+                      { field.type === constants.fieldTypes.LONG ? (
                         <EditComponentNumberfield
                           id={field.id}
                           label={field.label}
@@ -61,7 +62,7 @@ const EditComponent = ({
                         />
                       ) : (
                         // eslint-disable-next-line no-nested-ternary
-                        field.type === 'KeyValue' ? (
+                        field.type === constants.fieldTypes.KEY_VALUE ? (
                           <EditComponentMultifield
                             id={field.id}
                             label={field.label}
@@ -73,7 +74,7 @@ const EditComponent = ({
                           />
                         ) : (
                           // eslint-disable-next-line no-nested-ternary
-                          field.type === 'Boolean' ? (
+                          field.type === constants.fieldTypes.BOOLEAN ? (
                             <EditComponentCheckbox
                               id={field.id}
                               label={field.label}

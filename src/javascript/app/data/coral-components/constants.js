@@ -21,6 +21,12 @@ const constants = {
       color: 'fuchsia',
     },
   },
+  fieldTypes: {
+    STRING: 'String',
+    BOOLEAN: 'Boolean',
+    LONG: 'Long',
+    KEY_VALUE: 'KeyValue',
+  },
 };
 
 export default constants;

@@ -16,7 +16,7 @@ const radio = {
     {
       id: 'radiobuttons',
       label: 'Radiobuttons',
-      type: 'KeyValue',
+      type: constants.fieldTypes.KEY_VALUE,
       renderItem: (value, mode) => {
         if (mode === 'xml-output') {
           return value.map(({ itemId, itemCaption, itemValue }) => (
@@ -38,17 +38,17 @@ const radio = {
       {radiobuttons}
     </div>`,
   xmlOutput: `<{id}
-   jcr:primaryType="nt:unstructured"
-   sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
-   name="./{id}"
-   vertical="{Boolean}true"
-   fieldLabel="Radio">
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+    name="./{id}"
+    fieldLabel="{label}"
+    fieldDescription="{description}"
+    vertical="{Boolean}true"
+  >
      <items jcr:primaryType="nt:unstructured">
          {radiobuttons}
      </items>
-   </{id}>`,
+  </{id}>`,
 };
-
-// todo: anti sample it
 
 export default radio;

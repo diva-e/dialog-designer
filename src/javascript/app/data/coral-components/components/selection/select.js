@@ -16,12 +16,12 @@ const select = {
     {
       id: 'placeholder',
       label: 'Placeholder',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
     },
     {
       id: 'options',
       label: 'Options',
-      type: 'KeyValue',
+      type: constants.fieldTypes.KEY_VALUE,
       renderItem: (value, mode) => {
         if (mode === 'xml-output') {
           return value.map(({ itemId, itemCaption, itemValue }) => (
@@ -41,7 +41,7 @@ const select = {
     {
       id: 'selectDatasource',
       label: 'Select Datasource',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
     },
   ],
   previewOutput: `<div>
@@ -60,18 +60,16 @@ const select = {
       </coral-select>
     </div>`,
   xmlOutput: `<{id}
-   granite:class="cmp-options--editor-type-v1"
-   jcr:primaryType="nt:unstructured"
-   sling:resourceType="granite/ui/components/coral/foundation/form/select"
-   fieldLabel="{label}"
-   name="./{id}">
-   <items jcr:primaryType="nt:unstructured">
+    granite:class="cmp-options--editor-type-v1"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+    fieldLabel="{label}"
+    name="./{id}">
+    <items jcr:primaryType="nt:unstructured">
        {options}
-   </items>
-</{id}>`,
+    </items>
+  </{id}>`,
 };
-
-// todo: anti sample it
 
 // todo: allow alternative datasource (instead of static options)
 /*

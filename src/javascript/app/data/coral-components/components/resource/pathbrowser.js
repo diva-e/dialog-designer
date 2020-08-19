@@ -17,14 +17,14 @@ const pathbrowser = {
       id: 'rootPath',
       label: 'Root Path',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       required: true,
     },
     {
       id: 'suffix',
       label: 'Suffix',
       description: '',
-      type: 'String',
+      type: constants.fieldTypes.STRING,
       defaultValue: '.html',
       required: false,
     },
@@ -82,9 +82,11 @@ const pathbrowser = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-    fieldLabel="{label}"
     name="./{id}"
-    rootPath="{rootPath}" />`,
+    fieldLabel="{label}"
+    fieldDescription="{description}"
+    rootPath="{rootPath}"
+  />`,
 };
 
 export default pathbrowser;

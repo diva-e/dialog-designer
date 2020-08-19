@@ -848,9 +848,10 @@ const richtext = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-    fieldDescription="{label}"
+    name="./{id}"
     fieldLabel="{label}"
-    name="./{id}" />`,
+    fieldDescription="{description}"
+  />`,
 };
 
 export default richtext;

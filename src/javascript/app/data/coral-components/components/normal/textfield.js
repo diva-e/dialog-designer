@@ -15,8 +15,14 @@ const textfield = {
     FIELD_DEFINITION_REQUIRED,
   ],
   previewOutput: `<div>
-      <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
-      <input className="coral-Form-field _coral-Textfield"
+      <label
+        id="label_{id}"
+        class="coral-Form-fieldlabel"
+      >
+         {label}
+      </label>
+      <input
+        className="coral-Form-field _coral-Textfield"
         type="text"
         name="{id}"
         labelledby="label_{id}"
@@ -33,7 +39,8 @@ const textfield = {
     fieldLabel="{label}"
     name="./{id}"
     required="{required}"
-    value="" />`,
+    value=""
+  />`,
 };
 
 export default textfield;

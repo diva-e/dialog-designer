@@ -58,7 +58,7 @@ const datepicker = {
       defaultValue: '0',
     },
   ],
-  src: `<div>
+  previewOutput: `<div>
       <label
         id="label_{id}"
         class="coral-Form-fieldlabel"
@@ -72,7 +72,7 @@ const datepicker = {
         startday="0">
       </coral-datepicker>
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
     displayedFormat="{displayformat}"

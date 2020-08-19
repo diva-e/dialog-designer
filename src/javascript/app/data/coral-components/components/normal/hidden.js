@@ -18,14 +18,14 @@ const hidden = {
       required: false,
     },
   ],
-  src: `<input class="disabled"
+  previewOutput: `<input class="disabled"
     type="text"
     name="{id}"
     value="{value}"
     disabled="true"
     id="{id}"
   />`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
     fieldDescription="{label}"

@@ -14,9 +14,29 @@ const select = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
     {
+      id: 'placeholder',
+      label: 'Placeholder',
+      type: 'String',
+    },
+    {
       id: 'options',
       label: 'Options',
       type: 'KeyValue',
+      renderItem: (value, mode) => {
+        if (mode === 'xml-output') {
+          return value.map(({ itemId, itemCaption, itemValue }) => (
+            `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`
+          )).join('');
+        }
+
+        return value.map(({ itemId, itemCaption, itemValue }) => (
+          `<coral-select-item value="${itemValue}" data-id="${itemId}">${itemCaption}</coral-select-item>`
+        )).join('');
+      },
+      // samples for single output with template string only
+      // todo: not sure if this will be actually useful maybe remove feature (structureToDom structureToXML)
+      // renderItemString: ({ itemId, itemValue, itemCaption }) => `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`,
+      // renderItemString: ({ itemId, itemValue, itemCaption }) => `<coral-select-item value="${itemValue}" data-id="${itemId}">${itemCaption}</coral-select-item>`,
     },
     {
       id: 'selectDatasource',
@@ -24,39 +44,29 @@ const select = {
       type: 'String',
     },
   ],
-  src: `<div>
-      <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
-      <coral-select placeholder="{placeholder}" name="{id}" id="{id}">
-        <coral-select-item>
-          Value One
-        </coral-select-item>
-        <coral-select-item>
-          Value Two
-        </coral-select-item>
-        <coral-select-item>
-          Value Three
-        </coral-select-item>
+  previewOutput: `<div>
+      <label
+        id="label_{id}"
+        class="coral-Form-fieldlabel"
+      >
+        {label}
+      </label>
+      <coral-select
+        name="{id}"
+        id="{id}"
+        placeholder="{placeholder}"
+      >
+        {options}
       </coral-select>
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
    granite:class="cmp-options--editor-type-v1"
    jcr:primaryType="nt:unstructured"
    sling:resourceType="granite/ui/components/coral/foundation/form/select"
    fieldLabel="{label}"
    name="./{id}">
    <items jcr:primaryType="nt:unstructured">
-       <valueOne
-           jcr:primaryType="nt:unstructured"
-           text="Value One"
-           value="one"/>
-       <valueTwo
-           jcr:primaryType="nt:unstructured"
-           text="Value Two"
-           value="two"/>
-       <valueThree
-           jcr:primaryType="nt:unstructured"
-           text="Value Three"
-           value="tree"/>
+       {options}
    </items>
 </{id}>`,
 };

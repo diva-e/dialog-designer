@@ -15,8 +15,8 @@ const anchorbutton = {
     FIELD_DEFINITION_REQUIRED,
   ],
   /* todo: preview output */
-  src: '<coral-button>{label}</coral-button>',
-  xml: `<{id}
+  previewOutput: '<coral-button>{label}</coral-button>',
+  xmlOutput: `<{id}
   jcr:primaryType="nt:unstructured"
   sling:resourceType="granite/ui/components/coral/foundation/form/anchorbutton"
   name="./{id}"

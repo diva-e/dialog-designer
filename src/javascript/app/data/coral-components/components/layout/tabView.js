@@ -11,7 +11,7 @@ const tabView = {
   fields: [
     FIELD_DEFINITION_ID,
   ],
-  src: `<coral-tabview title="tt" data-horst="horst">
+  previewOutput: `<coral-tabview title="tt" data-horst="horst">
     <coral-tablist target="{id}">
       <drop-target data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>
     </coral-tablist>
@@ -19,7 +19,7 @@ const tabView = {
       <adapt data-from="tabs" data-to="panel" />
     </coral-panelstack>
   </coral-tabview>`,
-  xml: `<content
+  xmlOutput: `<content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/foundation/container">
         <layout

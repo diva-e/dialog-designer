@@ -30,7 +30,7 @@ const textarea = {
     },
   ],
   creation: 'textarea',
-  src: `<div>
+  previewOutput: `<div>
     <label
       id="label_{id}"
       class="coral-Form-fieldlabel"
@@ -45,7 +45,7 @@ const textarea = {
       aria-labelledby="label_{id}"
       variant="default">{value}</textarea>
   </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
      sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
      jcr:primaryType="nt:unstructured"
      name="./{id}"

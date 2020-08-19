@@ -18,13 +18,13 @@ const fieldset = {
       required: true,
     },
   ],
-  src: `<section class="coral-Form-fieldset">
+  previewOutput: `<section class="coral-Form-fieldset">
       <h3
         class="coral-Form-fieldset-legend">
         {title}</h3>
          <drop-target data-accept="datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
     </section>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
     jcr:title="{title}"

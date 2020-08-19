@@ -10,7 +10,7 @@ const panel = {
   id: 'panel',
   hidden: true,
   fields: [],
-  src: `<coral-panel>
+  previewOutput: `<coral-panel>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">
       <div class="coral-FixedColumn foundation-layout-util-vmargin">
@@ -27,7 +27,7 @@ const panel = {
     </div>
   </coral-panel-content>
 </coral-panel>`,
-  xml: '<!-- comment -->',
+  xmlOutput: '<!-- comment -->',
 };
 
 export default panel;

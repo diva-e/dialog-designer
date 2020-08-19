@@ -14,7 +14,7 @@ const textfield = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  src: `<div>
+  previewOutput: `<div>
       <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
       <input className="coral-Form-field _coral-Textfield"
         type="text"
@@ -26,7 +26,7 @@ const textfield = {
         variant="default"
       />
   </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
     fieldDescription="{label}"

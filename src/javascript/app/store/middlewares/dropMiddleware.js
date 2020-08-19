@@ -4,12 +4,27 @@ import coralComponents from '../../data/coral-components';
 import allFieldsValid from '../../../tools/allFieldsValid';
 import fieldValidation from '../../../tools/fieldValidation';
 
+const getFieldDefaultValue = (type) => {
+  switch (type) {
+    case 'KeyValue':
+      return [];
+    case 'String':
+      return '';
+    case 'Long':
+      return '';
+    case 'Boolean':
+      return '';
+    default:
+      return '';
+  }
+};
+
 const getFields = ({ what }, getUniqueFieldValue) => {
   const comp = coralComponents.find(({ id }) => id === what);
-  // todo prevent duplicate id of fields
+  // todo: prevent duplicate id of fields
   return comp.fields.map((field) => {
 
-    let value = field.defaultValue || '';
+    let value = field.defaultValue || getFieldDefaultValue(field.type);
     if (field.uniqueAutoValue) {
       value = getUniqueFieldValue(field.id, what);
     }
@@ -46,26 +61,16 @@ const getUniqueFieldValue = (store) => (fieldName, prefix) => {
 
 
 const dropMiddleware = (store) => (next) => (action) => {
-
   if (action.type === 'DROP_NEW_COMPONENT') {
-
     const fields = getFields(action.payload, getUniqueFieldValue(store));
-
     Object.assign(action.payload, { fields });
   }
 
   if (action.type === 'SAVE_EDIT_COMPONENT') {
     const { structure, editComponent } = store.getState();
-
-    console.log(fieldValidation(editComponent.fields));
-    console.log(allFieldsValid(fieldValidation(editComponent.fields)));
-
     if (!allFieldsValid(fieldValidation(editComponent.fields))) {
-      console.log('nöööp');
       return;
     }
-
-    console.log('yöööp');
 
     switch (editComponent.where.mode) {
       case 'update':
@@ -87,10 +92,6 @@ const dropMiddleware = (store) => (next) => (action) => {
       type: 'SET_STRUCTURE',
       payload: { ...structure },
     });
-  }
-
-  if (action.type === 'CLOSE_EDIT_COMPONENT') {
-    // nothing for now
   }
 
   next(action);

@@ -14,11 +14,11 @@ const switchfield = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  src: `<div>
+  previewOutput: `<div>
       <label id="label-{id}" class="coral-Form-fieldlabel">{label}</label>
       <coral-switch class="coral-Form-field" labelledby="label-{id}"></coral-switch>
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/switch"
     fieldDescription="{description}"

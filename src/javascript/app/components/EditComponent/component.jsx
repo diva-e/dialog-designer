@@ -56,6 +56,7 @@ const EditComponent = ({
                           label={field.label}
                           value={field.value}
                           isValid={field.isValid}
+                          description={field.description}
                           updateFieldValue={updateFieldValue}
                         />
                       ) : (
@@ -65,6 +66,9 @@ const EditComponent = ({
                             id={field.id}
                             label={field.label}
                             value={field.value}
+                            isValid={field.isValid}
+                            required={field.required}
+                            description={field.description}
                             updateFieldValue={updateFieldValue}
                           />
                         ) : (
@@ -74,6 +78,8 @@ const EditComponent = ({
                               id={field.id}
                               label={field.label}
                               value={field.value}
+                              placeholder={field.placeholder}
+                              description={field.description}
                               updateFieldValue={updateFieldValue}
                             />
                           ) : (
@@ -143,7 +149,7 @@ const EditComponent = ({
 
 EditComponent.propTypes = {
   closeEdit: PropTypes.func.isRequired,
-  fields: PropTypes.object,
+  fields: PropTypes.array,
   saveEdit: PropTypes.func.isRequired,
   updateFieldValue: PropTypes.func.isRequired,
 };

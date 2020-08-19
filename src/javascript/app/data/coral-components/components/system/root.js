@@ -6,7 +6,7 @@ const root = {
   id: 'root',
   hidden: true,
   fields: [],
-  src: `
+  previewOutput: `
 <coral-dialog-preview class="cq-Dialog _coral-BaseOverlay _coral-Dialog-wrapper cq-dialog-floating is-open" backdrop="none" variant="default" role="dialog" closable="off" open="open" aria-hidden="false" movable="false">
   <div handle="wrapper">
     <div class="coral-Form--vertical cq-dialog foundation-form foundation-layout-form _coral-Dialog _coral-Dialog--noBackdrop is-open">
@@ -27,7 +27,7 @@ const root = {
     </div>
   </div>
 </coral-dialog-preview>`,
-  xml: `<?xml version="1.0" encoding="UTF-8"?>
+  xmlOutput: `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root
   xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
   xmlns:granite="http://www.adobe.com/jcr/granite/1.0"

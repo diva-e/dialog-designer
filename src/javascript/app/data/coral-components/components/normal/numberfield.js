@@ -35,7 +35,7 @@ const numberfield = {
       required: false,
     },
   ],
-  src: `<div>
+  previewOutput: `<div>
     <label
       id="label_{id}"
       class="coral-Form-fieldlabel"
@@ -47,7 +47,7 @@ const numberfield = {
       name={id}>
     </coral-numberinput>
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
          granite:class="cq-AspectRatio-ratio"
          jcr:primaryType="nt:unstructured"
          sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"

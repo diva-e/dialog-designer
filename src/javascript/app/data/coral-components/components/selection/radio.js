@@ -13,34 +13,38 @@ const radio = {
     FIELD_DEFINITION_LABEL,
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
+    {
+      id: 'radiobuttons',
+      label: 'Radiobuttons',
+      type: 'KeyValue',
+      renderItem: (value, mode) => {
+        if (mode === 'xml-output') {
+          return value.map(({ itemId, itemCaption, itemValue }) => (
+            `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`
+          )).join('');
+        }
+
+        return value.map(({ itemId, itemCaption, itemValue }) => (
+          `<coral-radio name="${itemId}" value="${itemValue}">${itemCaption}</coral-radio>`
+        )).join('');
+      },
+    },
   ],
-  src: `<div>
+  previewOutput: `<div>
     <label
       id="label_{id}"
       class="coral-Form-fieldlabel"
       for="{id}">{label}</label>
-      <coral-radio
-        name={id}
-        value="one">Option One</coral-radio>
-      <coral-radio
-        name={id}
-        value="two">Option Two</coral-radio>
+      {radiobuttons}
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
    jcr:primaryType="nt:unstructured"
    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
    name="./{id}"
    vertical="{Boolean}true"
    fieldLabel="Radio">
      <items jcr:primaryType="nt:unstructured">
-         <optionOne
-             jcr:primaryType="nt:unstructured"
-             text="Option One"
-             value="one"/>
-         <optionTwo
-            jcr:primaryType="nt:unstructured"
-            text="Option Two"
-            value="two"/>
+         {radiobuttons}
      </items>
    </{id}>`,
 };

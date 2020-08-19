@@ -22,12 +22,21 @@ const select = {
       id: 'options',
       label: 'Options',
       type: 'KeyValue',
-      // Todo: allow optional template string
-      renderItem: (value) => (
-        value.map(({ itemCaption, itemValue }) => (
-          `<coral-select-item data-value="${itemValue}">${itemCaption}</coral-select-item>`
-        )).join('')
-      ),
+      renderItem: (value, mode) => {
+        if (mode === 'xml-output') {
+          return value.map(({ itemId, itemCaption, itemValue }) => (
+            `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`
+          )).join('');
+        }
+
+        return value.map(({ itemId, itemCaption, itemValue }) => (
+          `<coral-select-item value="${itemValue}" data-id="${itemId}">${itemCaption}</coral-select-item>`
+        )).join('');
+      },
+      // samples for single output with template string only
+      // todo: not sure if this will be actually useful maybe remove feature (structureToDom structureToXML)
+      // renderItemString: ({ itemId, itemValue, itemCaption }) => `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`,
+      // renderItemString: ({ itemId, itemValue, itemCaption }) => `<coral-select-item value="${itemValue}" data-id="${itemId}">${itemCaption}</coral-select-item>`,
     },
     {
       id: 'selectDatasource',
@@ -57,18 +66,7 @@ const select = {
    fieldLabel="{label}"
    name="./{id}">
    <items jcr:primaryType="nt:unstructured">
-       <valueOne
-           jcr:primaryType="nt:unstructured"
-           text="Value One"
-           value="one"/>
-       <valueTwo
-           jcr:primaryType="nt:unstructured"
-           text="Value Two"
-           value="two"/>
-       <valueThree
-           jcr:primaryType="nt:unstructured"
-           text="Value Three"
-           value="tree"/>
+       {options}
    </items>
 </{id}>`,
 };

@@ -32,6 +32,22 @@ const buttongroup = {
       defaultValue: ButtonGroup.selectionMode.SINGLE,
       required: false,
     },
+    {
+      id: 'buttons',
+      label: 'Buttons',
+      type: 'KeyValue',
+      renderItem: (value, mode) => {
+        if (mode === 'xml-output') {
+          return value.map(({ itemId, itemCaption, itemValue }) => (
+            `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`
+          )).join('');
+        }
+
+        return value.map(({ itemId, itemCaption, itemValue }) => (
+          `<button is="coral-button" variant="secondary" value="${itemValue}" data-id="${itemId}">${itemCaption}</button>`
+        )).join('');
+      },
+    },
   ],
   previewOutput: `<div>
         <label
@@ -41,9 +57,7 @@ const buttongroup = {
           <coral-buttongroup
       selectionmode="{selectionmode}"
       name="{id}">
-        <button is="coral-button" variant="secondary">One</button>
-        <button is="coral-button" variant="secondary">Two</button>
-        <button is="coral-button" variant="secondary">Three</button>
+        {buttons}
       </coral-buttongroup>
     </div>`,
   xmlOutput: `<{id}
@@ -54,18 +68,7 @@ const buttongroup = {
     selectionMode="{selectionMode}"
     sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup">
     <items jcr:primaryType="nt:unstructured">
-        <one jcr:primaryType="nt:unstructured"
-            name="./one"
-            text="One"
-            value="one" />
-        <two jcr:primaryType="nt:unstructured"
-            name="./two"
-            text="Two"
-            value="two" />
-        <three jcr:primaryType="nt:unstructured"
-            name="./three"
-            text="Option three"
-            value="three" />
+        {buttons}
     </items>
 </{id}>`,
 };

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const EditComponentMultifieldItem = ({
   itemCaption,
   itemValue,
+  itemId,
   deleteMultifieldItem,
   updateMultifieldItem,
 }) => (
@@ -14,6 +15,7 @@ const EditComponentMultifieldItem = ({
       onChange={({ target }) => updateMultifieldItem({
         itemCaption: target.value,
         itemValue,
+        itemId,
       })}
       className="coral-Form-field _coral-Textfield _coral-Textfield--key-value"
       placeholder="Caption"
@@ -25,6 +27,7 @@ const EditComponentMultifieldItem = ({
       onChange={({ target }) => updateMultifieldItem({
         itemCaption,
         itemValue: target.value,
+        itemId,
       })}
       className="coral-Form-field _coral-Textfield _coral-Textfield--key-value"
       placeholder="Value"
@@ -46,6 +49,7 @@ const EditComponentMultifieldItem = ({
 EditComponentMultifieldItem.propTypes = {
   itemCaption: PropTypes.string.isRequired,
   itemValue: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
   deleteMultifieldItem: PropTypes.func.isRequired,
   updateMultifieldItem: PropTypes.func.isRequired,
 };

@@ -18,6 +18,7 @@ class EditComponentMultifield extends React.Component {
     value.push({
       itemValue: '',
       itemCaption: '',
+      itemId: '',
     });
     this.setState({
       value: [...value],
@@ -72,6 +73,7 @@ class EditComponentMultifield extends React.Component {
               key={index}
               itemValue={item.itemValue}
               itemCaption={item.itemCaption}
+              itemId={`item_${index}`}
               deleteMultifieldItem={() => {
                 this.deleteMultifieldItem(index);
               }}

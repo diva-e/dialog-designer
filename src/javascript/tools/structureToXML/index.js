@@ -22,16 +22,30 @@ const structureToXML = (structureNode, path = '') => {
     return null;
   }
 
-  // Fill any textcontent placeholders
+  // Fill any placeholders
   const textReplace = {};
   if (structureNode.properties && structureNode.properties.forEach) {
     structureNode.properties.forEach((field) => {
+      let fieldDefinition;
       switch (field.type) {
         case 'Boolean':
           textReplace[field.id] = `{Boolean}${field.value ? 'true' : 'false'}`;
           break;
         case 'Long':
           textReplace[field.id] = `{Long}${parseInt(field.value, 10)}`;
+          break;
+        case 'KeyValue':
+          fieldDefinition = nodeData.fields.find(({ id }) => id === field.id);
+          if (typeof fieldDefinition.renderItem === 'function') {
+            textReplace[field.id] = fieldDefinition.renderItem(field.value, 'xml-output');
+          }
+
+          if (typeof fieldDefinition.renderItemString === 'function') {
+            textReplace[field.id] = field.value.map((value) => (
+              fieldDefinition.renderItemString(value)
+            )).join('');
+          }
+
           break;
         case 'String':
         default:
@@ -41,12 +55,13 @@ const structureToXML = (structureNode, path = '') => {
     });
   }
 
-  // Fill any textcontent placeholders
+  // Fill any placeholders
   const nodeDomString = stringFormat(nodeData.xmlOutput, textReplace);
 
   const parser = new DOMParser();
   const doc = parser.parseFromString(wrapNS(nodeDomString), 'text/xml');
 
+  // parse error reporting
   if (doc.querySelector('parsererror')) {
     console.error(`parse-error structureToXML [${structureNode.type}]`);
     [...doc.querySelectorAll('parsererror')].forEach((parseError) => {
@@ -57,13 +72,14 @@ const structureToXML = (structureNode, path = '') => {
     });
   }
 
+  // adapt substitution
   [...doc.querySelectorAll('adapt')].forEach((adapt) => {
     const adaptFrom = adapt.getAttribute('data-from');
     // eslint-disable-next-line no-param-reassign
     adapt.setAttribute('path', `${path}children.${adaptFrom}`);
   });
 
-  // Add childnodes for all contend defined by the names of droptargets
+  // drop-target substitution
   [...doc.querySelectorAll('drop-target')].forEach((droptarget) => {
     const childContainerName = droptarget.getAttribute('data-name');
     if (structureNode.children && structureNode.children[childContainerName]) {

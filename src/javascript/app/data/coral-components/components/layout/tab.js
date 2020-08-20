@@ -39,7 +39,7 @@ const tab = {
             sling:resourceType="granite/ui/components/coral/foundation/container">
             <items jcr:primaryType="nt:unstructured">
               <drop-target
-                data-accept="multifield,fieldset,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading,"
+                data-accept="helloworld,trophyfield,multifield,fieldset,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading,"
                 data-name="tabcontent" />
             </items>
           </column>

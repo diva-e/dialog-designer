@@ -20,6 +20,10 @@ const constants = {
       name: 'Selection',
       color: 'fuchsia',
     },
+    CUSTOM: {
+      name: 'Custom',
+      color: 'red',
+    },
   },
   fieldTypes: {
     STRING: 'String',

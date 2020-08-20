@@ -46,6 +46,14 @@ const fielupload = {
           class="cq-FileUpload-icon _coral-Icon _coral-Icon--sizeS"
           role="img"
           size="S" />
+           <svg focusable="false"
+            aria-hidden="true"
+            class="_coral-Icon--svg _coral-Icon">
+            <use
+              xlink:href="/dist/resources/spectrum-icons.svg#spectrum-icon-18-Image">
+            </use>
+          </svg>
+        </div>
         <span class="cq-FileUpload-label">
           Drop an asset here or <a
             aria-label="Browse for a file to upload"
@@ -65,12 +73,12 @@ const fielupload = {
     mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
     multiple="{Boolean}false"
     name="./file"
-    uploadUrl=""
+    uploadUrl="\${suffix.path}"
     useHTML5="{Boolean}true"
   />`,
 };
 
 // todo: find solution for / disable substitution logic
-// uploadUrl="${suffix.path}"
+// uploadUrl=""
 
 export default fielupload;

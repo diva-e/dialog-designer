@@ -15,7 +15,7 @@ const multifield = {
   ],
   previewOutput: `<div class="_coral-Multifield coral-Well">
     <div class="_coral-Multifield-item">
-      <button is="coral-button" type="button" handle="remove" variant="quietaction" icon="delete" iconsize="S" size="M" class="_coral-Multifield-remove" disabled>&nbsp;</button>
+      <button is="coral-button" type="button" variant="quietaction" icon="delete" iconsize="S" size="M" class="_coral-Multifield-remove" disabled>&nbsp;</button>
       <drop-target data-accept="textfield,hidden,datepicker,checkbox,radio,select,pathbrowser,pathfield" data-name="mf" data-wrap="" />
     </div>
     <button type="button" is="coral-button" disabled>Add a field</button>

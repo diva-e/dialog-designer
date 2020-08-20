@@ -36,10 +36,9 @@ const trophyfield = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="/apps/components/dialogfields/trophyfield"
-    fieldDescription="{label}"
+    fieldDescription="{description}"
     fieldLabel="{label}"
     name="./{id}"
-    required="{required}"
     value=""
   />`,
 };

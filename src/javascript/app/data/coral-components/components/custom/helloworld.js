@@ -9,6 +9,7 @@ const helloworld = {
   description: 'Hello World Sample',
   id: 'helloworld',
   fields: [
+    FIELD_DEFINITION_ID,
     {
       id: 'hello',
       label: 'Hellotext',
@@ -34,7 +35,7 @@ const helloworld = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/heading"
     hello="{hello}"
-    wolrd="{world}"
+    world="{world}"
   />`,
 };
 

@@ -16,7 +16,7 @@ const EditComponentTooltip = ({
     <>
       <coral-icon
         ref={addClassesToRef('coral-Form-fieldinfo')}
-        icon="infoCircle"
+        icon="info"
         alt="description"
         role="img"
         aria-label="description"

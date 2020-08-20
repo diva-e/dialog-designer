@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
 
 const trophyfield = {
   name: 'Trophyfield',
@@ -20,12 +21,7 @@ const trophyfield = {
     },
   ],
   previewOutput: `<div class="trophyfield">
-      <label
-        id="label_{id}"
-        class="coral-Form-fieldlabel"
-      >
-         {label}
-      </label>
+     ${LABEL_TEMPLATE}
      <div class="trophyfield_choises">
        <input type="radio" class="trophyvalue trophyvalue--bronce" name="{id}" value="15" title="Bronce" />
        <input type="radio" class="trophyvalue trophyvalue--silver" name="{id}" value="30" title="Silver" />

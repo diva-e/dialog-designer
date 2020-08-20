@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const checkbox = {
   name: 'Checkbox',
@@ -14,7 +15,8 @@ const checkbox = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  previewOutput: `<coral-checkbox
+  previewOutput: `<div>
+    <coral-checkbox
       name={id}
       value="true"
       class="coral-Form-field _coral-Checkbox"
@@ -33,7 +35,9 @@ const checkbox = {
         <span class="u-coral-screenReaderOnly" handle="screenReaderOnly" hidden="">Select</span>
         <coral-checkbox-label>{label}</coral-checkbox-label>
       </label>
-    </coral-checkbox>`,
+    </coral-checkbox>
+    ${TOOLTIP_WRAPPER_TEMPLATE}
+  </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"

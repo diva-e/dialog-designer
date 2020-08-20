@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const numberfield = {
   name: 'Numberfield',
@@ -36,16 +38,14 @@ const numberfield = {
     },
   ],
   previewOutput: `<div>
-    <label
-      id="label_{id}"
-      class="coral-Form-fieldlabel"
-      for="{id}">{label}</label>
+    ${LABEL_TEMPLATE}
     <coral-numberinput
       max={max}
       min={min}
       step={step}
       name={id}>
     </coral-numberinput>
+    ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"

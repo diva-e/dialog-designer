@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
+import LABEL_TEMPLATE from '../../partials/label';
 
 const radio = {
   name: 'Radio',
@@ -31,12 +33,10 @@ const radio = {
     },
   ],
   previewOutput: `<div>
-    <label
-      id="label_{id}"
-      class="coral-Form-fieldlabel"
-      for="{id}">{label}</label>
-      {radiobuttons}
-    </div>`,
+    ${LABEL_TEMPLATE}
+    {radiobuttons}
+    ${TOOLTIP_WRAPPER_TEMPLATE}
+  </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"

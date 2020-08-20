@@ -1,6 +1,7 @@
 import constants from '../../app/data/coral-components/constants';
 import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
+import conditionalRenderCheck from '../conditionalRender';
 
 const compAll = coralComponents.map(({ id }) => (id)).join(',');
 
@@ -74,6 +75,8 @@ const structureToDom = (structureNode, path = '') => {
       });
     }
   });
+
+  conditionalRenderCheck(doc);
 
   // drop-target substitution
   [...doc.querySelectorAll('drop-target')].forEach((droptarget) => {

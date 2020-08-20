@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
+import LABEL_TEMPLATE from '../../partials/label';
 
 const textfield = {
   name: 'Textfield',
@@ -15,12 +17,7 @@ const textfield = {
     FIELD_DEFINITION_REQUIRED,
   ],
   previewOutput: `<div>
-      <label
-        id="label_{id}"
-        class="coral-Form-fieldlabel"
-      >
-         {label}
-      </label>
+      ${LABEL_TEMPLATE}
       <input
         className="coral-Form-field _coral-Textfield"
         type="text"
@@ -31,6 +28,7 @@ const textfield = {
         aria-labelledby="label_{id}"
         variant="default"
       />
+      ${TOOLTIP_WRAPPER_TEMPLATE}
   </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"

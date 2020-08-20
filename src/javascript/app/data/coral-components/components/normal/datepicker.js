@@ -1,6 +1,8 @@
 import { Datepicker } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
+import LABEL_TEMPLATE from '../../partials/label';
 
 const datepicker = {
   name: 'Datepicker',
@@ -59,10 +61,7 @@ const datepicker = {
     },
   ],
   previewOutput: `<div>
-      <label
-        id="label_{id}"
-        class="coral-Form-fieldlabel"
-        for="{id}">{label}</label>
+      ${LABEL_TEMPLATE}
       <coral-datepicker
         placeholder={placeholder}
         name={id}
@@ -71,6 +70,7 @@ const datepicker = {
         displayformat={displayformat}
         startday="0">
       </coral-datepicker>
+      ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"

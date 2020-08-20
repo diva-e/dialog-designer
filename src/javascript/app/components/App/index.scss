@@ -117,17 +117,17 @@
   ._coral-Multifield {
     width: 100%;
   }
+}
 
-  .tooltip-wrapper {
-    position: absolute;
-    right: 0;
-    top: 4px;
-    width: 200px;
-    text-align: right;
+.tooltip-wrapper {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 200px;
+  text-align: right;
 
-    ._coral-Tooltip {
-      text-align: left;
-    }
+  ._coral-Tooltip {
+    text-align: left;
   }
 }
 

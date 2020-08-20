@@ -35,6 +35,7 @@ const EditComponentTextfield = ({
     <EditComponentTooltip
       description={description}
       isValid={isValid}
+      id={id}
     />
   </>
 );

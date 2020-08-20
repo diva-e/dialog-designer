@@ -1,3 +1,4 @@
+import constants from '../../data/coral-components/constants';
 import saveStructure from '../../../tools/saveStructure';
 
 const downloadsMiddleware = (store) => (next) => (action) => {
@@ -10,7 +11,7 @@ const downloadsMiddleware = (store) => (next) => (action) => {
       break;
     case 'EXECUTE_COMPLETE_RESET':
       // eslint-disable-next-line no-alert
-      if (window.confirm('Proceeding here will completely reset the current dialog.')) {
+      if (window.confirm(constants.messages.DELETE_CONFIRM)) {
         window.localStorage.removeItem('dndd-test-structure');
         window.location.reload();
       }

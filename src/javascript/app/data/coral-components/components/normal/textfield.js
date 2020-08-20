@@ -34,8 +34,8 @@ const textfield = {
   </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-    fieldDescription="{label}"
+    sling:resourceType="/apps/components/dialogfields/helloworld"
+    fieldDescription="{description}"
     fieldLabel="{label}"
     name="./{id}"
     required="{required}"

@@ -20,12 +20,20 @@ const constants = {
       name: 'Selection',
       color: 'fuchsia',
     },
+    CUSTOM: {
+      name: 'Custom',
+      color: 'red',
+    },
   },
   fieldTypes: {
     STRING: 'String',
     BOOLEAN: 'Boolean',
     LONG: 'Long',
     KEY_VALUE: 'KeyValue',
+  },
+  messages: {
+    DELETE_CONFIRM: 'Proceeding here will delete the currently selected field component',
+    PURGE_CONFIRM: 'Proceeding here will completely reset the current dialog.',
   },
 };
 

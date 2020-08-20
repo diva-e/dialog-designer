@@ -1,0 +1,48 @@
+.trophyfield {
+
+  .trophyfield_choises {
+    margin-top: 6px;
+  }
+
+  .trophyvalue {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+    border: 3px dashed transparent;
+    border-radius: 15px;
+    opacity: 0.9;
+
+    &--bronce {
+      border-color: #C46438;
+      &:checked {
+        background-color: #C46438;
+      }
+    }
+
+    &--silver {
+      border-color: #777777;
+      &:checked {
+        background-color: #777777;
+      }
+    }
+
+    &--gold {
+      border-color: #C2903E;
+      &:checked {
+        background-color: #C2903E;
+      }
+    }
+
+    &--platinum {
+      border-color: #6076ac;
+      &:checked {
+        background-color: #6076ac;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -27,6 +27,9 @@ import pathfield from './components/resource/pathfield';
 import alerthint from './components/authoring-helpers/alerthint';
 import anchorbutton from './components/authoring-helpers/anchorbutton';
 import heading from './components/authoring-helpers/heading';
+// Custom
+import trophyfield from './components/custom/trophyfield';
+import helloworld from './components/custom/helloworld';
 
 const coralComponents = [
   root,
@@ -52,6 +55,8 @@ const coralComponents = [
   alerthint,
   anchorbutton,
   heading,
+  trophyfield,
+  helloworld,
 ];
 
 export default coralComponents;

@@ -30,7 +30,7 @@ const textfield = {
       />
       ${TOOLTIP_WRAPPER_TEMPLATE}
   </div>`,
-  xmlOutput: `<{id}
+  xmlOutput: `<abc><{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="/apps/components/dialogfields/helloworld"
     fieldDescription="{description}"
@@ -38,7 +38,9 @@ const textfield = {
     name="./{id}"
     required="{required}"
     value=""
-  />`,
+  />
+  <xxx data-test="{description}">test</xxx>
+  </abc>`,
 };
 
 export default textfield;

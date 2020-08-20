@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const select = {
   name: 'Select',
@@ -45,12 +47,7 @@ const select = {
     },
   ],
   previewOutput: `<div>
-      <label
-        id="label_{id}"
-        class="coral-Form-fieldlabel"
-      >
-        {label}
-      </label>
+      ${LABEL_TEMPLATE}
       <coral-select
         name="{id}"
         id="{id}"
@@ -58,6 +55,7 @@ const select = {
       >
         {options}
       </coral-select>
+      ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
   xmlOutput: `<{id}
     granite:class="cmp-options--editor-type-v1"

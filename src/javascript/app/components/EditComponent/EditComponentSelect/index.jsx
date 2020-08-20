@@ -38,6 +38,7 @@ class EditComponentSelect extends React.Component {
 
   render() {
     const {
+      id,
       label,
       value,
       description,
@@ -61,6 +62,7 @@ class EditComponentSelect extends React.Component {
         <EditComponentTooltip
           description={description}
           isValid={isValid}
+          id={id}
         />
       </>
     );

@@ -26,6 +26,7 @@ const EditComponentCheckbox = ({
     <EditComponentTooltip
       description={description}
       isValid
+      id={id}
     />
   </div>
 );

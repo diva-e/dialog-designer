@@ -90,6 +90,7 @@ class EditComponentMultifield extends React.Component {
         <EditComponentTooltip
           description={description}
           isValid={isValid}
+          id={id}
         />
       </div>
     );

@@ -1,6 +1,7 @@
 import constants from '../../app/data/coral-components/constants';
 import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
+import conditionalRenderCheck from '../conditionalRender';
 
 const wrapNS = (xml) => {
   if (xml.indexOf('<?xml') === 0) {
@@ -72,6 +73,8 @@ const structureToXML = (structureNode, path = '') => {
       }
     });
   }
+
+  conditionalRenderCheck(doc);
 
   // adapt substitution
   [...doc.querySelectorAll('adapt')].forEach((adapt) => {

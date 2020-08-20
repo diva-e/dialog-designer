@@ -61,6 +61,7 @@ class EditComponentNumberfield extends React.Component {
         <EditComponentTooltip
           description={description}
           isValid={isValid}
+          id={id}
         />
       </>
     );

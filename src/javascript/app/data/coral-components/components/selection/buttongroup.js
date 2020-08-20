@@ -1,6 +1,8 @@
 import { ButtonGroup } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const buttongroup = {
   name: 'Buttongroup',
@@ -50,16 +52,15 @@ const buttongroup = {
     },
   ],
   previewOutput: `<div>
-        <label
-          id="label_{id}"
-          class="coral-Form-fieldlabel"
-          for="{id}">{label}</label>
-          <coral-buttongroup
+    ${LABEL_TEMPLATE}
+    <coral-buttongroup
       selectionmode="{selectionmode}"
-      name="{id}">
-        {buttons}
-      </coral-buttongroup>
-    </div>`,
+      name="{id}"
+    >
+      {buttons}
+    </coral-buttongroup>
+    ${TOOLTIP_WRAPPER_TEMPLATE}
+  </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup"

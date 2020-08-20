@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const switchfield = {
   name: 'Switch',
@@ -15,8 +17,9 @@ const switchfield = {
     FIELD_DEFINITION_REQUIRED,
   ],
   previewOutput: `<div>
-      <label id="label-{id}" class="coral-Form-fieldlabel">{label}</label>
+      ${LABEL_TEMPLATE}
       <coral-switch class="coral-Form-field" labelledby="label-{id}"></coral-switch>
+      ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"

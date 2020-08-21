@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Contextmenu = ({ startUpdateComponent, deleteComponent, x, y }) => {
-
   if (!x || !y) {
     return null;
   }

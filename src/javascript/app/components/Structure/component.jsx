@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// todo: #29 discuss the use of structure editor / probably remove and maybe replace by field meta data like comments etc.
 import { JsonEditor as Editor } from 'jsoneditor-react';
 import 'jsoneditor-react/es/editor.min.css';
 
@@ -12,6 +13,7 @@ class Structure extends React.Component {
     this.onMouseUp = this.onMouseUp.bind(this);
     this.resizeStructure = this.resizeStructure.bind(this);
     this.toggleShowHideStructurePanel = this.toggleShowHideStructurePanel.bind(this);
+    // todo: #28 save open/close stat as well as custom width
   }
 
   componentDidMount() {

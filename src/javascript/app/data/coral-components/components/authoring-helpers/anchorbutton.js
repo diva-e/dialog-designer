@@ -100,7 +100,7 @@ const anchorbutton = {
     },
   ],
 
-  previewOutput: `<a
+  previewOutput: `<div><a
     is="coral-anchorbutton"
     variant="{variant}"
     icon="{icon}"
@@ -111,7 +111,7 @@ const anchorbutton = {
     target="_blank"
   >
     {caption}
-  </a>`,
+  </a></div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/anchorbutton"

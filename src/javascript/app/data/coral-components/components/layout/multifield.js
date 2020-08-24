@@ -34,7 +34,7 @@ const multifield = {
                   jcr:primaryType="nt:unstructured"
                   sling:resourceType="granite/ui/components/coral/foundation/container">
                   <items jcr:primaryType="nt:unstructured">
-                      <drop-target data-accept="textfield,hidden,datepicker,checkbox,radio,select,pathbrowser,pathfield" data-name="mf" />
+                      <drop-target data-accept="trophyfield,helloworld,textfield,hidden,datepicker,checkbox,radio,select,pathbrowser,pathfield" data-name="mf" />
                   </items>
               </column>
           </items>

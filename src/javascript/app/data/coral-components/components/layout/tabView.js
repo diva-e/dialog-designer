@@ -22,7 +22,8 @@ const tabView = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/tabs"
-    maximized="{Boolean}true">
+    maximized="{Boolean}true"
+  >
     <items jcr:primaryType="nt:unstructured">
       <drop-target data-accept="tab" data-name="tabs" />
     </items>

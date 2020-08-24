@@ -25,7 +25,7 @@ module.exports = merge(common, {
     ],
     contentBase: path.join(process.cwd(), 'src', 'assets'),
     port: 3000,
-    watchContentBase: true,
+    // watchContentBase: true,
     before: setupServer,
   },
   plugins: [

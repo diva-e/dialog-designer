@@ -100,7 +100,6 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
         <button is="coral-button"
           variant="quietaction"
           class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet"
@@ -127,7 +126,6 @@ const richtext = {
             class="_coral-ActionButton-label">
           </coral-button-label>
         </button>
-
 
         <button is="coral-button"
           type="button" title="Justify"
@@ -165,7 +163,6 @@ const richtext = {
             </coral-icon>
           </coral-button-label>
         </button>
-
 
         <button is="coral-button"
           type="button" title="Lists"
@@ -205,7 +202,6 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
         <button is="coral-button"
           variant="quietaction"
           class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
@@ -243,7 +239,6 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
         <button is="coral-button"
           variant="quietaction"
           class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet"
@@ -268,7 +263,6 @@ const richtext = {
             class="_coral-ActionButton-label">
           </coral-button-label>
         </button>
-
 
         <button is="coral-button"
           type="button"
@@ -309,9 +303,7 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
       </coral-buttongroup>
-
 
       <coral-popover interaction="off"
         data-id="justify"

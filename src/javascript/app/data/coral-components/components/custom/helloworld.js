@@ -33,7 +33,7 @@ const helloworld = {
   </div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/heading"
+    sling:resourceType="/apps/components/dialogfields/helloworld"
     hello="{hello}"
     world="{world}"
   />`,

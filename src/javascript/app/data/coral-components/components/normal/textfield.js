@@ -30,17 +30,15 @@ const textfield = {
       />
       ${TOOLTIP_WRAPPER_TEMPLATE}
   </div>`,
-  xmlOutput: `<abc><{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
-    sling:resourceType="/apps/components/dialogfields/helloworld"
+    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
     fieldDescription="{description}"
     fieldLabel="{label}"
     name="./{id}"
     required="{required}"
     value=""
-  />
-  <xxx data-test="{description}">test</xxx>
-  </abc>`,
+  />`,
 };
 
 export default textfield;

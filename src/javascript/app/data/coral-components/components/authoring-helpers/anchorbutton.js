@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import { Button } from '@adobe/coral-spectrum';
 import constants from '../../constants';
+import icons from '../../icons';
 
 const anchorbutton = {
   name: 'Anchorbutton',
@@ -37,6 +38,7 @@ const anchorbutton = {
       label: 'Variant',
       description: '',
       type: constants.fieldTypes.STRING,
+      defaultValue: Button.variant.MINIMAL,
       options: [
         {
           value: Button.variant.PRIMARY,
@@ -70,14 +72,53 @@ const anchorbutton = {
       defaultValue: Button.size.MEDIUM,
       required: false,
     },
+    {
+      id: 'icon',
+      label: 'Icon',
+      description: '',
+      type: constants.fieldTypes.STRING,
+      options: icons.optionList,
+      required: false,
+    },
+    {
+      id: 'iconSize',
+      label: 'Icon-Size',
+      description: '',
+      type: constants.fieldTypes.STRING,
+      options: [
+        {
+          value: Button.size.MEDIUM,
+          caption: 'Medium',
+        },
+        {
+          value: Button.size.LARGE,
+          caption: 'Large',
+        },
+      ],
+      defaultValue: Button.size.MEDIUM,
+      required: false,
+    },
   ],
-  /* todo: preview output */
-  previewOutput: '<coral-button>{title}</coral-button>',
+
+  previewOutput: `<div><a
+    is="coral-anchorbutton"
+    variant="{variant}"
+    icon="{icon}"
+    iconsize="{iconSize}"
+    size="{size}"
+    href="{href}"
+    title="{title}"
+    target="_blank"
+  >
+    {caption}
+  </a></div>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/anchorbutton"
     name="./{id}"
     size="{size}"
+    icon="{icon}"
+    iconSize="{iconSize}"
     variant="{variant}"
     target="_blank"
     text="{caption}"

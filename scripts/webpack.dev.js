@@ -20,6 +20,7 @@ module.exports = merge(common, {
       warnings: false,
       errors: true,
     },
+    changeOrigin: true,
     allowedHosts: [
       '.diva-e.com',
     ],

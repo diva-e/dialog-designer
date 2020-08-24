@@ -20,7 +20,9 @@ module.exports = merge(common, {
       warnings: false,
       errors: true,
     },
-    disableHostCheck: true, // for use in ci-env
+    allowedHosts: [
+      '.diva-e.com',
+    ],
     contentBase: path.join(process.cwd(), 'src', 'assets'),
     port: 3000,
     watchContentBase: true,

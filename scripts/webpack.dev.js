@@ -9,7 +9,7 @@ module.exports = merge(common, {
   devtool: 'eval-cheap-module-source-map',
   devServer: {
     inline: true,
-    hot: true,
+    // hot: true,
     stats: {
       colors: true,
       assets: false,
@@ -20,6 +20,7 @@ module.exports = merge(common, {
       warnings: false,
       errors: true,
     },
+    disableHostCheck: true, // for use in ci-env
     contentBase: path.join(process.cwd(), 'src', 'assets'),
     port: 3000,
     watchContentBase: true,

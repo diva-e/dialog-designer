@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const pxtorem = require('postcss-pxtorem');
 const autoprefixer = require('autoprefixer');
-const packageJson = require('../package.json');
+const { projectConfig } = require('../package.json');
 const fieldDefinitions = require('./fieldDefinitions');
 
 const defineFieldDefinitions = {};
@@ -14,8 +14,6 @@ Object.keys(fieldDefinitions).forEach((definitionName) => {
 });
 
 module.exports = {
-  mode: 'production',
-  devtool: false,
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
   },
@@ -55,6 +53,10 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: true,
+              reload: 'all', // Fallback
+            },
           },
           {
             loader: 'css-loader',
@@ -89,7 +91,12 @@ module.exports = {
             },
           },
           {
-            loader: './scripts/sass-import-loader',
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                path.join(process.cwd(), 'src', 'scss', 'auto-imports', '**', '*.scss'),
+              ],
+            },
           },
         ],
       },
@@ -101,16 +108,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: packageJson.projectConfig.PROJECT_NAME,
+      title: projectConfig.PROJECT_NAME,
       template: './src/assets/index.html',
       filename: 'index.html',
       chunks: ['main'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
     new webpack.DefinePlugin({
-      CONFIG: JSON.stringify(packageJson.projectConfig),
+      CONFIG: JSON.stringify(projectConfig),
       ...defineFieldDefinitions,
     }),
   ],

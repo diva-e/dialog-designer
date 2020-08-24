@@ -1,0 +1,23 @@
+.action-panel__content--developer-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .structure {
+    &__json-editor {
+      background: $color-grey-90;
+      flex: 50vh 1 1;
+      margin: 5px;
+    }
+
+    &__xml {
+      background: $color-grey-80;
+      flex: 50vh 1 1;
+      padding: 10px;
+      overflow: auto;
+      margin: 5px;
+    }
+  }
+}
+
+

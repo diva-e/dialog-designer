@@ -1,3 +1,5 @@
+// todo: cleanup / structure / document / split
+
 .app-layout {
   display: flex;
   justify-content: space-between;
@@ -116,6 +118,13 @@
 
   ._coral-Multifield {
     width: 100%;
+  }
+
+  ._coral-Panel .coral-FixedColumn-column > .coral-Well {
+    background: transparent;
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

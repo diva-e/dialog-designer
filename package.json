@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "AEM Dialog Creator",
   "scripts": {
-    "start": "webpack-dev-server --config ./scripts/webpack.dev.js",
+    "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",
+    "start": "npm run build:clean && npm run build:webpack && node scripts/host.js",
     "build": "npm run build:clean && npm run build:webpack",
     "build:clean": "rimraf dist && rimraf build",
     "build:webpack": "node scripts/build.js",

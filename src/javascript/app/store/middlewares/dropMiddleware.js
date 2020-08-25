@@ -11,11 +11,8 @@ const getFieldDefaultValue = (type) => {
     case constants.fieldTypes.KEY_VALUE:
       return [];
     case constants.fieldTypes.STRING:
-      return '';
     case constants.fieldTypes.LONG:
-      return '';
     case constants.fieldTypes.BOOLEAN:
-      return '';
     default:
       return '';
   }
@@ -25,7 +22,6 @@ const getFields = ({ what }, getUniqueFieldValue) => {
   const comp = coralComponents.find(({ id }) => id === what);
   // todo: prevent duplicate id of fields
   return comp.fields.map((field) => {
-
     let value = field.defaultValue || getFieldDefaultValue(field.type);
     if (field.uniqueAutoValue) {
       value = getUniqueFieldValue(field.id, what);
@@ -39,9 +35,7 @@ const getFields = ({ what }, getUniqueFieldValue) => {
 };
 
 const getUniqueFieldValue = (store) => (fieldName, prefix) => {
-
   const allMatchingValues = [];
-
   walkObject(store.getState().structure, ({ value }) => {
     if (value.id === fieldName) {
       if (typeof value.value === 'string') {
@@ -52,7 +46,6 @@ const getUniqueFieldValue = (store) => (fieldName, prefix) => {
 
   let i = 0;
   let uniqueValue = prefix;
-
   while (allMatchingValues.includes(uniqueValue)) {
     i += 1;
     uniqueValue = `${prefix}_${i}`;
@@ -60,7 +53,6 @@ const getUniqueFieldValue = (store) => (fieldName, prefix) => {
 
   return uniqueValue;
 };
-
 
 const dropMiddleware = (store) => (next) => (action) => {
   if (action.type === 'DROP_NEW_COMPONENT') {

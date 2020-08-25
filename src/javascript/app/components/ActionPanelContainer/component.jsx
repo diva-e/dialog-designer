@@ -47,12 +47,15 @@ class ActionPanelContainer extends React.Component {
     const newWidth = (window.parseInt(window.getComputedStyle(structureResizePanel, '').width) + dx);
     if (newWidth >= MIN_WIDTH) {
       structureResizePanel.style.width = `${newWidth}px`;
+      // todo: somehow magically save this here
+      // updateActionPanelWidth(newWidth);
     }
   }
 
   render() {
     const {
       activateActionPanel,
+      updateActionPanelWidth,
     } = this.props;
     return (
       <div className="action-panel-container" ref={this.ref}>
@@ -90,6 +93,7 @@ class ActionPanelContainer extends React.Component {
 
 ActionPanelContainer.propTypes = {
   activateActionPanel: PropTypes.func.isRequired,
+  updateActionPanelWidth: PropTypes.func.isRequired,
 };
 
 export default ActionPanelContainer;

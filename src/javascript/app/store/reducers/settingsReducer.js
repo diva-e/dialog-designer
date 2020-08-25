@@ -1,4 +1,11 @@
-const settingsReducer = (value = null, action) => {
+const defaultSettings = {
+  activePanel: 'dev',
+  actionPanelContainerWidth: 350,
+  previewTheme: 'coral-light',
+};
+
+
+const settingsReducer = (value = defaultSettings, action) => {
   switch (action.type) {
     case 'UPDATE_ACTION_PANEL_CONTAINER_WIDTH':
       return {
@@ -15,10 +22,6 @@ const settingsReducer = (value = null, action) => {
         ...value,
         previewTheme: action.previewTheme,
       };
-    case 'SET_SETTINGS':
-      // todo: rename and outsource storage name
-      window.localStorage.setItem('adc-settings', JSON.stringify(action.payload));
-      return action.payload;
     default:
       return value;
   }

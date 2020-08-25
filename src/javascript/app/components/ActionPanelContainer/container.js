@@ -9,17 +9,13 @@ const mapDispatchToProps = (dispatch) => ({
   updateActionPanelWidth: (actionPanelContainerWidth) => {
     dispatch({
       type: 'UPDATE_ACTION_PANEL_CONTAINER_WIDTH',
-      settings: {
-        actionPanelContainerWidth,
-      },
+      actionPanelContainerWidth,
     });
   },
   activateActionPanel: (activePanel) => {
     dispatch({
       type: 'ACTIVATE_ACTION_PANEL',
-      settings: {
-        activePanel,
-      },
+      activePanel,
     });
   },
 });

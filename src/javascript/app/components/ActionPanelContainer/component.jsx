@@ -56,12 +56,12 @@ class ActionPanelContainer extends React.Component {
     const {
       activateActionPanel,
       updateActionPanelWidth,
+      activePanel,
     } = this.props;
     return (
       <div className="action-panel-container" ref={this.ref}>
         <ActionPanel
-          key="meta"
-          isActive={false}
+          isActive={activePanel === 'meta'}
           title="Meta"
           icon="organize"
           activate={() => activateActionPanel('meta')}
@@ -69,8 +69,7 @@ class ActionPanelContainer extends React.Component {
           META Stuff
         </ActionPanel>
         <ActionPanel
-          key="library"
-          isActive={false}
+          isActive={activePanel === 'library'}
           title="Library"
           icon="bookmark"
           activate={() => activateActionPanel('library')}
@@ -78,8 +77,7 @@ class ActionPanelContainer extends React.Component {
           Library Stuff
         </ActionPanel>
         <ActionPanel
-          key="dev"
-          isActive
+          isActive={activePanel === 'dev'}
           title="Developer"
           icon="shield"
           activate={() => activateActionPanel('dev')}
@@ -94,6 +92,7 @@ class ActionPanelContainer extends React.Component {
 ActionPanelContainer.propTypes = {
   activateActionPanel: PropTypes.func.isRequired,
   updateActionPanelWidth: PropTypes.func.isRequired,
+  activePanel: PropTypes.string.isRequired,
 };
 
 export default ActionPanelContainer;

@@ -5,7 +5,7 @@ class ActionPanel extends React.Component {
   constructor(props) {
     super(props);
     this.ref = React.createRef();
-    this.openPanel = this.openPanel.bind(this);
+    // this.openPanel = this.openPanel.bind(this);
   }
 
   // openPanel() {

@@ -12,12 +12,6 @@ const mapDispatchToProps = (dispatch) => ({
       actionPanelContainerWidth,
     });
   },
-  activateActionPanel: (activePanel) => {
-    dispatch({
-      type: 'ACTIVATE_ACTION_PANEL',
-      activePanel,
-    });
-  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

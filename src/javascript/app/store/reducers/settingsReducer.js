@@ -4,7 +4,6 @@ const defaultSettings = {
   previewTheme: 'coral-light',
 };
 
-
 const settingsReducer = (value = defaultSettings, action) => {
   switch (action.type) {
     case 'UPDATE_ACTION_PANEL_CONTAINER_WIDTH':

@@ -46,41 +46,38 @@ class ActionPanelContainer extends React.Component {
     this.mousePosition = ev.x;
     const newWidth = (window.parseInt(window.getComputedStyle(structureResizePanel, '').width) + dx);
     if (newWidth >= MIN_WIDTH) {
-      structureResizePanel.style.width = `${newWidth}px`;
-      // todo: somehow magically save this here
-      // updateActionPanelWidth(newWidth);
+      // structureResizePanel.style.width = `${newWidth}px`;
+      this.props.updateActionPanelWidth(newWidth);
     }
   }
 
   render() {
-    const {
-      activateActionPanel,
-      updateActionPanelWidth,
-      activePanel,
-    } = this.props;
     return (
-      <div className="action-panel-container" ref={this.ref}>
+      <div
+        className="action-panel-container"
+        ref={this.ref}
+        style={{
+          width: this.props.actionPanelContainerWidth,
+        }}
+      >
         <ActionPanel
-          isActive={activePanel === 'meta'}
+          id="meta"
           title="Meta"
           icon="organize"
-          activate={() => activateActionPanel('meta')}
         >
           META Stuff
         </ActionPanel>
         <ActionPanel
-          isActive={activePanel === 'library'}
+          id="library"
           title="Library"
           icon="bookmark"
-          activate={() => activateActionPanel('library')}
         >
           Library Stuff
         </ActionPanel>
         <ActionPanel
-          isActive={activePanel === 'dev'}
+          id="dev"
           title="Developer"
-          icon="shield"
-          activate={() => activateActionPanel('dev')}
+          icon="brackets"
         >
           <DeveloperPanel />
         </ActionPanel>
@@ -90,9 +87,8 @@ class ActionPanelContainer extends React.Component {
 }
 
 ActionPanelContainer.propTypes = {
-  activateActionPanel: PropTypes.func.isRequired,
   updateActionPanelWidth: PropTypes.func.isRequired,
-  activePanel: PropTypes.string.isRequired,
+  actionPanelContainerWidth: PropTypes.number.isRequired,
 };
 
 export default ActionPanelContainer;

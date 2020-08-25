@@ -20,13 +20,9 @@ module.exports = merge(common, {
       warnings: false,
       errors: true,
     },
-    host: '0.0.0.0',
-    allowedHosts: [
-      '.diva-e.com',
-    ],
     contentBase: path.join(process.cwd(), 'src', 'assets'),
     port: 3000,
-    // watchContentBase: true,
+    watchContentBase: true,
     before: setupServer,
   },
   plugins: [

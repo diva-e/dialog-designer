@@ -57,26 +57,29 @@ class ActionPanelContainer extends React.Component {
     return (
       <div className="action-panel-container" ref={this.ref}>
         <ActionPanel
+          key="meta"
           isActive={false}
           title="Meta"
           icon="organize"
-          activate={() => activateActionPanel()}
+          activate={() => activateActionPanel('meta')}
         >
           META Stuff
         </ActionPanel>
         <ActionPanel
+          key="library"
           isActive={false}
           title="Library"
           icon="bookmark"
-          activate={() => activateActionPanel()}
+          activate={() => activateActionPanel('library')}
         >
           Library Stuff
         </ActionPanel>
         <ActionPanel
+          key="dev"
           isActive
           title="Developer"
           icon="shield"
-          activate={() => activateActionPanel()}
+          activate={() => activateActionPanel('dev')}
         >
           <DeveloperPanel />
         </ActionPanel>

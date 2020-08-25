@@ -8,10 +8,10 @@ class ActionPanel extends React.Component {
     this.openPanel = this.openPanel.bind(this);
   }
 
-  openPanel() {
-    console.log('opened');
-    this.props.isActive = true;
-  }
+  // openPanel() {
+  //   console.log('opened');
+  //   this.props.isActive = true;
+  // }
 
   render() {
     const {
@@ -25,7 +25,7 @@ class ActionPanel extends React.Component {
       <>
         <button
           className="action-panel__content-opener"
-          onClick={this.openPanel}
+          onClick={activate}
           type="button"
         >
           { icon ? (

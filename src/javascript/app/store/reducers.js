@@ -4,7 +4,6 @@ import editComponent from './reducers/editComponentReducer';
 import structure from './reducers/structureReducer';
 import contextmenu from './reducers/contextmenuReducer';
 
-
 export default combineReducers({
   settings,
   editComponent,

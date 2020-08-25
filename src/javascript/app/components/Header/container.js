@@ -5,9 +5,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updatePreviewTheme: () => {
+  updatePreviewTheme: (previewTheme) => {
     dispatch({
       type: 'UPDATE_PREVIEW_THEME',
+      payload: {
+        previewTheme,
+      },
     });
   },
 });

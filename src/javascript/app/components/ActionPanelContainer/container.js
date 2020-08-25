@@ -2,22 +2,23 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
   actionPanelContainerWidth: state.settings.actionPanelContainerWidth,
+  activePanel: state.settings.activePanel,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateActionPanelWidth: (value) => {
+  updateActionPanelWidth: (actionPanelContainerWidth) => {
     dispatch({
       type: 'UPDATE_ACTION_PANEL_CONTAINER_WIDTH',
       settings: {
-        actionPanelContainerWidth: value,
+        actionPanelContainerWidth,
       },
     });
   },
-  activateActionPanel: (panel) => {
+  activateActionPanel: (activePanel) => {
     dispatch({
       type: 'ACTIVATE_ACTION_PANEL',
       settings: {
-        activePanel: panel,
+        activePanel,
       },
     });
   },

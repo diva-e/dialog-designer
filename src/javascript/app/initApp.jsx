@@ -13,10 +13,13 @@ const initApp = () => {
   }
 
   const initialState = {};
+  // todo: outsource and rename storage name (also see localStorageMiddleware
   const loadedStructure = JSON.parse(window.localStorage.getItem('dndd-test-structure'));
+  const loadedUiSettings = JSON.parse(window.localStorage.getItem('adc-settings'));
 
   if (loadedStructure) {
     initialState.structure = loadedStructure;
+    initialState.settings = loadedUiSettings;
   }
 
   const store = getStore(initialState);

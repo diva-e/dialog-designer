@@ -19,6 +19,7 @@ class ActionPanel extends React.Component {
       children,
       isActive,
       icon,
+      activate,
     } = this.props;
     return (
       <>
@@ -53,6 +54,7 @@ ActionPanel.propTypes = {
   ]),
   isActive: PropTypes.bool.isRequired,
   icon: PropTypes.string,
+  activate: PropTypes.func.isRequired,
 };
 
 ActionPanel.defaultProps = {

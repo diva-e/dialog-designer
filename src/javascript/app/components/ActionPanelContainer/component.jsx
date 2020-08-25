@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import DeveloperPanel from './DeveloperPanel';
 import ActionPanel from './ActionPanel';
@@ -50,12 +51,16 @@ class ActionPanelContainer extends React.Component {
   }
 
   render() {
+    const {
+      activateActionPanel,
+    } = this.props;
     return (
       <div className="action-panel-container" ref={this.ref}>
         <ActionPanel
           isActive={false}
           title="Meta"
           icon="organize"
+          activate={() => activateActionPanel()}
         >
           META Stuff
         </ActionPanel>
@@ -63,6 +68,7 @@ class ActionPanelContainer extends React.Component {
           isActive={false}
           title="Library"
           icon="bookmark"
+          activate={() => activateActionPanel()}
         >
           Library Stuff
         </ActionPanel>
@@ -70,6 +76,7 @@ class ActionPanelContainer extends React.Component {
           isActive
           title="Developer"
           icon="shield"
+          activate={() => activateActionPanel()}
         >
           <DeveloperPanel />
         </ActionPanel>
@@ -77,5 +84,9 @@ class ActionPanelContainer extends React.Component {
     );
   }
 }
+
+ActionPanelContainer.propTypes = {
+  activateActionPanel: PropTypes.func.isRequired,
+};
 
 export default ActionPanelContainer;

@@ -13,6 +13,11 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'DOWNLOAD_JSON',
     });
   },
+  downloadACGJSON: () => {
+    dispatch({
+      type: 'DOWNLOAD_ACG_JSON',
+    });
+  },
   executeCompleteReset: () => {
     dispatch({
       type: 'EXECUTE_COMPLETE_RESET',

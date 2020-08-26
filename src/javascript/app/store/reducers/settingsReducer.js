@@ -21,6 +21,11 @@ const settingsReducer = (value = defaultSettings, action) => {
         ...value,
         previewTheme: action.previewTheme,
       };
+    case 'CLOSE_ACTION_PANEL':
+      return {
+        ...value,
+        activePanel: null,
+      };
     default:
       return value;
   }

@@ -1,16 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'class-names';
 
 class ActionPanel extends React.Component {
   constructor(props) {
     super(props);
+    // todo: convert to non class version / remove ref
     this.ref = React.createRef();
-    this.openPanel = this.openPanel.bind(this);
-  }
-
-  openPanel() {
-    console.log('opened');
-    this.props.isActive = true;
   }
 
   render() {
@@ -19,12 +15,17 @@ class ActionPanel extends React.Component {
       children,
       isActive,
       icon,
+      activate,
     } = this.props;
     return (
       <>
         <button
-          className="action-panel__content-opener"
-          onClick={this.openPanel}
+          className={
+            classNames('action-panel__content-opener', {
+              'action-panel__content-opener--active': isActive,
+            })
+          }
+          onClick={activate}
           type="button"
         >
           { icon ? (
@@ -37,6 +38,7 @@ class ActionPanel extends React.Component {
         </button>
         { isActive ? (
           <div className="action-panel">
+            <h3>{title}</h3>
             {children}
           </div>
         ) : null }
@@ -53,6 +55,7 @@ ActionPanel.propTypes = {
   ]),
   isActive: PropTypes.bool.isRequired,
   icon: PropTypes.string,
+  activate: PropTypes.func.isRequired,
 };
 
 ActionPanel.defaultProps = {

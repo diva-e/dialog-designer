@@ -1,7 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'class-names';
 
 import DeveloperPanel from './DeveloperPanel';
 import ActionPanel from './ActionPanel';
+
 
 class ActionPanelContainer extends React.Component {
   constructor(props) {
@@ -9,7 +12,8 @@ class ActionPanelContainer extends React.Component {
     this.ref = React.createRef();
     this.onMouseDown = this.onMouseDown.bind(this);
     this.onMouseUp = this.onMouseUp.bind(this);
-    this.resizeStructure = this.resizeStructure.bind(this);
+    this.resizeAPC = this.resizeAPC.bind(this);
+    this.isMinified = this.isMinified.bind(this);
   }
 
   componentDidMount() {
@@ -23,59 +27,96 @@ class ActionPanelContainer extends React.Component {
     const structureResizePanel = this.ref.current;
     structureResizePanel.removeEventListener('mousedown', this.onMouseDown);
     structureResizePanel.removeEventListener('mouseup', this.onMouseUp);
-    document.removeEventListener('mousemove', this.resizeStructure);
+    document.removeEventListener('mousemove', this.resizeAPC);
   }
 
   onMouseDown(ev) {
     const BORDER_SIZE = 4;
     if (ev.offsetX < BORDER_SIZE) {
       this.mousePosition = ev.x;
-      document.addEventListener('mousemove', this.resizeStructure, false);
+      document.addEventListener('mousemove', this.resizeAPC, false);
     }
   }
 
   onMouseUp() {
-    document.removeEventListener('mousemove', this.resizeStructure, false);
+    document.removeEventListener('mousemove', this.resizeAPC, false);
   }
 
-  resizeStructure(ev) {
+  resizeAPC(ev) {
     const MIN_WIDTH = 350;
     const structureResizePanel = this.ref.current;
     const dx = this.mousePosition - ev.x;
     this.mousePosition = ev.x;
     const newWidth = (window.parseInt(window.getComputedStyle(structureResizePanel, '').width) + dx);
     if (newWidth >= MIN_WIDTH) {
-      structureResizePanel.style.width = `${newWidth}px`;
+      this.props.updateActionPanelWidth(newWidth);
     }
   }
 
+  isMinified() {
+    return this.props.actionPanelContainerWidth <= 0;
+  }
+
   render() {
+    const {
+      closeActionPanel,
+    } = this.props;
     return (
-      <div className="action-panel-container" ref={this.ref}>
+      <div
+        className={
+          classNames('action-panel-container', {
+            'action-panel-container--minified': this.isMinified(),
+          })
+        }
+        ref={this.ref}
+        style={{
+          width: this.props.actionPanelContainerWidth,
+        }}
+      >
         <ActionPanel
-          isActive={false}
+          id="meta"
           title="Meta"
           icon="organize"
         >
-          META Stuff
+          <div className="action-panel__content">
+            TO BE IMPLEMENTED (META)
+          </div>
         </ActionPanel>
         <ActionPanel
-          isActive={false}
+          id="library"
           title="Library"
           icon="bookmark"
         >
-          Library Stuff
+          <div className="action-panel__content">
+            TO BE IMPLEMENTED (Library)
+          </div>
         </ActionPanel>
         <ActionPanel
-          isActive
+          id="dev"
           title="Developer"
-          icon="shield"
+          icon="brackets"
         >
           <DeveloperPanel />
         </ActionPanel>
+        <button
+          className="action-panel__closer"
+          onClick={closeActionPanel}
+          type="button"
+        >
+          <coral-icon
+            icon="close"
+            size="S"
+          />
+        </button>
       </div>
     );
   }
 }
+
+ActionPanelContainer.propTypes = {
+  updateActionPanelWidth: PropTypes.func.isRequired,
+  actionPanelContainerWidth: PropTypes.number.isRequired,
+  closeActionPanel: PropTypes.func.isRequired,
+};
 
 export default ActionPanelContainer;

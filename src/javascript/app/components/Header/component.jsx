@@ -1,5 +1,6 @@
 import React from 'react';
 
+// todo: outsource style to css
 const Header = () => (
   <div className="header">
     <h1>AEM Dialog Creator</h1>
@@ -13,6 +14,7 @@ const Header = () => (
       title="Toggle Dialog Theme"
       style={{ position: 'absolute', right: '-5px', top: '3px', color: 'white' }}
       onClick={() => {
+        // actually dispatch an action to store it
         document.body.classList.toggle('coral--dark');
         document.body.classList.toggle('coral--light');
       }}

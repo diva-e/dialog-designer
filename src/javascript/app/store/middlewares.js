@@ -1,4 +1,6 @@
 import { applyMiddleware } from 'redux';
+
+import settingsMiddleware from './middlewares/settingsMiddleware';
 import dropMiddleware from './middlewares/dropMiddleware';
 import downloadsMiddleware from './middlewares/downloadsMiddleware';
 import startCreateComponentMiddleware from './middlewares/startCreateComponentMiddleware';
@@ -9,6 +11,7 @@ import contextMenuMiddleware from './middlewares/contextMenuMiddleware';
 import localStorageMiddleware from './middlewares/localStorageMiddleware';
 
 export default applyMiddleware(
+  settingsMiddleware,
   dropMiddleware,
   downloadsMiddleware,
   startCreateComponentMiddleware,

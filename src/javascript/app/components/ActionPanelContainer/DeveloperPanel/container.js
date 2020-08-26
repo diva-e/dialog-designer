@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import structureToXML from '../../../tools/structureToXML';
-import XMLFormat from '../../../tools/XMLFormat';
+import structureToXML from '../../../../tools/structureToXML';
+import XMLFormat from '../../../../tools/XMLFormat';
 
 const mapStateToProps = (state) => ({
   structure: state.structure,

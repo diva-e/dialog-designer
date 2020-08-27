@@ -8,11 +8,11 @@ import fieldValidation from '../../../tools/fieldValidation';
 
 const getFieldDefaultValue = (type) => {
   switch (type) {
-    case constants.fieldTypes.KEY_VALUE:
+    case constants.fieldValueTypes.KEY_VALUE:
       return [];
-    case constants.fieldTypes.STRING:
-    case constants.fieldTypes.LONG:
-    case constants.fieldTypes.BOOLEAN:
+    case constants.fieldValueTypes.STRING:
+    case constants.fieldValueTypes.LONG:
+    case constants.fieldValueTypes.BOOLEAN:
     default:
       return '';
   }

@@ -18,7 +18,7 @@ const radio = {
     {
       id: 'radiobuttons',
       label: 'Radiobuttons',
-      type: constants.fieldTypes.KEY_VALUE,
+      type: constants.fieldValueTypes.KEY_VALUE,
       renderItem: (value, mode) => {
         if (mode === 'xml-output') {
           return value.map(({ itemId, itemCaption, itemValue }) => (

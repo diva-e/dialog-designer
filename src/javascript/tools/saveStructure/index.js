@@ -28,7 +28,7 @@ const saveStructure = (structure, type) => {
     throw new Error(`unknown type ${type}`);
   }
 
-  // saveAs(new Blob([output], { type: 'text/plain;charset=utf-8' }), filename);
+  saveAs(new Blob([output], { type: 'text/plain;charset=utf-8' }), filename);
 };
 
 export default saveStructure;

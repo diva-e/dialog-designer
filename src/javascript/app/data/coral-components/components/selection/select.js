@@ -18,12 +18,12 @@ const select = {
     {
       id: 'placeholder',
       label: 'Placeholder',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
     },
     {
       id: 'options',
       label: 'Options',
-      type: constants.fieldTypes.KEY_VALUE,
+      type: constants.fieldValueTypes.KEY_VALUE,
       renderItem: (value, mode) => {
         if (mode === 'xml-output') {
           return value.map(({ itemId, itemCaption, itemValue }) => (
@@ -43,7 +43,7 @@ const select = {
     {
       id: 'selectDatasource',
       label: 'Select Datasource',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
     },
   ],
   previewOutput: `<div>

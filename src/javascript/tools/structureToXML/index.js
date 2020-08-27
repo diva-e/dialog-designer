@@ -30,13 +30,13 @@ const structureToXML = (structureNode, path = '') => {
     structureNode.properties.forEach((field) => {
       let fieldDefinition;
       switch (field.type) {
-        case constants.fieldTypes.BOOLEAN:
+        case constants.fieldValueTypes.BOOLEAN:
           textReplace[field.id] = `{Boolean}${field.value ? 'true' : 'false'}`;
           break;
-        case constants.fieldTypes.LONG:
+        case constants.fieldValueTypes.LONG:
           textReplace[field.id] = `{Long}${parseInt(field.value, 10)}`;
           break;
-        case constants.fieldTypes.KEY_VALUE:
+        case constants.fieldValueTypes.KEY_VALUE:
           fieldDefinition = nodeData.fields.find(({ id }) => id === field.id);
           if (typeof fieldDefinition.renderItem === 'function') {
             textReplace[field.id] = fieldDefinition.renderItem(field.value, 'xml-output');
@@ -49,7 +49,7 @@ const structureToXML = (structureNode, path = '') => {
           }
 
           break;
-        case constants.fieldTypes.STRING:
+        case constants.fieldValueTypes.STRING:
         default:
           textReplace[field.id] = field.value;
           break;

@@ -51,7 +51,7 @@ const EditComponent = ({
                       key={field.id}
                     >
                       {/* eslint-disable-next-line no-nested-ternary */}
-                      { field.type === constants.fieldTypes.LONG ? (
+                      { field.type === constants.fieldValueTypes.LONG ? (
                         <EditComponentNumberfield
                           id={field.id}
                           label={field.label}
@@ -62,7 +62,7 @@ const EditComponent = ({
                         />
                       ) : (
                         // eslint-disable-next-line no-nested-ternary
-                        field.type === constants.fieldTypes.KEY_VALUE ? (
+                        field.type === constants.fieldValueTypes.KEY_VALUE ? (
                           <EditComponentMultifield
                             id={field.id}
                             label={field.label}
@@ -74,7 +74,7 @@ const EditComponent = ({
                           />
                         ) : (
                           // eslint-disable-next-line no-nested-ternary
-                          field.type === constants.fieldTypes.BOOLEAN ? (
+                          field.type === constants.fieldValueTypes.BOOLEAN ? (
                             <EditComponentCheckbox
                               id={field.id}
                               label={field.label}

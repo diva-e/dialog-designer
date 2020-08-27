@@ -13,14 +13,11 @@ const definedFieldDefinitions = {};
 Object.keys(fieldDefinitions).forEach((definitionName) => {
   definedFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
 });
-console.log({ definedFieldDefinitions });
 
 const definedACGDefaultConfig = {};
 Object.keys(acgDefaultConfig).forEach((defaultConfig) => {
   definedACGDefaultConfig[defaultConfig] = JSON.stringify(acgDefaultConfig[defaultConfig], null, 2);
 });
-
-console.log({ definedACGDefaultConfig });
 
 module.exports = {
   resolve: {

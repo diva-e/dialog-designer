@@ -16,7 +16,7 @@ const structureToDom = (structureNode, path = '') => {
 
   if (structureNode.properties && structureNode.properties.forEach) {
     structureNode.properties.forEach((field) => {
-      if (field.type === constants.fieldTypes.KEY_VALUE) {
+      if (field.type === constants.fieldValueTypes.KEY_VALUE) {
         const fieldDefinition = nodeData.fields.find(({ id }) => id === field.id);
         if (typeof fieldDefinition.renderItem === 'function') {
           textReplace[field.id] = fieldDefinition.renderItem(field.value, 'preview-output');

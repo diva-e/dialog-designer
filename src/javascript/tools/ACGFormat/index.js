@@ -1,16 +1,16 @@
-/* eslint-disable no-undef,no-lonely-if,no-trailing-spaces */
+/* eslint-disable no-undef,no-lonely-if,no-trailing-spaces,indent */
 import constants from '../../app/data/coral-components/constants';
 
-const ACG_FIELD_MAP = {
+const ACG_MAIN_FIELD_PROPERTY_MAP = {
   id: 'field',
   label: 'label',
   description: 'description',
 };
 
-const isInACGFieldMap = (fieldNameToCheck) => Object.keys(ACG_FIELD_MAP).includes(fieldNameToCheck);
+const isInACGMainFieldPropertyMap = (fieldNameToCheck) => Object.keys(ACG_MAIN_FIELD_PROPERTY_MAP).includes(fieldNameToCheck);
 
 const isFieldComponentType = (typeToCheck) => {
-  const typeBlacklist = Object.values(constants.fieldTypes).concat([
+  const typeBlacklist = Object.values(constants.fieldValueTypes).concat([
     'root',
     'tabview',
   ]);
@@ -38,44 +38,151 @@ const getACG = (acgData, structure) => {
               };
               Object.entries(structure.properties).forEach((fieldData, index) => {
                 const field = fieldData[1];
-                console.log('field', field);
-                console.log('fieldData', fieldData);
-                console.log('index', index);
+                // console.log('field', field);
+                // console.log('fieldData', fieldData);
+                // console.log('index', index);
                 if (field.hasOwnProperty('id') && field.hasOwnProperty('value')) {
-                  if (isInACGFieldMap(field.id)) {
-                    console.log('val', ACG_FIELD_MAP[field.id]);
-                    console.log('->', field.value);
-                    currentFieldObject[ACG_FIELD_MAP[field.id]] = field.value;
-                    console.log({ currentFieldObject });
+                  if (isInACGMainFieldPropertyMap(field.id)) {
+                    // console.log('val', ACG_MAIN_FIELD_PROPERTY_MAP[field.id]);
+                    // console.log('->', field.value);
+                    currentFieldObject[ACG_MAIN_FIELD_PROPERTY_MAP[field.id]] = field.value;
+                    // console.log({ currentFieldObject });
                   } else {
-                    // todo: check subtype for Boolean
+                    switch (field.type) {
+                      case constants.fieldValueTypes.BOOLEAN:
+                        // todo: check subtype for Boolean
+                        if (field.value !== '' || typeof field.value === 'undefined') {
+                          currentFieldObject.attributes[field.id] = `{Boolean}${field.value.toString()}`;
+                        }
+                        break;
+                      case constants.fieldValueTypes.KEY_VALUE:
+                        // todo: handle select / radio / radiobutton sub-items basically subtype KeyValue
+                        break;
+                      default:
+                        currentFieldObject.attributes[field.id] = field.value;
+                    }
 
-                    currentFieldObject.attributes[field.id] = field.value;
+                    /*
+
+                    ##########  SELECT  ###########
+
+                    "items": [
+                      {
+                        "field": "option1",
+                        "attributes": {
+                          "selected": "true",
+                          "text": "Option 1",
+                          "value": "opt1"
+                        }
+                      },
+                      {
+                        "field": "option2",
+                        "attributes": {
+                          "text": "Option 2",
+                          "value": "opt2"
+                        }
+                      }
+                    ]
+
+                    ++++++++++++++++++++++++++++++++
+
+                    {
+                        "id": "options",
+                        "label": "Options",
+                        "type": "KeyValue",
+                        "value": [
+                          {
+                            "itemCaption": "My Option 2",
+                            "itemValue": "two",
+                            "itemId": "item_0"
+                          },
+                          {
+                            "itemCaption": "MyOption 3",
+                            "itemValue": "three",
+                            "itemId": "item_1"
+                          }
+                        ]
+                      },
+
+                    ##########  RADIO  ###########
+
+                    "items": [
+                    {
+                        "field": "radio1",
+                        "type": "radio",
+                        "attributes": {
+                            "checked": "{Boolean}true",
+                            "name": "radioTest",
+                            "text": "Radio 1",
+                            "value": "rad1"
+                        }
+                    },
+                    {
+                        "field": "radio2",
+                        "type": "radio",
+                        "attributes": {
+                            "checked": "{Boolean}true",
+                            "name": "radioTest",
+                            "text": "Radio 2",
+                            "value": "rad2"
+                        }
+                    }
+
+                    +++++++++++++++++++++++++++++++++++++++
+
+                    {
+                        "id": "radiobuttons",
+                        "label": "Radiobuttons",
+                        "type": "KeyValue",
+                        "value": [
+                          {
+                            "itemCaption": "My Radio 1",
+                            "itemValue": "one",
+                            "itemId": "item_0"
+                          },
+                          {
+                            "itemCaption": "My Radio 2",
+                            "itemValue": "two",
+                            "itemId": "item_1"
+                          }
+                        ]
+                      }
+                ]
+
+                */
+
+                // todo: handle multifields
+
+                /*
+
+                ##########  MULTIFIELD  ###########
+
+                 "items": [
+                    {
+                        "field": "path",
+                        "type": "pathfield",
+                        "label": "Path",
+                        "description": "Path to the page",
+                        "json-expose": true
+                    },
+                    {
+                        "field": "label",
+                        "type": "textfield",
+                        "label": "Label",
+                        "description": "Label to display on the link",
+                        "json-expose": true
+                    }
+                  ]
+                */
+
+
                   }
                 }
                 // todo: add field to currentTab if any
-                /*
-
-                 {
-                  "field": "dateTest",
-                  "description": "Context tooltip for authors.",
-                  "type": "datepicker",
-                  "json-expose": true,
-                  "label": "Select Date",
-                  "attributes": {
-                      "displayedFormat": "MM/DD/YYYY"
-                  }
-                 },
-
-                 */
-
               });
-
               // eslint-disable-next-line no-param-reassign
               acgData.options.properties = acgData.options.properties.concat([currentFieldObject]);
             }
-
-
           }
         }
       }

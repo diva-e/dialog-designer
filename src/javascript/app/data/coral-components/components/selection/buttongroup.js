@@ -20,7 +20,7 @@ const buttongroup = {
       id: 'selectionmode',
       label: 'Selection Mode',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: ButtonGroup.selectionMode.SINGLE,
@@ -37,7 +37,7 @@ const buttongroup = {
     {
       id: 'buttons',
       label: 'Buttons',
-      type: constants.fieldTypes.KEY_VALUE,
+      type: constants.fieldValueTypes.KEY_VALUE,
       renderItem: (value, mode) => {
         if (mode === 'xml-output') {
           return value.map(({ itemId, itemCaption, itemValue }) => (

@@ -9,6 +9,9 @@ const downloadsMiddleware = (store) => (next) => (action) => {
     case 'DOWNLOAD_JSON':
       saveStructure(store.getState().structure, 'json');
       break;
+    case 'DOWNLOAD_ACG_JSON':
+      saveStructure(store.getState().structure, 'acgjson');
+      break;
     case 'EXECUTE_COMPLETE_RESET':
       // eslint-disable-next-line no-alert
       if (window.confirm(constants.messages.DELETE_CONFIRM)) {

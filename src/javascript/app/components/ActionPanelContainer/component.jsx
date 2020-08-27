@@ -57,6 +57,10 @@ class ActionPanelContainer extends React.Component {
     return this.props.actionPanelContainerWidth <= 0;
   }
 
+  closeActionPanelContainer() {
+
+  }
+
   render() {
     const {
       closeActionPanel,

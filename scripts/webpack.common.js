@@ -5,12 +5,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const pxtorem = require('postcss-pxtorem');
 const autoprefixer = require('autoprefixer');
 const { projectConfig } = require('../package.json');
+
 const fieldDefinitions = require('./fieldDefinitions');
+const acgDefaultConfig = require('./acgDefaultConfig');
 
-const defineFieldDefinitions = {};
-
+const definedFieldDefinitions = {};
 Object.keys(fieldDefinitions).forEach((definitionName) => {
-  defineFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
+  definedFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
+});
+
+const definedACGDefaultConfig = {};
+Object.keys(acgDefaultConfig).forEach((defaultConfig) => {
+  definedACGDefaultConfig[defaultConfig] = JSON.stringify(acgDefaultConfig[defaultConfig], null, 2);
 });
 
 module.exports = {
@@ -119,7 +125,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       CONFIG: JSON.stringify(projectConfig),
-      ...defineFieldDefinitions,
+      ...definedFieldDefinitions,
+      ...definedACGDefaultConfig,
     }),
   ],
 };

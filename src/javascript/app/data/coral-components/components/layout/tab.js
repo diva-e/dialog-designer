@@ -14,7 +14,7 @@ const tab = {
       id: 'title',
       label: 'Title',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
   ],

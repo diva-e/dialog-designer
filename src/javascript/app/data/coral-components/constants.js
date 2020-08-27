@@ -25,7 +25,7 @@ const constants = {
       color: 'red',
     },
   },
-  fieldTypes: {
+  fieldValueTypes: {
     STRING: 'String',
     BOOLEAN: 'Boolean',
     LONG: 'Long',

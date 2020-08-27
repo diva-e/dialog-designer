@@ -14,7 +14,7 @@ const hidden = {
       id: 'value',
       label: 'Value',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: false,
     },
   ],
@@ -29,9 +29,6 @@ const hidden = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
-    required="{required}"
     value="{value}"
   />`,
 };

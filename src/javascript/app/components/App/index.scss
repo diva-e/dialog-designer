@@ -60,6 +60,10 @@
 
   .cq-Dialog {
     z-index: $z-index-coral-dialog-preview;
+    left: 300px;
+    top: 100px;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   ._coral-Dialog {

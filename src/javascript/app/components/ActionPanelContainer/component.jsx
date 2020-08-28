@@ -54,7 +54,7 @@ class ActionPanelContainer extends React.Component {
   }
 
   isMinified() {
-    return this.props.actionPanelContainerWidth <= 0;
+    return this.props.activePanel === '';
   }
 
   closeActionPanelContainer() {
@@ -120,7 +120,12 @@ class ActionPanelContainer extends React.Component {
 ActionPanelContainer.propTypes = {
   updateActionPanelWidth: PropTypes.func.isRequired,
   actionPanelContainerWidth: PropTypes.number.isRequired,
+  activePanel: PropTypes.string,
   closeActionPanel: PropTypes.func.isRequired,
+};
+
+ActionPanelContainer.defaultProps = {
+  activePanel: null,
 };
 
 export default ActionPanelContainer;

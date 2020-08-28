@@ -42,4 +42,8 @@ module.exports = {
     label: 'label',
     description: 'description',
   },
+  ACG_TAB_PROPERTY_MAP: {
+    id: 'id',
+    title: 'label',
+  },
 };

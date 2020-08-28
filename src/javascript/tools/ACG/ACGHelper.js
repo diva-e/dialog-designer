@@ -6,6 +6,11 @@ class ACGHelper {
     return Object.keys(ACG_MAIN_FIELD_PROPERTY_MAP).includes(fieldNameToCheck);
   }
 
+  static isInACGTabPropertyMap(fieldNameToCheck) {
+    // eslint-disable-next-line no-undef
+    return Object.keys(ACG_TAB_PROPERTY_MAP).includes(fieldNameToCheck);
+  }
+
   static isFieldComponentType(typeToCheck) {
     const typeBlacklist = Object.values(constants.fieldValueTypes).concat([
       'root',

@@ -48,32 +48,32 @@ class ACGField {
     return aCGObject;
   }
 
-  addItem(item) {
-    this.items.push(item);
+  addItem(acgItem) {
+    this.items.push(acgItem);
   }
 
-  fill(field) {
-    this.type = field.type;
-    field.properties.forEach((fieldData) => {
-      if (ACGHelper.isInACGMainFieldPropertyMap(fieldData.id)) {
+  fill(structureField) {
+    this.type = structureField.type;
+    structureField.properties.forEach((structureFieldData) => {
+      if (ACGHelper.isInACGMainFieldPropertyMap(structureFieldData.id)) {
         // eslint-disable-next-line no-undef
-        this[ACG_MAIN_FIELD_PROPERTY_MAP[fieldData.id]] = fieldData.value;
+        this[ACG_MAIN_FIELD_PROPERTY_MAP[structureFieldData.id]] = structureFieldData.value;
       } else {
-        switch (fieldData.type) {
+        switch (structureFieldData.type) {
           case constants.fieldValueTypes.BOOLEAN:
-            if (fieldData.value !== '' || typeof fieldData.value === 'undefined') {
-              this.attributes[fieldData.id] = `{Boolean}${fieldData.value.toString()}`;
+            if (structureFieldData.value !== '' || typeof structureFieldData.value === 'undefined') {
+              this.attributes[structureFieldData.id] = `{Boolean}${structureFieldData.value.toString()}`;
             }
             break;
           case constants.fieldValueTypes.KEY_VALUE:
             this.items = [];
-            fieldData.value.forEach((fieldItem) => {
+            structureFieldData.value.forEach((fieldItem) => {
               this.items.push(new ACGItem(fieldItem));
             });
 
             break;
           default:
-            this.attributes[fieldData.id] = fieldData.value;
+            this.attributes[structureFieldData.id] = structureFieldData.value;
         }
       }
     });

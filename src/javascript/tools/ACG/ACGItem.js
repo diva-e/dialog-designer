@@ -13,12 +13,12 @@ class ACGItem {
     };
   }
 
-  getACGObjectNotation() {
-    return {
-      field: this.field,
-      attributes: this.attributes,
-    };
-  }
+  // getACGObjectNotation() {
+  //   return {
+  //     field: this.field,
+  //     attributes: this.attributes,
+  //   };
+  // }
 }
 
 export default ACGItem;

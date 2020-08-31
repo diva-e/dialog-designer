@@ -27,8 +27,8 @@ const saveStructure = (structure, type) => {
   if (!type || !filename) {
     throw new Error(`unknown type ${type}`);
   }
-
-  saveAs(new Blob([output], { type: 'text/plain;charset=utf-8' }), filename);
+  // todo: undo comment next line
+  // saveAs(new Blob([output], { type: 'text/plain;charset=utf-8' }), filename);
 };
 
 export default saveStructure;

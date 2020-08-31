@@ -16,36 +16,36 @@ class ACGField {
     this.javadoc = null;
   }
 
-  getACGObjectNotation() {
-    const aCGObject = {
-      field: this.field,
-      type: this.type,
-      'json-expose': this.jsonExposure,
-      attributes: this.attributes,
-    };
-
-    if (this.label) {
-      aCGObject.label = this.label;
-    }
-
-    if (this.modelName) {
-      aCGObject.modelName = this.modelName;
-    }
-
-    if (this.useExistingModel) {
-      aCGObject.useExistingModel = this.useExistingModel;
-    }
-
-    if (this.jsonProperty) {
-      aCGObject.jsonProperty = this.jsonProperty;
-    }
-
-    if (this.javadoc) {
-      aCGObject.javadoc = this.javadoc;
-    }
-
-    return aCGObject;
-  }
+  // getACGObjectNotation() {
+  //   const aCGObject = {
+  //     field: this.field,
+  //     type: this.type,
+  //     'json-expose': this.jsonExposure,
+  //     attributes: this.attributes,
+  //   };
+  //
+  //   if (this.label) {
+  //     aCGObject.label = this.label;
+  //   }
+  //
+  //   if (this.modelName) {
+  //     aCGObject.modelName = this.modelName;
+  //   }
+  //
+  //   if (this.useExistingModel) {
+  //     aCGObject.useExistingModel = this.useExistingModel;
+  //   }
+  //
+  //   if (this.jsonProperty) {
+  //     aCGObject.jsonProperty = this.jsonProperty;
+  //   }
+  //
+  //   if (this.javadoc) {
+  //     aCGObject.javadoc = this.javadoc;
+  //   }
+  //
+  //   return aCGObject;
+  // }
 
   addItem(acgItem) {
     this.items.push(acgItem);

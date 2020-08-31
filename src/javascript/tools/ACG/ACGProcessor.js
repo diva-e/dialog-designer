@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 import ACGHelper from './ACGHelper';
 import ACGField from './ACGField';
 import ACGTab from './ACGTab';
@@ -12,25 +13,33 @@ class ACGProcessor {
     };
   }
 
-  processInput(fields) {
+  processInput(fields, wasTab = false, wasContainer = false) {
+    console.log('#######', fields, wasTab, wasContainer);
     fields.forEach((field) => {
+      console.log('field', field);
       if (ACGHelper.isFieldComponentType(field.type) && field.type !== 'tab') {
-        console.log(field.type);
+        console.log('detected field type', field.type);
         const currentACGField = new ACGField();
         currentACGField.fill(field);
-        if (this.processRAM.currentContainerPropertyIndex >= 0) {
+
+        if (wasContainer) {
           this.properties[this.processRAM.currentContainerPropertyIndex].addItem(currentACGField);
         } else {
           this.properties.push(currentACGField);
-          if (this.processRAM.currentTabIndex >= 0) {
+          if (wasTab) {
             this.propertiesTabs[this.processRAM.currentTabIndex].addField(currentACGField);
           }
-        }
 
-        if (field.isContainer) {
-          this.processRAM.currentContainerPropertyIndex = this.properties.length - 1;
+          const children = Object.entries(field.children);
+          if (children.length > 0) {
+            const childFields = children[0][1];
+            this.processRAM.currentContainerPropertyIndex = this.properties.length - 1;
+            this.processInput(childFields, false, true);
+            this.processRAM.currentContainerPropertyIndex = -1;
+          }
         }
       } else {
+        // not a direct field (tab or structure node)
         if (field.type === 'tab') {
           const currentACGTab = new ACGTab();
           currentACGTab.fill(field);
@@ -41,8 +50,8 @@ class ACGProcessor {
         const children = Object.entries(field.children);
         if (children.length > 0) {
           const childFields = children[0][1];
-          this.processInput(childFields);
-          this.processRAM.currentContainerPropertyIndex = -1;
+          this.processInput(childFields, field.type === 'tab', false);
+          this.processRAM.currentTabIndex = -1;
         }
       }
     });

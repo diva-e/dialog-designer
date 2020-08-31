@@ -38,13 +38,13 @@ EditComponentCheckbox.propTypes = {
   label: PropTypes.string,
   description: PropTypes.string,
   updateFieldValue: PropTypes.func.isRequired,
-  value: PropTypes.bool,
+  value: PropTypes.string,
 };
 
 EditComponentCheckbox.defaultProps = {
   label: null,
   description: null,
-  value: false,
+  value: 'false',
 };
 
 export default EditComponentCheckbox;

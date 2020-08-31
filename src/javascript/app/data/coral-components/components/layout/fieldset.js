@@ -18,7 +18,6 @@ const fieldset = {
       required: true,
     },
   ],
-  isContainer: true,
   previewOutput: `<section class="coral-Form-fieldset">
       <h3
         class="coral-Form-fieldset-legend">

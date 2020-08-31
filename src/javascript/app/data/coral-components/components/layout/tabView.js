@@ -11,7 +11,6 @@ const tabView = {
   fields: [
     FIELD_DEFINITION_ID,
   ],
-  isContainer: true,
   previewOutput: `<coral-tabview title="tt" data-horst="horst">
     <coral-tablist target="{id}">
       <drop-target data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>

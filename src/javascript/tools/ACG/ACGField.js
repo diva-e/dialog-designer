@@ -1,4 +1,3 @@
-/* eslint-disable lines-between-class-members,padding-line-between-statements */
 import constants from '../../app/data/coral-components/constants';
 import ACGItem from './ACGItem';
 import ACGHelper from './ACGHelper';
@@ -17,36 +16,36 @@ class ACGField {
     this.javadoc = null;
   }
 
-  getACGObjectNotation() {
-    const aCGObject = {
-      field: this.field,
-      type: this.type,
-      'json-expose': this.jsonExposure,
-      attributes: this.attributes,
-    };
-
-    if (this.label) {
-      aCGObject.label = this.label;
-    }
-
-    if (this.modelName) {
-      aCGObject.modelName = this.modelName;
-    }
-
-    if (this.useExistingModel) {
-      aCGObject.useExistingModel = this.useExistingModel;
-    }
-
-    if (this.jsonProperty) {
-      aCGObject.jsonProperty = this.jsonProperty;
-    }
-
-    if (this.javadoc) {
-      aCGObject.javadoc = this.javadoc;
-    }
-
-    return aCGObject;
-  }
+  // getACGObjectNotation() {
+  //   const aCGObject = {
+  //     field: this.field,
+  //     type: this.type,
+  //     'json-expose': this.jsonExposure,
+  //     attributes: this.attributes,
+  //   };
+  //
+  //   if (this.label) {
+  //     aCGObject.label = this.label;
+  //   }
+  //
+  //   if (this.modelName) {
+  //     aCGObject.modelName = this.modelName;
+  //   }
+  //
+  //   if (this.useExistingModel) {
+  //     aCGObject.useExistingModel = this.useExistingModel;
+  //   }
+  //
+  //   if (this.jsonProperty) {
+  //     aCGObject.jsonProperty = this.jsonProperty;
+  //   }
+  //
+  //   if (this.javadoc) {
+  //     aCGObject.javadoc = this.javadoc;
+  //   }
+  //
+  //   return aCGObject;
+  // }
 
   addItem(acgItem) {
     this.items.push(acgItem);
@@ -64,6 +63,7 @@ class ACGField {
             if (structureFieldData.value !== '' || typeof structureFieldData.value === 'undefined') {
               this.attributes[structureFieldData.id] = `{Boolean}${structureFieldData.value.toString()}`;
             }
+
             break;
           case constants.fieldValueTypes.KEY_VALUE:
             this.items = [];

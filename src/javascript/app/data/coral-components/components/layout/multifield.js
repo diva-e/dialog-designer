@@ -13,7 +13,6 @@ const multifield = {
     FIELD_DEFINITION_LABEL,
     FIELD_DEFINITION_DESCRIPTION,
   ],
-  isContainer: true,
   previewOutput: `<div class="_coral-Multifield coral-Well">
     <div class="_coral-Multifield-item">
       <button is="coral-button" type="button" variant="quietaction" icon="delete" iconsize="S" size="M" class="_coral-Multifield-remove" disabled>&nbsp;</button>

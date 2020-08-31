@@ -1,4 +1,3 @@
-/* eslint-disable lines-between-class-members */
 class ACGItem {
   constructor(fieldItem) {
     if (fieldItem) {
@@ -14,12 +13,12 @@ class ACGItem {
     };
   }
 
-  getACGObjectNotation() {
-    return {
-      field: this.field,
-      attributes: this.attributes,
-    };
-  }
+  // getACGObjectNotation() {
+  //   return {
+  //     field: this.field,
+  //     attributes: this.attributes,
+  //   };
+  // }
 }
 
 export default ACGItem;

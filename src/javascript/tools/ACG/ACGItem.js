@@ -1,4 +1,3 @@
-/* eslint-disable lines-between-class-members */
 class ACGItem {
   constructor(fieldItem) {
     if (fieldItem) {

@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign,no-undef,padding-line-between-statements,no-trailing-spaces */
 import ACGHelper from './ACGHelper';
 import ACGField from './ACGField';
 import ACGTab from './ACGTab';
@@ -27,6 +26,7 @@ class ACGProcessor {
             this.propertiesTabs[this.processRAM.currentTabIndex].addField(currentACGField);
           }
         }
+
         if (field.isContainer) {
           this.processRAM.currentContainerPropertyIndex = this.properties.length - 1;
         }
@@ -37,6 +37,7 @@ class ACGProcessor {
           this.propertiesTabs.push(currentACGTab);
           this.processRAM.currentTabIndex = this.propertiesTabs.length - 1;
         }
+
         const children = Object.entries(field.children);
         if (children.length > 0) {
           const childFields = children[0][1];
@@ -49,11 +50,13 @@ class ACGProcessor {
 
   getACGOutput(structureInput) {
     console.log(structureInput);
+    // eslint-disable-next-line no-undef
     const acgData = ACG_DEFAULT_CONFIG;
     // if dialog has content
     if (structureInput.children.hasOwnProperty('content')) {
       this.processInput(structureInput.children.content);
     }
+
     acgData.options.properties = this.properties;
     acgData.options.propertiesTabs = this.propertiesTabs;
     console.log(acgData);

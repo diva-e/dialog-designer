@@ -1,4 +1,3 @@
-/* eslint-disable lines-between-class-members,padding-line-between-statements */
 import constants from '../../app/data/coral-components/constants';
 import ACGItem from './ACGItem';
 import ACGHelper from './ACGHelper';
@@ -64,6 +63,7 @@ class ACGField {
             if (structureFieldData.value !== '' || typeof structureFieldData.value === 'undefined') {
               this.attributes[structureFieldData.id] = `{Boolean}${structureFieldData.value.toString()}`;
             }
+
             break;
           case constants.fieldValueTypes.KEY_VALUE:
             this.items = [];

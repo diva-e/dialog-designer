@@ -1,7 +1,7 @@
 import saveAs from 'file-saver';
 import XMLFormat from '../XMLFormat';
-import ACGFormat from '../ACGFormat';
 import structureToXML from '../structureToXML';
+import ACGProcessor from '../ACG/ACGProcessor';
 
 const saveStructure = (structure, type) => {
   let output = '';
@@ -17,7 +17,7 @@ const saveStructure = (structure, type) => {
       filename = 'dialog.json';
       break;
     case 'acgjson':
-      output = ACGFormat(structure);
+      output = new ACGProcessor().getACGOutput(structure);
       filename = 'acg.json';
       break;
     default:
@@ -27,8 +27,8 @@ const saveStructure = (structure, type) => {
   if (!type || !filename) {
     throw new Error(`unknown type ${type}`);
   }
-
-  saveAs(new Blob([output], { type: 'text/plain;charset=utf-8' }), filename);
+  // todo: reenable temp debug uncomment
+  // saveAs(new Blob([output], { type: 'text/plain;charset=utf-8' }), filename);
 };
 
 export default saveStructure;

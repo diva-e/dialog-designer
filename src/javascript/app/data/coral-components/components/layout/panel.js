@@ -10,6 +10,7 @@ const panel = {
   id: 'panel',
   hidden: true,
   fields: [],
+  isContainer: true,
   previewOutput: `<coral-panel>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">

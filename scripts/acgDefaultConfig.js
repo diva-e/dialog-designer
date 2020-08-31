@@ -37,4 +37,13 @@ module.exports = {
       properties: [],
     },
   },
+  ACG_MAIN_FIELD_PROPERTY_MAP: {
+    id: 'field',
+    label: 'label',
+    description: 'description',
+  },
+  ACG_TAB_PROPERTY_MAP: {
+    id: 'id',
+    title: 'label',
+  },
 };

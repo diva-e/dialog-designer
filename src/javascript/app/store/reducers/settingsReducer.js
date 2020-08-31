@@ -24,7 +24,7 @@ const settingsReducer = (value = defaultSettings, action) => {
     case 'CLOSE_ACTION_PANEL':
       return {
         ...value,
-        activePanel: null,
+        activePanel: '',
       };
     default:
       return value;

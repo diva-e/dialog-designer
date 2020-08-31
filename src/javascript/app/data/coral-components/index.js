@@ -21,7 +21,6 @@ import select from './components/selection/select';
 import switchfield from './components/selection/switchfield';
 // Resource
 import fileupload from './components/resource/fileupload';
-import pathbrowser from './components/resource/pathbrowser';
 import pathfield from './components/resource/pathfield';
 // Authoring Helpers
 import alerthint from './components/authoring-helpers/alerthint';
@@ -50,7 +49,6 @@ const coralComponents = [
   select,
   switchfield,
   fileupload,
-  pathbrowser,
   pathfield,
   alerthint,
   anchorbutton,

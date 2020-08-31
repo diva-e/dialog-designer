@@ -61,7 +61,9 @@ const select = {
     granite:class="cmp-options--editor-type-v1"
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/select"
-    fieldLabel="{label}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.required="{required}"
     name="./{id}">
     <items jcr:primaryType="nt:unstructured">
        {options}

@@ -76,10 +76,13 @@ const datepicker = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
-    displayedFormat="{displayformat}"
+    data-optional.fieldLabel="{label}"
+    data-optional.placeholder="{placeholder}"
+    data-optional.fieldDescription="{description}"
+    data-optional.displayedFormat="{displayformat}"
+    data-optional.startday="{startday}"
     type="{datetime}"
+    data-optional.required="{required}"
     typeHint="Date"
   />`,
 };

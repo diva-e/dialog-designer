@@ -51,11 +51,11 @@ const numberfield = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
-    min="{min}"
-    max="{max}"
-    step="{step}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.min="{min}"
+    data-optional.max="{max}"
+    data-optional.step="{step}"
   />`,
 };
 

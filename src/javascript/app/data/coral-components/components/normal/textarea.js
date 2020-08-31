@@ -49,8 +49,8 @@ const textarea = {
     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
     jcr:primaryType="nt:unstructured"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
     value="{value}"
   />`,
 };

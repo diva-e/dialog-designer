@@ -25,7 +25,9 @@ const multifield = {
       jcr:primaryType="nt:unstructured"
       sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
       composite="{Boolean}true"
-      fieldLabel="{label}">
+      data-optional.fieldLabel="{label}"
+      data-optional.fieldDescription="{description}"
+  >
       <field
           jcr:primaryType="nt:unstructured"
           sling:resourceType="granite/ui/components/coral/foundation/container"

@@ -65,9 +65,9 @@ const buttongroup = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
-    required="{required}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.required="{required}"
     selectionMode="{selectionMode}"
   >
     <items jcr:primaryType="nt:unstructured">

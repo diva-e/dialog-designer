@@ -29,7 +29,6 @@ Supports following fields:
 ###Resource Fields
 
 - fileupload
-- pathbrowser
 - pathfield
 
 ###Authoring Helpers

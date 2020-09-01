@@ -8,6 +8,7 @@ const { projectConfig } = require('../package.json');
 
 const fieldDefinitions = require('./fieldDefinitions');
 const acgDefaultConfig = require('./acgDefaultConfig');
+const containerPolicyConfig = require('./containerPolicyConfig');
 
 const definedFieldDefinitions = {};
 Object.keys(fieldDefinitions).forEach((definitionName) => {
@@ -17,6 +18,11 @@ Object.keys(fieldDefinitions).forEach((definitionName) => {
 const definedACGDefaultConfig = {};
 Object.keys(acgDefaultConfig).forEach((defaultConfig) => {
   definedACGDefaultConfig[defaultConfig] = JSON.stringify(acgDefaultConfig[defaultConfig], null, 2);
+});
+
+const definedPolicyConfig = {};
+Object.keys(containerPolicyConfig).forEach((policyConfig) => {
+  definedPolicyConfig[policyConfig] = JSON.stringify(containerPolicyConfig[policyConfig], null, 2);
 });
 
 module.exports = {
@@ -127,6 +133,7 @@ module.exports = {
       CONFIG: JSON.stringify(projectConfig),
       ...definedFieldDefinitions,
       ...definedACGDefaultConfig,
+      ...definedPolicyConfig,
     }),
   ],
 };

@@ -22,7 +22,7 @@ const fieldset = {
       <h3
         class="coral-Form-fieldset-legend">
         {title}</h3>
-         <drop-target data-accept="helloworld,trophyfield,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
+         <drop-target data-name="fs" />
     </section>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"

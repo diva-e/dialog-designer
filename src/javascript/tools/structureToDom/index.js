@@ -3,8 +3,6 @@ import coralComponents from '../../app/data/coral-components';
 import stringFormat from '../stringFormat';
 import conditionalRenderCheck from '../conditionalRender';
 
-const compAll = coralComponents.map(({ id }) => (id)).join(',');
-
 const structureToDom = (structureNode, path = '') => {
   const nodeData = coralComponents.find((coralComponent) => coralComponent.id === structureNode.type);
   if (!nodeData) {
@@ -39,10 +37,7 @@ const structureToDom = (structureNode, path = '') => {
   const htmlSource = nodeData.previewOutput.trim();
 
   // Fill any placeholders
-  const nodeDomString = stringFormat(htmlSource, textReplace)
-    // ToDo: redefine "component-categories" handling
-    // replace * with a list of all components
-    .replace(/data-accept="\*"/gi, `data-accept="${compAll}"`);
+  const nodeDomString = stringFormat(htmlSource, textReplace);
 
   const parser = new DOMParser();
   const doc = parser.parseFromString(nodeDomString, 'text/html');

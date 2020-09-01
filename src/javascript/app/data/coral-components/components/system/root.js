@@ -18,7 +18,7 @@ const root = {
         </div>
         <coral-dialog-content id="dialog-preview-content" class="_coral-Dialog-content">
           <div class="cq-dialog-content">
-            <drop-target data-accept="helloworld,trophyfield,multifield,fieldset,panel,tabview,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
+            <drop-target data-accept="helloworld,trophyfield,multifield,fieldset,panel,tabview,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathfield,alerthint,anchorbutton,heading," data-name="content" />
           </div>
         </coral-dialog-content>
         <coral-dialog-footer class="_coral-Dialog-footer">

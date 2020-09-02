@@ -2,22 +2,24 @@ import { applyMiddleware } from 'redux';
 
 import settingsMiddleware from './middlewares/settingsMiddleware';
 import dropMiddleware from './middlewares/dropMiddleware';
-import downloadsMiddleware from './middlewares/downloadsMiddleware';
+import footerMiddleware from './middlewares/footerMiddleware';
 import startCreateComponentMiddleware from './middlewares/startCreateComponentMiddleware';
 import startUpdateComponentMiddleware from './middlewares/startUpdateComponentMiddleware';
 import startDeleteComponentMiddleware from './middlewares/startDeleteComponentMiddleware';
 import updateDialogPreviewMiddleware from './middlewares/updateDialogPreviewMiddleware';
-import contextMenuMiddleware from './middlewares/contextMenuMiddleware';
+import contextmenuMiddleware from './middlewares/contextmenuMiddleware';
 import localStorageMiddleware from './middlewares/localStorageMiddleware';
+import moveComponentMiddleware from './middlewares/moveComponentMiddleware';
 
 export default applyMiddleware(
   settingsMiddleware,
   dropMiddleware,
-  downloadsMiddleware,
+  footerMiddleware,
   startCreateComponentMiddleware,
   startUpdateComponentMiddleware,
   startDeleteComponentMiddleware,
   updateDialogPreviewMiddleware,
-  contextMenuMiddleware,
+  contextmenuMiddleware,
   localStorageMiddleware,
+  moveComponentMiddleware,
 );

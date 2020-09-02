@@ -1,5 +1,6 @@
 /* eslint-disable no-trailing-spaces,no-empty */
 import objectPath from 'object-path';
+import actionNames from '../actionNames';
 
 const moveInContainer = (container, fromIndex, toIndex) => {
   const containerElement = container[fromIndex];
@@ -8,7 +9,7 @@ const moveInContainer = (container, fromIndex, toIndex) => {
 };
 
 const moveComponentMiddleware = (store) => (next) => (action) => {
-  if (action.type !== 'MOVE_COMPONENT_UP' && action.type !== 'MOVE_COMPONENT_DOWN') {
+  if (action.type !== actionNames.COMPONENT.MOVE_UP && action.type !== actionNames.COMPONENT.MOVE_DOWN) {
     next(action);
     return;
   }
@@ -20,20 +21,20 @@ const moveComponentMiddleware = (store) => (next) => (action) => {
   const containerPath = currentPathArray.join('.');
   const container = objectPath.get(structure, containerPath) || null;
 
-  if (action.type === 'MOVE_COMPONENT_UP') {
+  if (action.type === actionNames.COMPONENT.MOVE_UP) {
     if (container.length > 1 && currentContainerPosition > 0) {
       moveInContainer(container, currentContainerPosition, currentContainerPosition - 1);
     }
   }
 
-  if (action.type === 'MOVE_COMPONENT_DOWN') {
+  if (action.type === actionNames.COMPONENT.MOVE_DOWN) {
     if (currentContainerPosition < container.length - 1) {
       moveInContainer(container, currentContainerPosition, currentContainerPosition + 1);
     }
   }
 
   store.dispatch({
-    type: 'SET_STRUCTURE',
+    type: actionNames.STRUCTURE.SET,
     payload: { ...structure },
   });
 

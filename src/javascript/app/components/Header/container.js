@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import actionNames from '../../store/actionNames';
 
 const togglePreviewTheme = () => {
   // todo: move to correct position maybe in /tools ???
@@ -13,9 +14,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updatePreviewTheme: () => {
-
     dispatch({
-      type: 'UPDATE_PREVIEW_THEME',
+      type: actionNames.UI.PREVIEW.UPDATE_THEME,
       payload: {
         previewTheme: togglePreviewTheme(),
       },

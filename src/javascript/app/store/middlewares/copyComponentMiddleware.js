@@ -1,8 +1,9 @@
 /* eslint-disable no-trailing-spaces,no-empty */
 import objectPath from 'object-path';
+import actionNames from '../actionNames';
 
 const copyComponentMiddleware = (store) => (next) => (action) => {
-  if (action.type !== 'COPY_COMPONENT') {
+  if (action.type !== actionNames.COMPONENT.COPY) {
     next(action);
     return;
   }

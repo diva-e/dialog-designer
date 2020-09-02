@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import actionNames from '../../../store/actionNames';
 
 const mapStateToProps = (state, { id }) => ({
   isActive: state.settings.activePanel === id,
@@ -7,7 +8,7 @@ const mapStateToProps = (state, { id }) => ({
 const mapDispatchToProps = (dispatch, { id }) => ({
   activate: () => {
     dispatch({
-      type: 'ACTIVATE_ACTION_PANEL',
+      type: actionNames.UI.ACTION_PANEL.ACTIVATE,
       activePanel: id,
     });
   },

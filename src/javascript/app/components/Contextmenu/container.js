@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import actionNames from '../../store/actionNames';
 
 const mapStateToProps = (state) => ({
   x: state.contextmenu.x,
@@ -8,42 +9,42 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   startUpdateComponent: () => {
     dispatch({
-      type: 'START_UPDATE_COMPONENT',
+      type: actionNames.COMPONENT.UPDATE,
     });
   },
   deleteComponent: () => {
     dispatch({
-      type: 'DELETE_COMPONENT',
+      type: actionNames.COMPONENT.DELETE,
     });
   },
   moveComponentUp: () => {
     dispatch({
-      type: 'MOVE_COMPONENT_UP',
+      type: actionNames.COMPONENT.MOVE_UP,
     });
   },
   moveComponentDown: () => {
     dispatch({
-      type: 'MOVE_COMPONENT_DOWN',
+      type: actionNames.COMPONENT.MOVE_DOWN,
     });
   },
   copyComponent: () => {
     dispatch({
-      type: 'COPY_COMPONENT',
+      type: actionNames.COMPONENT.COPY,
     });
   },
   cutComponent: () => {
     dispatch({
-      type: 'CUT_COMPONENT',
+      type: actionNames.COMPONENT.CUT,
     });
   },
   pasteComponentBefore: () => {
     dispatch({
-      type: 'PASTE_COMPONENT_BEFORE',
+      type: actionNames.COMPONENT.PASTE_BEFORE,
     });
   },
   pasteComponentAfter: () => {
     dispatch({
-      type: 'PASTE_COMPONENT_AFTER',
+      type: actionNames.COMPONENT.PASTE_AFTER,
     });
   },
 });

@@ -1,3 +1,5 @@
+import actionNames from '../actionNames';
+
 const defaultSettings = {
   activePanel: 'dev',
   actionPanelContainerWidth: 350,
@@ -6,22 +8,22 @@ const defaultSettings = {
 
 const settingsReducer = (value = defaultSettings, action) => {
   switch (action.type) {
-    case 'UPDATE_ACTION_PANEL_CONTAINER_WIDTH':
+    case actionNames.UI.ACTION_PANEL.UPDATE_CONTAINER_WIDTH:
       return {
         ...value,
         actionPanelContainerWidth: action.actionPanelContainerWidth,
       };
-    case 'ACTIVATE_ACTION_PANEL':
+    case actionNames.UI.ACTION_PANEL.ACTIVATE:
       return {
         ...value,
         activePanel: action.activePanel,
       };
-    case 'UPDATE_PREVIEW_THEME':
+    case actionNames.UI.PREVIEW.UPDATE_THEME:
       return {
         ...value,
         previewTheme: action.previewTheme,
       };
-    case 'CLOSE_ACTION_PANEL':
+    case actionNames.UI.ACTION_PANEL.CLOSE:
       return {
         ...value,
         activePanel: '',

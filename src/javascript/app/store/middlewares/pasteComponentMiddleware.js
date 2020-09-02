@@ -1,12 +1,13 @@
 /* eslint-disable no-trailing-spaces,no-empty */
 import objectPath from 'object-path';
+import actionNames from '../actionNames';
 
 const pushInContainer = (container, toPushElement, toIndex) => {
   // todo: implement
 };
 
 const pasteComponentMiddleware = (store) => (next) => (action) => {
-  if (action.type !== 'PASTE_COMPONENT_BELOW' && action.type !== 'PASTE_COMPONENT_ONTOP') {
+  if (action.type !== actionNames.COMPONENT.PASTE_BEFORE && action.type !== actionNames.COMPONENT.PASTE_AFTER) {
     next(action);
     return;
   }
@@ -18,13 +19,13 @@ const pasteComponentMiddleware = (store) => (next) => (action) => {
   const containerPath = currentPathArray.join('.');
   const container = objectPath.get(structure, containerPath) || null;
 
-  if (action.type === 'PASTE_COMPONENT_BEFORE') {
+  if (action.type === actionNames.COMPONENT.PASTE_BEFORE) {
     if (container.length > 1 && currentContainerPosition > 0) {
       pushInContainer(container, currentContainerPosition - 1);
     }
   }
 
-  if (action.type === 'PASTE_COMPONENT_AFTER') {
+  if (action.type === actionNames.COMPONENT.PASTE_AFTER) {
     if (currentContainerPosition < container.length - 1) {
       pushInContainer(container, currentContainerPosition + 1);
     }

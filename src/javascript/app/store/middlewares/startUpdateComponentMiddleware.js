@@ -1,7 +1,8 @@
 import objectPath from 'object-path';
+import actionNames from '../actionNames';
 
 const startUpdateComponentMiddleware = (store) => (next) => (action) => {
-  if (action.type !== 'START_UPDATE_COMPONENT') {
+  if (action.type !== actionNames.COMPONENT.UPDATE) {
     next(action);
     return;
   }

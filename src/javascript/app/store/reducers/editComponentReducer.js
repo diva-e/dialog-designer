@@ -1,3 +1,5 @@
+import actionNames from '../actionNames';
+
 const updateField = (value, payload) => {
   const fields = value.fields.map((field) => {
     if (field.id === payload.field) {
@@ -19,7 +21,7 @@ const updateField = (value, payload) => {
 const newComponentReducer = (value = null, action) => {
   switch (action.type) {
     case 'DROP_NEW_COMPONENT':
-    case 'START_UPDATE_COMPONENT':
+    case actionNames.COMPONENT.UPDATE:
       return action.payload;
     case 'UPDATE_EDIT_FIELD_VALUE':
       return updateField(value, action.payload);

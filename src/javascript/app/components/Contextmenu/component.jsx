@@ -8,7 +8,8 @@ const Contextmenu = ({
   moveComponentDown,
   copyComponent,
   cutComponent,
-  pasteComponent,
+  pasteComponentBefore,
+  pasteComponentAfter,
   x,
   y,
 }) => {
@@ -81,12 +82,23 @@ const Contextmenu = ({
       </button>
       <button
         is="coral-anchorbutton"
-        icon="paste"
+        icon="TextSpaceBefore"
         variant="quiet"
-        title="Paste below"
+        title="Paste before"
         size="M"
         type="submit"
-        onClick={() => pasteComponent()}
+        onClick={() => pasteComponentBefore()}
+      >
+        <coral-button-label className="_coral-Button-label" />
+      </button>
+      <button
+        is="coral-anchorbutton"
+        icon="TextSpaceAfter"
+        variant="quiet"
+        title="Paste after"
+        size="M"
+        type="submit"
+        onClick={() => pasteComponentAfter()}
       >
         <coral-button-label className="_coral-Button-label" />
       </button>
@@ -112,7 +124,8 @@ Contextmenu.propTypes = {
   moveComponentDown: PropTypes.func.isRequired,
   copyComponent: PropTypes.func.isRequired,
   cutComponent: PropTypes.func.isRequired,
-  pasteComponent: PropTypes.func.isRequired,
+  pasteComponentBefore: PropTypes.func.isRequired,
+  pasteComponentAfter: PropTypes.func.isRequired,
   x: PropTypes.number,
   y: PropTypes.number,
 };

@@ -18,13 +18,13 @@ const pasteComponentMiddleware = (store) => (next) => (action) => {
   const containerPath = currentPathArray.join('.');
   const container = objectPath.get(structure, containerPath) || null;
 
-  if (action.type === 'PASTE_COMPONENT_ONTOP') {
+  if (action.type === 'PASTE_COMPONENT_BEFORE') {
     if (container.length > 1 && currentContainerPosition > 0) {
       pushInContainer(container, currentContainerPosition - 1);
     }
   }
 
-  if (action.type === 'PASTE_COMPONENT_BELOW') {
+  if (action.type === 'PASTE_COMPONENT_AFTER') {
     if (currentContainerPosition < container.length - 1) {
       pushInContainer(container, currentContainerPosition + 1);
     }

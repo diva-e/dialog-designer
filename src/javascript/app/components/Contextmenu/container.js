@@ -36,9 +36,14 @@ const mapDispatchToProps = (dispatch) => ({
       type: 'CUT_COMPONENT',
     });
   },
-  pasteComponent: () => {
+  pasteComponentBefore: () => {
     dispatch({
-      type: 'PASTE_COMPONENT',
+      type: 'PASTE_COMPONENT_BEFORE',
+    });
+  },
+  pasteComponentAfter: () => {
+    dispatch({
+      type: 'PASTE_COMPONENT_AFTER',
     });
   },
 });

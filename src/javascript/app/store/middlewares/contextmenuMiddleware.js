@@ -1,4 +1,4 @@
-const CONTEXTMENU_OPEN_CLASS = 'contextmenu-opened';
+const CONTEXTMENU_OPEN_CLASS = 'contextmenu--opened';
 
 const contextmenuMiddleware = (store) => {
   const unselectActiveComponentWrappers = () => {
@@ -6,6 +6,9 @@ const contextmenuMiddleware = (store) => {
       .forEach((openedContextmenuField) => {
         openedContextmenuField.classList.remove(CONTEXTMENU_OPEN_CLASS);
       });
+    store.dispatch({
+      type: 'CLOSE_CONTEXTMENU',
+    });
   };
 
   document.addEventListener('click', (ev) => {
@@ -17,9 +20,6 @@ const contextmenuMiddleware = (store) => {
     // close contextmenu if click outside
     if (ev.target.closest('.contextmenu') === null) {
       unselectActiveComponentWrappers();
-      store.dispatch({
-        type: 'CLOSE_CONTEXTMENU',
-      });
     }
   });
 

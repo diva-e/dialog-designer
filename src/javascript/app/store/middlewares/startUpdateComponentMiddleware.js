@@ -8,7 +8,7 @@ const startUpdateComponentMiddleware = (store) => (next) => (action) => {
 
   const state = store.getState();
   const path = state.contextmenu.path;
-  const rawChild = objectPath.get(state.structure, state.contextmenu.path) || null;
+  const rawChild = objectPath.get(state.structure, path) || null;
   const componentToUpdate = {
     what: rawChild.type,
     where: {

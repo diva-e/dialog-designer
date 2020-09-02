@@ -1,6 +1,6 @@
 const CONTEXTMENU_OPEN_CLASS = 'contextmenu-opened';
 
-const contextMenuMiddleware = (store) => {
+const contextmenuMiddleware = (store) => {
   const unselectActiveComponentWrappers = () => {
     [...document.getElementsByClassName(CONTEXTMENU_OPEN_CLASS)]
       .forEach((openedContextmenuField) => {
@@ -51,4 +51,4 @@ const contextMenuMiddleware = (store) => {
   };
 };
 
-export default contextMenuMiddleware;
+export default contextmenuMiddleware;

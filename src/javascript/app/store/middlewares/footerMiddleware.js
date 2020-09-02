@@ -1,7 +1,7 @@
 import constants from '../../data/coral-components/constants';
 import saveStructure from '../../../tools/saveStructure';
 
-const downloadsMiddleware = (store) => (next) => (action) => {
+const footerMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case 'DOWNLOAD_XML':
       saveStructure(store.getState().structure, 'xml');
@@ -27,4 +27,4 @@ const downloadsMiddleware = (store) => (next) => (action) => {
   next(action);
 };
 
-export default downloadsMiddleware;
+export default footerMiddleware;

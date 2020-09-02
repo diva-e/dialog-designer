@@ -6,6 +6,7 @@ const Contextmenu = ({
   deleteComponent,
   moveComponentUp,
   moveComponentDown,
+  copyComponent,
   cutComponent,
   pasteComponent,
   x,
@@ -58,6 +59,39 @@ const Contextmenu = ({
       </button>
       <button
         is="coral-anchorbutton"
+        icon="copy"
+        variant="quiet"
+        title="Copy"
+        size="M"
+        type="button"
+        onClick={() => copyComponent()}
+      >
+        <coral-button-label className="_coral-Button-label" />
+      </button>
+      <button
+        is="coral-anchorbutton"
+        icon="cut"
+        variant="quiet"
+        title="Cut"
+        size="M"
+        type="button"
+        onClick={() => cutComponent()}
+      >
+        <coral-button-label className="_coral-Button-label" />
+      </button>
+      <button
+        is="coral-anchorbutton"
+        icon="paste"
+        variant="quiet"
+        title="Paste below"
+        size="M"
+        type="submit"
+        onClick={() => pasteComponent()}
+      >
+        <coral-button-label className="_coral-Button-label" />
+      </button>
+      <button
+        is="coral-anchorbutton"
         icon="delete"
         variant="quiet"
         title="Delete"
@@ -76,6 +110,7 @@ Contextmenu.propTypes = {
   deleteComponent: PropTypes.func.isRequired,
   moveComponentUp: PropTypes.func.isRequired,
   moveComponentDown: PropTypes.func.isRequired,
+  copyComponent: PropTypes.func.isRequired,
   cutComponent: PropTypes.func.isRequired,
   pasteComponent: PropTypes.func.isRequired,
   x: PropTypes.number,

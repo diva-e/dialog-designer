@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   deleteComponent: () => {
     dispatch({
-      type: 'START_DELETE_COMPONENT',
+      type: 'DELETE_COMPONENT',
     });
   },
   moveComponentUp: () => {
@@ -24,6 +24,11 @@ const mapDispatchToProps = (dispatch) => ({
   moveComponentDown: () => {
     dispatch({
       type: 'MOVE_COMPONENT_DOWN',
+    });
+  },
+  copyComponent: () => {
+    dispatch({
+      type: 'COPY_COMPONENT',
     });
   },
   cutComponent: () => {

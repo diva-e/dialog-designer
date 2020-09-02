@@ -1,7 +1,7 @@
 import objectPath from 'object-path';
 import constants from '../../data/coral-components/constants';
 
-const startDeleteComponentMiddleware = (store) => (next) => (action) => {
+const deleteComponentMiddleware = (store) => (next) => (action) => {
   if (action.type !== 'START_DELETE_COMPONENT') {
     next(action);
     return;
@@ -22,4 +22,4 @@ const startDeleteComponentMiddleware = (store) => (next) => (action) => {
   next(action);
 };
 
-export default startDeleteComponentMiddleware;
+export default deleteComponentMiddleware;

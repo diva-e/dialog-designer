@@ -69,7 +69,7 @@ const Footer = ({
           icon="download"
           size="S"
         />
-        <coral-button-label className="_coral-Button-label">Download AGC JSON</coral-button-label>
+        <coral-button-label className="_coral-Button-label">Download ACG JSON</coral-button-label>
       </button>
     </div>
   </div>

@@ -60,7 +60,7 @@ const Footer = ({
         icon=""
         variant="cta"
         className="_coral-Button _coral-Button--cta"
-        title="Download AGC JSON"
+        title="Download ACG JSON"
         size="M"
         type="button"
         onClick={() => downloadACGJSON()}

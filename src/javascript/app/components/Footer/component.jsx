@@ -60,7 +60,7 @@ const Footer = ({
         icon=""
         variant="cta"
         className="_coral-Button _coral-Button--cta"
-        title="Download AGC JSON"
+        title="Download ACG JSON"
         size="M"
         type="button"
         onClick={() => downloadACGJSON()}
@@ -69,7 +69,7 @@ const Footer = ({
           icon="download"
           size="S"
         />
-        <coral-button-label className="_coral-Button-label">Download ACGr JSON</coral-button-label>
+        <coral-button-label className="_coral-Button-label">Download ACG JSON</coral-button-label>
       </button>
     </div>
   </div>

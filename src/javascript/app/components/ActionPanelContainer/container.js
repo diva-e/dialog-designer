@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import actionNames from '../../store/actionNames';
 
 const mapStateToProps = (state) => ({
   actionPanelContainerWidth: state.settings.actionPanelContainerWidth,
@@ -8,13 +9,13 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   updateActionPanelWidth: (actionPanelContainerWidth) => {
     dispatch({
-      type: 'UPDATE_ACTION_PANEL_CONTAINER_WIDTH',
+      type: actionNames.UI.ACTION_PANEL.UPDATE_CONTAINER_WIDTH,
       actionPanelContainerWidth,
     });
   },
   closeActionPanel: () => {
     dispatch({
-      type: 'CLOSE_ACTION_PANEL',
+      type: actionNames.UI.ACTION_PANEL.CLOSE,
     });
   },
 });

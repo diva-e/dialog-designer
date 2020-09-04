@@ -24,7 +24,7 @@
   }
 
   &:hover {
-    border: 1px solid #2680eb;
+    border-color: #2680eb;
     border-radius: 4px;
 
     &:after {
@@ -41,8 +41,8 @@
   }
 }
 
-.contextmenu-opened,
-.coral-Form--vertical .coral-Form-field._coral-Checkbox.contextmenu-opened {
+.has-contextmenu.contextmenu--opened,
+.coral-Form--vertical .coral-Form-field._coral-Checkbox.contextmenu--opened {
   border-color: #ff8800;
   border-radius: 4px;
 

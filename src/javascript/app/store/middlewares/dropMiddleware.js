@@ -1,8 +1,10 @@
 import objectPath from 'object-path';
 import { walkObject } from 'walk-object';
-import constants from '../../data/coral-components/constants';
 
+import constants from '../../data/coral-components/constants';
+import actionNames from '../actionNames';
 import coralComponents from '../../data/coral-components';
+
 import allFieldsValid from '../../../tools/allFieldsValid';
 import fieldValidation from '../../../tools/fieldValidation';
 
@@ -55,12 +57,12 @@ const getUniqueFieldValue = (store) => (fieldName, prefix) => {
 };
 
 const dropMiddleware = (store) => (next) => (action) => {
-  if (action.type === 'DROP_NEW_COMPONENT') {
+  if (action.type === actionNames.COMPONENT.DROP) {
     const fields = getFields(action.payload, getUniqueFieldValue(store));
     Object.assign(action.payload, { fields });
   }
 
-  if (action.type === 'SAVE_EDIT_COMPONENT') {
+  if (action.type === actionNames.UI.EDITCOMPONENT.SAVE) {
     const { structure, editComponent } = store.getState();
     if (!allFieldsValid(fieldValidation(editComponent.fields))) {
       return;
@@ -83,7 +85,7 @@ const dropMiddleware = (store) => (next) => (action) => {
     }
 
     store.dispatch({
-      type: 'SET_STRUCTURE',
+      type: actionNames.STRUCTURE.SET,
       payload: { ...structure },
     });
   }

@@ -1,18 +1,19 @@
 import constants from '../../data/coral-components/constants';
 import saveStructure from '../../../tools/saveStructure';
+import actionNames from '../actionNames';
 
 const footerMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case 'DOWNLOAD_XML':
+    case actionNames.STRUCTURE.DOWNLOAD.XML:
       saveStructure(store.getState().structure, 'xml');
       break;
-    case 'DOWNLOAD_JSON':
+    case actionNames.STRUCTURE.DOWNLOAD.JSON:
       saveStructure(store.getState().structure, 'json');
       break;
-    case 'DOWNLOAD_ACG_JSON':
+    case actionNames.STRUCTURE.DOWNLOAD.ACG_JSON:
       saveStructure(store.getState().structure, 'acgjson');
       break;
-    case 'EXECUTE_COMPLETE_RESET':
+    case actionNames.STRUCTURE.RESET:
       // eslint-disable-next-line no-alert
       if (window.confirm(constants.messages.DELETE_CONFIRM)) {
         window.localStorage.removeItem('dndd-test-structure');

@@ -14,11 +14,8 @@ class ACGProcessor {
   }
 
   processInput(fields, wasTab = false, wasContainer = false) {
-    console.log('#######', fields, wasTab, wasContainer);
     fields.forEach((field) => {
-      console.log('field', field);
       if (ACGHelper.isFieldComponentType(field.type) && field.type !== 'tab') {
-        console.log('detected field type', field.type);
         const currentACGField = new ACGField();
         currentACGField.fill(field);
 
@@ -58,7 +55,6 @@ class ACGProcessor {
   }
 
   getACGOutput(structureInput) {
-    console.log(structureInput);
     // eslint-disable-next-line no-undef
     const acgData = ACG_DEFAULT_CONFIG;
     // if dialog has content
@@ -68,12 +64,10 @@ class ACGProcessor {
 
     acgData.options.properties = this.properties;
     acgData.options.propertiesTabs = this.propertiesTabs;
-    console.log(acgData);
     // todo: #32 implement main meta data
     // acgData.name = 'my-component';
     // acgData.title = 'My Component';
     // acgData.group = 'Basic Components';
-    console.log(this);
     return JSON.stringify(acgData, null, 2);
   }
 }

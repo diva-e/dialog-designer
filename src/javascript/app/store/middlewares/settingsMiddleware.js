@@ -20,7 +20,8 @@ const settingsMiddleware = (store) => (next) => (action) => {
     action.type === actionNames.UI.ACTION_PANEL.CLOSE
   ) {
     const { settings } = store.getState();
-    window.localStorage.setItem('adc-settings', JSON.stringify(settings));
+    // eslint-disable-next-line no-undef
+    window.localStorage.setItem(STORAGE.SETTINGS, JSON.stringify(settings));
   }
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
@@ -13,9 +14,8 @@ const initApp = () => {
   }
 
   const initialState = {};
-  // todo: outsource and rename storage name (also see localStorageMiddleware
-  const loadedStructure = JSON.parse(window.localStorage.getItem('dndd-test-structure'));
-  const loadedUiSettings = JSON.parse(window.localStorage.getItem('adc-settings'));
+  const loadedStructure = JSON.parse(window.localStorage.getItem(STORAGE.STRUCTURE));
+  const loadedUiSettings = JSON.parse(window.localStorage.getItem(STORAGE.SETTINGS));
 
   if (loadedStructure) {
     initialState.structure = loadedStructure;

@@ -9,20 +9,26 @@ const { projectConfig } = require('../package.json');
 const fieldDefinitions = require('./fieldDefinitions');
 const acgDefaultConfig = require('./acgDefaultConfig');
 const containerPolicyConfig = require('./containerPolicyConfig');
+const storageConfig = require('./storageConfig');
 
 const definedFieldDefinitions = {};
-Object.keys(fieldDefinitions).forEach((definitionName) => {
-  definedFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
+Object.keys(fieldDefinitions).forEach((fd) => {
+  definedFieldDefinitions[fd] = JSON.stringify(fieldDefinitions[fd], null, 2);
 });
 
 const definedACGDefaultConfig = {};
-Object.keys(acgDefaultConfig).forEach((defaultConfig) => {
-  definedACGDefaultConfig[defaultConfig] = JSON.stringify(acgDefaultConfig[defaultConfig], null, 2);
+Object.keys(acgDefaultConfig).forEach((acgc) => {
+  definedACGDefaultConfig[acgc] = JSON.stringify(acgDefaultConfig[acgc], null, 2);
 });
 
 const definedPolicyConfig = {};
-Object.keys(containerPolicyConfig).forEach((policyConfig) => {
-  definedPolicyConfig[policyConfig] = JSON.stringify(containerPolicyConfig[policyConfig], null, 2);
+Object.keys(containerPolicyConfig).forEach((pc) => {
+  definedPolicyConfig[pc] = JSON.stringify(containerPolicyConfig[pc], null, 2);
+});
+
+const definedStorageConfig = {};
+Object.keys(storageConfig).forEach((sc) => {
+  definedStorageConfig[sc] = JSON.stringify(storageConfig[sc], null, 2);
 });
 
 module.exports = {
@@ -134,6 +140,7 @@ module.exports = {
       ...definedFieldDefinitions,
       ...definedACGDefaultConfig,
       ...definedPolicyConfig,
+      ...definedStorageConfig,
     }),
   ],
 };

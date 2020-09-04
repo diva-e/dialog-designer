@@ -1,7 +1,7 @@
 {
-  "name": "dnd-aem-dialogs",
+  "name": "dialog-designer",
   "version": "0.0.1",
-  "description": "AEM Dialog Creator",
+  "description": "DialogDesigner",
   "scripts": {
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",
     "start": "npm run build:clean && npm run build:webpack && node scripts/host.js",
@@ -35,7 +35,7 @@
   },
   "private": true,
   "projectConfig": {
-    "PROJECT_NAME": "AEM Dialog Creator"
+    "PROJECT_NAME": "Dialog Designer"
   },
   "devDependencies": {
     "@adobe/coral-spectrum": "^4.9.0",

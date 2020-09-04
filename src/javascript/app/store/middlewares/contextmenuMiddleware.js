@@ -1,4 +1,4 @@
-import actionNames from "../actionNames";
+import actionNames from '../actionNames';
 
 const CONTEXTMENU_OPEN_CLASS = 'contextmenu--opened';
 

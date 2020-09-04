@@ -2,9 +2,33 @@
 
 [[_TOC_]]
 
+
+## What is Dialog Designer
+
 Single Page Drag/Drop application to create AEM Dialogs.
 
-## Supported fields
+## Using Dialog Designer
+
+## Config
+
+- [Local Storage Config](./scripts/storageConfig.js)
+- [ACG Default Config](./scripts/acgDefaultConfig.js)
+- [Default Field Definitions](./scripts/fieldDefinitions.js)
+- [Container Policy Config](./scripts/containerPolicyConfig.js)
+
+### Installation / Setup
+
+```
+npm i
+```
+
+```
+npm run dev
+```
+
+[http://localhost:3000/](http://localhost:3000/)
+
+## Supported Fields
 
 ### Layout
 
@@ -114,21 +138,33 @@ Example:
 },
 ```
 
+## Supported Download options
+
+| Format| Filename | Info |
+| --- | --- | --- |
+| XML | _cq_dialog.xml | to directly use in AEM projects |
+| JSON | dialog.json | For saving on disk an future load feature in tools Library  |
+| AEM Component Generator JSON | dialog | to use with AEM Component Generator |
+
+## Contributing
+
+TODO: contributing guidelines ... sub documentation mds
+
 ## Test
 
 ```mermaid
 graph TB
 
   SubGraph1 --> SubGraph1Flow
-  subgraph "SubGraph 1 Flow"
+  subgraph "Edit Field Component"
   SubGraph1Flow(SubNode 1)
-  SubGraph1Flow -- Choice1 --> DoChoice1
-  SubGraph1Flow -- Choice2 --> DoChoice2
+  SubGraph1Flow -- Cancel --> DoNothing[Do Nothing]
+  SubGraph1Flow -- Save --> Save[Save in local storage]
   end
 
-  subgraph "Main Graph"
-  Node1[Node 1] --> Node2[Node 2]
-  Node2 --> SubGraph1[Jump to SubGraph1]
+  subgraph "Dialog Designer"
+  Sidepanel[SidePanel Component] -- Drag & Drop --> Preview[Dialog Preview]
+  Preview --> SubGraph1[Jump to SubGraph1]
   SubGraph1 --> FinalThing[Final Thing]
 end
 ```

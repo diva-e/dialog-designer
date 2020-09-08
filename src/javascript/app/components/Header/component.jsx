@@ -3,7 +3,12 @@ import React from 'react';
 // todo: outsource style to css
 const Header = () => (
   <div className="header">
-    <h1>Dialog Designer</h1>
+    <h1>
+      Dialog
+      <span>
+        Designer
+      </span>
+    </h1>
     {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
     <button
       is="coral-button"

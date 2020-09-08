@@ -1,7 +1,8 @@
 {
-  "name": "dnd-aem-dialogs",
+  "name": "dialog-designer",
   "version": "0.0.1",
-  "description": "AEM Dialog Creator",
+  "description": "Dialog Designer",
+  "keywords": ["AEM", "Dialogs"],
   "scripts": {
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",
     "start": "npm run build:clean && npm run build:webpack && node scripts/host.js",
@@ -31,11 +32,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@gitlab.diva-e.com:adaptto/dnd-aem-dialogs.git"
+    "url": "git@github.com:diva-e/dialog-designer.git"
   },
   "private": true,
   "projectConfig": {
-    "PROJECT_NAME": "AEM Dialog Creator"
+    "PROJECT_NAME": "Dialog Designer"
   },
   "devDependencies": {
     "@adobe/coral-spectrum": "^4.9.0",

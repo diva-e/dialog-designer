@@ -8,9 +8,7 @@ import coralComponents from '../../data/coral-components';
 const Sidepanel = ({
   dropNewComponent,
 }) => (
-  <ul
-    className="sidepanel"
-  >
+  <ul className="sidepanel">
     {
       coralComponents
         .filter(({ hidden }) => !hidden)

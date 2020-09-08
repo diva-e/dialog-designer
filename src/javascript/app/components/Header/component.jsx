@@ -1,6 +1,5 @@
 import React from 'react';
 
-// todo: outsource style to css
 const Header = () => (
   <div className="header">
     <h1>
@@ -16,11 +15,12 @@ const Header = () => (
       icon="colorPalette"
       iconsize="M"
       type="button"
-      title="Toggle Dialog Theme"
+      title="Toggle Dialog Preview Theme"
       onClick={() => {
-        // actually dispatch an action to store it
-        document.body.classList.toggle('coral--dark');
-        document.body.classList.toggle('coral--light');
+        // todo: actually dispatch an action to store it
+        const preview = document.getElementById('preview');
+        preview.classList.toggle('coral--dark');
+        preview.classList.toggle('coral--light');
       }}
     />
   </div>

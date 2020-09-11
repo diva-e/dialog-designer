@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => (
   <div className="header">
     <h1>
-      Dialog
+      Dialog&nbsp;
       <span>
         Designer
       </span>

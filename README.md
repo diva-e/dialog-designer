@@ -1,8 +1,5 @@
 # Dialog Designer
 
-[[_TOC_]]
-
-
 ## What is Dialog Designer
 
 Single Page Drag/Drop application to create AEM Dialogs.
@@ -150,21 +147,3 @@ Example:
 
 TODO: contributing guidelines ... sub documentation mds
 
-## Test
-
-```mermaid
-graph TB
-
-  SubGraph1 --> SubGraph1Flow
-  subgraph "Edit Field Component"
-  SubGraph1Flow(SubNode 1)
-  SubGraph1Flow -- Cancel --> DoNothing[Do Nothing]
-  SubGraph1Flow -- Save --> Save[Save in local storage]
-  end
-
-  subgraph "Dialog Designer"
-  Sidepanel[SidePanel Component] -- Drag & Drop --> Preview[Dialog Preview]
-  Preview --> SubGraph1[Jump to SubGraph1]
-  SubGraph1 --> FinalThing[Final Thing]
-end
-```

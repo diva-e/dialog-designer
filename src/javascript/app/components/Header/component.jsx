@@ -2,7 +2,12 @@ import React from 'react';
 
 const Header = () => (
   <div className="header">
-    <h1>AEM Dialog Creator</h1>
+    <h1>
+      Dialog
+      <span>
+        Designer
+      </span>
+    </h1>
     {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
     <button
       is="coral-button"
@@ -10,11 +15,12 @@ const Header = () => (
       icon="colorPalette"
       iconsize="M"
       type="button"
-      title="Toggle Dialog Theme"
-      style={{ position: 'absolute', right: '-5px', top: '3px', color: 'white' }}
+      title="Toggle Dialog Preview Theme"
       onClick={() => {
-        document.body.classList.toggle('coral--dark');
-        document.body.classList.toggle('coral--light');
+        // todo: actually dispatch an action to store it
+        const preview = document.getElementById('preview');
+        preview.classList.toggle('coral--dark');
+        preview.classList.toggle('coral--light');
       }}
     />
   </div>

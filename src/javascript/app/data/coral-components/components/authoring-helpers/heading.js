@@ -14,14 +14,14 @@ const heading = {
       id: 'text',
       label: 'Headline text',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'level',
       label: 'Level of the Headline (1-6)',
       description: '',
-      type: constants.fieldTypes.LONG,
+      type: constants.fieldValueTypes.LONG,
       typeOptions: [
         {
           value: '1',

@@ -19,7 +19,7 @@ const textarea = {
       id: 'rows',
       label: 'Rows',
       description: 'Number of lines for the textarea to show.',
-      type: constants.fieldTypes.LONG,
+      type: constants.fieldValueTypes.LONG,
       defaultValue: '5',
       min: 2,
       max: 100,
@@ -28,7 +28,7 @@ const textarea = {
     {
       id: 'value',
       label: 'Value',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
     },
   ],
   creation: 'textarea',
@@ -49,8 +49,8 @@ const textarea = {
     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
     jcr:primaryType="nt:unstructured"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
     value="{value}"
   />`,
 };

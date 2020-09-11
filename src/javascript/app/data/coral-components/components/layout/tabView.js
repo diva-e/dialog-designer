@@ -11,9 +11,9 @@ const tabView = {
   fields: [
     FIELD_DEFINITION_ID,
   ],
-  previewOutput: `<coral-tabview title="tt" data-horst="horst">
+  previewOutput: `<coral-tabview>
     <coral-tablist target="{id}">
-      <drop-target data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>
+      <drop-target data-name="tabs" data-wrap="coral-tab"/>
     </coral-tablist>
     <coral-panelstack id="{id}">
       <adapt data-from="tabs" data-to="panel" />
@@ -25,7 +25,7 @@ const tabView = {
     maximized="{Boolean}true"
   >
     <items jcr:primaryType="nt:unstructured">
-      <drop-target data-accept="tab" data-name="tabs" />
+      <drop-target data-name="tabs" />
     </items>
   </{id}>`,
 };

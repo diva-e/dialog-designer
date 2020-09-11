@@ -1,8 +1,9 @@
 import objectPath from 'object-path';
 import constants from '../../data/coral-components/constants';
+import actionNames from '../actionNames';
 
-const startDeleteComponentMiddleware = (store) => (next) => (action) => {
-  if (action.type !== 'START_DELETE_COMPONENT') {
+const deleteComponentMiddleware = (store) => (next) => (action) => {
+  if (action.type !== actionNames.COMPONENT.DELETE) {
     next(action);
     return;
   }
@@ -14,7 +15,7 @@ const startDeleteComponentMiddleware = (store) => (next) => (action) => {
   if (window.confirm(constants.messages.DELETE_CONFIRM)) {
     objectPath.del(structure, path);
     store.dispatch({
-      type: 'SET_STRUCTURE',
+      type: actionNames.STRUCTURE.SET,
       payload: { ...structure },
     });
   }
@@ -22,4 +23,4 @@ const startDeleteComponentMiddleware = (store) => (next) => (action) => {
   next(action);
 };
 
-export default startDeleteComponentMiddleware;
+export default deleteComponentMiddleware;

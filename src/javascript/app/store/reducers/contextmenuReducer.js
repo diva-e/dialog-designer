@@ -1,14 +1,15 @@
+import actionNames from '../actionNames';
+
 const contextmenuReducer = (value = {}, action) => {
   switch (action.type) {
-    case 'OPEN_CONTEXTMENU':
+    case actionNames.UI.CONTEXTMENU.OPEN:
       return {
         y: action.y,
         x: action.x,
         path: action.path,
       };
-    case 'START_UPDATE_COMPONENT':
-    case 'CLOSE_CONTEXTMENU':
-    case 'SET_STRUCTURE':
+    case actionNames.COMPONENT.UPDATE:
+    case actionNames.STRUCTURE.SET:
       return {};
     default:
       return value;
@@ -16,3 +17,9 @@ const contextmenuReducer = (value = {}, action) => {
 };
 
 export default contextmenuReducer;
+
+// case 'START_DELETE_COMPONENT':
+// case 'MOVE_COMPONENT_UP':
+// case 'MOVE_COMPONENT_DOWN':
+// case 'CUT_COMPONENT':
+// case 'PASTE_COMPONENT':

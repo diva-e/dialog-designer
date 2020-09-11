@@ -16,7 +16,7 @@ const multifield = {
   previewOutput: `<div class="_coral-Multifield coral-Well">
     <div class="_coral-Multifield-item">
       <button is="coral-button" type="button" variant="quietaction" icon="delete" iconsize="S" size="M" class="_coral-Multifield-remove" disabled>&nbsp;</button>
-      <drop-target data-accept="textfield,hidden,datepicker,checkbox,radio,select,pathbrowser,pathfield" data-name="mf" data-wrap="" />
+      <drop-target data-name="mf" data-wrap="" />
     </div>
     <button type="button" is="coral-button" disabled>Add a field</button>
   </div>`,
@@ -24,7 +24,9 @@ const multifield = {
       jcr:primaryType="nt:unstructured"
       sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
       composite="{Boolean}true"
-      fieldLabel="{label}">
+      data-optional.fieldLabel="{label}"
+      data-optional.fieldDescription="{description}"
+  >
       <field
           jcr:primaryType="nt:unstructured"
           sling:resourceType="granite/ui/components/coral/foundation/container"
@@ -34,7 +36,7 @@ const multifield = {
                   jcr:primaryType="nt:unstructured"
                   sling:resourceType="granite/ui/components/coral/foundation/container">
                   <items jcr:primaryType="nt:unstructured">
-                      <drop-target data-accept="trophyfield,helloworld,textfield,hidden,datepicker,checkbox,radio,select,pathbrowser,pathfield" data-name="mf" />
+                      <drop-target data-accept="trophyfield,helloworld,textfield,hidden,datepicker,checkbox,radio,select,pathfield" data-name="mf" />
                   </items>
               </column>
           </items>

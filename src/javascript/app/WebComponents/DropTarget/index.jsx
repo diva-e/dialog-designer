@@ -1,9 +1,12 @@
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import React from 'react';
+
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
+
 import DropTarget from '../../components/DropTarget';
+import ContainerPolicies from '../../../tools/ContainerPolicies/ContainerPolicies';
 
 const initDropTarget = (store) => {
   class DropTargetWebComponent extends HTMLElement {
@@ -13,7 +16,7 @@ const initDropTarget = (store) => {
         <Provider store={store}>
           <DndProvider backend={HTML5Backend}>
             <DropTarget
-              accepts={this.dataset.accept.split(',')}
+              accepts={ContainerPolicies.getPolicy(this.dataset.name)}
               path={this.dataset.path}
             />
           </DndProvider>

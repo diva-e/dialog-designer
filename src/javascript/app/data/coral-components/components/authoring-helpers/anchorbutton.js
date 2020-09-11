@@ -16,28 +16,28 @@ const anchorbutton = {
       id: 'caption',
       label: 'Caption',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'title',
       label: 'Title',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'href',
       label: 'HRef',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'variant',
       label: 'Variant',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       defaultValue: Button.variant.MINIMAL,
       options: [
         {
@@ -58,7 +58,7 @@ const anchorbutton = {
       id: 'size',
       label: 'Size',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: Button.size.MEDIUM,
@@ -76,7 +76,7 @@ const anchorbutton = {
       id: 'icon',
       label: 'Icon',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       options: icons.optionList,
       required: false,
     },
@@ -84,7 +84,7 @@ const anchorbutton = {
       id: 'iconSize',
       label: 'Icon-Size',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: Button.size.MEDIUM,

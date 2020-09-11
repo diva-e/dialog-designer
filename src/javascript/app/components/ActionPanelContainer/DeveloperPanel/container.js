@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import structureToXML from '../../../tools/structureToXML';
-import XMLFormat from '../../../tools/XMLFormat';
+import structureToXML from '../../../../tools/structureToXML';
+import XMLFormat from '../../../../tools/XMLFormat';
+import actionNames from '../../../store/actionNames';
 
 const mapStateToProps = (state) => ({
   structure: state.structure,
@@ -10,7 +11,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   updateStructure: (structure) => {
     dispatch({
-      type: 'SET_STRUCTURE',
+      type: actionNames.STRUCTURE.SET,
       payload: structure,
     });
   },

@@ -841,8 +841,8 @@ const richtext = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
   />`,
 };
 

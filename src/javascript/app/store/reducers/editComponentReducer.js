@@ -1,3 +1,5 @@
+import actionNames from '../actionNames';
+
 const updateField = (value, payload) => {
   const fields = value.fields.map((field) => {
     if (field.id === payload.field) {
@@ -18,13 +20,13 @@ const updateField = (value, payload) => {
 
 const newComponentReducer = (value = null, action) => {
   switch (action.type) {
-    case 'DROP_NEW_COMPONENT':
-    case 'START_UPDATE_COMPONENT':
+    case actionNames.COMPONENT.DROP:
+    case actionNames.COMPONENT.UPDATE:
       return action.payload;
-    case 'UPDATE_EDIT_FIELD_VALUE':
+    case actionNames.UI.EDITCOMPONENT.UPDATE_FIELDVALUE:
       return updateField(value, action.payload);
-    case 'SAVE_EDIT_COMPONENT':
-    case 'CLOSE_EDIT_COMPONENT':
+    case actionNames.UI.EDITCOMPONENT.SAVE:
+    case actionNames.UI.EDITCOMPONENT.CLOSE:
       return null;
     default:
       return value;

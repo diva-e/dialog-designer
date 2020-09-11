@@ -5,12 +5,30 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const pxtorem = require('postcss-pxtorem');
 const autoprefixer = require('autoprefixer');
 const { projectConfig } = require('../package.json');
+
 const fieldDefinitions = require('./fieldDefinitions');
+const acgDefaultConfig = require('./acgDefaultConfig');
+const containerPolicyConfig = require('./containerPolicyConfig');
+const storageConfig = require('./storageConfig');
 
-const defineFieldDefinitions = {};
+const definedFieldDefinitions = {};
+Object.keys(fieldDefinitions).forEach((fd) => {
+  definedFieldDefinitions[fd] = JSON.stringify(fieldDefinitions[fd], null, 2);
+});
 
-Object.keys(fieldDefinitions).forEach((definitionName) => {
-  defineFieldDefinitions[definitionName] = JSON.stringify(fieldDefinitions[definitionName], null, 2);
+const definedACGDefaultConfig = {};
+Object.keys(acgDefaultConfig).forEach((acgc) => {
+  definedACGDefaultConfig[acgc] = JSON.stringify(acgDefaultConfig[acgc], null, 2);
+});
+
+const definedPolicyConfig = {};
+Object.keys(containerPolicyConfig).forEach((pc) => {
+  definedPolicyConfig[pc] = JSON.stringify(containerPolicyConfig[pc], null, 2);
+});
+
+const definedStorageConfig = {};
+Object.keys(storageConfig).forEach((sc) => {
+  definedStorageConfig[sc] = JSON.stringify(storageConfig[sc], null, 2);
 });
 
 module.exports = {
@@ -119,7 +137,10 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       CONFIG: JSON.stringify(projectConfig),
-      ...defineFieldDefinitions,
+      ...definedFieldDefinitions,
+      ...definedACGDefaultConfig,
+      ...definedPolicyConfig,
+      ...definedStorageConfig,
     }),
   ],
 };

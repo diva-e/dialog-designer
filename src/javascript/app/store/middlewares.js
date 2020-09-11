@@ -1,20 +1,33 @@
 import { applyMiddleware } from 'redux';
+
+import settingsMiddleware from './middlewares/settingsMiddleware';
 import dropMiddleware from './middlewares/dropMiddleware';
-import downloadsMiddleware from './middlewares/downloadsMiddleware';
+import footerMiddleware from './middlewares/footerMiddleware';
 import startCreateComponentMiddleware from './middlewares/startCreateComponentMiddleware';
 import startUpdateComponentMiddleware from './middlewares/startUpdateComponentMiddleware';
-import startDeleteComponentMiddleware from './middlewares/startDeleteComponentMiddleware';
+import deleteComponentMiddleware from './middlewares/deleteComponentMiddleware';
 import updateDialogPreviewMiddleware from './middlewares/updateDialogPreviewMiddleware';
-import contextMenuMiddleware from './middlewares/contextMenuMiddleware';
+import contextmenuMiddleware from './middlewares/contextmenuMiddleware';
 import localStorageMiddleware from './middlewares/localStorageMiddleware';
+import moveComponentMiddleware from './middlewares/moveComponentMiddleware';
+import pasteComponentMiddleware from './middlewares/pasteComponentMiddleware';
+import cutComponentMiddleware from './middlewares/cutComponentMiddleware';
+import copyComponentMiddleware from './middlewares/copyComponentMiddleware';
+import setStructureClipboardMiddleware from './middlewares/setStructureClipboardMiddleware';
 
 export default applyMiddleware(
+  settingsMiddleware,
   dropMiddleware,
-  downloadsMiddleware,
+  footerMiddleware,
+  setStructureClipboardMiddleware,
   startCreateComponentMiddleware,
   startUpdateComponentMiddleware,
-  startDeleteComponentMiddleware,
+  deleteComponentMiddleware,
   updateDialogPreviewMiddleware,
-  contextMenuMiddleware,
+  contextmenuMiddleware,
   localStorageMiddleware,
+  moveComponentMiddleware,
+  pasteComponentMiddleware,
+  cutComponentMiddleware,
+  copyComponentMiddleware,
 );

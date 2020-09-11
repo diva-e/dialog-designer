@@ -18,12 +18,12 @@ const select = {
     {
       id: 'placeholder',
       label: 'Placeholder',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
     },
     {
       id: 'options',
       label: 'Options',
-      type: constants.fieldTypes.KEY_VALUE,
+      type: constants.fieldValueTypes.KEY_VALUE,
       renderItem: (value, mode) => {
         if (mode === 'xml-output') {
           return value.map(({ itemId, itemCaption, itemValue }) => (
@@ -43,7 +43,7 @@ const select = {
     {
       id: 'selectDatasource',
       label: 'Select Datasource',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
     },
   ],
   previewOutput: `<div>
@@ -61,7 +61,9 @@ const select = {
     granite:class="cmp-options--editor-type-v1"
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/select"
-    fieldLabel="{label}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.required="{required}"
     name="./{id}">
     <items jcr:primaryType="nt:unstructured">
        {options}

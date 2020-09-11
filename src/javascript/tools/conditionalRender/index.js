@@ -6,6 +6,22 @@ const conditionalRenderCheck = (dom) => {
       toBeCheckedElement.removeAttribute('data-test');
     }
   });
+
+  [...dom.querySelectorAll('*')].forEach((toBeCheckedElement) => {
+    const currentAttributes = toBeCheckedElement.getAttributeNames().filter((attribute) => attribute.startsWith('data-optional.'));
+    for (const attribute of currentAttributes) {
+      const attributeValue = toBeCheckedElement.getAttribute(attribute);
+      if (attributeValue === '' || attributeValue === '{Boolean}false' || attributeValue === 'false') {
+        toBeCheckedElement.removeAttribute(attribute);
+      } else {
+        const preservedValue = attributeValue;
+        toBeCheckedElement.removeAttribute(attribute);
+        const cleanedAttributeName = attribute.replace('data-optional.', '');
+        toBeCheckedElement.setAttribute(cleanedAttributeName, preservedValue);
+      }
+    }
+  });
+
   return dom;
 };
 

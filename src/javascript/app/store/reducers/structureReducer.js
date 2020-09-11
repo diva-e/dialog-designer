@@ -1,3 +1,5 @@
+import actionNames from '../actionNames';
+
 const defaultStructure = {
   type: 'root',
   properties: {},
@@ -6,7 +8,8 @@ const defaultStructure = {
 
 const structureReducer = (value = defaultStructure, action) => {
   switch (action.type) {
-    case 'SET_STRUCTURE':
+    case actionNames.STRUCTURE.SET:
+      // todo:rename and outsource storage name
       window.localStorage.setItem('dndd-test-structure', JSON.stringify(action.payload));
       return action.payload;
     default:

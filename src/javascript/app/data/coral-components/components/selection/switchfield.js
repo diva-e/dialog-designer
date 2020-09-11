@@ -24,11 +24,11 @@ const switchfield = {
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/switch"
-    fieldDescription="{description}"
-    fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.fieldLabel="{label}"
     name="./{id}"
     checked="{Boolean}true"
-    required="{required}"
+    data-optional.required="{required}"
     value="{value}"
   />`,
 };

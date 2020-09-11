@@ -17,14 +17,14 @@ const pathfield = {
       id: 'rootPath',
       label: 'Root Path',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'suffix',
       label: 'Suffix',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       defaultValue: '.html',
       required: false,
     },
@@ -83,10 +83,11 @@ const pathfield = {
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
     name="./{id}"
-    fieldLabel="{label}"
-    fieldDescription="{description}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
     rootPath="{rootPath}"
-    suffix="{suffix}"
+    data-optional.suffix="{suffix}"
+    data-optional.required="{required}"
   />`,
 };
 

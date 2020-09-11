@@ -1,11 +1,16 @@
-const CONTEXTMENU_OPEN_CLASS = 'contextmenu-opened';
+import actionNames from '../actionNames';
 
-const contextMenuMiddleware = (store) => {
+const CONTEXTMENU_OPEN_CLASS = 'contextmenu--opened';
+
+const contextmenuMiddleware = (store) => {
   const unselectActiveComponentWrappers = () => {
     [...document.getElementsByClassName(CONTEXTMENU_OPEN_CLASS)]
       .forEach((openedContextmenuField) => {
         openedContextmenuField.classList.remove(CONTEXTMENU_OPEN_CLASS);
       });
+    store.dispatch({
+      type: actionNames.UI.CONTEXTMENU.CLOSE,
+    });
   };
 
   document.addEventListener('click', (ev) => {
@@ -17,9 +22,6 @@ const contextMenuMiddleware = (store) => {
     // close contextmenu if click outside
     if (ev.target.closest('.contextmenu') === null) {
       unselectActiveComponentWrappers();
-      store.dispatch({
-        type: 'CLOSE_CONTEXTMENU',
-      });
     }
   });
 
@@ -35,7 +37,7 @@ const contextMenuMiddleware = (store) => {
     componentWrapper.classList.add(CONTEXTMENU_OPEN_CLASS);
     const { top, left } = componentWrapper.getBoundingClientRect();
     store.dispatch({
-      type: 'OPEN_CONTEXTMENU',
+      type: actionNames.UI.CONTEXTMENU.OPEN,
       path: componentWrapper.dataset.path,
       x: left,
       y: top - 49,
@@ -43,7 +45,7 @@ const contextMenuMiddleware = (store) => {
   });
 
   return (next) => (action) => {
-    if (action.type === 'CLOSE_EDIT_COMPONENT') {
+    if (action.type === actionNames.UI.EDITCOMPONENT.CLOSE) {
       unselectActiveComponentWrappers();
     }
 
@@ -51,4 +53,4 @@ const contextMenuMiddleware = (store) => {
   };
 };
 
-export default contextMenuMiddleware;
+export default contextmenuMiddleware;

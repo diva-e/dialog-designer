@@ -11,13 +11,6 @@ const fielupload = {
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_REQUIRED,
-    {
-      id: 'title',
-      label: 'Title',
-      description: '',
-      type: constants.fieldTypes.STRING,
-      required: true,
-    },
   ],
   previewOutput: `<div
     class="coral-Form-field cq-FileUpload cq-droptarget _coral-FileUpload"
@@ -75,6 +68,7 @@ const fielupload = {
     name="./file"
     uploadUrl="\${suffix.path}"
     useHTML5="{Boolean}true"
+    data-optional.required="{required}"
   />`,
 };
 

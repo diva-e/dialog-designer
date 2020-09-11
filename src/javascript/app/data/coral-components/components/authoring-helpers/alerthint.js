@@ -15,21 +15,21 @@ const alerthint = {
       id: 'header',
       label: 'Headertext',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'message',
       label: 'Message',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'size',
       label: 'Size',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: Alert.size.SMALL,
@@ -47,7 +47,7 @@ const alerthint = {
       id: 'variant',
       label: 'Variant',
       description: '',
-      type: constants.fieldTypes.STRING,
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: Alert.variant.ERROR,

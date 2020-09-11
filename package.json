@@ -13,10 +13,14 @@
     "check:stylelint": "echo no-stylelint-check"
   },
   "author": {
-    "name": "Andreas Hahn",
-    "email": "andreas.hahn@diva-e.com"
+    "name": "diva-e Platforms GmbH",
+    "url": "https://diva-e.com/"
   },
   "contributors": [
+    {
+      "name": "Andreas Hahn",
+      "email": "andreas.hahn@diva-e.com"
+    },
     {
       "name": "Andrei Shilov",
       "email": "andrei.shilov@diva-e.com"
@@ -34,7 +38,7 @@
     "type": "git",
     "url": "git@github.com:diva-e/dialog-designer.git"
   },
-  "private": true,
+  "license": "Apache 2.0",
   "projectConfig": {
     "PROJECT_NAME": "Dialog Designer"
   },

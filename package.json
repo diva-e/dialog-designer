@@ -10,7 +10,8 @@
     "build:clean": "rimraf dist && rimraf build",
     "build:webpack": "node scripts/build.js",
     "check:eslint": "echo no-eslint-check",
-    "check:stylelint": "echo no-stylelint-check"
+    "check:stylelint": "echo no-stylelint-check",
+    "deploy-gh-pages": "npm run build && cd dist && git add . && git commit -m \"pages update\" && git push"
   },
   "author": {
     "name": "diva-e Platforms GmbH",

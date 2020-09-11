@@ -1,7 +1,8 @@
 {
   "name": "dialog-designer",
   "version": "0.0.1",
-  "description": "DialogDesigner",
+  "description": "Dialog Designer",
+  "keywords": ["AEM", "Dialogs"],
   "scripts": {
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",
     "start": "npm run build:clean && npm run build:webpack && node scripts/host.js",
@@ -9,13 +10,18 @@
     "build:clean": "rimraf dist && rimraf build",
     "build:webpack": "node scripts/build.js",
     "check:eslint": "echo no-eslint-check",
-    "check:stylelint": "echo no-stylelint-check"
+    "check:stylelint": "echo no-stylelint-check",
+    "deploy-gh-pages": "npm run build && cd dist && git add . && git commit -m \"pages update\" && git push"
   },
   "author": {
-    "name": "Andreas Hahn",
-    "email": "andreas.hahn@diva-e.com"
+    "name": "diva-e Platforms GmbH",
+    "url": "https://diva-e.com/"
   },
   "contributors": [
+    {
+      "name": "Andreas Hahn",
+      "email": "andreas.hahn@diva-e.com"
+    },
     {
       "name": "Andrei Shilov",
       "email": "andrei.shilov@diva-e.com"
@@ -31,9 +37,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@gitlab.diva-e.com:adaptto/dnd-aem-dialogs.git"
+    "url": "git@github.com:diva-e/dialog-designer.git"
   },
-  "private": true,
+  "license": "Apache 2.0",
   "projectConfig": {
     "PROJECT_NAME": "Dialog Designer"
   },

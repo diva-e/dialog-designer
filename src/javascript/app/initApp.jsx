@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
@@ -13,10 +14,12 @@ const initApp = () => {
   }
 
   const initialState = {};
-  const loadedStructure = JSON.parse(window.localStorage.getItem('dndd-test-structure'));
+  const loadedStructure = JSON.parse(window.localStorage.getItem(STORAGE.STRUCTURE));
+  const loadedUiSettings = JSON.parse(window.localStorage.getItem(STORAGE.SETTINGS));
 
   if (loadedStructure) {
     initialState.structure = loadedStructure;
+    initialState.settings = loadedUiSettings;
   }
 
   const store = getStore(initialState);

@@ -17,19 +17,19 @@ const pathfield = {
       id: 'rootPath',
       label: 'Root Path',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'suffix',
       label: 'Suffix',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       defaultValue: '.html',
       required: false,
     },
   ],
-  src: `<div>
+  previewOutput: `<div>
   <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
   <div
       class="coral-Form-field"
@@ -79,13 +79,16 @@ const pathfield = {
       </div>
     </div>
   </div>`,
-  xml: `<{id}
-   jcr:primaryType="nt:unstructured"
-   sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-   fieldLabel="{label}"
-   name="./{id}"
-   rootPath="{rootPath}"
-   suffix="{suffix}"/>`,
+  xmlOutput: `<{id}
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+    name="./{id}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    rootPath="{rootPath}"
+    data-optional.suffix="{suffix}"
+    data-optional.required="{required}"
+  />`,
 };
 
 export default pathfield;

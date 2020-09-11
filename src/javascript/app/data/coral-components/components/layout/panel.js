@@ -10,16 +10,13 @@ const panel = {
   id: 'panel',
   hidden: true,
   fields: [],
-  src: `<coral-panel>
+  previewOutput: `<coral-panel>
   <coral-panel-content>
     <div class="foundation-layout-util-vmargin">
       <div class="coral-FixedColumn foundation-layout-util-vmargin">
         <div class="coral-FixedColumn-column">
           <div class="coral-Well">
-            <drop-target
-              data-accept="fieldset,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading"
-              data-name="tabcontent"
-            >
+            <drop-target data-name="tabcontent">
             </drop-target>
           </div>
         </div>
@@ -27,7 +24,7 @@ const panel = {
     </div>
   </coral-panel-content>
 </coral-panel>`,
-  xml: '<!-- comment -->',
+  xmlOutput: '<!-- no output -->',
 };
 
 export default panel;

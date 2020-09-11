@@ -15,21 +15,21 @@ const alerthint = {
       id: 'header',
       label: 'Headertext',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'message',
       label: 'Message',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'size',
       label: 'Size',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: Alert.size.SMALL,
@@ -47,7 +47,7 @@ const alerthint = {
       id: 'variant',
       label: 'Variant',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: Alert.variant.ERROR,
@@ -74,17 +74,18 @@ const alerthint = {
       required: false,
     },
   ],
-  src: `<coral-alert size="{size}" variant="{variant}" id="{id}">
-          <coral-alert-header>{header}</coral-alert-header>
-          <coral-alert-content>{message}</coral-alert-content>
-        </coral-alert>`,
-  xml: `<{id}
-   granite:class="cmp-form-textfield-readonlyselected-alert"
-   jcr:primaryType="nt:unstructured"
-   sling:resourceType="granite/ui/components/coral/foundation/alert"
-   size="{size}"
-   text="{message}"
-   variant="{variant}" />`,
+  previewOutput: `<coral-alert size="{size}" variant="{variant}" id="{id}">
+    <coral-alert-header>{header}</coral-alert-header>
+    <coral-alert-content>{message}</coral-alert-content>
+  </coral-alert>`,
+  xmlOutput: `<{id}
+    granite:class="cmp-form-textfield-readonlyselected-alert"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/alert"
+    size="{size}"
+    text="{message}"
+    variant="{variant}"
+  />`,
 };
 
 export default alerthint;

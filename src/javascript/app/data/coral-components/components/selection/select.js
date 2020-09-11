@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const select = {
   name: 'Select',
@@ -14,54 +16,60 @@ const select = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
     {
+      id: 'placeholder',
+      label: 'Placeholder',
+      type: constants.fieldValueTypes.STRING,
+    },
+    {
       id: 'options',
       label: 'Options',
-      type: 'KeyValue',
+      type: constants.fieldValueTypes.KEY_VALUE,
+      renderItem: (value, mode) => {
+        if (mode === 'xml-output') {
+          return value.map(({ itemId, itemCaption, itemValue }) => (
+            `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`
+          )).join('');
+        }
+
+        return value.map(({ itemId, itemCaption, itemValue }) => (
+          `<coral-select-item value="${itemValue}" data-id="${itemId}">${itemCaption}</coral-select-item>`
+        )).join('');
+      },
+      // samples for single output with template string only
+      // todo: not sure if this will be actually useful maybe remove feature (structureToDom structureToXML)
+      // renderItemString: ({ itemId, itemValue, itemCaption }) => `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`,
+      // renderItemString: ({ itemId, itemValue, itemCaption }) => `<coral-select-item value="${itemValue}" data-id="${itemId}">${itemCaption}</coral-select-item>`,
     },
     {
       id: 'selectDatasource',
       label: 'Select Datasource',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
     },
   ],
-  src: `<div>
-      <label id="label_{id}" class="coral-Form-fieldlabel">{label}</label>
-      <coral-select placeholder="{placeholder}" name="{id}" id="{id}">
-        <coral-select-item>
-          Value One
-        </coral-select-item>
-        <coral-select-item>
-          Value Two
-        </coral-select-item>
-        <coral-select-item>
-          Value Three
-        </coral-select-item>
+  previewOutput: `<div>
+      ${LABEL_TEMPLATE}
+      <coral-select
+        name="{id}"
+        id="{id}"
+        placeholder="{placeholder}"
+      >
+        {options}
       </coral-select>
+      ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
-  xml: `<{id}
-   granite:class="cmp-options--editor-type-v1"
-   jcr:primaryType="nt:unstructured"
-   sling:resourceType="granite/ui/components/coral/foundation/form/select"
-   fieldLabel="{label}"
-   name="./{id}">
-   <items jcr:primaryType="nt:unstructured">
-       <valueOne
-           jcr:primaryType="nt:unstructured"
-           text="Value One"
-           value="one"/>
-       <valueTwo
-           jcr:primaryType="nt:unstructured"
-           text="Value Two"
-           value="two"/>
-       <valueThree
-           jcr:primaryType="nt:unstructured"
-           text="Value Three"
-           value="tree"/>
-   </items>
-</{id}>`,
+  xmlOutput: `<{id}
+    granite:class="cmp-options--editor-type-v1"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.required="{required}"
+    name="./{id}">
+    <items jcr:primaryType="nt:unstructured">
+       {options}
+    </items>
+  </{id}>`,
 };
-
-// todo: anti sample it
 
 // todo: allow alternative datasource (instead of static options)
 /*

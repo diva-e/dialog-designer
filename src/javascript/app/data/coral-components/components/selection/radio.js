@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
+import LABEL_TEMPLATE from '../../partials/label';
 
 const radio = {
   name: 'Radio',
@@ -13,38 +15,41 @@ const radio = {
     FIELD_DEFINITION_LABEL,
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
-  ],
-  src: `<div>
-    <label
-      id="label_{id}"
-      class="coral-Form-fieldlabel"
-      for="{id}">{label}</label>
-      <coral-radio
-        name={id}
-        value="one">Option One</coral-radio>
-      <coral-radio
-        name={id}
-        value="two">Option Two</coral-radio>
-    </div>`,
-  xml: `<{id}
-   jcr:primaryType="nt:unstructured"
-   sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
-   name="./{id}"
-   vertical="{Boolean}true"
-   fieldLabel="Radio">
-     <items jcr:primaryType="nt:unstructured">
-         <optionOne
-             jcr:primaryType="nt:unstructured"
-             text="Option One"
-             value="one"/>
-         <optionTwo
-            jcr:primaryType="nt:unstructured"
-            text="Option Two"
-            value="two"/>
-     </items>
-   </{id}>`,
-};
+    {
+      id: 'radiobuttons',
+      label: 'Radiobuttons',
+      type: constants.fieldValueTypes.KEY_VALUE,
+      renderItem: (value, mode) => {
+        if (mode === 'xml-output') {
+          return value.map(({ itemId, itemCaption, itemValue }) => (
+            `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`
+          )).join('');
+        }
 
-// todo: anti sample it
+        return value.map(({ itemId, itemCaption, itemValue }) => (
+          `<coral-radio name="${itemId}" value="${itemValue}">${itemCaption}</coral-radio>`
+        )).join('');
+      },
+    },
+  ],
+  previewOutput: `<div>
+    ${LABEL_TEMPLATE}
+    {radiobuttons}
+    ${TOOLTIP_WRAPPER_TEMPLATE}
+  </div>`,
+  xmlOutput: `<{id}
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+    name="./{id}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.required="{required}"
+    vertical="{Boolean}true"
+  >
+     <items jcr:primaryType="nt:unstructured">
+         {radiobuttons}
+     </items>
+  </{id}>`,
+};
 
 export default radio;

@@ -4,7 +4,6 @@ import { useDrop } from 'react-dnd';
 import classNames from 'class-names';
 
 const DropTarget = ({ accepts, path }) => {
-
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: accepts,
     drop: () => ({ name: 'droptarget', path }),

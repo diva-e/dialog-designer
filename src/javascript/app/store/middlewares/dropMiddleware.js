@@ -1,15 +1,30 @@
 import objectPath from 'object-path';
 import { walkObject } from 'walk-object';
+
+import constants from '../../data/coral-components/constants';
+import actionNames from '../actionNames';
 import coralComponents from '../../data/coral-components';
+
 import allFieldsValid from '../../../tools/allFieldsValid';
 import fieldValidation from '../../../tools/fieldValidation';
 
+const getFieldDefaultValue = (type) => {
+  switch (type) {
+    case constants.fieldValueTypes.KEY_VALUE:
+      return [];
+    case constants.fieldValueTypes.STRING:
+    case constants.fieldValueTypes.LONG:
+    case constants.fieldValueTypes.BOOLEAN:
+    default:
+      return '';
+  }
+};
+
 const getFields = ({ what }, getUniqueFieldValue) => {
   const comp = coralComponents.find(({ id }) => id === what);
-  // todo prevent duplicate id of fields
+  // todo: prevent duplicate id of fields
   return comp.fields.map((field) => {
-
-    let value = field.defaultValue || '';
+    let value = field.defaultValue || getFieldDefaultValue(field.type);
     if (field.uniqueAutoValue) {
       value = getUniqueFieldValue(field.id, what);
     }
@@ -22,9 +37,7 @@ const getFields = ({ what }, getUniqueFieldValue) => {
 };
 
 const getUniqueFieldValue = (store) => (fieldName, prefix) => {
-
   const allMatchingValues = [];
-
   walkObject(store.getState().structure, ({ value }) => {
     if (value.id === fieldName) {
       if (typeof value.value === 'string') {
@@ -35,7 +48,6 @@ const getUniqueFieldValue = (store) => (fieldName, prefix) => {
 
   let i = 0;
   let uniqueValue = prefix;
-
   while (allMatchingValues.includes(uniqueValue)) {
     i += 1;
     uniqueValue = `${prefix}_${i}`;
@@ -44,28 +56,17 @@ const getUniqueFieldValue = (store) => (fieldName, prefix) => {
   return uniqueValue;
 };
 
-
 const dropMiddleware = (store) => (next) => (action) => {
-
-  if (action.type === 'DROP_NEW_COMPONENT') {
-
+  if (action.type === actionNames.COMPONENT.DROP) {
     const fields = getFields(action.payload, getUniqueFieldValue(store));
-
     Object.assign(action.payload, { fields });
   }
 
-  if (action.type === 'SAVE_EDIT_COMPONENT') {
+  if (action.type === actionNames.UI.EDITCOMPONENT.SAVE) {
     const { structure, editComponent } = store.getState();
-
-    console.log(fieldValidation(editComponent.fields));
-    console.log(allFieldsValid(fieldValidation(editComponent.fields)));
-
     if (!allFieldsValid(fieldValidation(editComponent.fields))) {
-      console.log('nöööp');
       return;
     }
-
-    console.log('yöööp');
 
     switch (editComponent.where.mode) {
       case 'update':
@@ -84,13 +85,9 @@ const dropMiddleware = (store) => (next) => (action) => {
     }
 
     store.dispatch({
-      type: 'SET_STRUCTURE',
+      type: actionNames.STRUCTURE.SET,
       payload: { ...structure },
     });
-  }
-
-  if (action.type === 'CLOSE_EDIT_COMPONENT') {
-    // nothing for now
   }
 
   next(action);

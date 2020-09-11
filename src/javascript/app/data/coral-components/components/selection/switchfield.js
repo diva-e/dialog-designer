@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const switchfield = {
   name: 'Switch',
@@ -14,19 +16,21 @@ const switchfield = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  src: `<div>
-      <label id="label-{id}" class="coral-Form-fieldlabel">{label}</label>
+  previewOutput: `<div>
+      ${LABEL_TEMPLATE}
       <coral-switch class="coral-Form-field" labelledby="label-{id}"></coral-switch>
+      ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/switch"
-    fieldDescription="{description}"
-    fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.fieldLabel="{label}"
     name="./{id}"
     checked="{Boolean}true"
-    required="{required}"
-    value="{value}"/>`,
+    data-optional.required="{required}"
+    value="{value}"
+  />`,
 };
 
 export default switchfield;

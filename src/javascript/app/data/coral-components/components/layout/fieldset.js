@@ -14,26 +14,24 @@ const fieldset = {
       id: 'title',
       label: 'Title',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
   ],
-  src: `<section class="coral-Form-fieldset">
+  previewOutput: `<section class="coral-Form-fieldset">
       <h3
         class="coral-Form-fieldset-legend">
         {title}</h3>
-         <drop-target data-accept="datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="content" />
+         <drop-target data-name="fs" />
     </section>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-    jcr:title="{title}"
-    >
+    jcr:title="{title}">
       <items jcr:primaryType="nt:unstructured">
-        <!-- other fields here -->
-        <drop-target data-name="content" />
+        <drop-target data-name="fscontent" />
       </items>
-    </{id}>`,
+  </{id}>`,
 };
 
 export default fieldset;

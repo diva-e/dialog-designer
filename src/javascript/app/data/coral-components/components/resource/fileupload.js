@@ -11,15 +11,8 @@ const fielupload = {
   fields: [
     FIELD_DEFINITION_ID,
     FIELD_DEFINITION_REQUIRED,
-    {
-      id: 'title',
-      label: 'Title',
-      description: '',
-      type: 'String',
-      required: true,
-    },
   ],
-  src: `<div
+  previewOutput: `<div
     class="coral-Form-field cq-FileUpload cq-droptarget _coral-FileUpload"
     name="./file"
     async=""
@@ -30,7 +23,8 @@ const fielupload = {
     data-cq-fileupload-temporaryfiledelete="./file.sftmp@Delete"
     data-cq-fileupload-temporaryfilepath=""
     data-cq-fileupload-allowupload=""
-    id="{id}">
+    id="{id}"
+  >
     <div
       coral-fileupload-dropzone=""
       class="cq-FileUpload-thumbnail">
@@ -44,7 +38,15 @@ const fielupload = {
           title="Drag image here."
           class="cq-FileUpload-icon _coral-Icon _coral-Icon--sizeS"
           role="img"
-          size="S"></coral-icon>
+          size="S" />
+           <svg focusable="false"
+            aria-hidden="true"
+            class="_coral-Icon--svg _coral-Icon">
+            <use
+              xlink:href="/dist/resources/spectrum-icons.svg#spectrum-icon-18-Image">
+            </use>
+          </svg>
+        </div>
         <span class="cq-FileUpload-label">
           Drop an asset here or <a
             aria-label="Browse for a file to upload"
@@ -54,7 +56,7 @@ const fielupload = {
       </div>
     </div>
   </div>`,
-  xml: `<file
+  xmlOutput: `<file
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
     autoStart="{Boolean}false"
@@ -64,10 +66,13 @@ const fielupload = {
     mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
     multiple="{Boolean}false"
     name="./file"
-    uploadUrl=""
-    useHTML5="{Boolean}true"/>`,
+    uploadUrl="\${suffix.path}"
+    useHTML5="{Boolean}true"
+    data-optional.required="{required}"
+  />`,
 };
+
 // todo: find solution for / disable substitution logic
-// uploadUrl="${suffix.path}"
+// uploadUrl=""
 
 export default fielupload;

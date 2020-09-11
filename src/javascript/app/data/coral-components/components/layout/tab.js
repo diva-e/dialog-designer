@@ -14,33 +14,37 @@ const tab = {
       id: 'title',
       label: 'Title',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
   ],
-  src: `<coral-tab>
-      <coral-tab-label>
-        {title}
-      </coral-tab-label>
-    </coral-tab>`,
-  xml: `<{id}
+  previewOutput: `<coral-tab>
+    <coral-tab-label>
+      {title}
+    </coral-tab-label>
+  </coral-tab>`,
+  xmlOutput: `<{id}
+    jcr:primaryType="nt:unstructured"
+    jcr:title="{title}"
+    sling:resourceType="granite/ui/components/coral/foundation/container"
+    margin="{Boolean}true">
+    <items jcr:primaryType="nt:unstructured">
+      <columns
         jcr:primaryType="nt:unstructured"
-        jcr:title="{title}"
-        sling:resourceType="granite/ui/components/foundation/section">
-        <layout
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-            margin="{Boolean}false"/>
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+        margin="{Boolean}true">
         <items jcr:primaryType="nt:unstructured">
-            <column
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/foundation/container">
-                <items jcr:primaryType="nt:unstructured">
-                     <drop-target data-accept="fieldset,datepicker,hidden,numberfield,richtext,textarea,textfield,buttongroup,checkbox,radio,select,switchfield,fileupload,pathbrowser,pathfield,alerthint,anchorbutton,heading," data-name="tabcontent" />
-                </items>
-            </column>
+          <column
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+              <drop-target data-name="tabcontent" />
+            </items>
+          </column>
         </items>
-    </{id}>`,
+      </columns>
+    </items>
+  </{id}>`,
 };
 
 export default tab;

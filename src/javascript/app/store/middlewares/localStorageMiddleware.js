@@ -1,7 +1,13 @@
-const localStorageMiddleware = (store) => (next) => (action) => {
+/* eslint-disable no-undef */
+import actionNames from '../actionNames';
 
-  if (action.type === 'SET_STRUCTURE') {
-    window.localStorage.setItem('dndd-test-structure', JSON.stringify(store.getState().structure));
+const localStorageMiddleware = (store) => (next) => (action) => {
+  if (action.type === actionNames.STRUCTURE.SET) {
+    window.localStorage.setItem(STORAGE.STRUCTURE, JSON.stringify(store.getState().structure));
+  }
+
+  if (action.type === actionNames.SETTINGS.SET) {
+    window.localStorage.setItem(STORAGE.SETTINGS, JSON.stringify(store.getState().settings));
   }
 
   next(action);

@@ -14,7 +14,7 @@ const richtext = {
     FIELD_DEFINITION_DESCRIPTION,
     FIELD_DEFINITION_REQUIRED,
   ],
-  src: `<div
+  previewOutput: `<div
   class="cq-RichText richtext-container coral-Form-field coral-DecoratedTextfield">
   <input type="hidden"
     data-cq-richtext-input="true"
@@ -100,7 +100,6 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
         <button is="coral-button"
           variant="quietaction"
           class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet"
@@ -127,7 +126,6 @@ const richtext = {
             class="_coral-ActionButton-label">
           </coral-button-label>
         </button>
-
 
         <button is="coral-button"
           type="button" title="Justify"
@@ -165,7 +163,6 @@ const richtext = {
             </coral-icon>
           </coral-button-label>
         </button>
-
 
         <button is="coral-button"
           type="button" title="Lists"
@@ -205,7 +202,6 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
         <button is="coral-button"
           variant="quietaction"
           class="rte-toolbar-item disabled rte--trigger _coral-ActionButton _coral-ActionButton--quiet"
@@ -243,7 +239,6 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
         <button is="coral-button"
           variant="quietaction"
           class="rte-toolbar-item disabled _coral-ActionButton _coral-ActionButton--quiet"
@@ -268,7 +263,6 @@ const richtext = {
             class="_coral-ActionButton-label">
           </coral-button-label>
         </button>
-
 
         <button is="coral-button"
           type="button"
@@ -309,9 +303,7 @@ const richtext = {
           </coral-button-label>
         </button>
 
-
       </coral-buttongroup>
-
 
       <coral-popover interaction="off"
         data-id="justify"
@@ -845,12 +837,13 @@ const richtext = {
   </div>
 
 </div>`,
-  xml: `<{id}
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-    fieldDescription="{label}"
-    fieldLabel="{label}"
-    name="./{id}" />`,
+    name="./{id}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+  />`,
 };
 
 export default richtext;

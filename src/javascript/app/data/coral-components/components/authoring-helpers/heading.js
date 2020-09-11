@@ -14,14 +14,14 @@ const heading = {
       id: 'text',
       label: 'Headline text',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       required: true,
     },
     {
       id: 'level',
       label: 'Level of the Headline (1-6)',
       description: '',
-      type: 'Long',
+      type: constants.fieldValueTypes.LONG,
       typeOptions: [
         {
           value: '1',
@@ -52,14 +52,15 @@ const heading = {
       required: true,
     },
   ],
-  src: `<h{level} id="{id}">
-        {text}
-    </h{level}>`,
-  xml: `<{id}
+  previewOutput: `<h{level} id="{id}">
+      {text}
+  </h{level}>`,
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/heading"
     level="{level}"
-    text="{text}"/>`,
+    text="{text}"
+  />`,
 };
 
 export default heading;

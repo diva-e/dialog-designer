@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const numberfield = {
   name: 'Numberfield',
@@ -17,45 +19,44 @@ const numberfield = {
       id: 'min',
       label: 'Min',
       description: '',
-      type: 'Long',
+      type: constants.fieldValueTypes.LONG,
       required: false,
     },
     {
       id: 'max',
       label: 'Max',
       description: '',
-      type: 'Long',
+      type: constants.fieldValueTypes.LONG,
       required: false,
     },
     {
       id: 'step',
       label: 'Step',
       description: '',
-      type: 'Long',
+      type: constants.fieldValueTypes.LONG,
       required: false,
     },
   ],
-  src: `<div>
-    <label
-      id="label_{id}"
-      class="coral-Form-fieldlabel"
-      for="{id}">{label}</label>
+  previewOutput: `<div>
+    ${LABEL_TEMPLATE}
     <coral-numberinput
       max={max}
       min={min}
       step={step}
       name={id}>
     </coral-numberinput>
+    ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
-  xml: `<{id}
-         granite:class="cq-AspectRatio-ratio"
-         jcr:primaryType="nt:unstructured"
-         sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
-         fieldLabel="{label}"
-         min="{min}"
-         max="{max}"
-         name="ratio"
-         step="{step}" />`,
+  xmlOutput: `<{id}
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+    name="./{id}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.min="{min}"
+    data-optional.max="{max}"
+    data-optional.step="{step}"
+  />`,
 };
 
 export default numberfield;

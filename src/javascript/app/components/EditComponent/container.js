@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import fieldValidation from '../../../tools/fieldValidation';
+import actionNames from '../../store/actionNames';
 
 const mapStateToProps = (state) => ({
   component: state.editComponent,
@@ -9,7 +10,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   updateFieldValue: (field, value) => {
     dispatch({
-      type: 'UPDATE_EDIT_FIELD_VALUE',
+      type: actionNames.UI.EDITCOMPONENT.UPDATE_FIELDVALUE,
       payload: {
         field,
         value,
@@ -18,12 +19,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
   saveEdit: () => {
     dispatch({
-      type: 'SAVE_EDIT_COMPONENT',
+      type: actionNames.UI.EDITCOMPONENT.SAVE,
     });
   },
   closeEdit: () => {
     dispatch({
-      type: 'CLOSE_EDIT_COMPONENT',
+      type: actionNames.UI.EDITCOMPONENT.CLOSE,
     });
   },
 });

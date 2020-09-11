@@ -11,9 +11,7 @@
 @import '../../node_modules/@spectrum-css/icon/dist/index-vars.css';
 @import '../../node_modules/@spectrum-css/button/dist/index-vars.css';
 
-@import 'preview';
+@import 'app/app';
+@import 'app/preview';
 
-body {
-  overflow: hidden;
-  height: 100%;
-}
+@import 'custom';

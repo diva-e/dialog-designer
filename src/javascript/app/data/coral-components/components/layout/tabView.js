@@ -11,25 +11,23 @@ const tabView = {
   fields: [
     FIELD_DEFINITION_ID,
   ],
-  src: `<coral-tabview title="tt" data-horst="horst">
+  previewOutput: `<coral-tabview>
     <coral-tablist target="{id}">
-      <drop-target data-accept="tab" data-name="tabs" data-wrap="coral-tab"/>
+      <drop-target data-name="tabs" data-wrap="coral-tab"/>
     </coral-tablist>
     <coral-panelstack id="{id}">
       <adapt data-from="tabs" data-to="panel" />
     </coral-panelstack>
   </coral-tabview>`,
-  xml: `<content
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/foundation/container">
-        <layout
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
-            type="nav"/>
-        <items jcr:primaryType="nt:unstructured">
-            <drop-target data-accept="tab" data-name="tabs" />
-        </items>
-    </content>`,
+  xmlOutput: `<{id}
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+    maximized="{Boolean}true"
+  >
+    <items jcr:primaryType="nt:unstructured">
+      <drop-target data-name="tabs" />
+    </items>
+  </{id}>`,
 };
 
 export default tabView;

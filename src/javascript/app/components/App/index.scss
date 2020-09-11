@@ -1,3 +1,5 @@
+// todo: cleanup / structure / document / split
+
 .app-layout {
   display: flex;
   justify-content: space-between;
@@ -15,7 +17,9 @@
   height: calc(100vh - 96px);  /* 40 header 56 footer */
   min-width: 100vw;
   overflow: hidden;
-  background: #e1e1e1;
+  background-color: #e1e1e1;
+  background-image: linear-gradient(transparent 11px, #cccccc 12px, transparent 12px), linear-gradient(90deg, transparent 11px, #cccccc 12px, transparent 12px);
+  background-size: 100% 12px, 12px 100%;
 }
 
 ._coral-Dialog-header {
@@ -56,6 +60,10 @@
 
   .cq-Dialog {
     z-index: $z-index-coral-dialog-preview;
+    left: 300px;
+    top: 100px;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   ._coral-Dialog {
@@ -113,6 +121,33 @@
   .cq-FileUpload-label {
     display: block;
   }
+
+  ._coral-Multifield {
+    width: 100%;
+  }
+
+  ._coral-Panel .coral-FixedColumn-column > .coral-Well {
+    background: transparent;
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.tooltip-wrapper {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 200px;
+  text-align: right;
+
+  ._coral-Tooltip {
+    text-align: left;
+  }
+}
+
+coral-button-label {
+  margin-left: 0.5rem;
 }
 
 /* todo: further cleanup / removals */

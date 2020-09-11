@@ -25,7 +25,7 @@ module.exports = {
   FIELD_DEFINITION_DESCRIPTION: {
     id: 'description',
     label: 'Field Description',
-    description: '',
+    description: 'Will be displayed as help tooltip next to the field.',
     type: 'String',
     required: false,
   },

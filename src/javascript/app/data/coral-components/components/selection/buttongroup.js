@@ -1,6 +1,8 @@
 import { ButtonGroup } from '@adobe/coral-spectrum';
 /* eslint-disable no-undef */
 import constants from '../../constants';
+import LABEL_TEMPLATE from '../../partials/label';
+import TOOLTIP_WRAPPER_TEMPLATE from '../../partials/tooltip';
 
 const buttongroup = {
   name: 'Buttongroup',
@@ -18,7 +20,7 @@ const buttongroup = {
       id: 'selectionmode',
       label: 'Selection Mode',
       description: '',
-      type: 'String',
+      type: constants.fieldValueTypes.STRING,
       options: [
         {
           value: ButtonGroup.selectionMode.SINGLE,
@@ -32,43 +34,46 @@ const buttongroup = {
       defaultValue: ButtonGroup.selectionMode.SINGLE,
       required: false,
     },
+    {
+      id: 'buttons',
+      label: 'Buttons',
+      type: constants.fieldValueTypes.KEY_VALUE,
+      renderItem: (value, mode) => {
+        if (mode === 'xml-output') {
+          return value.map(({ itemId, itemCaption, itemValue }) => (
+            `<${itemId} jcr:primaryType="nt:unstructured" text="${itemCaption}" value="${itemValue}" />`
+          )).join('');
+        }
+
+        return value.map(({ itemId, itemCaption, itemValue }) => (
+          `<button is="coral-button" variant="secondary" value="${itemValue}" data-id="${itemId}">${itemCaption}</button>`
+        )).join('');
+      },
+    },
   ],
-  src: `<div>
-        <label
-          id="label_{id}"
-          class="coral-Form-fieldlabel"
-          for="{id}">{label}</label>
-          <coral-buttongroup
+  previewOutput: `<div>
+    ${LABEL_TEMPLATE}
+    <coral-buttongroup
       selectionmode="{selectionmode}"
-      name="{id}">
-        <button is="coral-button" variant="secondary">One</button>
-        <button is="coral-button" variant="secondary">Two</button>
-        <button is="coral-button" variant="secondary">Three</button>
-      </coral-buttongroup>
-    </div>`,
-  xml: `<{id}
+      name="{id}"
+    >
+      {buttons}
+    </coral-buttongroup>
+    ${TOOLTIP_WRAPPER_TEMPLATE}
+  </div>`,
+  xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup"
     name="./{id}"
-    fieldLabel="{label}"
-    required="{required}"
+    data-optional.fieldLabel="{label}"
+    data-optional.fieldDescription="{description}"
+    data-optional.required="{required}"
     selectionMode="{selectionMode}"
-    sling:resourceType="granite/ui/components/coral/foundation/form/buttongroup">
+  >
     <items jcr:primaryType="nt:unstructured">
-        <one jcr:primaryType="nt:unstructured"
-            name="./one"
-            text="One"
-            value="one" />
-        <two jcr:primaryType="nt:unstructured"
-            name="./two"
-            text="Two"
-            value="two" />
-        <three jcr:primaryType="nt:unstructured"
-            name="./three"
-            text="Option three"
-            value="three" />
+        {buttons}
     </items>
-</{id}>`,
+  </{id}>`,
 };
 
-// todo: anti sample it
 export default buttongroup;

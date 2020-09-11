@@ -8,8 +8,30 @@
   box-sizing: border-box;
   padding-top: 10px;
   font-size: 13px;
+
   h1 {
     margin: 0;
-    font-size: 13px;
+    font-size: 17px;
+
+    &:before {
+      content: ' ';
+      background: white;
+      width: 10px;
+      height: 20px;
+      display: block;
+      position: absolute;
+      left: 17px;
+    }
+
+    span {
+      font-weight: 100;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: -5px;
+    top: 3px;
+    color: white;
   }
 }

@@ -7,6 +7,7 @@ const EditComponentCheckbox = ({
   label,
   description,
   updateFieldValue,
+  value,
 }) => (
   <div className="coral-Form-field _coral-Checkbox">
     <input
@@ -15,6 +16,7 @@ const EditComponentCheckbox = ({
       className="_coral-Checkbox-input"
       id={id}
       name={id}
+      checked={value}
       value="true"
       onChange={({ target }) => updateFieldValue(id, target.checked)}
     />
@@ -25,7 +27,8 @@ const EditComponentCheckbox = ({
     </label>
     <EditComponentTooltip
       description={description}
-      isValid="true"
+      isValid
+      id={id}
     />
   </div>
 );
@@ -35,11 +38,13 @@ EditComponentCheckbox.propTypes = {
   label: PropTypes.string,
   description: PropTypes.string,
   updateFieldValue: PropTypes.func.isRequired,
+  value: PropTypes.string,
 };
 
 EditComponentCheckbox.defaultProps = {
   label: null,
   description: null,
+  value: 'false',
 };
 
 export default EditComponentCheckbox;

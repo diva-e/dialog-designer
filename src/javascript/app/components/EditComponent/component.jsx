@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import constants from '../../data/coral-components/constants';
+
 import EditComponentTextfield from './EditComponentTextfield';
 import EditComponentCheckbox from './EditComponentCheckbox';
 import EditComponentSelect from './EditComponentSelect';
 import EditComponentNumberfield from './EditComponentNumberfield';
 import EditComponentMultifield from './EditComponentMultifield';
-
 
 import allFieldsValid from '../../../tools/allFieldsValid';
 
@@ -50,30 +51,36 @@ const EditComponent = ({
                       key={field.id}
                     >
                       {/* eslint-disable-next-line no-nested-ternary */}
-                      { field.type === 'Long' ? (
+                      { field.type === constants.fieldValueTypes.LONG ? (
                         <EditComponentNumberfield
                           id={field.id}
                           label={field.label}
                           value={field.value}
                           isValid={field.isValid}
+                          description={field.description}
                           updateFieldValue={updateFieldValue}
                         />
                       ) : (
                         // eslint-disable-next-line no-nested-ternary
-                        field.type === 'KeyValue' ? (
+                        field.type === constants.fieldValueTypes.KEY_VALUE ? (
                           <EditComponentMultifield
                             id={field.id}
                             label={field.label}
                             value={field.value}
+                            isValid={field.isValid}
+                            required={field.required}
+                            description={field.description}
                             updateFieldValue={updateFieldValue}
                           />
                         ) : (
                           // eslint-disable-next-line no-nested-ternary
-                          field.type === 'Boolean' ? (
+                          field.type === constants.fieldValueTypes.BOOLEAN ? (
                             <EditComponentCheckbox
                               id={field.id}
                               label={field.label}
                               value={field.value}
+                              placeholder={field.placeholder}
+                              description={field.description}
                               updateFieldValue={updateFieldValue}
                             />
                           ) : (
@@ -143,7 +150,7 @@ const EditComponent = ({
 
 EditComponent.propTypes = {
   closeEdit: PropTypes.func.isRequired,
-  fields: PropTypes.object,
+  fields: PropTypes.array,
   saveEdit: PropTypes.func.isRequired,
   updateFieldValue: PropTypes.func.isRequired,
 };

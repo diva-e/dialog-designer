@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",
     "start": "npm run build:clean && npm run build:webpack && node scripts/host.js",
     "build": "npm run build:clean && npm run build:webpack",
-    "build:clean": "rimraf dist && rimraf build",
+    "build:clean": "rimraf dist/*",
     "build:webpack": "node scripts/build.js",
     "check:eslint": "echo no-eslint-check",
     "check:stylelint": "echo no-stylelint-check",

@@ -145,5 +145,4 @@ Example:
 
 ## Contributing
 
-TODO: contributing guidelines ... sub documentation mds
-
+Please checkout our [contributing guideline](CONTRIBUTING.md).  

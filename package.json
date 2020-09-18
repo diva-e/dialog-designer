@@ -2,7 +2,10 @@
   "name": "dialog-designer",
   "version": "0.0.1",
   "description": "Dialog Designer",
-  "keywords": ["AEM", "Dialogs"],
+  "keywords": [
+    "AEM",
+    "Dialogs"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",
     "start": "npm run build:clean && npm run build:webpack && node scripts/host.js",

@@ -6,7 +6,7 @@ const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
   downloadXML: () => {
     dispatch({
-      type: actionNames.STRUCTURE.XML,
+      type: actionNames.STRUCTURE.DOWNLOAD.XML,
     });
   },
   downloadJSON: () => {

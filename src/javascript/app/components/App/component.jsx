@@ -4,7 +4,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import Header from '../Header';
 import Sidepanel from '../Sidepanel';
 import EditComponent from '../EditComponent';
-import ActionPanelContainwer from '../ActionPanelContainer';
+import ActionPanelContainer from '../ActionPanelContainer';
 import Footer from '../Footer';
 import ErrorBoundary from '../ErrorBoundary';
 import Contextmenu from '../Contextmenu';
@@ -16,7 +16,7 @@ const App = () => (
       <main className="app-main-layout">
         <Sidepanel />
         <ErrorBoundary>
-          <ActionPanelContainwer />
+          <ActionPanelContainer />
         </ErrorBoundary>
       </main>
       <Footer />

@@ -18,8 +18,3 @@ const contextmenuReducer = (value = {}, action) => {
 
 export default contextmenuReducer;
 
-// case 'START_DELETE_COMPONENT':
-// case 'MOVE_COMPONENT_UP':
-// case 'MOVE_COMPONENT_DOWN':
-// case 'CUT_COMPONENT':
-// case 'PASTE_COMPONENT':

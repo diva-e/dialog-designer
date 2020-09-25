@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import constants from '../../data/coral-components/constants';
 import saveStructure from '../../../tools/saveStructure';
 import actionNames from '../actionNames';
@@ -16,7 +17,7 @@ const footerMiddleware = (store) => (next) => (action) => {
     case actionNames.STRUCTURE.RESET:
       // eslint-disable-next-line no-alert
       if (window.confirm(constants.messages.DELETE_CONFIRM)) {
-        window.localStorage.removeItem('dndd-test-structure');
+        window.localStorage.removeItem(STORAGE.STRUCTURE);
         window.location.reload();
       }
 

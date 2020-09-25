@@ -12,15 +12,6 @@
     user-select: none;
     cursor: grab;
     padding: 0;
-
-    &:hover {
-        // background-color: rgba(44,44,44,.04);
-    }
-
-    &--is-dragging {
-      // background: $color-grey-50;
-      // color: $color-white;
-    }
   }
 }
 

@@ -19,6 +19,9 @@ const initApp = () => {
 
   if (loadedStructure) {
     initialState.structure = loadedStructure;
+  }
+
+  if (loadedUiSettings) {
     initialState.settings = loadedUiSettings;
   }
 

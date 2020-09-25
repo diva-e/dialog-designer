@@ -32,6 +32,7 @@ const actionNames = {
       ACTIVATE: 'ui/action_panel/activate',
       CLOSE: 'ui/action_panel/close',
       UPDATE_CONTAINER_WIDTH: 'ui/action_panel/update_container_width',
+      UPDATE_XML_ZOOM: 'ui/action_panel/update_xml_zoom',
     },
     EDITCOMPONENT: {
       SAVE: 'ui/editcomponent/save',

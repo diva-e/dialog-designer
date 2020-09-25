@@ -21,6 +21,58 @@
         padding: 10px;
         overflow: auto;
         margin: 5px;
+        font-size: 13px;
+
+        &--zoom-1 {
+          font-size: 9.5px;
+        }
+
+        &--zoom-2 {
+          font-size: 11px;
+        }
+
+        &--zoom-3 {
+          font-size: 13px;
+        }
+
+        &--zoom-4 {
+          font-size: 15px;
+        }
+
+        &--zoom-5 {
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+      }
+
+      &__xml-zoom-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 5px;
+      }
+
+      &__xml-zoom-button {
+        background: $color-grey-80;
+        color: $color-grey-20;
+        border: none;
+        width: 32px;
+        height: 32px;
+        margin-left: 5px;
+        font-size: 24px;
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+
+        &:hover {
+          background: $color-grey-70;
+        }
+
+        &:disabled {
+          cursor: default;
+          background: $color-grey-80;
+          color: $color-grey-70;
+        }
       }
     }
   }

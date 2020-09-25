@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { JsonEditor as Editor } from 'jsoneditor-react';
-import 'jsoneditor-react/es/editor.min.css';
-
 class ActionPanelDeveloper extends React.Component {
   constructor(props) {
     super(props);
     this.ref = React.createRef();
+
+    this.increaseZoom = this.increaseZoom.bind(this);
+    this.decreaseZoom = this.decreaseZoom.bind(this);
   }
 
   componentDidMount() {
@@ -24,21 +24,41 @@ class ActionPanelDeveloper extends React.Component {
     document.removeEventListener('mousemove', this.resizeStructure);
   }
 
+  increaseZoom() {
+    this.props.updateXmlZoom(Math.min(5, this.props.xmlZoom + 1));
+  }
+
+  decreaseZoom() {
+    this.props.updateXmlZoom(Math.max(1, this.props.xmlZoom - 1));
+  }
+
   render() {
     const {
-      structure,
-      updateStructure,
       xmlOutput,
     } = this.props;
     return (
       <div className="action-panel__content action-panel__content--developer-panel" ref={this.ref}>
-        <div className="structure__json-editor">
-          <Editor
-            value={structure}
-            onChange={updateStructure}
-          />
+        <div className="structure__xml-zoom-buttons">
+          <button
+            className="structure__xml-zoom-button"
+            type="button"
+            disabled={this.props.xmlZoom <= 1}
+            onClick={this.decreaseZoom}
+            title="Zoom out"
+          >
+            -
+          </button>
+          <button
+            className="structure__xml-zoom-button"
+            type="button"
+            disabled={this.props.xmlZoom >= 5}
+            onClick={this.increaseZoom}
+            title="Zoom in"
+          >
+            +
+          </button>
         </div>
-        <pre className="structure__xml">
+        <pre className={`structure__xml structure__xml--zoom-${this.props.xmlZoom}`}>
           {xmlOutput}
         </pre>
       </div>
@@ -47,8 +67,8 @@ class ActionPanelDeveloper extends React.Component {
 }
 
 ActionPanelDeveloper.propTypes = {
-  structure: PropTypes.object.isRequired,
-  updateStructure: PropTypes.func.isRequired,
+  xmlZoom: PropTypes.number.isRequired,
+  updateXmlZoom: PropTypes.func.isRequired,
   xmlOutput: PropTypes.string.isRequired,
 };
 

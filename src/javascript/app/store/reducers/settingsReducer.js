@@ -4,6 +4,7 @@ const defaultSettings = {
   activePanel: 'dev',
   actionPanelContainerWidth: 350,
   previewTheme: 'coral-light',
+  xmlZoom: 3,
 };
 
 const settingsReducer = (value = defaultSettings, action) => {
@@ -27,6 +28,11 @@ const settingsReducer = (value = defaultSettings, action) => {
       return {
         ...value,
         activePanel: '',
+      };
+    case actionNames.UI.ACTION_PANEL.UPDATE_XML_ZOOM:
+      return {
+        ...value,
+        xmlZoom: action.xmlZoom,
       };
     default:
       return value;

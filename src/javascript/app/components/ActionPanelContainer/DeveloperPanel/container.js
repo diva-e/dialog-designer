@@ -6,13 +6,14 @@ import actionNames from '../../../store/actionNames';
 const mapStateToProps = (state) => ({
   structure: state.structure,
   xmlOutput: XMLFormat(structureToXML(state.structure).documentElement),
+  xmlZoom: state.settings.xmlZoom,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateStructure: (structure) => {
+  updateXmlZoom: (xmlZoom) => {
     dispatch({
-      type: actionNames.STRUCTURE.SET,
-      payload: structure,
+      type: actionNames.UI.ACTION_PANEL.UPDATE_XML_ZOOM,
+      xmlZoom,
     });
   },
 });

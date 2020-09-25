@@ -2,7 +2,7 @@
 import objectPath from 'object-path';
 import actionNames from '../actionNames';
 
-const pushInContainer = (container, toPushElement, toIndex) => {
+const pushInContainer = (/* container, toPushElement, toIndex */) => {
   // todo: implement
 };
 

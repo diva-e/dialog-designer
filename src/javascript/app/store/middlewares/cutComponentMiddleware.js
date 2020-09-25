@@ -1,8 +1,7 @@
 /* eslint-disable no-trailing-spaces,no-empty */
-import objectPath from 'object-path';
 import actionNames from '../actionNames';
 
-const cutComponentMiddleware = (store) => (next) => (action) => {
+const cutComponentMiddleware = () => (next) => (action) => {
   if (action.type !== actionNames.COMPONENT.CUT) {
     next(action);
     return;

@@ -6,7 +6,7 @@ import actionNames from '../../../store/actionNames';
 const mapStateToProps = (state) => ({
   structure: state.structure,
   xmlOutput: XMLFormat(structureToXML(state.structure).documentElement),
-  xmlZoom: state.settings.xmlZoom,
+  xmlZoom: state.settings.xmlZoom || 3,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -7,7 +7,7 @@ const Footer = ({
   downloadJSON,
   downloadACGJSON,
 }) => (
-  <div className="footer">
+  <div className="footer coral--light">
     <div className="footer_left">
       <button
         type="button"

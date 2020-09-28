@@ -18,9 +18,8 @@ const Header = () => (
       title="Toggle Dialog Preview Theme"
       onClick={() => {
         // todo: actually dispatch an action to store it
-        const preview = document.getElementById('preview');
-        preview.classList.toggle('coral--dark');
-        preview.classList.toggle('coral--light');
+        document.body.classList.toggle('coral--dark');
+        document.body.classList.toggle('coral--light');
       }}
     />
   </div>

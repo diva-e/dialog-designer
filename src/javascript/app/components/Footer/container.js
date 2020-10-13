@@ -10,7 +10,6 @@ const mapDispatchToProps = (dispatch) => ({
     });
   },
   downloadJSON: () => {
-  
     dispatch({
       type: actionNames.STRUCTURE.DOWNLOAD.JSON,
     });

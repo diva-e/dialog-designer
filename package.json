@@ -83,7 +83,7 @@
     "node-sass": "^4.14.1",
     "node-watch": "^0.6.4",
     "nodemon": "^2.0.4",
-    "object-path": "^0.11.4",
+    "object-path": "^0.11.5",
     "postcss-loader": "^3.0.0",
     "postcss-pxtorem": "^5.1.1",
     "prop-types": "^15.7.2",

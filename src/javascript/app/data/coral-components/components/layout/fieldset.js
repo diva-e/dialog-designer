@@ -22,7 +22,7 @@ const fieldset = {
       <h3
         class="coral-Form-fieldset-legend">
         {title}</h3>
-         <drop-target data-name="fs" />
+         <drop-target data-name="fscontent" />
     </section>`,
   xmlOutput: `<{id}
     jcr:primaryType="nt:unstructured"

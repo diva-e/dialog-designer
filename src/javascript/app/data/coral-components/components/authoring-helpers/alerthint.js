@@ -79,7 +79,6 @@ const alerthint = {
     <coral-alert-content>{message}</coral-alert-content>
   </coral-alert>`,
   xmlOutput: `<{id}
-    granite:class="cmp-form-textfield-readonlyselected-alert"
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/alert"
     size="{size}"

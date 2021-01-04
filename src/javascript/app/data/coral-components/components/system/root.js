@@ -37,7 +37,6 @@ const root = {
     jcr:title="Button"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
-      granite:class="cmp-button__editor"
       jcr:primaryType="nt:unstructured"
       sling:resourceType="granite/ui/components/coral/foundation/container">
       <items jcr:primaryType="nt:unstructured">

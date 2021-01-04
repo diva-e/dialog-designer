@@ -58,7 +58,6 @@ const select = {
       ${TOOLTIP_WRAPPER_TEMPLATE}
     </div>`,
   xmlOutput: `<{id}
-    granite:class="cmp-options--editor-type-v1"
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/select"
     data-optional.fieldLabel="{label}"

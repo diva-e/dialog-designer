@@ -51,7 +51,11 @@ const structureToXML = (structureNode, path = '') => {
           break;
         case constants.fieldValueTypes.STRING:
         default:
-          textReplace[field.id] = field.value;
+          textReplace[field.id] = field.value.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/'/g, '&apos;')
+            .replace(/"/g, '&quot;');
           break;
       }
     });
